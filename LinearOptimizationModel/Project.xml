@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<LibraryProject AimmsVersion="24.2.7.1 unicode x64" ProjectUUID="CC108CAD-7513-41C0-B20F-18543FEF99CF">
-	<ModelFileName>LinearOptimizationModel.ams</ModelFileName>
-	<Prefix>lom</Prefix>
-	<DisplayName>LinearOptimizationModel</DisplayName>
-</LibraryProject>
