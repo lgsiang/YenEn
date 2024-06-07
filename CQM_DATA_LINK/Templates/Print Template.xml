@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Page Version="4000" TimeStamp="2016-07-05 13:49:20" PrintPage="true">
+	<PageEditSize Type="Inherited">
+		<Size Width="9025" Height="13958" />
+	</PageEditSize>
+	<ProjectUUID>FE7A9F00-883C-40F4-88E9-CD76396DAF24</ProjectUUID>
+	<PaperType Standard="A4" />
+	<PrintMargins top="1440" left="1440" bottom="1440" right="1440" />
+	<Positioning>Max-Visible Borders</Positioning>
+	<TemplatesTabOrderPosition>1</TemplatesTabOrderPosition>
+	<ResizeData>
+		<MainArea Line="FixedFromBottom" Value="428" />
+	</ResizeData>
+	<Background RGB="#ffffff" />
+	<PageObject Type="Scalar">
+		<Location top="13590" left="7830" bottom="13950" right="9000" />
+		<TabOrder>1</TabOrder>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="None" Width="2" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor RGB="#ffffff" />
+		<Layout>Text-Value</Layout>
+		<SeparatorSign>space</SeparatorSign>
+		<ExplicitIdentifier>
+			<Identifier>CurrentPageNumber</Identifier>
+			<NumberFormat Width="3" Decimals="0" Scientific="IfTooSmallorLarge" Alignment="Center" ShowDefaults="true" />
+			<Title>"Page"</Title>
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="13680" left="90" bottom="13950" right="5220" />
+		<StaticText>CQM, www.cqm.nl</StaticText>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<TextColor RGB="#000000" />
+	</PageObject>
+	<UsedReferences>
+		<Model>
+			<Symbol>CurrentPageNumber</Symbol>
+		</Model>
+	</UsedReferences>
+</Page>

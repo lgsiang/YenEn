@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<Page Version="4000" TimeStamp="2022-03-08 10:51:10">
+	<PageEditSize Type="Specified">
+		<Size Width="1200" Height="606" />
+	</PageEditSize>
+	<ProjectUUID>748F1752-A3CC-4398-BEB0-3B3157FE70D8</ProjectUUID>
+	<TemplatesTabOrderPosition>1</TemplatesTabOrderPosition>
+	<ResizeData>
+		<MainArea Line="FixedFromBottom" Value="24">
+			<TopArea Line="PercentageFromLeft" Value="0.993333333333">
+				<LeftArea Line="FixedFromTop" Value="42">
+					<TopArea Line="FixedFromLeft" Value="241" />
+				</LeftArea>
+			</TopArea>
+		</MainArea>
+	</ResizeData>
+	<Background>
+		<UserColor GUID="BDFE7E86-A7C8-4FA3-BEA3-FA3B7D1374B7">dark grey</UserColor>
+	</Background>
+	<PageObject Type="Scalar">
+		<Location top="6" left="252" bottom="36" right="912" />
+		<ReadOnly>"Yes"</ReadOnly>
+		<TabOrder>1</TabOrder>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="InShadow" Width="2" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</BackgroundColor>
+		<TextColor>
+			<UserColor>ALFIBackgroundDisplay</UserColor>
+		</TextColor>
+		<SelectionColor>
+			<UserColor>ALFIBackgroundDisplay</UserColor>
+		</SelectionColor>
+		<Layout>Text-Value</Layout>
+		<SeparatorSign>=</SeparatorSign>
+		<ExplicitIdentifier>
+			<Identifier>odm::spActiveFile</Identifier>
+			<NumberFormat Width="100" Decimals="0" Alignment="Left" ShowDefaults="true" />
+			<Color>267 ALFIBackgroundDisplay</Color>
+			<DescriptionFromIdentifierName>false</DescriptionFromIdentifierName>
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Picture">
+		<Location top="582" left="0" bottom="612" right="144" />
+		<FileName LiteralFileName="true">"Picture\AIR_LIQUIDE_CO_Redux.png"</FileName>
+		<Display>StretchOrShrink</Display>
+		<KeepRatio>true</KeepRatio>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="630" left="324" bottom="696" right="396" />
+		<StaticText>
+
+PdP Style</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<TextColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="588" left="858" bottom="612" right="1182" />
+		<StaticText>Core Engine V3.0</StaticText>
+		<Alignment>Right</Alignment>
+		<Font GUID="AE4EBE2E-F8FF-42B5-95E9-E08B2BDCA11F" Name="Arial 11 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="0" left="0" bottom="42" right="228" />
+		<StaticText>Result Manager</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="B88ACF7E-383E-421F-A0F5-9E7D01597930" Name="Arial 18 Bold" />
+		<TextColor>
+			<UserColor>Air Liquide blue</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Line">
+		<Location top="42" left="0" bottom="42" right="1188" />
+		<LineColor RGB="#000000" />
+		<LineWidth>3</LineWidth>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="6" left="1098" bottom="36" right="1182" />
+		<TabOrder>2</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Main Page"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="3924427E-1A5F-465C-BA9D-FBA3DBEA92EF" Name="MainPage" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Tabbed Page Object">
+		<Location top="48" left="0" bottom="582" right="1188" />
+		<TabOrder>3</TabOrder>
+		<PrintingOccurrence>Never</PrintingOccurrence>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ParentPage PageGUID="DF63049B-71A6-415F-810B-6AAEA75CBFDB" Name="Result_Manager" />
+		<MultipleTabRows>true</MultipleTabRows>
+	</PageObject>
+	<UsedReferences>
+		<Model>
+			<Symbol>odm::spActiveFile</Symbol>
+		</Model>
+	</UsedReferences>
+</Page>

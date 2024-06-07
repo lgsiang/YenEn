@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Page Version="4000" TimeStamp="2015-08-19 08:46:01" NeedsCompiledModel="false">
+	<PageEditSize Type="Inherited">
+		<Size Width="480" Height="320" />
+	</PageEditSize>
+	<ProjectUUID>9F0BEB5A-61CC-4610-A78D-019367C5B0A9</ProjectUUID>
+	<TemplatesTabOrderPosition>1</TemplatesTabOrderPosition>
+	<ResizeData>
+		<MainArea Line="FixedFromTop" Value="41">
+			<BottomArea Line="FixedFromBottom" Value="31" />
+		</MainArea>
+	</ResizeData>
+	<Background Inherited="true" />
+	<PageObject Type="Button">
+		<Location top="294" left="402" bottom="318" right="468" />
+		<TabOrder>1</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Close"</Title>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="ClosePage" />
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Line">
+		<Location top="36" left="6" bottom="36" right="474" />
+		<LineColor>
+			<UserColor>Air Liquide blue</UserColor>
+		</LineColor>
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="6" left="6" bottom="36" right="276" />
+		<StaticText>Information</StaticText>
+		<Font GUID="183C0590-160B-4157-B819-B2C5FDF1A412" Name="DialogHeader" />
+		<TextColor>
+			<UserColor>Air Liquide blue</UserColor>
+		</TextColor>
+	</PageObject>
+	<UsedReferences>
+		<Model />
+	</UsedReferences>
+</Page>

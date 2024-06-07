@@ -1,0 +1,351 @@
+<?xml version="1.0"?>
+<Page Version="4000" TimeStamp="2021-08-09 13:32:59">
+	<PageEditSize Type="Inherited" />
+	<ProjectUUID>D2E6486F-6F55-4A9C-99DE-EEA675A35CD7</ProjectUUID>
+	<TemplatesTabOrderPosition>1</TemplatesTabOrderPosition>
+	<Background Inherited="true" />
+	<PageObject Type="Button">
+		<Location top="60" left="693" bottom="102" right="921" />
+		<TabOrder>2</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Read Excel Inteface"</Title>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>udm::procEmptyAllData_udm</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>udm::procReadFromExcelButton_udm</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>udm::procCheckData_udm</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="210" left="690" bottom="252" right="804" />
+		<TabOrder>5</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"1. Solve General MINLP"</Title>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>uom::procSolveGeneralModel_uom</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="210" left="810" bottom="252" right="924" />
+		<TabOrder>4</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"2. Solve General MILP"</Title>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>ulom::procSolveLinearModel_ulom</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Table">
+		<Location top="102" left="90" bottom="192" right="306" />
+		<TabOrder>8</TabOrder>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="InShadow" Width="2" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor RGB="#ffffff" />
+		<RowIndentation>3</RowIndentation>
+		<ExplicitIdentifier>
+			<Identifier>gdm::spRunFriendlyName</Identifier>
+			<FirstColumn>0</FirstColumn>
+			<HeaderText>"Project Name"</HeaderText>
+			<NumberFormat Width="15" Decimals="0" />
+		</ExplicitIdentifier>
+		<ExplicitIdentifier>
+			<Identifier>gdm::spRunEntity</Identifier>
+			<FirstColumn>0</FirstColumn>
+			<HeaderText>"Entity"</HeaderText>
+			<NumberFormat Width="15" Decimals="0" />
+		</ExplicitIdentifier>
+		<ExplicitIdentifier>
+			<Identifier>gdm::spRunSite</Identifier>
+			<FirstColumn>0</FirstColumn>
+			<HeaderText>"Site"</HeaderText>
+			<NumberFormat Width="15" Decimals="0" />
+		</ExplicitIdentifier>
+		<ExplicitIdentifier>
+			<Identifier>gdm::spRunModelVersion</Identifier>
+			<FirstColumn>0</FirstColumn>
+			<HeaderText>"Version"</HeaderText>
+			<NumberFormat Width="15" Decimals="0" />
+		</ExplicitIdentifier>
+		<ExplicitIdentifier>
+			<Identifier>gdm::spRunTimeStamp</Identifier>
+			<FirstColumn>0</FirstColumn>
+			<HeaderText>"Date"</HeaderText>
+			<NumberFormat Width="15" Decimals="0" />
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Composite Table">
+		<Location top="198" left="90" bottom="528" right="528" />
+		<TabOrder>7</TabOrder>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="InShadow" Width="2" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor RGB="#ffffff" />
+		<Domain>
+			<Identifier>log_message::iLogMessage</Identifier>
+			<Index Name="log_message::iLogMessage">
+				<TitleText>" "</TitleText>
+			</Index>
+		</Domain>
+		<ExplicitIdentifier>
+			<Identifier>log_message::pLogMessageSeverity( log_message::iLogMessage )</Identifier>
+			<NumberFormat Width="5" Decimals="0" Alignment="Right" />
+			<TitleText>"Severity"</TitleText>
+		</ExplicitIdentifier>
+		<ExplicitIdentifier>
+			<Identifier>log_message::spLogMessageText( log_message::iLogMessage )</Identifier>
+			<NumberFormat Width="15" Decimals="0" Alignment="Right" />
+			<TitleText>"Message"</TitleText>
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="108" left="693" bottom="150" right="921" />
+		<TabOrder>1</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Clear Data (Empty AllVariable)"</Title>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>uom::procClear_uom</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="534" left="420" bottom="564" right="522" />
+		<TabOrder>9</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Clear Msg"</Title>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>gdm::procClearMessages</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Scalar">
+		<Location top="330" left="684" bottom="372" right="930" />
+		<TabOrder>11</TabOrder>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="InShadow" Width="2" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor RGB="#ffffff" />
+		<Layout>Text-Value</Layout>
+		<SeparatorSign>=</SeparatorSign>
+		<ExplicitIdentifier>
+			<Identifier>gom::pObjective</Identifier>
+			<NumberFormat Width="7" Decimals="0" Scientific="IfTooSmallorLarge" Alignment="Center" ShowDefaults="true" />
+			<Title>"Obj. value nonlinear"</Title>
+		</ExplicitIdentifier>
+		<ExplicitIdentifier>
+			<Identifier>lom::pObjective</Identifier>
+			<NumberFormat Width="7" Decimals="0" Scientific="IfTooSmallorLarge" Alignment="Center" ShowDefaults="true" />
+			<Title>"Obj.value linear"</Title>
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Selection Object">
+		<SelectionType>CheckBoxes</SelectionType>
+		<Location top="414" left="684" bottom="570" right="936" />
+		<TabOrder>10</TabOrder>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<TextShown>IdentifierText</TextShown>
+		<Border Style="InShadow" Width="2" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor RGB="#ffffff" />
+		<ExplicitIdentifier>
+			<Identifier>gdm::p01AllowSlackPressure</Identifier>
+			<Description>"Slack on pressure control nodes"</Description>
+		</ExplicitIdentifier>
+		<ExplicitIdentifier>
+			<Identifier>gdm::p01AllowPressurePenalty</Identifier>
+			<Description>"Penalty on pressure control nodes"</Description>
+		</ExplicitIdentifier>
+		<ExplicitIdentifier>
+			<Identifier>gdm::p01AllowSlackLiquid</Identifier>
+			<Description>"Slack on liquid production"</Description>
+		</ExplicitIdentifier>
+		<ExplicitIdentifier>
+			<Identifier>gdm::p01AllowSlackCompressorFlow</Identifier>
+			<Description>"Slack on compressor flow"</Description>
+		</ExplicitIdentifier>
+		<ExplicitIdentifier>
+			<Identifier>gdm::p01AllowSlackPowerBalance</Identifier>
+			<Description>"Slack on power balance"</Description>
+		</ExplicitIdentifier>
+		<ExplicitIdentifier>
+			<Identifier>gdm::p01AllowSlackPressureDrop</Identifier>
+			<Description>"Slack on pressure drop"</Description>
+		</ExplicitIdentifier>
+		<ExplicitIdentifier>
+			<Identifier>gdm::p01AllowSlackReliefValveBuffer</Identifier>
+			<Description>"Slack relief valve buffer"</Description>
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Selection Object">
+		<SelectionType>CheckBoxes</SelectionType>
+		<Location top="162" left="690" bottom="192" right="804" />
+		<TabOrder>12</TabOrder>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<TextShown>IdentifierText</TextShown>
+		<Border Style="InShadow" Width="2" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor RGB="#ffffff" />
+		<ExplicitIdentifier>
+			<Identifier>gdm::p01AllowMultiStart</Identifier>
+			<Description>"Use MultiStart"</Description>
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="54" left="684" bottom="156" right="930" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="204" left="684" bottom="258" right="930" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="270" left="690" bottom="312" right="804" />
+		<TabOrder>6</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Initialize with MILP + Solve MINLP "</Title>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>ulom::procSolveLinearModel_ulom</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>uom::procSolveGeneralModel_uom</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="270" left="810" bottom="312" right="924" />
+		<TabOrder>3</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Fix Integer with MILP + Solve NLP"</Title>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>uom::procSolveLinearBlockGeneral_uom</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="264" left="684" bottom="318" right="930" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="384" left="684" bottom="408" right="930" />
+		<TabOrder>13</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Save Results to Excel"</Title>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>gdm::procWriteToExcelButton</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Scalar">
+		<Location top="54" left="90" bottom="84" right="672" />
+		<TabOrder>14</TabOrder>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="InShadow" Width="2" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor RGB="#ffffff" />
+		<Layout>Text-Value</Layout>
+		<SeparatorSign>=</SeparatorSign>
+		<ExplicitIdentifier>
+			<Identifier>gdm::spExcelFileDisplay</Identifier>
+			<NumberFormat Width="80" Decimals="0" Alignment="Left" ShowDefaults="true" />
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="114" left="348" bottom="156" right="576" />
+		<TabOrder>1</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Main Page CE v3"</Title>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page ProjectGUID="748F1752-A3CC-4398-BEB0-3B3157FE70D8" PageGUID="3924427E-1A5F-465C-BA9D-FBA3DBEA92EF" Name="MainPage" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<UsedReferences>
+		<Model>
+			<Symbol>gdm::spRunFriendlyName</Symbol>
+			<Symbol>gdm::spRunEntity</Symbol>
+			<Symbol>gdm::spRunSite</Symbol>
+			<Symbol>gdm::spRunTimeStamp</Symbol>
+			<Symbol>gdm::spRunModelVersion</Symbol>
+			<Symbol>gdm::p01AllowMultiStart</Symbol>
+			<Symbol>gdm::p01AllowSlackPressure</Symbol>
+			<Symbol>gdm::p01AllowPressurePenalty</Symbol>
+			<Symbol>gdm::p01AllowSlackLiquid</Symbol>
+			<Symbol>gdm::p01AllowSlackCompressorFlow</Symbol>
+			<Symbol>gdm::p01AllowSlackPowerBalance</Symbol>
+			<Symbol>gdm::p01AllowSlackPressureDrop</Symbol>
+			<Symbol>gdm::p01AllowSlackReliefValveBuffer</Symbol>
+			<Symbol>gdm::spExcelFileDisplay</Symbol>
+			<Symbol>gdm::procWriteToExcelButton</Symbol>
+			<Symbol>gdm::procClearMessages</Symbol>
+			<Symbol>gom::pObjective</Symbol>
+			<Symbol>lom::pObjective</Symbol>
+			<Symbol>udm::procCheckData_udm</Symbol>
+			<Symbol>udm::procReadFromExcelButton_udm</Symbol>
+			<Symbol>udm::procEmptyAllData_udm</Symbol>
+			<Symbol>uom::procSolveGeneralModel_uom</Symbol>
+			<Symbol>uom::procSolveLinearBlockGeneral_uom</Symbol>
+			<Symbol>uom::procClear_uom</Symbol>
+			<Symbol>ulom::procSolveLinearModel_ulom</Symbol>
+			<Symbol>log_message::pLogMessageSeverity</Symbol>
+			<Symbol>log_message::spLogMessageText</Symbol>
+			<Symbol>log_message::iLogMessage</Symbol>
+		</Model>
+	</UsedReferences>
+</Page>

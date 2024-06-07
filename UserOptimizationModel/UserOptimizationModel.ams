@@ -1,0 +1,1012 @@
+## ams_version=1.0
+
+LibraryModule UserOptimizationModel {
+	Prefix: uom;
+	Interface: {
+		data { vInput1FlowUserBox, vInput2FlowUserBox, vInput3FlowUserBox, vInput4FlowUserBox, 
+		       vInput5FlowUserBox, vInput6FlowUserBox, vInput7FlowUserBox, vInput8FlowUserBox, 
+		       vInput9FlowUserBox, vInput10FlowUserBox, vOutput1FlowUserBox, vOutput2FlowUserBox, 
+		       vOutput3FlowUserBox, vOutput4FlowUserBox, vOutput5FlowUserBox, vOutput6FlowUserBox, 
+		       vOutput7FlowUserBox, vOutput8FlowUserBox, vOutput9FlowUserBox, vOutput10FlowUserBox, 
+		       cSetInputFlowUserBox, cSetOutputFlowUserBox, cLinkToUserbox, cConstraintUserBox, 
+		       cSetPressureUserBox, vUserObjective, mpUserModel, procSolveGeneralModel_uom, 
+		       procSolveLinearBlockGeneral_uom, sMPConstraintsExcluded_uom, sMPVariablesExcluded_uom, 
+		       epProgramStatus_uom, spProgramStatus_uom, pTimeUsed_uom, pGap_uom, procConfigureMathProgram_uom, 
+		       procNodeSetsDefinition_uom, procFixUserSpecificVariables_uom, mpUserModelWithViolations, 
+		       sConstraintsMP, pViolationPenalty, epConstraintsFirstIndex, sConstraintsNode, 
+		       pNode_vp, sConstraintsPressureControlNode, pPressureControlNode_vp, sConstraintsTankNode, 
+		       pTankNode_vp, sConstraintsBufferNode, pBufferNode_vp, sConstraintsInputFlowNode, 
+		       pInputFlowNode_vp, sConstraintsOutputFlowNode, pOutputFlowNode_vp, sConstraintsArc, 
+		       pArc_vp, sConstraintsCompressorArc, pCompressorArc_vp, sConstraintsLiquefierArc, 
+		       pLiquefierArc_vp, sConstraintsBackupArc, pBackupArc_vp, sConstraintsValveArc, 
+		       pValveArc_vp, sConstraintsPipeArc, pPipeArc_vp, sConstraintsBox, pBox_vp, 
+		       sConstraintsColdBox, pColdBox_vp, sConstraintsOperatingModes, pOperatingMode_vp, 
+		       sConstraintsOther, pOther_vp, procSolveModelwithViolations_uom, procEmptyAllPenalties, procClear_uom }
+	}
+	Section Optimization_model_for_user_specifics {
+		Section box_type_userbox_model {
+			DeclarationSection In_and_Out_declaration_for_UserBox {
+				Variable vInput1FlowUserBox {
+					IndexDomain: (gdm::iBox,gdm::iTime) | gdm::epBoxType(gdm::iBox)=udm::epBoxTypeUserBox;
+					Range: nonnegative;
+				}
+				Variable vInput2FlowUserBox {
+					IndexDomain: (gdm::iBox,gdm::iTime) | gdm::epBoxType(gdm::iBox)=udm::epBoxTypeUserBox;
+					Range: nonnegative;
+				}
+				Variable vInput3FlowUserBox {
+					IndexDomain: (gdm::iBox,gdm::iTime) | gdm::epBoxType(gdm::iBox)=udm::epBoxTypeUserBox;
+					Range: nonnegative;
+				}
+				Variable vInput4FlowUserBox {
+					IndexDomain: (gdm::iBox,gdm::iTime) | gdm::epBoxType(gdm::iBox)=udm::epBoxTypeUserBox;
+					Range: nonnegative;
+				}
+				Variable vInput5FlowUserBox {
+					IndexDomain: (gdm::iBox,gdm::iTime) | gdm::epBoxType(gdm::iBox)=udm::epBoxTypeUserBox;
+					Range: nonnegative;
+				}
+				Variable vInput6FlowUserBox {
+					IndexDomain: (gdm::iBox,gdm::iTime) | gdm::epBoxType(gdm::iBox)=udm::epBoxTypeUserBox;
+					Range: nonnegative;
+				}
+				Variable vInput7FlowUserBox {
+					IndexDomain: (gdm::iBox,gdm::iTime) | gdm::epBoxType(gdm::iBox)=udm::epBoxTypeUserBox;
+					Range: nonnegative;
+				}
+				Variable vInput8FlowUserBox {
+					IndexDomain: (gdm::iBox,gdm::iTime) | gdm::epBoxType(gdm::iBox)=udm::epBoxTypeUserBox;
+					Range: nonnegative;
+				}
+				Variable vInput9FlowUserBox {
+					IndexDomain: (gdm::iBox,gdm::iTime) | gdm::epBoxType(gdm::iBox)=udm::epBoxTypeUserBox;
+					Range: nonnegative;
+				}
+				Variable vInput10FlowUserBox {
+					IndexDomain: (gdm::iBox,gdm::iTime) | gdm::epBoxType(gdm::iBox)=udm::epBoxTypeUserBox;
+					Range: nonnegative;
+				}
+				Variable vOutput1FlowUserBox {
+					IndexDomain: (gdm::iBox,gdm::iTime) | gdm::epBoxType(gdm::iBox)=udm::epBoxTypeUserBox;
+					Range: nonnegative;
+				}
+				Variable vOutput2FlowUserBox {
+					IndexDomain: (gdm::iBox,gdm::iTime) | gdm::epBoxType(gdm::iBox)=udm::epBoxTypeUserBox;
+					Range: nonnegative;
+				}
+				Variable vOutput3FlowUserBox {
+					IndexDomain: (gdm::iBox,gdm::iTime) | gdm::epBoxType(gdm::iBox)=udm::epBoxTypeUserBox;
+					Range: nonnegative;
+				}
+				Variable vOutput4FlowUserBox {
+					IndexDomain: (gdm::iBox,gdm::iTime) | gdm::epBoxType(gdm::iBox)=udm::epBoxTypeUserBox;
+					Range: nonnegative;
+				}
+				Variable vOutput5FlowUserBox {
+					IndexDomain: (gdm::iBox,gdm::iTime) | gdm::epBoxType(gdm::iBox)=udm::epBoxTypeUserBox;
+					Range: nonnegative;
+				}
+				Variable vOutput6FlowUserBox {
+					IndexDomain: (gdm::iBox,gdm::iTime) | gdm::epBoxType(gdm::iBox)=udm::epBoxTypeUserBox;
+					Range: nonnegative;
+				}
+				Variable vOutput7FlowUserBox {
+					IndexDomain: (gdm::iBox,gdm::iTime) | gdm::epBoxType(gdm::iBox)=udm::epBoxTypeUserBox;
+					Range: nonnegative;
+				}
+				Variable vOutput8FlowUserBox {
+					IndexDomain: (gdm::iBox,gdm::iTime) | gdm::epBoxType(gdm::iBox)=udm::epBoxTypeUserBox;
+					Range: nonnegative;
+				}
+				Variable vOutput9FlowUserBox {
+					IndexDomain: (gdm::iBox,gdm::iTime) | gdm::epBoxType(gdm::iBox)=udm::epBoxTypeUserBox;
+					Range: nonnegative;
+				}
+				Variable vOutput10FlowUserBox {
+					IndexDomain: (gdm::iBox,gdm::iTime) | gdm::epBoxType(gdm::iBox)=udm::epBoxTypeUserBox;
+					Range: nonnegative;
+				}
+			}
+			DeclarationSection Link_to_UserBox {
+				Constraint cSetInputFlowUserBox {
+					IndexDomain: (gdm::iBox,gdm::iBoxNodeConnectionType, gdm::iTime) | gdm::epBoxType(gdm::iBox)=udm::epBoxTypeUserBox;
+					Definition: {
+						! Link InputFlow for the boxNodeConnectionTypeIntput
+						if gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeInput1 then
+							gom::vInputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = 0
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeInput2 then
+							gom::vInputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = 0
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeInput3 then
+							gom::vInputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = 0
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeInput4 then
+							gom::vInputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = 0
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeInput5 then
+							gom::vInputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = 0
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeInput6 then
+							gom::vInputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = 0
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeInput7 then
+							gom::vInputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = 0
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeInput8 then
+							gom::vInputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = 0
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeInput9 then
+							gom::vInputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = 0
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeInput10 then
+							gom::vInputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = 0
+						
+						! Link InputFlow for the boxNodeConnectionTypeOutput
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeOutput1 then
+							gom::vInputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = vOutput1FlowUserBox(gdm::iBox,gdm::iTime)
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeOutput2 then
+							gom::vInputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = vOutput2FlowUserBox(gdm::iBox,gdm::iTime)
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeOutput3 then
+							gom::vInputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = vOutput3FlowUserBox(gdm::iBox,gdm::iTime)
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeOutput4 then
+							gom::vInputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = vOutput4FlowUserBox(gdm::iBox,gdm::iTime)
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeOutput5 then
+							gom::vInputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = vOutput5FlowUserBox(gdm::iBox,gdm::iTime)
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeOutput6 then
+							gom::vInputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = vOutput6FlowUserBox(gdm::iBox,gdm::iTime)
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeOutput7 then
+							gom::vInputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = vOutput7FlowUserBox(gdm::iBox,gdm::iTime)
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeOutput8 then
+							gom::vInputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = vOutput8FlowUserBox(gdm::iBox,gdm::iTime)
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeOutput9 then
+							gom::vInputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = vOutput9FlowUserBox(gdm::iBox,gdm::iTime)
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeOutput10 then
+							gom::vInputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = vOutput10FlowUserBox(gdm::iBox,gdm::iTime)
+						
+						else
+							0=0
+						
+						endif
+					}
+					Comment: {
+						"Note that Input flow of the node are set to zero for input but they could be
+						linked to another variable that you should create in \"In and Out Declaration for UserBox\""
+					}
+				}
+				Constraint cSetOutputFlowUserBox {
+					IndexDomain: (gdm::iBox,gdm::iBoxNodeConnectionType, gdm::iTime) | gdm::epBoxType(gdm::iBox)=udm::epBoxTypeUserBox;
+					Definition: {
+						! Link OutputFlow for the boxNodeConnectionTypeIntput
+						if gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeInput1 then
+							gom::vOutputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = vInput1FlowUserBox(gdm::iBox,gdm::iTime)
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeInput2 then
+							gom::vOutputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = vInput2FlowUserBox(gdm::iBox,gdm::iTime)
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeInput3 then
+							gom::vOutputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = vInput3FlowUserBox(gdm::iBox,gdm::iTime)
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeInput4 then
+							gom::vOutputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = vInput4FlowUserBox(gdm::iBox,gdm::iTime)
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeInput5 then
+							gom::vOutputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = vInput5FlowUserBox(gdm::iBox,gdm::iTime)
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeInput6 then
+							gom::vOutputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = vInput6FlowUserBox(gdm::iBox,gdm::iTime)
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeInput7 then
+							gom::vOutputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = vInput7FlowUserBox(gdm::iBox,gdm::iTime)
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeInput8 then
+							gom::vOutputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = vInput8FlowUserBox(gdm::iBox,gdm::iTime)
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeInput9 then
+							gom::vOutputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = vInput9FlowUserBox(gdm::iBox,gdm::iTime)
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeInput10 then
+							gom::vOutputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = vInput10FlowUserBox(gdm::iBox,gdm::iTime)
+						
+						! Link OutputFlow for the boxNodeConnectionTypeOutput
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeOutput1 then
+							gom::vOutputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = 0
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeOutput2 then
+							gom::vOutputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = 0
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeOutput3 then
+							gom::vOutputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = 0
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeOutput4 then
+							gom::vOutputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = 0
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeOutput5 then
+							gom::vOutputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = 0
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeOutput6 then
+							gom::vOutputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = 0
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeOutput7 then
+							gom::vOutputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = 0
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeOutput8 then
+							gom::vOutputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = 0
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeOutput9 then
+							gom::vOutputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = 0
+						
+						elseif gdm::iBoxNodeConnectionType=gdm::epboxNodeConnectionTypeOutput10 then
+							gom::vOutputFlow(gdm::epboxNode(gdm::iBox,gdm::iBoxNodeConnectionType), gdm::iTime) = 0
+						
+						else
+							0=0
+						endif
+					}
+					Comment: {
+						"Note that Output flow of the node are set to zero for output but they could be
+						linked to another variable that you should create in \"In and Out Declaration for UserBox\""
+					}
+				}
+			}
+			DeclarationSection UserBox_operating_mode {
+				Constraint cLinkToUserbox {
+					IndexDomain: {
+						(gdm::iBox,gdm::iTime) | gdm::iBox in gdm::sOperatingModeElements and gdm::p01OperatingModeUseSpecificDescription(gdm::iBox)
+						and gdm::epBoxType(gdm::iBox)=udm::epBoxTypeUserBox
+					}
+					Definition: {
+						! This is an example for a userbow with start and on operating mode
+						
+						gom::v01ElementInOperatingMode(gdm::iBox,gdm::epOperatingModeTypeOn,gdm::iTime) +
+						gom::v01ElementInOperatingMode(gdm::iBox,gdm::epOperatingModeTypeStart,gdm::iTime)
+						= 
+						gom::v01box(gdm::iBox,gdm::iTime)
+					}
+				}
+			}
+			DeclarationSection userbox_constraints {
+				Comment: {
+					"Describe here the relationship between input, output flows 
+					and pressures of UserBox."
+				}
+				Constraint cConstraintUserBox {
+					IndexDomain: (gdm::iBox, gdm::iTime) |gdm::epBoxType(gdm::iBox)=udm::epBoxTypeUserBox and not gdm::p01BoxLinearEquationModel( gdm::iBox);
+					Definition: {
+						/*
+						Non Linear model:
+						Parameters already created for non linear model are:
+						gdm::pUserBoxParameterValue(gdm::iBox,udm::epUserBoxParameter1)
+						...
+						gdm::pUserBoxParameterValue(gdm::iBox,udm::epUserBoxParameter10)
+						
+						Parameter p01UserBoxLinearEquationModel should be used if there is a non linear
+						and a linear model (if just one linear model, remove the parameter condition in the
+						Index Domain as it is done for the exchanger by example)
+						p01UserBoxLinearEquationModel should be forced to be equal to p01UserBoxLinearEquationData in the procConfigureMathProgram_uom
+						
+						Linear Model
+						Parameters already created for linear model are:
+						gdm::pUserBoxParameterValue(gdm::iBox,udm::epUserBoxParameterLinear1)
+						...
+						gdm::pUserBoxParameterValue(gdm::iBox,udm::epUserBoxParameterLinear10)
+						The constraint should be placed in ulom library
+						The index domain shoudl be:(gdm::iBox, gdm::iTime) |gdm::epBoxType(gdm::iBox)=udm::epUserBoxTypeUserBox
+						and gdm::p01BoxLinearEquationModel( gdm::iBox)
+						p01BoxLinearEquationModel should be forced to 1 in the procConfigureMathProgram_ulom
+						
+						*/
+						0=0
+					}
+					Comment: "write here the relationships between Inputs and Outputs flows and pressure";
+				}
+				Constraint cSetPressureUserBox {
+					IndexDomain: (gdm::iBox,gdm::iBoxNodeConnectionType, gdm::iTime) | gdm::epBoxType(gdm::iBox)=udm::epBoxTypeUserBox;
+					Definition: {
+						
+						0=0
+						
+						! To be desined by the developper of the user box
+						! It is the calculation of the userbox_ConnectionNode's pressure
+						! If it is needed for the userbox
+					}
+				}
+			}
+		}
+		DeclarationSection objective_function {
+			Variable vUserObjective {
+				Range: free;
+				Definition: {
+					
+					gom::vObjective 
+					+ 0  ! user additional objective
+					! or a completely new objective function
+				}
+			}
+		}
+		DeclarationSection mathematical_program {
+			MathematicalProgram mpUserModel {
+				Objective: vUserObjective;
+				Direction: minimize;
+				Constraints: gom::sMPConstraints_General;
+				Variables: gom::sMPVariables_General;
+				Type: Automatic;
+			}
+		}
+	}
+	Section Solve_procedures {
+		Comment: {
+			"/* Fonction objective avec cout des liquide en kw/nm3 et non en euro !
+			
+			! total cost (compressors + liquid assist)+ liquid  credit at production cost
+			sum(gdm::iPlant,
+				(sum(gdm::iCompressorArc|gdm::epCompressorPlant(gdm::iCompressorArc)=gdm::iPlant,vCompressorPower(gdm::iCompressorArc))+
+				 sum(gdm::iLiquefierArc |gdm::epLiquefierPlant(gdm::iLiquefierArc)  =gdm::iPlant,vLiquefierPower(gdm::iLiquefierArc)  )+
+			! EL 04/04/2016 Replace the parameter plant auxiliary power by a calculation by groupe of equipment
+			!	 dm::pPlantAuxPower(dm::iPlant)
+				 sum(gdm::iGRAuxPower |gdm::epGroupAuxPowerPlant(gdm::iGRAuxPower)  =gdm::iPlant,vAuxPower(gdm::iGRAuxPower)          )
+				)
+				*
+				gdm::pPlantEnergyCost(gdm::iPlant))
+			
+			! Liquid Cost from tank and liquid credit to tank  	
+			+ sum(gdm::iPlant,
+				! Cost of bib OL and bib NL
+				(sum(gdm::iTank| gdm::epTankPlant(gdm::iTank)=gdm::iPlant and (
+					gdm::epTankLiquidProduct(gdm::iTank)=gdm::epLiquidProductN2 or gdm::epTankLiquidProduct(gdm::iTank)=gdm::epLiquidProductO2) ,
+					gdm::pTankStorageCostIni(gdm::iTank)*vTotalLiquidFromTank(gdm::iTank))
+				! credit for liquid produced at a better cost than storage cost (incremental additional margin)
+				-sum(gdm::iTank| gdm::epTankPlant(gdm::iTank)=gdm::iPlant and (
+					gdm::epTankLiquidProduct(gdm::iTank)=gdm::epLiquidProductN2 or gdm::epTankLiquidProduct(gdm::iTank)=gdm::epLiquidProductO2) ,
+					gdm::pTankStorageCostIni(gdm::iTank)*vTotalLiquidToTank(gdm::iTank))
+				! credit for liquid argon at the storage cost multiply by the plant liquid argon cost
+				-(sum(gdm::iTank | gdm::epTankPlant(gdm::iTank)=gdm::iPlant and (
+					gdm::epTankLiquidProduct(gdm::iTank)=gdm::epLiquidProductAR) ,
+					gdm::pTankStorageCostIni(gdm::iTank)*vTotalLiquidToTank(gdm::iTank))
+					) * gdm::pPlantArgonProductionValue(gdm::iPlant)
+				)
+				*
+				gdm::pPlantEnergyCost(gdm::iPlant))
+			
+			! Cost of the backup
+			+ sum(gdm::iPlant,
+				sum(gdm::iBkp | gdm::epBkpPlant(gdm::iBkp)=gdm::iPlant ,
+				vLiquidBkp(gdm::iBkp) * gdm::pBkpCostPerUnit(gdm::iBkp)
+				)
+				*
+				gdm::pPlantEnergyCost(gdm::iPlant))	
+			! Cost of the external source
+			+sum(gdm::iExternalSourceNode, vExternalFlow(gdm::iExternalSourceNode) * gdm::pExternalNodeCostPerUnit(gdm::iExternalSourceNode))
+			
+			
+			*/"
+		}
+		Procedure procSolveGeneralModel_uom {
+			Body: {
+				if p01ApplicationIsOnAimmsPro then
+					pro::ManagedSessionRemoveFromCaseIdentifierSet := {};
+				
+					!Delegate the execution of the procedure to the server
+					if pro::DelegateToServer( 
+					waitForCompletion: 1,
+					completionCallback: 'pro::session::LoadResultsCallback',
+					priorityAdjustment: 0,
+					timeOut: 600000
+					) 
+					then
+					return 1;
+					endif ;
+				endif;
+				
+				!check the data inclusing user data
+				udm::procCheckData_udm;
+				
+					if gom::procCheckSevereErrors() = 1  then
+				
+						!Configure math program for user model
+						uom::procConfigureMathProgram_uom();
+				
+						!Solve
+				                	BLOCK
+				                		epGMP := GMP::Instance::Generate( uom::mpUserModel);
+				                		gom::procSolve( epGMP, 0, splProgramStatus );
+				                	ONERROR epError
+				                	DO
+				                		spErrorString := errh::Message(epError);
+				                		if( errh::Severity( epError ) = 'Warning' )
+				                		then
+				                			!It is a warning, mark it as handled and return.
+				                			errh::MarkAsHandled( epError );
+				                		else
+				                			log_message::procLogInfo("",formatstring( "Solver failed for general model: %s", spErrorString));
+				                			errh::MarkAsHandled( epError );	
+				                			return 0;
+				                		endif;
+				                	ENDBLOCK;
+				
+						gdm::procLogSlackAllowed("Variant"); !log slack allowed
+						log_message::procLogInfo("",formatstring( "Program status for variant: %s", splProgramStatus));
+				
+						!Copy objective values to parameters
+				                gom::pObjective:= vUserObjective ;
+				
+				                epProgramStatus_uom := (GMP::Solution::GetProgramStatus( epGMP, 1 ));
+						pTimeUsed_uom := (GMP::Solution::GetTimeUsed( epGMP, 1 ));
+						pGap_uom :=( abs( mpUserModel.Incumbent - mpUserModel.bestbound ) / $abs( mpUserModel.Incumbent ) ) * 100;
+				
+				                !Return 1 on (local)optimality
+				                if( splProgramStatus = "Optimal" or splProgramStatus = "LocallyOptimal" )
+				                then
+				                	return 1;
+				                else
+				                	return 0;
+				                endif;
+					else
+						return 0;
+					endif;
+			}
+			ElementParameter epGMP {
+				Range: AllGeneratedMathematicalPrograms;
+			}
+			StringParameter splProgramStatus;
+			ElementParameter epError {
+				Range: errh::PendingErrors;
+			}
+			StringParameter spErrorString;
+		}
+		Procedure procSolveLinearBlockGeneral_uom {
+			Body: {
+				if p01ApplicationIsOnAimmsPro then
+					pro::ManagedSessionRemoveFromCaseIdentifierSet := {};
+				
+					!Delegate the execution of the procedure to the server
+					if pro::DelegateToServer( 
+					waitForCompletion: 1,
+					completionCallback: 'pro::session::LoadResultsCallback',
+					priorityAdjustment: 0,
+					timeOut: 600000
+					) 
+					then
+					return 1;
+					endif ;
+				endif;
+				
+				gdm::procCheckData;
+				if gom::procCheckSevereErrors() = 1  then
+				
+					!Solve
+					Empty AllVariables;
+				
+					!Configure linear math program 
+					 ulom::procConfigureMathProgram_ulom();
+				
+					if ulom::procSolveLinearModel_ulom() = 0 then
+						return 0;
+					endif;
+				
+					! Fix binary variables
+					gom::procFixAllBinaryVariables();
+				
+					!Configure nonlinear math program 
+					uom::procConfigureMathProgram_uom();
+				
+					!Solve
+				        	BLOCK
+				        		epGMP := GMP::Instance::Generate( uom::mpUserModel );
+				        		gom::procSolve( epGMP, 1, splProgramStatus );
+				        	ONERROR epError
+				        	DO
+				        		spErrorString := errh::Message(epError);
+				        		if( errh::Severity( epError ) = 'Warning' )
+				        		then
+				        			!It is a warning, mark it as handled and return.
+				        			errh::MarkAsHandled( epError );
+				        		else
+				        			log_message::procLogInfo("",formatstring( "Solver failed for general model: %s", spErrorString));
+				        			errh::MarkAsHandled( epError );	
+				        			return 0;
+				        		endif;
+				        	ENDBLOCK;
+				
+				        	gdm::procLogSlackAllowed("Variant"); !log slack allowed
+				        	log_message::procLogInfo("",formatstring( "Program status for general model: %s", splProgramStatus));
+				
+				        	gom::procMakeAllVariablesVar();
+				
+				        	!Copy objective values to parameters
+				        	! gom::pObjectiveCost:= gom::vObjectiveCost;
+				        	gom::pObjective:= uom::vUserObjective;
+				
+				        	!Return 1 on (local)optimality
+				        	if( splProgramStatus = "Optimal" or splProgramStatus = "LocallyOptimal" )
+				        	then
+				        		return 1;
+				        	else
+				        		return 0;
+				        	endif;
+				
+				        else
+				        	return 0;
+				        endif;
+			}
+			ElementParameter epGMP {
+				Range: AllGeneratedMathematicalPrograms;
+			}
+			StringParameter splProgramStatus;
+			ElementParameter epError {
+				Range: errh::PendingErrors;
+			}
+			StringParameter spErrorString;
+		}
+		Section Config_declaration {
+			Set sMPConstraintsExcluded_uom {
+				SubsetOf: AllConstraints;
+				Definition: {
+					!{ 'lom::cFlowDirection', 'lom::cFlowDirectionPlus', 'lom::cFlowDirectionMinus' }
+				}
+			}
+			Set sMPVariablesExcluded_uom {
+				SubsetOf: AllVariables;
+			}
+			ElementParameter epProgramStatus_uom {
+				Range: AllSolutionStates;
+			}
+			StringParameter spProgramStatus_uom {
+				Definition: epProgramStatus_uom;
+			}
+			Parameter pTimeUsed_uom;
+			Parameter pGap_uom;
+		}
+		Section Config_procedures {
+			Procedure procConfigureMathProgram_uom {
+				Body: {
+					/****
+					This procedure is called before any solve and it configures 
+					the mathematical program by setting the correct elements in 
+					the sets, i.e. it defines the set of
+					- Constraints
+					- Variables
+					... other
+					****/
+					
+					!set definitions of p01 for linear or non-linear constraints based on data
+					gdm::p01BoxLinearEquationModel( gdm::iBox ) := gdm::p01BoxLinearEquationData( gdm::iBox );
+					gdm::p01CompressorLinearEquationModel( gdm::iCompressorArc ) := gdm::p01CompressorLinearEquationData( gdm::iCompressorArc );
+					gdm::p01LiquefierLinearEquationModel( gdm::iLiquefierArc ) := gdm::p01LiquefierLinearEquationData( gdm::iLiquefierArc );
+					gdm::p01PipeLinearEquationModel( gdm::iPipeArc ) := 0; ! use the calcualtion mode defined by the user (it can even be linear)
+					gdm::p01ValveLinearEquationModel( gdm::iValveArc ) := 0; !we do not linearize valve equations within the non-linear model
+					
+					!Set definitions of constraint and variables sets
+					gom::sMPConstraints_General := 
+						{IndexConstraints|IndexConstraints in ( GeneralOptimizationModel or UserOptimizationModel or LinearOptimizationModel or UserLinearOptimizationModel ) }
+						- gom::sMPConstraintsExcluded_gom 
+						- sMPConstraintsExcluded_uom; !exclude the linear constraints on flow, we never linearize these within the non-linear model
+					
+					gom::sMPVariables_General :=
+						{IndexVariables|IndexVariables in ( GeneralOptimizationModel or UserOptimizationModel or LinearOptimizationModel or UserLinearOptimizationModel ) }
+						- gom::sMPVarialblesExcluded_gom
+						- sMPVariablesExcluded_uom;
+					
+					!Set definitions of other sets
+					uom::procNodeSetsDefinition_uom();
+					
+					! Call procedure to initialize pAccuBufferInitial based on initial pressures
+					gom::procInitializeAccuBuffers();
+					
+					
+					! Fix unnecessary variables based on data and initialization based on data reconciliation step
+					gom::procFixFlowVariablesFromData();
+					
+					! Fix user specific variables
+					procFixUserSpecificVariables_uom();
+				}
+			}
+			Procedure procNodeSetsDefinition_uom {
+				Body: {
+					!Set definitions of node zero input and zero output
+					gom::sInputZeroNodes := 
+						gdm::sNodes
+						- gdm::sInputFlowNodes
+						- gdm::sBoxConnectionNodes;
+						!- USERom::sXxxxx;
+					
+					gom::sOutputZeroNodes := 
+						gdm::sNodes
+						- gdm::sBoxConnectionNodes
+						- gdm::sOutputFlowNodes
+						- gdm::sTankNodes;
+						!- USERom::sXXXXX;
+					
+					!Set definitions of nodes to which cMatBalanceFlowNodes applies
+					gom::sNodesMaterialBalance := 
+						gdm::sNodes
+						- gdm::sBufferNodes 
+						- gdm::sTankNodes;
+						!- USERom::sXXXXX;
+				}
+				Comment: "Modify this procedure if you creates new Nodes type that need either output or input flow to be set to zero";
+			}
+			Procedure procFixUserSpecificVariables_uom {
+				Body: {
+					
+					! fix user element
+				}
+				Comment: "Modify this procedure to fix Integer variables for a user model";
+			}
+		}
+		Section Infeasibility_uom {
+			DeclarationSection MathProggramInfeasible {
+				MathematicalProgram mpUserModelWithViolations {
+					Objective: vUserObjective;
+					Direction: minimize;
+					Constraints: gom::sMPConstraints_General;
+					Variables: gom::sMPVariables_General;
+					Type: Automatic;
+					ViolationPenalty: pViolationPenalty;
+				}
+			}
+			DeclarationSection Declaration_for_linear_constraints_violation {
+				Set sConstraintsMP {
+					SubsetOf: AllVariablesConstraints;
+					Index: iConstraintMP;
+					Definition: {
+						gom::sMPConstraints_General
+						! constraints for these two variables since the range are defined (min and max arcs flows and node pressure)
+						+'gom::vFlow'+'gom::vPressure'
+					}
+				}
+				Parameter pViolationPenalty {
+					IndexDomain: iConstraintMP;
+					Definition: {
+						!Node constraints penalty
+						pNode_vp(iConstraintMP)
+						+pPressureControlNode_vp(iConstraintMP)
+						+pTankNode_vp(iConstraintMP)
+						+pBufferNode_vp(iConstraintMP)
+						+pInputFlowNode_vp(iConstraintMP)
+						+pOutputFlowNode_vp(iConstraintMP)
+						!Arc constraints penalty
+						+pArc_vp(iConstraintMP)
+						+pCompressorArc_vp(iConstraintMP)
+						+pLiquefierArc_vp(iConstraintMP)
+						+pBackupArc_vp(iConstraintMP)
+						+pValveArc_vp(iConstraintMP)
+						+pPipeArc_vp(iConstraintMP)
+						!Box constraints penalty
+						+pBox_vp(iConstraintMP)
+						+pColdBox_vp(iConstraintMP)
+						!OPeratingMode constraint penalty
+						+pOperatingMode_vp(iConstraintMP)
+						! Other penalty
+						+pOther_vp(iConstraintMP)
+					}
+				}
+			}
+			DeclarationSection Declaration_for_constraints_list_split {
+				ElementParameter epConstraintsFirstIndex {
+					IndexDomain: iConstraintMP;
+					Range: AllIdentifiers;
+					Definition: {
+						DomainIndex(
+							identifierName : iConstraintMP, 
+							indexPosition  : 1 )
+					}
+				}
+				Set sConstraintsNode {
+					SubsetOf: sConstraintsMP;
+					Index: iConstraintNode;
+					Definition: {
+						{iConstraintMP| (epConstraintsFirstIndex(iConstraintMP)='gdm::iNode' ) }
+					}
+				}
+				Parameter pNode_vp {
+					IndexDomain: iConstraintNode;
+				}
+				Set sConstraintsPressureControlNode {
+					SubsetOf: sConstraintsMP;
+					Index: iConstraintPressureControlNode;
+					Definition: {
+						{iConstraintMP| (epConstraintsFirstIndex(iConstraintMP)='gdm::iPressureControlNode') }
+					}
+				}
+				Parameter pPressureControlNode_vp {
+					IndexDomain: iConstraintPressureControlNode;
+				}
+				Set sConstraintsTankNode {
+					SubsetOf: sConstraintsMP;
+					Index: iConstraintTankNode;
+					Definition: {
+						{iConstraintMP| (epConstraintsFirstIndex(iConstraintMP)='gdm::iTankNode')  }
+					}
+				}
+				Parameter pTankNode_vp {
+					IndexDomain: iConstraintTankNode;
+				}
+				Set sConstraintsBufferNode {
+					SubsetOf: sConstraintsMP;
+					Index: iConstraintBufferNode;
+					Definition: {
+						{iConstraintMP| (epConstraintsFirstIndex(iConstraintMP)='gdm::iBufferNode') }
+					}
+				}
+				Parameter pBufferNode_vp {
+					IndexDomain: iConstraintBufferNode;
+				}
+				Set sConstraintsInputFlowNode {
+					SubsetOf: sConstraintsMP;
+					Index: iConstraintInputFlowNode;
+					Definition: {
+						{iConstraintMP| (epConstraintsFirstIndex(iConstraintMP)='gdm::iInputFlowNode' ) }
+					}
+				}
+				Parameter pInputFlowNode_vp {
+					IndexDomain: iConstraintInputFlowNode;
+				}
+				Set sConstraintsOutputFlowNode {
+					SubsetOf: sConstraintsMP;
+					Index: iConstraintOutputFlowNode;
+					Definition: {
+						{iConstraintMP| (epConstraintsFirstIndex(iConstraintMP)='gdm::iOutputFlowNode' ) }
+					}
+				}
+				Parameter pOutputFlowNode_vp {
+					IndexDomain: iConstraintOutputFlowNode;
+				}
+				Set sConstraintsArc {
+					SubsetOf: sConstraintsMP;
+					Index: iConstraintArc;
+					Definition: {
+						{iConstraintMP| (epConstraintsFirstIndex(iConstraintMP)='gdm::iArc' )}
+					}
+				}
+				Parameter pArc_vp {
+					IndexDomain: iConstraintArc;
+				}
+				Set sConstraintsCompressorArc {
+					SubsetOf: sConstraintsMP;
+					Index: iConstraintCompressorArc;
+					Definition: {
+						{iConstraintMP| (epConstraintsFirstIndex(iConstraintMP)='gdm::iCompressorArc' ) }
+					}
+				}
+				Parameter pCompressorArc_vp {
+					IndexDomain: iConstraintCompressorArc;
+				}
+				Set sConstraintsLiquefierArc {
+					SubsetOf: sConstraintsMP;
+					Index: iConstraintLiquefierArc;
+					Definition: {
+						{iConstraintMP| (epConstraintsFirstIndex(iConstraintMP)='gdm::iLiquefierArc' ) }
+					}
+				}
+				Parameter pLiquefierArc_vp {
+					IndexDomain: iConstraintLiquefierArc;
+				}
+				Set sConstraintsBackupArc {
+					SubsetOf: sConstraintsMP;
+					Index: iConstraintBackupArc;
+					Definition: {
+						{iConstraintMP| (epConstraintsFirstIndex(iConstraintMP)='gdm::iBackupArc' ) }
+					}
+				}
+				Parameter pBackupArc_vp {
+					IndexDomain: iConstraintBackupArc;
+				}
+				Set sConstraintsValveArc {
+					SubsetOf: sConstraintsMP;
+					Index: iConstraintValveArc;
+					Definition: {
+						{iConstraintMP| (epConstraintsFirstIndex(iConstraintMP)='gdm::iValveArc' ) }
+					}
+				}
+				Parameter pValveArc_vp {
+					IndexDomain: iConstraintValveArc;
+				}
+				Set sConstraintsPipeArc {
+					SubsetOf: sConstraintsMP;
+					Index: iConstraintPipeArc;
+					Definition: {
+						{iConstraintMP| (epConstraintsFirstIndex(iConstraintMP)='gdm::iPipeArc' ) }
+					}
+				}
+				Parameter pPipeArc_vp {
+					IndexDomain: iConstraintPipeArc;
+				}
+				Set sConstraintsBox {
+					SubsetOf: sConstraintsMP;
+					Index: iConstraintBox;
+					Definition: {
+						{iConstraintMP| (epConstraintsFirstIndex(iConstraintMP)='gdm::iBox' ) }
+					}
+				}
+				Parameter pBox_vp {
+					IndexDomain: iConstraintBox;
+				}
+				Set sConstraintsColdBox {
+					SubsetOf: sConstraintsMP;
+					Index: iConstraintColdBox;
+					Definition: {
+						{iConstraintMP|  (epConstraintsFirstIndex(iConstraintMP)='gdm::iColdBox' ) }
+					}
+				}
+				Parameter pColdBox_vp {
+					IndexDomain: iConstraintColdBox;
+				}
+				Set sConstraintsOperatingModes {
+					SubsetOf: sConstraintsMP;
+					Index: iConstraintOperatingMode;
+					Definition: {
+						{iConstraintMP| (epConstraintsFirstIndex(iConstraintMP)='gdm::iOperatingModeElement' )}
+					}
+				}
+				Parameter pOperatingMode_vp {
+					IndexDomain: iConstraintOperatingMode;
+				}
+				Set sConstraintsOther {
+					SubsetOf: sConstraintsMP;
+					Index: iConstraintOther;
+					Definition: {
+						! Must b blanked if all the constraints are taken into account. The list represents the constraints that are in no other sets
+						
+						sConstraintsMP
+						! Node indexed Constraints
+						- sConstraintsNode
+						- sConstraintsPressureControlNode
+						- sConstraintsTankNode
+						- sConstraintsBufferNode
+						- sConstraintsInputFlowNode
+						- sConstraintsOutputFlowNode
+						!Arc indexed Constraints
+						- sConstraintsArc
+						- sConstraintsCompressorArc
+						- sConstraintsLiquefierArc
+						- sConstraintsBackupArc
+						- sConstraintsValveArc
+						- sConstraintsPipeArc
+						!Box indexed Constraints
+						- sConstraintsBox
+						!ColdBox indexed Constraints
+						- sConstraintsColdBox
+						! Operating mode indexed constraints
+						-sConstraintsOperatingModes
+					}
+				}
+				Parameter pOther_vp {
+					IndexDomain: iConstraintOther;
+				}
+			}
+			Procedure procSolveModelwithViolations_uom {
+				Body: {
+					if p01ApplicationIsOnAimmsPro then
+						pro::ManagedSessionRemoveFromCaseIdentifierSet := {};
+					
+						!Delegate the execution of the procedure to the server
+						if pro::DelegateToServer( 
+						waitForCompletion: 1,
+						completionCallback: 'pro::session::LoadResultsCallback',
+						priorityAdjustment: 0,
+						timeOut: 600000
+						) 
+						then
+						return 1;
+						endif ;
+					endif;
+					
+					udm::procCheckData_udm;
+					if gom::procCheckSevereErrors() = 1  then
+					
+						!Configure math program 
+						uom::procConfigureMathProgram_uom();
+					
+						!Solve
+					        BLOCK
+					                epGMP := GMP::Instance::Generate( mpUserModelWithViolations );
+					                gom::procSolve( epGMP, 0, splProgramStatus );
+					        ONERROR epError
+					        DO
+					                spErrorString := errh::Message(epError);
+					                if( errh::Severity( epError ) = 'Warning' )
+					                then
+					                !It is a warning, mark it as handled and return.
+					                	errh::MarkAsHandled( epError );
+					                else
+					                	log_message::procLogInfo("",formatstring( "Solver failed for linear model: %s", spErrorString));
+					                	errh::MarkAsHandled( epError );	
+					                	return 0;
+					                endif;
+					        ENDBLOCK;
+					
+					        gdm::procLogSlackAllowed("Variant"); !log slack allowed
+					        log_message::procLogInfo("",formatstring( "Program status for linear model: %s", splProgramStatus));
+					
+					        !Copy objective values to parameters
+					        !lom::pObjectiveCost:= gom::vObjectiveCost;
+					        lom::pObjective_lom:= vUserObjective;
+					
+					        ! Initialized missing variables
+					        gom::vRectificationPower.level(gdm::iColdbox,gdm::iTime) := lom::pRectificationPowerLinear(gdm::iColdbox,gdm::iTime);
+					        gom::vO2Recovery.level(gdm::iColdbox,gdm::iTime)  := lom::pO2RecoveryLinear(gdm::iColdbox,gdm::iTime);
+					        gom::vArRecovery.level(gdm::iColdbox,gdm::iTime)  := lom::pArRecoveryLinear(gdm::iColdbox,gdm::iTime);
+					
+						ulom::epProgramStatus_ulom := (GMP::Solution::GetProgramStatus( epGMP, 1 ));
+						ulom::pTimeUsed_ulom := (GMP::Solution::GetTimeUsed( epGMP, 1 ));
+						ulom::pGap_ulom :=( abs( ulom::mpUserLinearModel.Incumbent - ulom::mpUserLinearModel.bestbound ) / $abs( ulom::mpUserLinearModel.Incumbent ) ) * 100;
+					
+						return 1;
+					else
+						return 0;
+					endif;
+				}
+				ElementParameter epGMP {
+					Range: AllGeneratedMathematicalPrograms;
+				}
+				StringParameter splProgramStatus;
+				StringParameter spErrorString;
+				ElementParameter epError {
+					Range: errh::PendingErrors;
+				}
+			}
+			Procedure procEmptyAllPenalties {
+				Body: {
+					!Node constraints penalty
+					empty pNode_vp(iConstraintMP);
+					empty pPressureControlNode_vp(iConstraintMP);
+					empty pTankNode_vp(iConstraintMP);
+					empty pBufferNode_vp(iConstraintMP);
+					empty pInputFlowNode_vp(iConstraintMP);
+					empty pOutputFlowNode_vp(iConstraintMP);
+					!Arc constraints penalty
+					empty pArc_vp(iConstraintMP);
+					empty pCompressorArc_vp(iConstraintMP);
+					empty pLiquefierArc_vp(iConstraintMP);
+					empty pBackupArc_vp(iConstraintMP);
+					empty pValveArc_vp(iConstraintMP);
+					empty pPipeArc_vp(iConstraintMP);
+					!Box constraints penalty
+					empty pBox_vp(iConstraintMP);
+					empty pColdBox_vp(iConstraintMP);
+					!OPeratingMode constraint penalty
+					empty pOperatingMode_vp(iConstraintMP);
+					! Other penalty
+					empty pOther_vp(iConstraintMP);
+				}
+			}
+		}
+		Procedure procClear_uom {
+			Body: {
+				
+				empty allvariables;
+				gom::pObjective:=0;
+				lom::pObjective_lom:=0;
+				
+				ulom::mpUserLinearModel.Objective:=0;
+				uom::mpUserModel.Objective:=0;
+				ulom::mpUserLinearModel.SolverStatus:='';
+				ulom::mpUserLinearModel.ProgramStatus :='';
+				ulom::mpUserLinearModel.SolutionTime := 0;
+				ulom::mpUserLinearModel.BestBound :=0;
+				ulom::mpUserLinearModel.Incumbent :=0;
+				
+				uom::mpUserModel.SolverStatus := '';
+				uom::mpUserModel.ProgramStatus := '';
+				uom::mpUserModel.SolutionTime := 0;
+				
+				
+				!Clear data managers
+				!empty UserOptimizationModel;
+				!empty UserLinearOptimizationModel;
+				!gom::procClear;
+			}
+			Comment: "Clear all general and specific data";
+		}
+	}
+}

@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<Page Version="4000" TimeStamp="2020-04-02 09:45:52">
+	<PageEditSize Type="Specified">
+		<Size Width="480" Height="320" />
+	</PageEditSize>
+	<ProjectUUID>748F1752-A3CC-4398-BEB0-3B3157FE70D8</ProjectUUID>
+	<IsDialogPage>true</IsDialogPage>
+	<TemplatesTabOrderPosition>1</TemplatesTabOrderPosition>
+	<ResizeData>
+		<MainArea Line="PercentageFromTop" Value="0.975">
+			<TopArea Line="PercentageFromLeft" Value="0.983333333333" />
+		</MainArea>
+	</ResizeData>
+	<Background>
+		<UserColor GUID="BDFE7E86-A7C8-4FA3-BEA3-FA3B7D1374B7">dark grey</UserColor>
+	</Background>
+	<PageObject Type="Text">
+		<Location top="332" left="129" bottom="367" right="158" />
+		<StaticText>
+
+PdP Style</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<TextColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="156" left="486" bottom="348" right="756" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="12" left="402" bottom="36" right="462" />
+		<TabOrder>1</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Closed"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="ClosePage" />
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="12" left="24" bottom="54" right="336" />
+		<StaticText>Run Informations</StaticText>
+		<Font GUID="6CE1F43F-6A59-4B87-9BAA-9BF6DCB0D1BB" Name="Arial 14 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Scalar">
+		<Location top="72" left="18" bottom="246" right="456" />
+		<TabOrder>2</TabOrder>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="InShadow" Width="2" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</BackgroundColor>
+		<TextColor>
+			<UserColor>ALFIBackgroundDisplay</UserColor>
+		</TextColor>
+		<SelectionColor>
+			<UserColor>ALFIBackgroundDisplay</UserColor>
+		</SelectionColor>
+		<Layout>Text-Value</Layout>
+		<SeparatorSign>=</SeparatorSign>
+		<ExplicitIdentifier>
+			<Identifier>gdm::spRunFriendlyName</Identifier>
+			<NumberFormat Width="15" Decimals="0" Alignment="Left" ShowDefaults="true" />
+		</ExplicitIdentifier>
+		<ExplicitIdentifier>
+			<Identifier>gdm::spRunEntity</Identifier>
+			<NumberFormat Width="15" Decimals="0" Alignment="Left" ShowDefaults="true" />
+		</ExplicitIdentifier>
+		<ExplicitIdentifier>
+			<Identifier>gdm::spRunSite</Identifier>
+			<NumberFormat Width="15" Decimals="0" Alignment="Left" ShowDefaults="true" />
+		</ExplicitIdentifier>
+		<ExplicitIdentifier>
+			<Identifier>gdm::spRunTimeStamp</Identifier>
+			<NumberFormat Width="15" Decimals="0" Alignment="Left" ShowDefaults="true" />
+		</ExplicitIdentifier>
+		<ExplicitIdentifier>
+			<Identifier>gdm::spRunModelVersion</Identifier>
+			<NumberFormat Width="15" Decimals="0" Alignment="Left" ShowDefaults="true" />
+		</ExplicitIdentifier>
+		<ExplicitIdentifier>
+			<Identifier>gdm::spRunTimeStampCreation</Identifier>
+			<NumberFormat Width="15" Decimals="0" Alignment="Left" ShowDefaults="true" />
+		</ExplicitIdentifier>
+		<ExplicitIdentifier>
+			<Identifier>gdm::spRunLastSavedBy</Identifier>
+			<NumberFormat Width="15" Decimals="0" Alignment="Left" ShowDefaults="true" />
+		</ExplicitIdentifier>
+		<ExplicitIdentifier>
+			<Identifier>gdm::spRunCreatedBy</Identifier>
+			<NumberFormat Width="15" Decimals="0" Alignment="Left" ShowDefaults="true" />
+		</ExplicitIdentifier>
+	</PageObject>
+	<UsedReferences>
+		<Model>
+			<Symbol>gdm::spRunFriendlyName</Symbol>
+			<Symbol>gdm::spRunEntity</Symbol>
+			<Symbol>gdm::spRunSite</Symbol>
+			<Symbol>gdm::spRunTimeStamp</Symbol>
+			<Symbol>gdm::spRunTimeStampCreation</Symbol>
+			<Symbol>gdm::spRunLastSavedBy</Symbol>
+			<Symbol>gdm::spRunCreatedBy</Symbol>
+			<Symbol>gdm::spRunModelVersion</Symbol>
+		</Model>
+	</UsedReferences>
+</Page>

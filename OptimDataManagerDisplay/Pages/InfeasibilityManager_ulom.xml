@@ -1,0 +1,702 @@
+<?xml version="1.0"?>
+<Page Version="4000" TimeStamp="2022-03-29 07:36:31">
+	<PageEditSize Type="Specified">
+		<Size Width="1200" Height="606" />
+	</PageEditSize>
+	<ProjectUUID>748F1752-A3CC-4398-BEB0-3B3157FE70D8</ProjectUUID>
+	<TemplatesTabOrderPosition>1</TemplatesTabOrderPosition>
+	<ResizeData>
+		<MainArea Line="PercentageFromTop" Value="0.986798679868">
+			<TopArea Line="PercentageFromLeft" Value="0.993333333333">
+				<LeftArea Line="FixedFromTop" Value="46">
+					<TopArea Line="FixedFromLeft" Value="240" />
+				</LeftArea>
+			</TopArea>
+		</MainArea>
+	</ResizeData>
+	<Background>
+		<UserColor GUID="BDFE7E86-A7C8-4FA3-BEA3-FA3B7D1374B7">dark grey</UserColor>
+	</Background>
+	<PageObject Type="Scalar">
+		<Location top="6" left="246" bottom="36" right="852" />
+		<TabOrder>5</TabOrder>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="InShadow" Width="2" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</BackgroundColor>
+		<TextColor>
+			<UserColor>ALFIBackgroundDisplay</UserColor>
+		</TextColor>
+		<SelectionColor>
+			<UserColor>ALFIBackgroundDisplay</UserColor>
+		</SelectionColor>
+		<Layout>Text-Value</Layout>
+		<SeparatorSign>=</SeparatorSign>
+		<ExplicitIdentifier>
+			<Identifier>odm::spActiveFile</Identifier>
+			<NumberFormat Width="100" Decimals="0" Alignment="Left" ShowDefaults="true" />
+			<Color>267 ALFIBackgroundDisplay</Color>
+			<DescriptionFromIdentifierName>false</DescriptionFromIdentifierName>
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="630" left="324" bottom="696" right="396" />
+		<StaticText>
+
+PdP Style</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<TextColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="6" left="1080" bottom="42" right="1176" />
+		<Shape>Rounded-Filled</Shape>
+		<FillColor>
+			<UserColor>ALFIBackgroundDisplay</UserColor>
+		</FillColor>
+		<LineColor>
+			<UserColor>ALFIBackgroundDisplay</UserColor>
+		</LineColor>
+	</PageObject>
+	<PageObject Type="Pivot Table">
+		<Location top="72" left="534" bottom="588" right="1182" />
+		<TabOrder>3</TabOrder>
+		<ObjectUUID>9E8379EA-C4B8-47E8-8A35-D01B9C2A1FBB</ObjectUUID>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="Line" Width="1" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<Contents>
+			<Implicit_Identifiers ID="4010">ulom::sConstraintsMP_Linear( AllVariablesConstraints )</Implicit_Identifiers>
+			<Defaults>
+				<Format>
+					<Standard_Format ID="4216">3</Standard_Format>
+					<Show_1000_seperator ID="4213">"Yes"</Show_1000_seperator>
+				</Format>
+				<Readonly ID="4052">odm::p01ReadOnlyInputFile</Readonly>
+				<Colors>
+					<Background_Color ID="4170">odm::epContentBackgroundColor</Background_Color>
+					<Text_Color ID="4175">odm::epContentTextColor</Text_Color>
+					<Bar_Fill_Color ID="4177">odm::epContentBarFillColor</Bar_Fill_Color>
+				</Colors>
+			</Defaults>
+		</Contents>
+		<Indices>
+			<Identifier_Index>
+				<Header_Title ID="6230">""</Header_Title>
+				<Initially_Collapsed ID="6252">1</Initially_Collapsed>
+				<Hide_if_Single_Identifier ID="6270">"No"</Hide_if_Single_Identifier>
+			</Identifier_Index>
+			<Suffix_Index>
+				<Explicit_Suffix>
+					<Suffix ID="6620">"Violation"</Suffix>
+				</Explicit_Suffix>
+			</Suffix_Index>
+		</Indices>
+		<General>
+			<Background_Color ID="1010">odm::epGeneralBackgroundColor</Background_Color>
+			<Border_Color ID="1011">odm::epGeneralBorderColor</Border_Color>
+			<Dense_Aggregation_restricts_to_Domain ID="1022">"Yes"</Dense_Aggregation_restricts_to_Domain>
+		</General>
+		<Row_Area>
+			<Background_Color ID="2010">odm::epRowAreaBackgroundColor</Background_Color>
+			<Text_Color ID="2020">odm::epRowAreaTextColor</Text_Color>
+			<Line_Color ID="2040">odm::epRowAreaLineColor</Line_Color>
+			<Headers>
+				<Background_Color ID="2120">odm::epRowAreaHeaderBackgroundColor</Background_Color>
+				<Text_Color ID="2130">odm::epRowAreaHeaderTextColor</Text_Color>
+				<Show_Sub_Headers ID="2150">"No"</Show_Sub_Headers>
+			</Headers>
+			<Aggregators>
+				<Background_Color ID="2220">odm::epRowAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="2230">odm::epRowAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Grid_Focus_Indicator>
+				<Background_Color ID="2270">odm::epRowAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="2280">odm::epRowAreaGridFocusTextColor</Text_Color>
+			</Grid_Focus_Indicator>
+		</Row_Area>
+		<Column_Area>
+			<Same_as_Row_Area ID="3005">"No"</Same_as_Row_Area>
+			<Auto_resize_Column_Widths ID="3006">"Never"</Auto_resize_Column_Widths>
+			<Background_Color ID="3010">odm::epColumnAreaBackgroundColor</Background_Color>
+			<Text_Color ID="3020">odm::epColumnAreaTextColor</Text_Color>
+			<Line_Color ID="3040">odm::epColumnAreaLineColor</Line_Color>
+			<Headers>
+				<Background_Color ID="3120">odm::epColumnAreaHeaderBackgroundColor</Background_Color>
+				<Text_Color ID="3130">odm::epColumnAreaHeaderTextColor</Text_Color>
+			</Headers>
+			<Aggregators>
+				<Background_Color ID="3220">odm::epColumnAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="3230">odm::epColumnAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Grid_Focus_Indicator>
+				<Background_Color ID="3270">odm::epColumnAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="3280">odm::epColumnAreaGridFocusTextColor</Text_Color>
+			</Grid_Focus_Indicator>
+		</Column_Area>
+		<Outer_Area>
+			<Same_as_Row_Area ID="3505">"No"</Same_as_Row_Area>
+			<Background_Color ID="3510">odm::epOuterAreaBackgroundColor</Background_Color>
+			<Text_Color ID="3520">odm::epOuterAreaTextColor</Text_Color>
+			<Line_Color ID="3540">odm::epOuterAreaLineColor</Line_Color>
+			<Headers>
+				<Background_Color ID="3620">odm::epOuterAreaHeaderBackgroundColor</Background_Color>
+				<Text_Color ID="3630">odm::epOuterAreaHeaderTextColor</Text_Color>
+			</Headers>
+			<Aggregators>
+				<Background_Color ID="3720">odm::epOuterAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="3730">odm::epOuterAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Grid_Focus_Indicator>
+				<Background_Color ID="3770">odm::epOuterAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="3780">odm::epOuterAreaGridFocusTextColor</Text_Color>
+			</Grid_Focus_Indicator>
+		</Outer_Area>
+		<Grid_Area>
+			<Background_Color ID="5010">odm::epGridAreaBackgroundColor</Background_Color>
+			<Alternating_Background_Color ID="5011">odm::epGridAreaAltBackgroundColor</Alternating_Background_Color>
+			<Text_Color ID="5020">odm::epGridAreaTextColor</Text_Color>
+			<Line_Color ID="5040">odm::epGridAreaLineColor</Line_Color>
+			<Second_Line_Color ID="5041">odm::epGridAreaSecondLineColor</Second_Line_Color>
+			<Selection>
+				<Background_Color ID="5120">odm::epGridAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="5130">odm::epGridAreaGridFocusTextColor</Text_Color>
+			</Selection>
+			<Aggregators>
+				<Background_Color ID="5220">odm::epGridAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="5230">odm::epGridAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Sub_Header_Row_or_Column>
+				<Background_Color ID="5320">odm::epGridAreaSubHeaderColor</Background_Color>
+			</Sub_Header_Row_or_Column>
+		</Grid_Area>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="48" left="528" bottom="594" right="1188" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="54" left="534" bottom="72" right="780" />
+		<StaticText>Constraints Violations</StaticText>
+		<Font GUID="523F941B-E378-47BE-AEB2-3C1FD99F8C69" Name="Arial 12 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="96" left="24" bottom="144" right="300" />
+		<StaticText>Zero value: violation not allowed
+High value: violation allowed but strongly discouraged
+Low value: violation allowed</StaticText>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="48" left="6" bottom="594" right="522" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="0" left="0" bottom="42" right="204" />
+		<StaticText>Linear Infeasibility 
+Management</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="523F941B-E378-47BE-AEB2-3C1FD99F8C69" Name="Arial 12 Bold" />
+		<TextColor>
+			<UserColor>Air Liquide blue</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="12" left="1086" bottom="36" right="1170" />
+		<TabOrder>8</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Main Page"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="3924427E-1A5F-465C-BA9D-FBA3DBEA92EF" Name="MainPage" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="54" left="18" bottom="78" right="300" />
+		<TabOrder>6</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Linear Solve with Violations allowed"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<ActionSequence>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>ulom::procSolveLinearModelwithViolations_ulom</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="78" left="24" bottom="114" right="270" />
+		<StaticText>Violation Penalty</StaticText>
+		<Font GUID="523F941B-E378-47BE-AEB2-3C1FD99F8C69" Name="Arial 12 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Pivot Table">
+		<Location top="138" left="12" bottom="300" right="516" />
+		<TabOrder>1</TabOrder>
+		<ObjectUUID>F502F5AB-CEF9-4954-B2F1-DD36F5489359</ObjectUUID>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="Line" Width="1" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<Contents>
+			<Explicit_Identifier>
+				<Identifier ID="4110">ulom::pNode_vp( ulom::iConstraintNode )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">ulom::pPressureControlNode_vp( ulom::iConstraintPressureControlNode )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">ulom::pTankNode_vp( ulom::iConstraintTankNode )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">ulom::pBufferNode_vp( ulom::iConstraintBufferNode )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">ulom::pInputFlowNode_vp( ulom::iConstraintInputFlowNode )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">ulom::pOutputFlowNode_vp( ulom::iConstraintOutputFlowNode )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">ulom::pArc_vp( ulom::iConstraintArc )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">ulom::pCompressorArc_vp( ulom::iConstraintCompressorArc )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">ulom::pLiquefierArc_vp( ulom::iConstraintLiquefierArc )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">ulom::pBackupArc_vp( ulom::iConstraintBackupArc )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">ulom::pBox_vp( ulom::iConstraintBox )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">ulom::pValveArc_vp( ulom::iConstraintValveArc )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">ulom::pPipeArc_vp( ulom::iConstraintPipeArc )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">ulom::pBox_vp( ulom::iConstraintBox )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">ulom::pColdBox_vp( ulom::iConstraintColdBox )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">ulom::pOperatingMode_vp( ulom::iConstraintOperatingMode )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">ulom::pOther_vp( ulom::iConstraintOther )</Identifier>
+			</Explicit_Identifier>
+			<Defaults>
+				<Format>
+					<Standard_Format ID="4216">3</Standard_Format>
+				</Format>
+				<Readonly ID="4052">odm::p01ReadOnlyInputFile</Readonly>
+				<Colors>
+					<Background_Color ID="4170">odm::epContentBackgroundColor</Background_Color>
+					<Text_Color ID="4175">odm::epContentTextColor</Text_Color>
+					<Bar_Fill_Color ID="4177">odm::epContentBarFillColor</Bar_Fill_Color>
+				</Colors>
+				<Procedures_Assertions>
+					<On_Change ID="4081">odm::procUpdateTimeDependentDataWithConstant</On_Change>
+				</Procedures_Assertions>
+			</Defaults>
+		</Contents>
+		<Indices>
+			<Identifier_Index>
+				<Header_Title ID="6230">""</Header_Title>
+				<Hide_if_Single_Identifier ID="6270">"No"</Hide_if_Single_Identifier>
+			</Identifier_Index>
+		</Indices>
+		<General>
+			<Background_Color ID="1010">odm::epGeneralBackgroundColor</Background_Color>
+			<Border_Color ID="1011">odm::epGeneralBorderColor</Border_Color>
+			<Show_Inactive_Data ID="1021">"Yes"</Show_Inactive_Data>
+			<Dense_Aggregation_restricts_to_Domain ID="1022">"Yes"</Dense_Aggregation_restricts_to_Domain>
+		</General>
+		<Row_Area>
+			<Background_Color ID="2010">odm::epRowAreaBackgroundColor</Background_Color>
+			<Text_Color ID="2020">odm::epRowAreaTextColor</Text_Color>
+			<Line_Color ID="2040">odm::epRowAreaLineColor</Line_Color>
+			<Headers>
+				<Background_Color ID="2120">odm::epRowAreaHeaderBackgroundColor</Background_Color>
+				<Text_Color ID="2130">odm::epRowAreaHeaderTextColor</Text_Color>
+				<Show_Sub_Headers ID="2150">"No"</Show_Sub_Headers>
+			</Headers>
+			<Aggregators>
+				<Background_Color ID="2220">odm::epRowAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="2230">odm::epRowAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Grid_Focus_Indicator>
+				<Background_Color ID="2270">odm::epRowAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="2280">odm::epRowAreaGridFocusTextColor</Text_Color>
+			</Grid_Focus_Indicator>
+		</Row_Area>
+		<Column_Area>
+			<Same_as_Row_Area ID="3005">"No"</Same_as_Row_Area>
+			<Auto_resize_Column_Widths ID="3006">"Never"</Auto_resize_Column_Widths>
+			<Background_Color ID="3010">odm::epColumnAreaBackgroundColor</Background_Color>
+			<Text_Color ID="3020">odm::epColumnAreaTextColor</Text_Color>
+			<Line_Color ID="3040">odm::epColumnAreaLineColor</Line_Color>
+			<Headers>
+				<Background_Color ID="3120">odm::epColumnAreaHeaderBackgroundColor</Background_Color>
+				<Text_Color ID="3130">odm::epColumnAreaHeaderTextColor</Text_Color>
+			</Headers>
+			<Aggregators>
+				<Background_Color ID="3220">odm::epColumnAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="3230">odm::epColumnAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Grid_Focus_Indicator>
+				<Background_Color ID="3270">odm::epColumnAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="3280">odm::epColumnAreaGridFocusTextColor</Text_Color>
+			</Grid_Focus_Indicator>
+		</Column_Area>
+		<Outer_Area>
+			<Same_as_Row_Area ID="3505">"No"</Same_as_Row_Area>
+			<Background_Color ID="3510">odm::epOuterAreaBackgroundColor</Background_Color>
+			<Text_Color ID="3520">odm::epOuterAreaTextColor</Text_Color>
+			<Line_Color ID="3540">odm::epOuterAreaLineColor</Line_Color>
+			<Headers>
+				<Background_Color ID="3620">odm::epOuterAreaHeaderBackgroundColor</Background_Color>
+				<Text_Color ID="3630">odm::epOuterAreaHeaderTextColor</Text_Color>
+			</Headers>
+			<Aggregators>
+				<Background_Color ID="3720">odm::epOuterAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="3730">odm::epOuterAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Grid_Focus_Indicator>
+				<Background_Color ID="3770">odm::epOuterAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="3780">odm::epOuterAreaGridFocusTextColor</Text_Color>
+			</Grid_Focus_Indicator>
+		</Outer_Area>
+		<Grid_Area>
+			<Background_Color ID="5010">odm::epGridAreaBackgroundColor</Background_Color>
+			<Alternating_Background_Color ID="5011">odm::epGridAreaAltBackgroundColor</Alternating_Background_Color>
+			<Text_Color ID="5020">odm::epGridAreaTextColor</Text_Color>
+			<Line_Color ID="5040">odm::epGridAreaLineColor</Line_Color>
+			<Second_Line_Color ID="5041">odm::epGridAreaSecondLineColor</Second_Line_Color>
+			<Selection>
+				<Background_Color ID="5120">odm::epGridAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="5130">odm::epGridAreaGridFocusTextColor</Text_Color>
+			</Selection>
+			<Aggregators>
+				<Background_Color ID="5220">odm::epGridAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="5230">odm::epGridAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Sub_Header_Row_or_Column>
+				<Background_Color ID="5320">odm::epGridAreaSubHeaderColor</Background_Color>
+			</Sub_Header_Row_or_Column>
+		</Grid_Area>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="324" left="312" bottom="342" right="510" />
+		<TabOrder>7</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Reset"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<ActionSequence>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>ulom::procEmptyAllPenalties</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Pivot Table">
+		<Location top="342" left="12" bottom="588" right="516" />
+		<TabOrder>2</TabOrder>
+		<ObjectUUID>AE29F631-CF80-4E43-8CA7-7D1515EAE0FA</ObjectUUID>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="Line" Width="1" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<Contents>
+			<Explicit_Identifier>
+				<Identifier ID="4110">ulom::pViolationPenalty( ulom::iConstraintMP_Linear )</Identifier>
+			</Explicit_Identifier>
+			<Defaults>
+				<Format>
+					<Standard_Format ID="4216">3</Standard_Format>
+				</Format>
+				<Readonly ID="4052">odm::p01ReadOnlyInputFile</Readonly>
+				<Colors>
+					<Background_Color ID="4170">odm::epContentBackgroundColor</Background_Color>
+					<Text_Color ID="4175">odm::epContentTextColor</Text_Color>
+					<Bar_Fill_Color ID="4177">odm::epContentBarFillColor</Bar_Fill_Color>
+				</Colors>
+				<Procedures_Assertions>
+					<On_Change ID="4081">odm::procUpdateTimeDependentDataWithConstant</On_Change>
+				</Procedures_Assertions>
+			</Defaults>
+		</Contents>
+		<Indices>
+			<Identifier_Index>
+				<Header_Title ID="6230">""</Header_Title>
+				<Hide_if_Single_Identifier ID="6270">"No"</Hide_if_Single_Identifier>
+			</Identifier_Index>
+		</Indices>
+		<General>
+			<Background_Color ID="1010">odm::epGeneralBackgroundColor</Background_Color>
+			<Border_Color ID="1011">odm::epGeneralBorderColor</Border_Color>
+			<Show_Inactive_Data ID="1021">"Yes"</Show_Inactive_Data>
+			<Dense_Aggregation_restricts_to_Domain ID="1022">"Yes"</Dense_Aggregation_restricts_to_Domain>
+		</General>
+		<Row_Area>
+			<Background_Color ID="2010">odm::epRowAreaBackgroundColor</Background_Color>
+			<Text_Color ID="2020">odm::epRowAreaTextColor</Text_Color>
+			<Line_Color ID="2040">odm::epRowAreaLineColor</Line_Color>
+			<Headers>
+				<Background_Color ID="2120">odm::epRowAreaHeaderBackgroundColor</Background_Color>
+				<Text_Color ID="2130">odm::epRowAreaHeaderTextColor</Text_Color>
+				<Show_Sub_Headers ID="2150">"No"</Show_Sub_Headers>
+			</Headers>
+			<Aggregators>
+				<Background_Color ID="2220">odm::epRowAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="2230">odm::epRowAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Grid_Focus_Indicator>
+				<Background_Color ID="2270">odm::epRowAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="2280">odm::epRowAreaGridFocusTextColor</Text_Color>
+			</Grid_Focus_Indicator>
+		</Row_Area>
+		<Column_Area>
+			<Same_as_Row_Area ID="3005">"No"</Same_as_Row_Area>
+			<Auto_resize_Column_Widths ID="3006">"Never"</Auto_resize_Column_Widths>
+			<Background_Color ID="3010">odm::epColumnAreaBackgroundColor</Background_Color>
+			<Text_Color ID="3020">odm::epColumnAreaTextColor</Text_Color>
+			<Line_Color ID="3040">odm::epColumnAreaLineColor</Line_Color>
+			<Headers>
+				<Background_Color ID="3120">odm::epColumnAreaHeaderBackgroundColor</Background_Color>
+				<Text_Color ID="3130">odm::epColumnAreaHeaderTextColor</Text_Color>
+			</Headers>
+			<Aggregators>
+				<Background_Color ID="3220">odm::epColumnAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="3230">odm::epColumnAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Grid_Focus_Indicator>
+				<Background_Color ID="3270">odm::epColumnAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="3280">odm::epColumnAreaGridFocusTextColor</Text_Color>
+			</Grid_Focus_Indicator>
+		</Column_Area>
+		<Outer_Area>
+			<Same_as_Row_Area ID="3505">"No"</Same_as_Row_Area>
+			<Background_Color ID="3510">odm::epOuterAreaBackgroundColor</Background_Color>
+			<Text_Color ID="3520">odm::epOuterAreaTextColor</Text_Color>
+			<Line_Color ID="3540">odm::epOuterAreaLineColor</Line_Color>
+			<Headers>
+				<Background_Color ID="3620">odm::epOuterAreaHeaderBackgroundColor</Background_Color>
+				<Text_Color ID="3630">odm::epOuterAreaHeaderTextColor</Text_Color>
+			</Headers>
+			<Aggregators>
+				<Background_Color ID="3720">odm::epOuterAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="3730">odm::epOuterAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Grid_Focus_Indicator>
+				<Background_Color ID="3770">odm::epOuterAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="3780">odm::epOuterAreaGridFocusTextColor</Text_Color>
+			</Grid_Focus_Indicator>
+		</Outer_Area>
+		<Grid_Area>
+			<Background_Color ID="5010">odm::epGridAreaBackgroundColor</Background_Color>
+			<Alternating_Background_Color ID="5011">odm::epGridAreaAltBackgroundColor</Alternating_Background_Color>
+			<Text_Color ID="5020">odm::epGridAreaTextColor</Text_Color>
+			<Line_Color ID="5040">odm::epGridAreaLineColor</Line_Color>
+			<Second_Line_Color ID="5041">odm::epGridAreaSecondLineColor</Second_Line_Color>
+			<Selection>
+				<Background_Color ID="5120">odm::epGridAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="5130">odm::epGridAreaGridFocusTextColor</Text_Color>
+			</Selection>
+			<Aggregators>
+				<Background_Color ID="5220">odm::epGridAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="5230">odm::epGridAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Sub_Header_Row_or_Column>
+				<Background_Color ID="5320">odm::epGridAreaSubHeaderColor</Background_Color>
+			</Sub_Header_Row_or_Column>
+		</Grid_Area>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="324" left="18" bottom="342" right="264" />
+		<StaticText>Constraints that can be violated</StaticText>
+		<Font GUID="523F941B-E378-47BE-AEB2-3C1FD99F8C69" Name="Arial 12 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Picture">
+		<Location top="6" left="204" bottom="36" right="234" />
+		<FileName LiteralFileName="true">"Pictures\help.png"</FileName>
+		<Display>StretchOrShrink</Display>
+		<Center>true</Center>
+		<KeepRatio>true</KeepRatio>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="6" left="204" bottom="36" right="234" />
+		<TabOrder>9</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Invisible</ButtonType>
+		<TooltipText>"Infeasibility"</TooltipText>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Assignment">
+				<Identifier>odm::epWebLinkSelect</Identifier>
+				<AssignedValue>'Infeasibility'</AssignedValue>
+			</Action>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>odm::procOpenWebLink</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Scalar">
+		<Location top="54" left="312" bottom="126" right="516" />
+		<TabOrder>4</TabOrder>
+		<Font GUID="A81B58D9-EF17-4930-9ED9-91DE30BE93C7" Name="Arial 8n" />
+		<Border Style="InShadow" Width="2" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</BackgroundColor>
+		<TextColor>
+			<UserColor>ALFIBackgroundDisplay</UserColor>
+		</TextColor>
+		<SelectionColor>
+			<UserColor>ALFIBackgroundDisplay</UserColor>
+		</SelectionColor>
+		<Layout>MultipleLineEditField</Layout>
+		<SeparatorSign>=</SeparatorSign>
+		<ExplicitIdentifier>
+			<Identifier>odm::spInfeasibleLinearSolveTerminationInfo</Identifier>
+			<NumberFormat Width="15" Decimals="0" Alignment="Left" ShowDefaults="true" />
+		</ExplicitIdentifier>
+	</PageObject>
+	<UsedReferences>
+		<Model>
+			<Symbol>AllVariablesConstraints</Symbol>
+			<Symbol>ulom::sConstraintsMP_Linear</Symbol>
+			<Symbol>ulom::pViolationPenalty</Symbol>
+			<Symbol>ulom::pNode_vp</Symbol>
+			<Symbol>ulom::pPressureControlNode_vp</Symbol>
+			<Symbol>ulom::pTankNode_vp</Symbol>
+			<Symbol>ulom::pBufferNode_vp</Symbol>
+			<Symbol>ulom::pInputFlowNode_vp</Symbol>
+			<Symbol>ulom::pOutputFlowNode_vp</Symbol>
+			<Symbol>ulom::pArc_vp</Symbol>
+			<Symbol>ulom::pCompressorArc_vp</Symbol>
+			<Symbol>ulom::pLiquefierArc_vp</Symbol>
+			<Symbol>ulom::pBackupArc_vp</Symbol>
+			<Symbol>ulom::pValveArc_vp</Symbol>
+			<Symbol>ulom::pPipeArc_vp</Symbol>
+			<Symbol>ulom::pBox_vp</Symbol>
+			<Symbol>ulom::pColdBox_vp</Symbol>
+			<Symbol>ulom::pOperatingMode_vp</Symbol>
+			<Symbol>ulom::pOther_vp</Symbol>
+			<Symbol>ulom::procSolveLinearModelwithViolations_ulom</Symbol>
+			<Symbol>ulom::procEmptyAllPenalties</Symbol>
+			<Symbol>odm::spActiveFile</Symbol>
+			<Symbol>odm::procUpdateTimeDependentDataWithConstant</Symbol>
+			<Symbol>odm::epWebLinkSelect</Symbol>
+			<Symbol>odm::procOpenWebLink</Symbol>
+			<Symbol>odm::p01ReadOnlyInputFile</Symbol>
+			<Symbol>odm::epColumnAreaBackgroundColor</Symbol>
+			<Symbol>odm::epColumnAreaGridFocusBackgroundColor</Symbol>
+			<Symbol>odm::epColumnAreaGridFocusTextColor</Symbol>
+			<Symbol>odm::epColumnAreaHeaderBackgroundColor</Symbol>
+			<Symbol>odm::epColumnAreaHeaderTextColor</Symbol>
+			<Symbol>odm::epColumnAreaLineColor</Symbol>
+			<Symbol>odm::epColumnAreaTextColor</Symbol>
+			<Symbol>odm::epColumnAreaAgregatorsBackgroundColor</Symbol>
+			<Symbol>odm::epColumnAreaAgregatorsTextColor</Symbol>
+			<Symbol>odm::epContentBackgroundColor</Symbol>
+			<Symbol>odm::epContentBarFillColor</Symbol>
+			<Symbol>odm::epContentTextColor</Symbol>
+			<Symbol>odm::epGeneralBackgroundColor</Symbol>
+			<Symbol>odm::epGeneralBorderColor</Symbol>
+			<Symbol>odm::epGridAreaAltBackgroundColor</Symbol>
+			<Symbol>odm::epGridAreaBackgroundColor</Symbol>
+			<Symbol>odm::epGridAreaGridFocusBackgroundColor</Symbol>
+			<Symbol>odm::epGridAreaGridFocusTextColor</Symbol>
+			<Symbol>odm::epGridAreaLineColor</Symbol>
+			<Symbol>odm::epGridAreaSecondLineColor</Symbol>
+			<Symbol>odm::epGridAreaSubHeaderColor</Symbol>
+			<Symbol>odm::epGridAreaTextColor</Symbol>
+			<Symbol>odm::epGridAreaAgregatorsBackgroundColor</Symbol>
+			<Symbol>odm::epGridAreaAgregatorsTextColor</Symbol>
+			<Symbol>odm::epOuterAreaLineColor</Symbol>
+			<Symbol>odm::epOuterAreaBackgroundColor</Symbol>
+			<Symbol>odm::epOuterAreaGridFocusBackgroundColor</Symbol>
+			<Symbol>odm::epOuterAreaGridFocusTextColor</Symbol>
+			<Symbol>odm::epOuterAreaHeaderBackgroundColor</Symbol>
+			<Symbol>odm::epOuterAreaHeaderTextColor</Symbol>
+			<Symbol>odm::epOuterAreaTextColor</Symbol>
+			<Symbol>odm::epOuterAreaAgregatorsBackgroundColor</Symbol>
+			<Symbol>odm::epOuterAreaAgregatorsTextColor</Symbol>
+			<Symbol>odm::epRowAreaBackgroundColor</Symbol>
+			<Symbol>odm::epRowAreaGridFocusBackgroundColor</Symbol>
+			<Symbol>odm::epRowAreaGridFocusTextColor</Symbol>
+			<Symbol>odm::epRowAreaHeaderBackgroundColor</Symbol>
+			<Symbol>odm::epRowAreaHeaderTextColor</Symbol>
+			<Symbol>odm::epRowAreaLineColor</Symbol>
+			<Symbol>odm::epRowAreaTextColor</Symbol>
+			<Symbol>odm::epRowAreaAgregatorsBackgroundColor</Symbol>
+			<Symbol>odm::epRowAreaAgregatorsTextColor</Symbol>
+			<Symbol>ulom::iConstraintMP_Linear</Symbol>
+			<Symbol>ulom::iConstraintNode</Symbol>
+			<Symbol>ulom::iConstraintPressureControlNode</Symbol>
+			<Symbol>ulom::iConstraintTankNode</Symbol>
+			<Symbol>ulom::iConstraintBufferNode</Symbol>
+			<Symbol>ulom::iConstraintInputFlowNode</Symbol>
+			<Symbol>ulom::iConstraintOutputFlowNode</Symbol>
+			<Symbol>ulom::iConstraintArc</Symbol>
+			<Symbol>ulom::iConstraintCompressorArc</Symbol>
+			<Symbol>ulom::iConstraintLiquefierArc</Symbol>
+			<Symbol>ulom::iConstraintBackupArc</Symbol>
+			<Symbol>ulom::iConstraintValveArc</Symbol>
+			<Symbol>ulom::iConstraintPipeArc</Symbol>
+			<Symbol>ulom::iConstraintBox</Symbol>
+			<Symbol>ulom::iConstraintColdBox</Symbol>
+			<Symbol>ulom::iConstraintOperatingMode</Symbol>
+			<Symbol>ulom::iConstraintOther</Symbol>
+			<Symbol>odm::spInfeasibleLinearSolveTerminationInfo</Symbol>
+		</Model>
+	</UsedReferences>
+</Page>

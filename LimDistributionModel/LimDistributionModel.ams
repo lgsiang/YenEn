@@ -1,0 +1,4010 @@
+## ams_version=1.0
+
+LibraryModule LimDistributionModel {
+	Prefix: ldm;
+	Interface: {
+		data { spDistributionVersion, spExcelDistribFileDisplay, sIMPeriodList, epDayIM, 
+		       epWeekIM, epMonthIM, epIMPeriod, pFirstDayOfTheWeek, sTimeIM, epFirstTimeIM, 
+		       epLastTimeIM, pOrdTimeIMplus1, sTruckTypes, epTruckTypeTrailer, epTruckTypeSmall, 
+		       epTruckTypeTruck, pTruckTypeCapacity, pTruckTypeTransportCost, pTruckTypeDistancePerShift, 
+		       pTruckTypeLoadingDistance, sCustomerClusters, epCustomerClusterProduct, epCustomerClusterTruckType, 
+		       pCustomerClusterLiquidDemand, pCustomerClusterLatitude, pCustomerClusterLongitude, 
+		       sDispatchZone, spCustomerClusterDispatchZone, epCustomerClusterDispatchZone, 
+		       sCustomerClusterCategoryForRouteRule, spCustomerClusterCategoryForRouteRule, 
+		       epCustomerClusterCategoryForRouteRule, spAltoRawProductCode, sExternalsourceTanks, 
+		       pExternalsourceTankCost, pExternalsourceTankTakeOrPayQuantity, pExternalsourceTankInitialLevel, 
+		       epInOutputFlowNodeExternalsourceTankInit, sSources, epSourceType, pSourceLatitude, 
+		       pSourceLongitude, spSourceOpeningDay, spAltoBusinessCode, pSourceDepotDistance, 
+		       p01SourceDepotActive, sSourceTypes, epInternalSource, epExternalSource, sTruckLoadings, 
+		       epTruckLoadingSource, epTruckLoadingProduct, p01TruckloadingOpeningDay, pTruckloadingCoefSplit, 
+		       sDepots, pDepotLatitude, pDepotLongitude, pDepotNumberShift, pDepotNumberDriver, 
+		       pDepotShiftExtraCost, pDepotTruckTypeNumber, pDepotTruckTypeNumberShift, pDepotTruckTypeTransportCost, 
+		       p01DepotTruckNumberActive, pSourceDepotTruckTypeNumber, p01SourceDepotTruckTypeActive, 
+		       sRoutes, epRouteFrom, epRouteTo, epRouteTruckType, epRouteProduct, pRouteDistance, 
+		       p01RouteAssigned, p01RouteRemoved, pRouteVolumeTransportedForced, p01RouteVolumeTransportedForced, 
+		       p01UseDepot, pDistanceAdjustmentCoefficient, sDepotDistanceCalWay, epWithDistanceDepotSource, 
+		       epWithoutDistanceDepotSource, epDistanceDepotSourceInShiftCal, epDepotDistanceCalWay, 
+		       procRead_LI_ExcelFile, procRead_IM_ExcelFile, procSimulationDate, procDefineTables_IM1, 
+		       procDefineTables_Routes, procDefineTables_Routes_Time, procDefineTablesRules, 
+		       procDefineTablesResult_MapGraph, procDefineTablesResult_Table, procInitializeTimeDependentData_Lim, 
+		       sInternalSources, sExternalSources, sNodeInOutputFlow_InitTank, sInternalSourceTankNumber, 
+		       epInternalsourceTank, p01InternalsourceActive, sExternalsourceTierNumber, 
+		       spProductName, pExternalsourceQuantityAvailable, pExternalsourceCost, pExternalsourceTakeorPayQuantity, 
+		       p01ExternalsourceActive, procCreationFromSource, procCreationCrossTable, procAddSetDispatchZoneAndCategory, 
+		       p01SourceDepotActive_Input, p01SourceDepotTruckType_Input, p01SourceDepotTruckType_InputIsException, 
+		       pCoefSplit, procActivationRule, p01RouteDispatchzoneRuleRemoved, p01SourceCustomerCluster_InputIsException, 
+		       p01CategorySourceRemoved, pRouteRuleRemoved, pRouteRuleDistance, procRouteActivationRule, 
+		       procReadFromExcelButtonAuto_ldm, procReadFromExcel_Routes_ldm, procWriteToExcel_Routes_ldm, 
+		       procWriteToExcelMapGraphButton_ldm, procWriteToExcelTableButton_ldm, procSaveToExcelInputDataButton_ldm, 
+		       p01TruckTypeFlexibleActive, pTruckTypeLoadingDistanceSave, pTruckTypeLoadingDistanceProductAverage, 
+		       pTruckTypeLoadingDistanceProductAverageInput, pTruckTypeLoadingDistanceAverage, 
+		       procTruckTypeFlexibleInit, cCustomerClusterMaterialBalance, vRouteVolumeTransported, 
+		       vRouteNumberOfTrip, vRouteDistance, vRouteTransportCost, cRouteNumberOfTrip, 
+		       cRouteDistance, cRouteAssigned, cRouteRemoved, cRouteForceVolumeTransported, 
+		       pRouteAverageDistancePerTrip, pSourceRouteDistance, pVolumeTransportedResult, 
+		       vTruckloadingTotalDistance, vTruckloadingNumberOfShift, pTruckloadingSplitCoefCal, 
+		       cTruckLoadingMaterialBalance, cTruckLoadingMaterialBalance2, cTruckloadingTotalDistance, 
+		       cTruckloadingNumberOfShift, vSlackNeg, pTruckloadingLoadingDistance, vTruckLoadingDepotNumberOfShift, 
+		       vTruckLoadingDepotDistance, cTruckloadingDepotMaterialBalance1, cTruckloadingDepotMaterialBalance2, 
+		       cTruckLoadingDepotDistance, pTestMatBal, vTruckLoadingDepotNumberOfShiftFlex, 
+		       cTruckloadingDepotMaterialBalance1Flex, cTruckloadingDepotFlexLink, vDepotExtraShiftCost, 
+		       cDepotCapacityTrailer, cDepotCapacityDriver, cDepotExtraCost, pDepotDistanceTruckType, 
+		       vSlackTrailerCapacity, vSlackDriverCapacity, p01AllowSlackDepotCapacity, pSlackDepotCapacityPenalty, 
+		       vTruckTypeTotalDistance, vTruckTypeTotalTransportCost, cTruckTypeTotalDistance, 
+		       cTruckTypeTotalTransportCost, pDistancePeriod, pTransportCostPeriod, vDepotTruckTypeTotalDistance, 
+		       vDepotTruckTypeTotalTransportCost, cDepotTruckTypeTotalDistance, cDepotTruckTypeTotalTransportCost, 
+		       v01InputFlowNode, v01OutputFlowNode, c01ExternalsourceInputflow, c01ExternalsourceOutputflow, 
+		       cExternalsourceInputFlowOrOutputFlow, cExternalsourceInitialLevel1, cExternalsourceInitialLevel2, 
+		       cExternalsourceInitialLevel3, vExternalsourceCost, cExternalsourceTakeorPayTankLevel, 
+		       pExternalsourceTakeorPayCost, pTestTankCal, ptestInputFlow, vObjective_LIM, 
+		       vObjective_IM, pExternalsourceCostTotal, pTransportCostTotal, pSlackDepotCost, 
+		       pDistanceTotal, mpLinearModel_ldm, spLinearSolveTerminationInfo, spLinearSolveTerminationInfoSave, 
+		       procSolveLinearModel_ldm, sMPConstraintsExcluded_ldm, sMPVariablesExcluded_ldm, 
+		       procConfigureMathProgram_ldm, procEmptyAllData_ldm, procEmpty_IM_DataModel, 
+		       procEmptyIMData, procRead_IM_ExcelFileDistanceCalibration, procReadFromExcelButtonDistanceCalibration, 
+		       procDefineTablesDistanceCalibration_ldm, procSolveCalibration, sWeeks, pCalibrationFactorWeek, 
+		       pDistanceCalibrationKM, pDistanceCalibrationKMperSource, pDistanceCalibrationDemandForced, 
+		       pDistanceCalibrationRouteVolumeForced, pDistanceCalibrationVolumeForced_Input, 
+		       pWeekTotalDistanceActual, pDistanceTotalTruckloading, vDistanceAdjustmentCoefficient, 
+		       vTotalDistanceForced, pActualTotalDistance, cTruckloadingTotalDistanceForced, 
+		       cTotalDistanceForced, cActualDistanceForced1, p01TimeIMActive, procTimeIMDefinition_OpenPage, 
+		       procTimeIMDefinition_ClosePage, p01RouteSelectLIN, p01RouteSelectLOX, p01RouteSelectLAR, 
+		       sRouteSelectLIN_DM, sRouteSelectLOX_DM, sRouteSelectLAR_DM, pVolumeTransportedTruckloading, 
+		       pVolumeTakeOrPayNotUsedTruckloading, pNbShiftTruckMaxPerDepot, pNbShiftDriverMaxPerDepot, 
+		       pProductAvailableTankUnit, pProductAvailableNm3, pProductTakeOrPayQuantityNm3, 
+		       pTotalNumberOfShiftPerDepot, pTotalNumberOfShiftPerDepotTruckType, pVolumeTransportedDispatchzone, 
+		       spRouteDispatchzone, pRouteVolumeTransportedDisplay, pRouteVolumeTransportedDisplay2, 
+		       pSourceLiquidConsumption, pSourceTruckloadingConsumption, pTankInput, pTankOutput, 
+		       pTankOutputBackup, pTankOutputTruckloading, pTankOutputCustomerLI, pTankOutputOthers, 
+		       spTankOutputOthersTooltip, pTankInputReffiling, pTankInputProduction, epTimeIMSelected, 
+		       pRouteVolumetransportedSelected, pRouteNumberOfTripSelected, pRouteDistanceSelect, 
+		       pCustomerClusterLiquidDemandSelect, pVolumeTransportedTruckloadingSelected, 
+		       pTruckloadingTotalDistanceSelected, pTruckloadingNumberOfShiftSelected, pTruckLoadingDepotNumberOfShiftSelected, 
+		       pTruckLoadingDepotDistanceSelected, pTruckTypeTotalDistanceSelected, pTruckTypeTotalTransportCostSelected, 
+		       sInternalSourceTank, sNodeIM, sArcIM, sOutputflowNodeIM, sInputflowNodeIM, 
+		       sDisplayUnits, epDisplayUnit_Nm3, epSelectedUnit, pConvFromNm3ToSelectUnit, 
+		       pVolumeTransportedTruckloading_SelectedUnit, pVolumeTakeOrPayNotUsedTruckloading_SelectedUnit, 
+		       pProductAvailable_SelectedUnit, pProductTakeOrPayQuantity_SelectedUnit, pRouteVolumeTransportedDisplay2_SelectedUnit, 
+		       pRouteVolumeTransported_SelectedUnit, pVolumeTransportedResult_SelectedUnit, 
+		       pTankInitialLevel_SelectedUnit, pTankInput_SelectedUnit, pTankOutput_SelectedUnit, 
+		       pTankLevel_SelectedUnit, pTankInputProduction_SelectedUnit, pTankInputReffiling_SelectedUnit, 
+		       pTankOutputBackup_SelectedUnit, pTankOutputTruckloading_SelectedUnit, pTankOutputCustomerLI_SelectedUnit, 
+		       pTankOutputOthers_SelectedUnit, pTankMinLevel_SelectedUnit, pTankMaxLevel_SelectedUnit, 
+		       pFlashTank_SelectedUnit, pTankLiquidValue_SelectedUnit, pTankStorageCapacity_SelectedUnit, 
+		       pTankInitialLevel_InputSelectedUnit, pTankMinLevel_InputSelectedUnit, pTankMaxLevel_InputSelectedUnit, 
+		       pTankLiquidValue_InputSelectedUnit, pExternalsourceQuantityAvailable_InputSelectedUnit, 
+		       pExternalsourceCost_InputSelectedUnit, pExternalsourceTakeorPayQuantity_InputSelectedUnit, 
+		       procDM_ModeledTank_FromSelectedUnit, procDM_ModeledTank_ToSelectedUnit, procDM_NonModeledSource_FromSelectedUnit, 
+		       procDM_NonModeledSource_FromSelectedUnit2, procDM_NonModeledSource_ToSelectedUnit, 
+		       epColorSlackDepot, epColorSlackTruckTypeQty, epColorSlackDriverQty, p01RouteTripOrShiftDepot, 
+		       vTruckloadingNumberOfShiftForDepotDistance, cTruckloadingNumberOfShiftForDepotDistance, 
+		       procDefineTables_IM2, procReadFromExcelButton_ldm, pRouteTotalDistance, pDepotTotalDistance, 
+		       pDemandForcedWeek, pTotalDistanceWeek, pRouteTotalDistanceWeek, pDepotTotalDistanceWeek, 
+		       procDefineTablesForHistQty_LIM, procReadFromExcelForHistQty_ldm, procLaunchSolvePerWeek, 
+		       sCustomerClusterLin, sCustomerClusterLox, sCustomerClusterLar, pRoutesUsedForLin, 
+		       pRoutesUsedForLox, pRoutesUsedForLar, spaSources, spaArcLox, spaCustomerProduct, 
+		       spaRoutesTrucktypeLin, spaRoutesTrucktypeLox, spaRoutesTrucktypeLar, epRoute, 
+		       p01MapArcHideLabel, vObjective_IM_Std, p01CalibrationCalculation, cActualDistanceForced2, 
+		       vObjective_IM_Forced, sAltoBusinessCode, epAltoBusinessCode, sAltoRawProductCode, 
+		       epAltoRawProductCode, sAltoDispatchZoneCode, spAltoDispatchZoneCode, epAltoDispatchZoneCode, 
+		       procAddSetForAltoCode, epTimeZoneApplication, epTimeZoneUTC, spStartTimeIM_UTC, 
+		       spEndTimeIM_UTC, pVolumeTransportedResultAlto, epDisplayUnit_kg }
+	}
+	DeclarationSection Declaration_Version {
+		StringParameter spDistributionVersion {
+			Definition: {
+				! "CE Distribution V1.01"
+				gdm::spCoreEngineVersion
+			}
+		}
+	}
+	Section Distribution_Data_Manager {
+		DeclarationSection run_declaration {
+			StringParameter spExcelDistribFileDisplay;
+		}
+		DeclarationSection IM_Period {
+			Set sIMPeriodList {
+				Definition: {
+					{ 'Day', 'Week', 'Month' }
+				}
+			}
+			ElementParameter epDayIM {
+				Range: sIMPeriodList;
+				Definition: stringtoelement(sIMPeriodList, "Day");
+			}
+			ElementParameter epWeekIM {
+				Range: sIMPeriodList;
+				Definition: stringtoelement(sIMPeriodList, "Week");
+			}
+			ElementParameter epMonthIM {
+				Range: sIMPeriodList;
+				Definition: stringtoelement(sIMPeriodList, "Month");
+			}
+			ElementParameter epIMPeriod {
+				Range: sIMPeriodList;
+				Definition: epWeekIM;
+			}
+			Parameter pFirstDayOfTheWeek {
+				Definition: {
+					! monday = 1, tuesday = 2, ..., Sunday = 7
+					1
+				}
+			}
+			Set sTimeIM {
+				SubsetOf: gdm::calHorizon;
+				Index: iTimeIM, iTimeIM2;
+				OrderBy: iTimeIM;
+				Definition: {
+					!if epIMPeriod = epDayIM then
+					!	{ gdm::iTime | TimeslotCharacteristic(gdm::iTime,'hour') = 0 }
+					!elseif epIMPeriod = epWeekIM then
+					!	{ gdm::iTime | TimeslotCharacteristic(gdm::iTime,'weekday') = pFirstDayOfTheWeek and TimeslotCharacteristic(gdm::iTime,'hour') = 0}
+					!	+
+					!	if TimeslotCharacteristic(gdm::epFirstTimeUnit,'weekday') <> 1 then
+					!		{ gdm::epFirstTimeUnit }
+					!	endif
+					!elseif epIMPeriod = epMonthIM then
+					!	{ gdm::iTime | TimeslotCharacteristic(gdm::iTime,'monthday') = 1 and TimeslotCharacteristic(gdm::iTime,'hour') = 0}
+					!	+
+					!	if TimeslotCharacteristic(gdm::epFirstTimeUnit,'monthday') <> 1 then
+					!		{ gdm::epFirstTimeUnit }
+					!	endif
+					!endif
+				}
+			}
+			ElementParameter epFirstTimeIM {
+				Range: sTimeIM;
+				Definition: first( sTimeIM );
+			}
+			ElementParameter epLastTimeIM {
+				Range: sTimeIM;
+				Definition: last( sTimeIM );
+			}
+			Parameter pOrdTimeIMplus1 {
+				IndexDomain: iTimeIM;
+				Definition: {
+					if iTimeIM = epLastTimeIM then
+						ord(gdm::epLastTimeUnit, gdm::calHorizon)+1
+					else
+						ord(iTimeIM+1, gdm::calHorizon)
+					endif
+				}
+			}
+		}
+		DeclarationSection TruckType {
+			Set sTruckTypes {
+				Index: iTruckType, iTruckType1, iTruckType2;
+				OrderBy: iTruckType;
+			}
+			ElementParameter epTruckTypeTrailer {
+				Range: sTruckTypes;
+				Definition: stringtoelement(sTruckTypes,"TRAILER");
+			}
+			ElementParameter epTruckTypeSmall {
+				Range: sTruckTypes;
+				Definition: stringtoelement(sTruckTypes,"SMALL");
+			}
+			ElementParameter epTruckTypeTruck {
+				Range: sTruckTypes;
+				Definition: stringtoelement(sTruckTypes,"TRUCK");
+			}
+			Parameter pTruckTypeCapacity {
+				IndexDomain: (iTruckType, gdm::iProduct);
+			}
+			Parameter pTruckTypeTransportCost {
+				IndexDomain: (iTruckType, gdm::iProduct);
+			}
+			Parameter pTruckTypeDistancePerShift {
+				IndexDomain: (iTruckType,gdm::iProduct);
+			}
+			Parameter pTruckTypeLoadingDistance {
+				IndexDomain: (iTruckType,gdm::iProduct);
+			}
+		}
+		DeclarationSection Customer_Clusters {
+			Set sCustomerClusters {
+				Index: iCustomerCluster;
+				OrderBy: iCustomerCluster;
+			}
+			ElementParameter epCustomerClusterProduct {
+				IndexDomain: iCustomerCluster;
+				Range: gdm::sProducts;
+			}
+			ElementParameter epCustomerClusterTruckType {
+				IndexDomain: iCustomerCluster;
+				Range: sTruckTypes;
+			}
+			Parameter pCustomerClusterLiquidDemand {
+				IndexDomain: (iCustomerCluster, iTimeIM);
+			}
+			Parameter pCustomerClusterLatitude {
+				IndexDomain: iCustomerCluster;
+			}
+			Parameter pCustomerClusterLongitude {
+				IndexDomain: iCustomerCluster;
+			}
+			Set sDispatchZone {
+				Index: iDispatchZone;
+				OrderBy: iDispatchZone;
+			}
+			StringParameter spCustomerClusterDispatchZone {
+				IndexDomain: iCustomerCluster;
+			}
+			ElementParameter epCustomerClusterDispatchZone {
+				IndexDomain: iCustomerCluster;
+				Range: sDispatchZone;
+			}
+			Set sCustomerClusterCategoryForRouteRule {
+				Index: iCustomerClusterCategoryForRouteRule;
+			}
+			StringParameter spCustomerClusterCategoryForRouteRule {
+				IndexDomain: iCustomerCluster;
+			}
+			ElementParameter epCustomerClusterCategoryForRouteRule {
+				IndexDomain: iCustomerCluster;
+				Range: sCustomerClusterCategoryForRouteRule;
+			}
+		}
+		DeclarationSection ExternalsourceTank {
+			Set sExternalsourceTanks {
+				SubsetOf: gdm::sTankNodes;
+				Index: iExternalsourceTank;
+				OrderBy: iExternalsourceTank;
+			}
+			Parameter pExternalsourceTankCost {
+				IndexDomain: (iExternalsourceTank, iTimeIM);
+			}
+			Parameter pExternalsourceTankTakeOrPayQuantity {
+				IndexDomain: (iExternalsourceTank, iTimeIM);
+			}
+			Parameter pExternalsourceTankInitialLevel {
+				IndexDomain: (iExternalsourceTank, iTimeIM);
+			}
+			ElementParameter epInOutputFlowNodeExternalsourceTankInit {
+				IndexDomain: (iExternalsourceTank);
+				Range: gdm::sInputFlowNodes;
+			}
+		}
+		DeclarationSection Sources {
+			Set sSources {
+				SubsetOf: gdm::sSites;
+				Index: iSource;
+				OrderBy: iSource;
+				webui::AnnotationsIdentifier: spaSources;
+			}
+			ElementParameter epSourceType {
+				IndexDomain: iSource;
+				Range: sSourceTypes;
+			}
+			Parameter pSourceLatitude {
+				IndexDomain: iSource;
+			}
+			Parameter pSourceLongitude {
+				IndexDomain: iSource;
+			}
+			StringParameter spSourceOpeningDay {
+				IndexDomain: iSource;
+				Comment: "\"1111100\"";
+			}
+			Parameter pSourceDepotDistance {
+				IndexDomain: (iSource, iDepot);
+			}
+			Parameter p01SourceDepotActive {
+				IndexDomain: (iSource, iDepot, iTimeIM);
+				Range: binary;
+				Comment: "1 for all for the moment";
+			}
+		}
+		DeclarationSection Source_Types {
+			Set sSourceTypes {
+				Index: iSourceType;
+				OrderBy: iSourceType;
+			}
+			ElementParameter epInternalSource {
+				Range: sSourceTypes;
+				Definition: stringtoelement(sSourceTypes, "ModeledSource");
+			}
+			ElementParameter epExternalSource {
+				Range: sSourceTypes;
+				Definition: stringtoelement(sSourceTypes, "NonModeledSource");
+			}
+		}
+		DeclarationSection Truckloadings {
+			Set sTruckLoadings {
+				SubsetOf: gdm::sOutputFlowNodes;
+				Index: iTruckLoading;
+				OrderBy: iTruckLoading;
+			}
+			ElementParameter epTruckLoadingSource {
+				IndexDomain: iTruckloading;
+				Range: sSources;
+				Definition: {
+					
+					gdm::epNodeSite(iTruckloading)
+				}
+			}
+			ElementParameter epTruckLoadingProduct {
+				IndexDomain: iTruckloading;
+				Range: gdm::sProducts;
+			}
+			Parameter p01TruckloadingOpeningDay {
+				IndexDomain: (iTruckloading, gdm::iTime);
+				Range: binary;
+				Definition: {
+					if substring(spSourceOpeningDay(epTruckLoadingSource(ldm::iTruckLoading)), (TimeSlotCharacteristic(gdm::iTime, 'weekday')), (TimeSlotCharacteristic(gdm::iTime, 'weekday'))) = "0" then
+						0
+					else
+						1
+					endif
+				}
+				Comment: {
+					"if substring(spTruckloadingOpeningDay(ldm::iTruckLoading), (TimeSlotCharacteristic(gdm::iTime, \'weekday\')), (TimeSlotCharacteristic(gdm::iTime, \'weekday\'))) = \"0\" then
+						0
+					else
+						1
+					endif"
+				}
+			}
+			Parameter pTruckloadingCoefSplit {
+				IndexDomain: (iTruckloading, gdm::iTime);
+			}
+		}
+		DeclarationSection Depots {
+			Set sDepots {
+				Index: iDepot, iDepot2;
+				OrderBy: iDepot;
+			}
+			Parameter pDepotLatitude {
+				IndexDomain: iDepot;
+			}
+			Parameter pDepotLongitude {
+				IndexDomain: iDepot;
+			}
+			Parameter pDepotNumberShift {
+				IndexDomain: (iDepot, iTimeIM);
+			}
+			Parameter pDepotNumberDriver {
+				IndexDomain: (iDepot, iTimeIM);
+			}
+			Parameter pDepotShiftExtraCost {
+				IndexDomain: (iDepot, iTimeIM);
+			}
+		}
+		DeclarationSection Depot_TruckType {
+			Parameter pDepotTruckTypeNumber {
+				IndexDomain: (iDepot, iTruckType, gdm::iproduct, iTimeIM);
+			}
+			Parameter pDepotTruckTypeNumberShift {
+				IndexDomain: (iDepot, iTruckType, gdm::iproduct, iTimeIM);
+			}
+			Parameter pDepotTruckTypeTransportCost {
+				IndexDomain: (iDepot, iTruckType, gdm::iproduct, iTimeIM);
+			}
+			Parameter p01DepotTruckNumberActive {
+				IndexDomain: (iDepot, iTruckType, gdm::iproduct, iTimeIM);
+				Range: binary;
+			}
+		}
+		DeclarationSection Source_Depot_TruckType_Product {
+			Parameter pSourceDepotTruckTypeNumber {
+				IndexDomain: (iSource, iDepot, iTruckType, gdm::iproduct);
+				Comment: "not used";
+			}
+			Parameter p01SourceDepotTruckTypeActive {
+				IndexDomain: (iSource, iDepot, iTruckType, gdm::iproduct, iTimeIM);
+				Range: binary;
+			}
+		}
+		DeclarationSection Routes {
+			Set sRoutes {
+				Index: iRoute;
+			}
+			ElementParameter epRouteFrom {
+				IndexDomain: iRoute;
+				Range: sTruckLoadings;
+			}
+			ElementParameter epRouteTo {
+				IndexDomain: iRoute;
+				Range: sCustomerClusters;
+			}
+			ElementParameter epRouteTruckType {
+				IndexDomain: iRoute;
+				Range: sTruckTypes;
+				Definition: epCustomerClusterTruckType( epRouteTo(ldm::iRoute) );
+			}
+			ElementParameter epRouteProduct {
+				IndexDomain: iRoute;
+				Range: gdm::sProducts;
+				Definition: epCustomerClusterProduct(epRouteTo(ldm::iRoute));
+			}
+			Parameter pRouteDistance {
+				IndexDomain: iRoute;
+			}
+			Parameter p01RouteAssigned {
+				IndexDomain: iRoute;
+				Range: binary;
+			}
+			Parameter p01RouteRemoved {
+				IndexDomain: iRoute;
+				Range: binary;
+			}
+			Parameter pRouteVolumeTransportedForced {
+				IndexDomain: (ldm::iRoute, iTimeIM);
+			}
+			Parameter p01RouteVolumeTransportedForced {
+				Range: binary;
+			}
+		}
+		DeclarationSection Distribution_Parameters {
+			Parameter p01UseDepot {
+				Range: binary;
+			}
+			Parameter pDistanceAdjustmentCoefficient;
+			Set sDepotDistanceCalWay {
+				Index: iDepotDistanceCalWay;
+				OrderBy: iDepotDistanceCalWay;
+				Definition: {
+					
+					{ 'WithDistanceDepotSource', 'WithoutDistanceDepotSource' }
+				}
+				Comment: "{ \'WithDistanceDepotSource\', \'WithoutDistanceDepotSource\', \'DistanceDepotSourceInShiftCal\' }";
+			}
+			ElementParameter epWithDistanceDepotSource {
+				Range: sDepotDistanceCalWay;
+				Definition: {
+					
+					stringtoelement(sDepotDistanceCalWay, "WithDistanceDepotSource")
+				}
+			}
+			ElementParameter epWithoutDistanceDepotSource {
+				Range: sDepotDistanceCalWay;
+				Definition: {
+					
+					stringtoelement(sDepotDistanceCalWay, "WithoutDistanceDepotSource")
+				}
+			}
+			ElementParameter epDistanceDepotSourceInShiftCal {
+				Range: sDepotDistanceCalWay;
+				Definition: {
+					
+					stringtoelement(sDepotDistanceCalWay, "DistanceDepotSourceInShiftCal")
+				}
+			}
+			ElementParameter epDepotDistanceCalWay {
+				Range: sDepotDistanceCalWay;
+				Comment: {
+					"WithDistanceDepotSource or empty : Distance source depot is not take into account for the calculation of the number of shift but the total distance take into account the distance source depot.
+					WithoutDistanceDepotSource : Distance source depot is not take into account for the calculation of the number of shift and the distance source depot is minimize in the calculation of the total distance.
+					DistanceDepotSourceInShiftCal : Distance source depot is take into account for the calculation of the number of shift and the total distance take into account the distance source depot."
+				}
+			}
+		}
+		Section ReadWriteExcel {
+			Procedure procRead_LI_ExcelFile {
+				Body: {
+					procEmptyAllData_ldm();
+					udm::procReadFromExcelButton_udm();
+					udm::procCheckData_udm();
+					odm::procInitCalendar();
+					odm::procClearCurrentcase;
+				}
+			}
+			Procedure procRead_IM_ExcelFile {
+				Body: {
+					! Clear variable
+					uom::procClear_uom;
+					! Read the Excel File of IM with the automatic generation of the CE table and cross table
+					procReadFromExcelButtonAuto_ldm();
+					! Check the data of the CE
+					udm::procCheckData_udm();
+					! Apply the specific activation rules
+					ldm::procActivationRule();
+					! Select IM_date
+					epTimeIMSelected := ldm::epLastTimeIM;
+					! Select and complete Selected unit
+					epSelectedUnit := epDisplayUnit_Nm3;
+					procDM_ModeledTank_ToSelectedUnit();
+					procDM_NonModeledSource_ToSelectedUnit();
+				}
+			}
+			Procedure procSimulationDate {
+				Body: {
+					!gdm::spBeginCalendar := udm::spBeginCalendarSimul;
+					!gdm::spEndCalendar := udm::spEndCalendarSimul;
+					!odm::spBeginCalendar_odm := udm::spBeginCalendarSimul;
+					!odm::spEndCalendar_odm := udm::spEndCalendarSimul;
+					!
+				}
+			}
+			Section Define_table {
+				Procedure procDefineTables_IM1 {
+					Body: {
+						/***
+						Definition of the datatables that are the specific for User
+						Do not add additional properties to existing (generic) data tables 
+						but define new tables for these specific properties
+						***/
+						!Format of command for index(sets) or other identifiers)
+						!cdl::procAddTable("Excel sheet name", gdm::spSchemaName, 1);
+						!cdl::procAddIndexToTable( "Excel sheet name", 'udm::iIndex', "Excel column name");
+						!cdl::procAddIdentifierToTable( "Excell sheet name", 'udm::AIMMSidentifier', "Excel column name");
+						
+						cdl::procClear();
+						
+						! Period TimeIM
+						cdl::procAddTable("time_im", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "time_im", 'ldm::iTimeIM', "time_im");
+						
+						! source type table
+						cdl::procAddTable("source_types", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "source_types", 'ldm::iSourceType', "source_type");
+						
+						! Source table
+						cdl::procAddTable("sources", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "sources", 'ldm::iSource', "source");
+						cdl::procAddIdentifierToTable("sources",'ldm::epSourceType',"source_type");
+						cdl::procAddIdentifierToTable("sources",'ldm::pSourceLatitude',"latitude");
+						cdl::procAddIdentifierToTable("sources",'ldm::pSourceLongitude',"longitude");
+						cdl::procAddIdentifierToTable("sources",'ldm::spSourceOpeningDay',"opening_day");
+						cdl::procAddIdentifierToTable("sources",'ldm::spAltoBusinessCode',"alto_business_code");
+						
+						! non_modeled_source Source table
+						cdl::procAddTable("non_modeled_source", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "non_modeled_source", 'ldm::iExternalSource', "source");
+						cdl::procAddIndexToTable( "non_modeled_source", 'gdm::iProduct', "product");
+						cdl::procAddIndexToTable( "non_modeled_source", 'ldm::iExternalsourceTierNumber', "tier_number");
+						cdl::procAddIndexToTable( "non_modeled_source", 'ldm::iTimeIM', "time_im");
+						cdl::procAddIdentifierToTable("non_modeled_source",'ldm::pExternalsourceQuantityAvailable',"quantity_available");
+						cdl::procAddIdentifierToTable("non_modeled_source",'ldm::pExternalsourceCost',"nonmodeled_source_cost");
+						cdl::procAddIdentifierToTable("non_modeled_source",'ldm::pExternalsourceTakeorPayQuantity',"takeorpay_quantity");
+						cdl::procAddIdentifierToTable("non_modeled_source",'ldm::p01ExternalsourceActive',"is_active");
+						
+						! modeled_source
+						cdl::procAddTable("modeled_source", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "modeled_source", 'ldm::iInternalSource', "source");
+						cdl::procAddIndexToTable( "modeled_source", 'gdm::iProduct', "product");
+						cdl::procAddIndexToTable( "modeled_source", 'ldm::iInternalSourceTankNumber',"tank_number");
+						cdl::procAddIdentifierToTable("modeled_source",'ldm::epInternalSourceTank',"tank");
+						cdl::procAddIdentifierToTable("modeled_source",'ldm::p01InternalsourceActive',"is_active");
+						
+						! TruckType table
+						cdl::procAddTable("truck_type", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "truck_type", 'ldm::iTruckType', "truck_type");
+						cdl::procAddIndexToTable( "truck_type", 'gdm::iProduct', "product");
+						cdl::procAddIdentifierToTable("truck_type",'ldm::pTruckTypeCapacity',"capacity");
+						cdl::procAddIdentifierToTable("truck_type",'ldm::pTruckTypeTransportCost',"transport_cost");
+						cdl::procAddIdentifierToTable("truck_type",'ldm::pTruckTypeDistancePerShift',"distance_per_simplified_shift");
+						cdl::procAddIdentifierToTable("truck_type",'ldm::pTruckTypeLoadingDistance',"loading_distance");
+						
+						! CustomerClusters table
+						cdl::procAddTable("customer_clusters", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "customer_clusters", 'ldm::iCustomerCluster', "customer_cluster");
+						cdl::procAddIdentifierToTable("customer_clusters",'ldm::epCustomerClusterProduct',"product");
+						cdl::procAddIdentifierToTable("customer_clusters",'ldm::epCustomerClusterTruckType',"truck_type");
+						cdl::procAddIdentifierToTable("customer_clusters",'ldm::pCustomerClusterLatitude',"latitude");
+						cdl::procAddIdentifierToTable("customer_clusters",'ldm::pCustomerClusterLongitude',"longitude");
+						cdl::procAddIdentifierToTable("customer_clusters",'ldm::spCustomerClusterDispatchZone',"dispatch_zone");
+						cdl::procAddIdentifierToTable("customer_clusters",'ldm::spCustomerClusterCategoryForRouteRule',"category_for_route_rule");
+						cdl::procAddIdentifierToTable("customer_clusters",'ldm::spAltoRawProductCode',"alto_raw_product_code");
+						cdl::procAddIdentifierToTable("customer_clusters",'ldm::spAltoDispatchZoneCode',"alto_dispatch_zone_code");
+						
+						! CustomerClustersTimeIM table
+						cdl::procAddTable("customer_clusters_time_im", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "customer_clusters_time_im", 'ldm::iCustomerCluster', "customer_cluster");
+						cdl::procAddIndexToTable( "customer_clusters_time_im", 'ldm::iTimeIM', "time_im");
+						cdl::procAddIdentifierToTable("customer_clusters_time_im",'ldm::pCustomerClusterLiquidDemand',"demand");
+						
+						! Depots table
+						cdl::procAddTable("depots", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "depots", 'ldm::iDepot', "depot");
+						cdl::procAddIdentifierToTable("depots",'ldm::pDepotLatitude',"latitude");
+						cdl::procAddIdentifierToTable("depots",'ldm::pDepotLongitude',"longitude");
+						
+						! Depots TimeIM table
+						cdl::procAddTable("depots_time_im", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "depots_time_im", 'ldm::iDepot', "depot");
+						cdl::procAddIndexToTable( "depots_time_im", 'ldm::iTimeIM', "time_im");
+						cdl::procAddIdentifierToTable("depots_time_im",'ldm::pDepotNumberDriver',"number_driver");
+						cdl::procAddIdentifierToTable("depots_time_im",'ldm::pDepotNumberShift',"number_simplified_shift");
+						cdl::procAddIdentifierToTable("depots_time_im",'ldm::pDepotShiftExtraCost',"simplified_shift_extra_cost");
+						
+						! Depot_Trucktype table
+						cdl::procAddTable("depot_truck_type", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "depot_truck_type", 'ldm::iDepot', "depot");
+						cdl::procAddIndexToTable( "depot_truck_type", 'ldm::iTruckType', "truck_type");
+						cdl::procAddIndexToTable( "depot_truck_type", 'gdm::iProduct', "product");
+						cdl::procAddIndexToTable( "depot_truck_type", 'ldm::iTimeIM', "time_im");
+						cdl::procAddIdentifierToTable("depot_truck_type",'ldm::pDepotTruckTypeNumber',"number_truck_type");
+						cdl::procAddIdentifierToTable("depot_truck_type",'ldm::pDepotTruckTypeNumberShift',"number_simplified_shift");
+						cdl::procAddIdentifierToTable("depot_truck_type",'ldm::pDepotTruckTypeTransportCost',"depot_transport_cost");
+						cdl::procAddIdentifierToTable("depot_truck_type",'ldm::p01DepotTruckNumberActive',"is_active");
+						
+						! Lim Parameters
+						cdl::procAddTable("lim_parameters" , gdm::spSchemaName, 1);
+						cdl::procAddIdentifierToTable( "lim_parameters", 'ldm::p01UseDepot', "use_depot");
+						cdl::procAddIdentifierToTable( "lim_parameters", 'ldm::pDistanceAdjustmentCoefficient', "distance_adjustment_coefficient");
+						cdl::procAddIdentifierToTable( "lim_parameters", 'ldm::epDepotDistanceCalWay', "depot_distance_option");
+						
+						! Output Flow Node Time
+						cdl::procAddTable("output_flow_node_time", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "output_flow_node_time", 'gdm::iOutputFlowNode', "output_flow_node");
+						cdl::procAddIndexToTable( "output_flow_node_time", 'gdm::iTime', "time" );
+						cdl::procAddIdentifierToTable( "output_flow_node_time", 'gdm::pOutputFlowNodeFixedTimeDependent', "fixed_flow");
+						cdl::procAddIdentifierToTable( "output_flow_node_time", 'gdm::pOutputFlowNodeMinFlowTimeDependent', "min_flow");
+						cdl::procAddIdentifierToTable( "output_flow_node_time", 'gdm::pOutputFlowNodeMaxFlowTimeDependent', "max_flow");
+						cdl::procAddIdentifierToTable( "output_flow_node_time", 'gdm::pOutputFlowNodeMinPositiveRateChangeFlowTimeDependent', "min_positive_rate_change");
+						cdl::procAddIdentifierToTable( "output_flow_node_time", 'gdm::pOutputFlowNodeMaxPositiveRateChangeFlowTimeDependent', "max_positive_rate_change");
+						cdl::procAddIdentifierToTable( "output_flow_node_time", 'gdm::pOutputFlowNodeMinNegativeRateChangeFlowTimeDependent', "min_negative_rate_change");
+						cdl::procAddIdentifierToTable( "output_flow_node_time", 'gdm::pOutputFlowNodeMaxNegativeRateChangeFlowTimeDependent', "max_negative_rate_change");
+						cdl::procAddIdentifierToTable( "output_flow_node_time", 'gdm::pOutputFlowNodeMinStayTimeSteadyStateTimeDependent', "min_stay_time_steady_state");
+						cdl::procAddIdentifierToTable( "output_flow_node_time", 'gdm::pOutputFlowNodeValuePerUnitTimeDependent', "value_per_unit");
+						cdl::procAddIdentifierToTable( "output_flow_node_time", 'gdm::p01OutputFlowNodeActiveTimeDependent', "is_active");
+						
+						! Display Units
+						cdl::procAddTable("display_units", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "display_units", 'gdm::iProduct', "product" );
+						cdl::procAddIndexToTable( "display_units", 'ldm::iDisplayUnit', "unit");
+						cdl::procAddIdentifierToTable( "display_units", 'ldm::pConvFromNm3ToSelectUnit', "conversion");
+					}
+					Comment: {
+						"
+						Defines the table structure in the database / excel files"
+					}
+				}
+				Procedure procDefineTables_Routes {
+					Body: {
+						/***
+						Definition of the datatables that are the specific for User
+						Do not add additional properties to existing (generic) data tables 
+						but define new tables for these specific properties
+						***/
+						!Format of command for index(sets) or other identifiers)
+						!cdl::procAddTable("Excel sheet name", gdm::spSchemaName, 1);
+						!cdl::procAddIndexToTable( "Excel sheet name", 'udm::iIndex', "Excel column name");
+						!cdl::procAddIdentifierToTable( "Excell sheet name", 'udm::AIMMSidentifier', "Excel column name");
+						
+						! cdl::procClear();
+						
+						! Routes table
+						cdl::procAddTable("routes", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "routes", 'ldm::iRoute', "route");
+						cdl::procAddIdentifierToTable("routes",'ldm::epRouteFrom',"from_truckloading");
+						cdl::procAddIdentifierToTable("routes",'ldm::epRouteTo',"to_cluster");
+						cdl::procAddIdentifierToTable("routes",'ldm::pRouteDistance',"distance");
+						cdl::procAddIdentifierToTable("routes",'ldm::p01RouteAssigned',"assigned");
+						cdl::procAddIdentifierToTable("routes",'ldm::p01RouteRemoved',"removed");
+					}
+					Comment: {
+						"
+						Defines the table structure in the database / excel files"
+					}
+				}
+				Procedure procDefineTables_Routes_Time {
+					Body: {
+						/***
+						Definition of the datatables that are the specific for User
+						Do not add additional properties to existing (generic) data tables 
+						but define new tables for these specific properties
+						***/
+						!Format of command for index(sets) or other identifiers)
+						!cdl::procAddTable("Excel sheet name", gdm::spSchemaName, 1);
+						!cdl::procAddIndexToTable( "Excel sheet name", 'udm::iIndex', "Excel column name");
+						!cdl::procAddIdentifierToTable( "Excell sheet name", 'udm::AIMMSidentifier', "Excel column name");
+						
+						! Routes TimeIM table
+						cdl::procAddTable("routes_time_im", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "routes_time_im", 'ldm::iRoute', "route");
+						cdl::procAddIndexToTable( "routes_time_im", 'ldm::iTimeIM', "time_im");
+						cdl::procAddIdentifierToTable("routes_time_im",'ldm::pRouteVolumeTransportedForced',"force_volume_transported");
+					}
+					Comment: {
+						"
+						Defines the table structure in the database / excel files"
+					}
+				}
+				Procedure procDefineTablesRules {
+					Body: {
+						/***
+						Definition of the datatables that are the specific for User
+						Do not add additional properties to existing (generic) data tables 
+						but define new tables for these specific properties
+						***/
+						!Format of command for index(sets) or other identifiers)
+						!cdl::procAddTable("Excel sheet name", gdm::spSchemaName, 1);
+						!cdl::procAddIndexToTable( "Excel sheet name", 'udm::iIndex', "Excel column name");
+						!cdl::procAddIdentifierToTable( "Excell sheet name", 'udm::AIMMSidentifier', "Excel column name");
+						
+						
+						! Source_Depot table
+						cdl::procAddTable("source_depot", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "source_depot", 'ldm::iSource', "source");
+						cdl::procAddIndexToTable( "source_depot", 'ldm::iDepot', "depot");
+						cdl::procAddIndexToTable( "source_depot", 'ldm::iTimeIM', "time_im");
+						cdl::procAddIdentifierToTable("source_depot",'ldm::p01SourceDepotActive_Input',"is_active");
+						
+						! source_depot_trucktype table
+						cdl::procAddTable("source_depot_trucktype", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "source_depot_trucktype", 'ldm::iSource', "source");
+						cdl::procAddIndexToTable( "source_depot_trucktype", 'ldm::iDepot', "depot");
+						cdl::procAddIndexToTable( "source_depot_trucktype", 'ldm::iTruckType', "trucktype");
+						cdl::procAddIndexToTable( "source_depot_trucktype", 'gdm::iProduct', "product");
+						cdl::procAddIdentifierToTable("source_depot_trucktype",'ldm::p01SourceDepotTruckType_Input',"is_active");
+						cdl::procAddIdentifierToTable("source_depot_trucktype",'ldm::p01SourceDepotTruckType_InputIsException',"is_exception");
+						
+						! Coef split demand
+						cdl::procAddTable("split_time", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "split_time", 'gdm::iTime', "time");
+						cdl::procAddIdentifierToTable("split_time",'ldm::pCoefSplit',"coef_split");
+						
+						! Dispatch Zone Route rule
+						cdl::procAddTable("dispatch_zone_route_rule", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable("dispatch_zone_route_rule", 'ldm::isource', "source");
+						cdl::procAddIndexToTable("dispatch_zone_route_rule", 'gdm::iProduct', "product");
+						cdl::procAddIndexToTable("dispatch_zone_route_rule", 'ldm::iDispatchZone', "dispatch_zone");
+						cdl::procAddIdentifierToTable("dispatch_zone_route_rule",'ldm::p01RouteDispatchzoneRuleRemoved',"removed");
+						
+						! Source cluster route rule
+						cdl::procAddTable("source_cluster_route_rule", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable("source_cluster_route_rule", 'ldm::isource', "source");
+						cdl::procAddIndexToTable("source_cluster_route_rule", 'ldm::iCustomerCluster', "customer_cluster");
+						cdl::procAddIndexToTable("source_cluster_route_rule", 'gdm::iProduct', "product");
+						cdl::procAddIdentifierToTable("source_cluster_route_rule",'ldm::p01SourceCustomerCluster_InputIsException',"removed");
+						cdl::procAddIdentifierToTable("source_cluster_route_rule",'ldm::pRouteRuleDistance',"distance");
+						
+						! Category of CustomeCluster Source rule
+						cdl::procAddTable("category_source_route_rule", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable("category_source_route_rule", 'ldm::iCustomerClusterCategoryForRouteRule', "category_for_route_rule");
+						cdl::procAddIndexToTable("category_source_route_rule", 'gdm::iProduct', "product");
+						cdl::procAddIndexToTable("category_source_route_rule", 'ldm::isource', "source");
+						cdl::procAddIdentifierToTable("category_source_route_rule",'ldm::p01CategorySourceRemoved',"removed");
+					}
+					Comment: {
+						"
+						Defines the table structure in the database / excel files"
+					}
+				}
+				Procedure procDefineTablesResult_MapGraph {
+					Body: {
+						/***
+						Definition of the datatables that are the specific for User
+						Do not add additional properties to existing (generic) data tables 
+						but define new tables for these specific properties
+						***/
+						!Format of command for index(sets) or other identifiers)
+						!cdl::procAddTable("Excel sheet name", gdm::spSchemaName, 1);
+						!cdl::procAddIndexToTable( "Excel sheet name", 'udm::iIndex', "Excel column name");
+						!cdl::procAddIdentifierToTable( "Excell sheet name", 'udm::AIMMSidentifier', "Excel column name");
+						
+						cdl::procClear();
+						
+						! Result route table
+						cdl::procAddTable("R_route", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable("R_route", 'ldm::iRoute', "route");
+						cdl::procAddIdentifierToTable("R_route",'ldm::pRouteVolumetransportedSelected',"qty");
+						cdl::procAddIdentifierToTable("R_route",'ldm::pRouteNumberOfTripSelected',"nb_trip_route");
+						cdl::procAddIdentifierToTable("R_route",'ldm::pRouteDistanceSelect',"distance_route");
+						cdl::procAddIdentifierToTable("R_route",'ldm::epRouteFrom',"truckloading");
+						cdl::procAddIdentifierToTable("R_route",'ldm::epRouteTo',"cluster");
+						
+						! Cluster table
+						cdl::procAddTable("Cluster", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "Cluster", 'ldm::iCustomerCluster', "cluster");
+						cdl::procAddIdentifierToTable("Cluster",'ldm::epCustomerClusterProduct',"product");
+						cdl::procAddIdentifierToTable("Cluster",'ldm::pCustomerClusterLiquidDemandSelect',"demand");
+						cdl::procAddIdentifierToTable("Cluster",'ldm::epCustomerClusterTruckType',"accessibility");
+						cdl::procAddIdentifierToTable("Cluster",'ldm::pCustomerClusterLatitude',"latitude");
+						cdl::procAddIdentifierToTable("Cluster",'ldm::pCustomerClusterLongitude',"longitude");
+						cdl::procAddIdentifierToTable("Cluster",'ldm::epCustomerClusterDispatchZone',"dispatch_zone");
+						
+						! Source table
+						cdl::procAddTable("Source", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "Source", 'ldm::iSource', "source");
+						cdl::procAddIdentifierToTable("Source",'ldm::pSourceLatitude',"latitude");
+						cdl::procAddIdentifierToTable("Source",'ldm::pSourceLongitude',"longitude");
+						
+						! Depot
+						cdl::procAddTable("Depot", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "Depot", 'ldm::iDepot', "depot");
+						cdl::procAddIdentifierToTable("Depot",'ldm::pDepotLatitude',"latitude");
+						cdl::procAddIdentifierToTable("Depot",'ldm::pDepotLongitude',"longitude");
+						
+						! Truckloading table
+						cdl::procAddTable("Truckloadings", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "Truckloadings", 'ldm::iTruckLoading', "truckloading");
+						cdl::procAddIdentifierToTable("Truckloadings",'ldm::epTruckLoadingSource',"source");
+						cdl::procAddIdentifierToTable("Truckloadings",'ldm::epTruckLoadingProduct',"product");
+						cdl::procAddIdentifierToTable("Truckloadings",'ldm::pVolumeTransportedTruckloadingSelected',"volume_transported");
+						
+						! Result Truckloading table
+						cdl::procAddTable("R_truckloading", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "R_truckloading", 'ldm::iTruckLoading', "truckloading");
+						cdl::procAddIndexToTable( "R_truckloading", 'gdm::iProduct', "product");
+						cdl::procAddIndexToTable( "R_truckloading", 'ldm::iTruckType', "accessibility");
+						cdl::procAddIdentifierToTable("R_truckloading",'ldm::pTruckloadingTotalDistanceSelected',"total_distance_truckloading");
+						cdl::procAddIdentifierToTable("R_truckloading",'ldm::pTruckloadingNumberOfShiftSelected',"nb_shift_truckloading");
+						
+						! Result depot
+						cdl::procAddTable("R_tl_depot", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "R_tl_depot", 'ldm::iTruckLoading', "truckloading");
+						cdl::procAddIndexToTable( "R_tl_depot", 'ldm::iDepot', "depot");
+						cdl::procAddIndexToTable( "R_tl_depot", 'gdm::iProduct', "product");
+						cdl::procAddIndexToTable( "R_tl_depot", 'ldm::iTruckType', "accessibility");
+						cdl::procAddIdentifierToTable("R_tl_depot",'ldm::pTruckLoadingDepotNumberOfShiftSelected',"nb_shift_depot");
+						cdl::procAddIdentifierToTable("R_tl_depot",'ldm::pTruckLoadingDepotDistanceSelected',"distance_depot");
+						
+						! Result accessibility
+						cdl::procAddTable("R_accessibility", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "R_accessibility", 'ldm::iTruckType', "accessibility");
+						cdl::procAddIndexToTable( "R_accessibility", 'gdm::iProduct', "product");
+						cdl::procAddIdentifierToTable("R_accessibility",'ldm::pTruckTypeCapacity',"capacity");
+						cdl::procAddIdentifierToTable("R_accessibility",'ldm::pTruckTypeTransportCost',"transport_cost");
+						cdl::procAddIdentifierToTable("R_accessibility",'ldm::pTruckTypeDistancePerShift',"distance_per_shift");
+						cdl::procAddIdentifierToTable("R_accessibility",'ldm::pTruckTypeTotalDistanceSelected',"total_distance");
+						cdl::procAddIdentifierToTable("R_accessibility",'ldm::pTruckTypeTotalTransportCostSelected',"total_transport_cost");
+					}
+					Comment: {
+						"
+						Defines the table structure in the database / excel files"
+					}
+				}
+				Procedure procDefineTablesResult_Table {
+					Body: {
+						/***
+						Definition of the datatables that are the specific for User
+						Do not add additional properties to existing (generic) data tables 
+						but define new tables for these specific properties
+						***/
+						!Format of command for index(sets) or other identifiers)
+						!cdl::procAddTable("Excel sheet name", gdm::spSchemaName, 1);
+						!cdl::procAddIndexToTable( "Excel sheet name", 'udm::iIndex', "Excel column name");
+						!cdl::procAddIdentifierToTable( "Excell sheet name", 'udm::AIMMSidentifier', "Excel column name");
+						
+						cdl::procClear();
+						
+						! Result route table
+						cdl::procAddTable("R_route", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable("R_route", 'ldm::iRoute', "route");
+						cdl::procAddIdentifierToTable("R_route",'ldm::epRouteFrom',"truckloading");
+						cdl::procAddIdentifierToTable("R_route",'ldm::epRouteTo',"cluster");
+						cdl::procAddIdentifierToTable("R_route",'ldm::pRouteDistance',"route_distance");
+						cdl::procAddIdentifierToTable("R_route",'ldm::spRouteDispatchzone',"dispatch_zone");
+						cdl::procAddIdentifierToTable("R_route",'ldm::epRouteTruckType',"truck_type");
+						cdl::procAddIdentifierToTable("R_route",'ldm::epRouteProduct',"product");
+						
+						! Result route timeIM table
+						cdl::procAddTable("R_route_timeIM", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable("R_route_timeIM", 'ldm::iRoute', "route");
+						cdl::procAddIndexToTable("R_route_timeIM", 'ldm::iTimeIM', "time_IM");
+						cdl::procAddIdentifierToTable("R_route_timeIM",'ldm::vRouteVolumetransported',"qty");
+						cdl::procAddIdentifierToTable("R_route_timeIM",'ldm::vRouteNumberOfTrip',"nb_trip_route");
+						cdl::procAddIdentifierToTable("R_route_timeIM",'ldm::vRouteDistance',"distance_route");
+						
+						! Result Truckloading table
+						cdl::procAddTable("R_truckloading", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "R_truckloading", 'ldm::iTruckLoading', "truckloading");
+						cdl::procAddIndexToTable( "R_truckloading", 'gdm::iProduct', "product");
+						cdl::procAddIndexToTable( "R_truckloading", 'ldm::iTruckType', "accessibility");
+						cdl::procAddIndexToTable("R_truckloading", 'ldm::iTimeIM', "time_IM");
+						cdl::procAddIdentifierToTable("R_truckloading",'ldm::vTruckloadingTotalDistance',"total_distance_truckloading");
+						cdl::procAddIdentifierToTable("R_truckloading",'ldm::vTruckloadingNumberOfShift',"nb_shift_truckloading");
+						
+						! Result depot
+						cdl::procAddTable("R_tl_depot", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "R_tl_depot", 'ldm::iTruckLoading', "truckloading");
+						cdl::procAddIndexToTable( "R_tl_depot", 'ldm::iDepot', "depot");
+						cdl::procAddIndexToTable( "R_tl_depot", 'gdm::iProduct', "product");
+						cdl::procAddIndexToTable( "R_tl_depot", 'ldm::iTruckType', "accessibility");
+						cdl::procAddIndexToTable("R_tl_depot", 'ldm::iTimeIM', "time_IM");
+						cdl::procAddIdentifierToTable("R_tl_depot",'ldm::vTruckloadingDepotNumberOfShift',"nb_shift_depot");
+						cdl::procAddIdentifierToTable("R_tl_depot",'ldm::vTruckloadingDepotDistance',"distance_depot");
+						
+						! Result accessibility
+						cdl::procAddTable("R_accessibility", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "R_accessibility", 'ldm::iTruckType', "accessibility");
+						cdl::procAddIndexToTable( "R_accessibility", 'gdm::iProduct', "product");
+						cdl::procAddIdentifierToTable("R_accessibility",'ldm::pTruckTypeCapacity',"capacity");
+						cdl::procAddIdentifierToTable("R_accessibility",'ldm::pTruckTypeTransportCost',"transport_cost");
+						cdl::procAddIdentifierToTable("R_accessibility",'ldm::pTruckTypeDistancePerShift',"distance_per_shift");
+						
+						! Result accessibility timeIM
+						cdl::procAddTable("R_accessibility_timeIM", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "R_accessibility_timeIM", 'ldm::iTruckType', "accessibility");
+						cdl::procAddIndexToTable( "R_accessibility_timeIM", 'gdm::iProduct', "product");
+						cdl::procAddIndexToTable("R_accessibility_timeIM", 'ldm::iTimeIM', "time_IM");
+						cdl::procAddIdentifierToTable("R_accessibility_timeIM",'ldm::vTruckTypeTotalDistance',"total_distance");
+						cdl::procAddIdentifierToTable("R_accessibility_timeIM",'ldm::vTruckTypeTotalTransportCost',"total_transport_cost");
+					}
+					Comment: {
+						"
+						Defines the table structure in the database / excel files"
+					}
+				}
+			}
+			Section Declaration_Time_Dependent_Parameter {
+				Procedure procInitializeTimeDependentData_Lim {
+					Body: {
+						!!!! This procedure is the link between the parameters read from excel and the parameters used in the model (gom) !!!!!
+					}
+				}
+			}
+			Section Distribution_Auto_creation_element {
+				DeclarationSection Declaration_Raw_Data_Source {
+					Set sInternalSources {
+						SubsetOf: sSources;
+						Index: iInternalSource;
+						OrderBy: iInternalSource;
+						Definition: {
+							{ iSource | epSourceType(ldm::iSource) = epInternalSource }
+						}
+					}
+					Set sExternalSources {
+						SubsetOf: sSources;
+						Index: iExternalSource;
+						OrderBy: iExternalSource;
+						Definition: {
+							{ iSource | epSourceType(ldm::iSource) = epExternalSource }
+						}
+					}
+					Set sNodeInOutputFlow_InitTank {
+						SubsetOf: gdm::sNodes;
+						Index: iNodeInOutputFlow_InitTank;
+						OrderBy: iNodeInOutputFlow_InitTank;
+					}
+					Set sInternalSourceTankNumber {
+						Index: iInternalSourceTankNumber;
+						OrderBy: iInternalSourceTankNumber;
+						Definition: ElementRange(1, 9, 1);
+					}
+					ElementParameter epInternalsourceTank {
+						IndexDomain: (iInternalSource, gdm::iProduct, iInternalSourceTankNumber);
+						Range: gdm::sTankNodes;
+					}
+					Parameter p01InternalsourceActive {
+						IndexDomain: (iInternalSource, gdm::iProduct, iInternalSourceTankNumber);
+						Range: binary;
+					}
+					Set sExternalsourceTierNumber {
+						Index: iExternalsourceTierNumber;
+						OrderBy: iExternalsourceTierNumber;
+						Definition: ElementRange(1, 9, 1);
+					}
+					StringParameter spProductName {
+						IndexDomain: gdm::iProduct;
+						Definition: {
+							
+							if gdm::iProduct = gdm::epProductN2 then
+								"LIN"
+							elseif gdm::iProduct = gdm::epProductO2 then
+								"LOX"
+							elseif  gdm::iProduct = gdm::epProductAr then
+								"LAR"
+							else
+								""
+							endif
+						}
+					}
+					Parameter pExternalsourceQuantityAvailable {
+						IndexDomain: (iExternalSource,gdm::iProduct,iExternalsourceTierNumber,iTimeIM);
+					}
+					Parameter pExternalsourceCost {
+						IndexDomain: (iExternalSource,gdm::iProduct,iExternalsourceTierNumber,iTimeIM);
+					}
+					Parameter pExternalsourceTakeorPayQuantity {
+						IndexDomain: (iExternalSource,gdm::iProduct,iExternalsourceTierNumber,iTimeIM);
+					}
+					Parameter p01ExternalsourceActive {
+						IndexDomain: (iExternalSource,gdm::iProduct,iExternalsourceTierNumber,iTimeIM);
+						Range: binary;
+					}
+				}
+				Procedure procCreationFromSource {
+					Body: {
+						! Create nodes, arcs, tank, outputflow for External Source
+						for iExternalSource, gdm::iProduct, iExternalsourceTierNumber, iTimeIM do
+							if p01ExternalsourceActive(iExternalSource, gdm::iProduct, iExternalsourceTierNumber, iTimeIM) then
+								! Add Nodes with the node_type "Tank" for the External source
+								SetElementAdd(gdm::sNodes, epNodeAdd, "Tank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource );
+								gdm::epNodeType(stringtoelement(gdm::sNodes, "Tank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource) ) := gdm::epNodeTypeTank;
+								gdm::pNodeMinPressure(stringtoelement(gdm::sNodes, "Tank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource)) := 0.1;
+								gdm::pNodeMaxPressure(stringtoelement(gdm::sNodes, "Tank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource)) := 100;
+								gdm::epNodeSite(stringtoelement(gdm::sNodes, "Tank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource)) := iExternalSource;
+								! Add Arguments in the set sTanks
+								gdm::epTankLiquidProduct(stringtoelement(gdm::sNodes, "Tank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource)) := gdm::iProduct;
+								gdm::pTankInitialLevel(stringtoelement(gdm::sNodes, "Tank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource)) := pExternalsourceQuantityAvailable(iExternalSource, gdm::iProduct, iExternalsourceTierNumber, epFirstTimeIM) * gdm::pLiquidMassToVolumeUnits(gdm::iProduct);
+								gdm::pTankStorageCapacity(stringtoelement(gdm::sNodes, "Tank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource)) := max(iTimeIM2, pExternalsourceQuantityAvailable(iExternalSource, gdm::iProduct, iExternalsourceTierNumber, iTimeIM2)) * gdm::pLiquidMassToVolumeUnits(gdm::iProduct);
+								gdm::p01TankFlashSpecificEquation(stringtoelement(gdm::sNodes, "Tank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource)) := 1;
+								SetElementAdd(sExternalsourceTanks, epExternalsourceTankAdd, "Tank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource );
+								pExternalsourceTankInitialLevel(stringtoelement(gdm::sNodes, "Tank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource), iTimeIM) := pExternalsourceQuantityAvailable(iExternalSource, gdm::iProduct, iExternalsourceTierNumber, iTimeIM);
+								pExternalsourceTankCost(stringtoelement(gdm::sNodes, "Tank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource), iTimeIM) := pExternalsourceCost(iExternalSource, gdm::iProduct, iExternalsourceTierNumber, iTimeIM);
+								pExternalsourceTankTakeOrPayQuantity(stringtoelement(gdm::sNodes, "Tank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource), iTimeIM) := pExternalsourceTakeorPayQuantity(iExternalSource, gdm::iProduct, iExternalsourceTierNumber, iTimeIM);
+						
+								if stringtoelement(gdm::sNodes, "TL_" + spProductName(gdm::iProduct) + " - " + iExternalSource) in gdm::sNodes then
+								else
+									! Add Nodes with the node_type "OutputFlowNode" for the Truckloading
+									SetElementAdd(gdm::sNodes, epNodeAdd, "TL_" + spProductName(gdm::iProduct) + " - " + iExternalSource );
+									gdm::epNodeType(stringtoelement(gdm::sNodes, "TL_" + spProductName(gdm::iProduct) + " - " + iExternalSource) ) := gdm::epNodeTypeOutputFlow;
+									gdm::pNodeMinPressure(stringtoelement(gdm::sNodes, "TL_" + spProductName(gdm::iProduct) + " - " + iExternalSource)) := 0.1;
+									gdm::pNodeMaxPressure(stringtoelement(gdm::sNodes, "TL_" + spProductName(gdm::iProduct) + " - " + iExternalSource)) := 100;
+									gdm::epNodeSite(stringtoelement(gdm::sNodes, "TL_" + spProductName(gdm::iProduct) + " - " + iExternalSource)) := iExternalSource;
+									! Add Arguments in the set sOutputFlowNode
+									gdm::pOutputFlowNodeMaxFlowConstant( stringtoelement(gdm::sNodes, "TL_" + spProductName(gdm::iProduct) + " - " + iExternalSource) ) := 999999;
+									SetElementAdd(sTruckloadings, epNodeAdd, "TL_" + spProductName(gdm::iProduct) + " - " + iExternalSource );
+									epTruckLoadingProduct(stringtoelement(gdm::sNodes, "TL_" + spProductName(gdm::iProduct) + " - " + iExternalSource)) := gdm::iProduct;
+								endif;
+								! Add Arcs to link the tank and the Truckloading
+								SetElementAdd(gdm::sArcs, epArcAdd, "tank" + iExternalsourceTierNumber + "_TL_" + spProductName(gdm::iProduct) + " - " + iExternalSource );
+								gdm::epArcType(stringtoelement(gdm::sArcs, "tank" + iExternalsourceTierNumber + "_TL_" + spProductName(gdm::iProduct) + " - " + iExternalSource)) := gdm::epArcTypeRegular;
+								gdm::epNodeFrom(stringtoelement(gdm::sArcs, "tank" + iExternalsourceTierNumber + "_TL_" + spProductName(gdm::iProduct) + " - " + iExternalSource)) := stringtoelement(gdm::sNodes, "Tank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource);
+								gdm::epNodeTo(stringtoelement(gdm::sArcs, "tank" + iExternalsourceTierNumber + "_TL_" + spProductName(gdm::iProduct) + " - " + iExternalSource)) := stringtoelement(gdm::sNodes, "TL_" + spProductName(gdm::iProduct) + " - " + iExternalSource);
+								gdm::pArcMinFlow(stringtoelement(gdm::sArcs, "tank" + iExternalsourceTierNumber + "_TL_" + spProductName(gdm::iProduct) + " - " + iExternalSource)) := 0;
+								gdm::pArcMaxFlow(stringtoelement(gdm::sArcs, "tank" + iExternalsourceTierNumber + "_TL_" + spProductName(gdm::iProduct) + " - " + iExternalSource)) := 999999;
+						
+								! Add Nodes with the node_type "InOutputFlowNode" to initialize the tank level at each TimeIM
+								SetElementAdd(gdm::sNodes, epNodeAdd, "InitTank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource );
+								gdm::epNodeType(stringtoelement(gdm::sNodes, "InitTank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource) ) := gdm::epNodeTypeInOutputFlow;
+								gdm::pNodeMinPressure(stringtoelement(gdm::sNodes, "InitTank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource)) := 0.1;
+								gdm::pNodeMaxPressure(stringtoelement(gdm::sNodes, "InitTank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource)) := 100;
+								gdm::epNodeSite(stringtoelement(gdm::sNodes, "InitTank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource)) := iExternalSource;
+								SetElementAdd(sNodeInOutputFlow_InitTank, epNodeAdd, "InitTank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource );
+								! Add Arguments in the set sInputFlowNode
+								gdm::pInputFlowNodeMaxFlowConstant( stringtoelement(gdm::sNodes, "InitTank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource) ) := 9999999;
+								! Add Arguments in the set sOutputFlowNode
+								gdm::pOutputFlowNodeMaxFlowConstant( stringtoelement(gdm::sNodes, "InitTank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource) ) := 9999999;
+								! Add Arcs to link the tank and the InputFlow node to initialize the tank level at each TimeIM
+								SetElementAdd(gdm::sArcs, epArcAdd, "Init" + "_tank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource );
+								gdm::epArcType(stringtoelement(gdm::sArcs, "Init" + "_tank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource)) := gdm::epArcTypeRegular;
+								gdm::epNodeFrom(stringtoelement(gdm::sArcs, "Init" + "_tank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource)) := stringtoelement(gdm::sNodes, "InitTank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource);
+								gdm::epNodeTo(stringtoelement(gdm::sArcs, "Init" + "_tank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource)) := stringtoelement(gdm::sNodes, "Tank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource);
+								gdm::pArcMinFlow(stringtoelement(gdm::sArcs, "Init" + "_tank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource)) := -9999999;
+								gdm::pArcMaxFlow(stringtoelement(gdm::sArcs, "Init" + "_tank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource)) := 9999999;
+								! For each tank put the name of the "InputFlowNodeTankInit"
+								epInOutputFlowNodeExternalsourceTankInit(stringtoelement(gdm::sNodes, "Tank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource)) := stringtoelement(gdm::sNodes, "InitTank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource);
+						
+							endif;
+						endfor;
+						
+						! Create nodes, arcs, outputflow for Internal Source
+						for iInternalSource, gdm::iProduct, ldm::iInternalSourceTankNumber do
+							if p01InternalsourceActive(iInternalSource, gdm::iProduct, ldm::iInternalSourceTankNumber) then
+								if stringtoelement(gdm::sNodes, "TL_" + spProductName(gdm::iProduct) + " - " + iInternalSource) in gdm::sNodes then
+								else
+									SetElementAdd(gdm::sNodes, epNodeAdd, "TL_" + spProductName(gdm::iProduct) + " - " + iInternalSource );
+									gdm::epNodeType(stringtoelement(gdm::sNodes, "TL_" + spProductName(gdm::iProduct) + " - " + iInternalSource) ) := gdm::epNodeTypeOutputFlow;
+									gdm::pNodeMinPressure(stringtoelement(gdm::sNodes, "TL_" + spProductName(gdm::iProduct) + " - " + iInternalSource)) := 0.1;
+									gdm::pNodeMaxPressure(stringtoelement(gdm::sNodes, "TL_" + spProductName(gdm::iProduct) + " - " + iInternalSource)) := 100;
+									gdm::epNodeSite(stringtoelement(gdm::sNodes, "TL_" + spProductName(gdm::iProduct) + " - " + iInternalSource)) := iInternalSource;
+									! Add Arguments in the set sOutputFlowNode
+									gdm::pOutputFlowNodeMaxFlowConstant( stringtoelement(gdm::sNodes, "TL_" + spProductName(gdm::iProduct) + " - " + iInternalSource) ) := 999999;
+									SetElementAdd(sTruckloadings, epNodeAdd, "TL_" + spProductName(gdm::iProduct) + " - " + iInternalSource );
+									epTruckLoadingProduct(stringtoelement(gdm::sNodes, "TL_" + spProductName(gdm::iProduct) + " - " + iInternalSource)) := gdm::iProduct;
+								endif;
+						
+								SetElementAdd(gdm::sArcs, epArcAdd, "tank" + ldm::iInternalSourceTankNumber + "_TL_" + spProductName(gdm::iProduct) + " - " + iInternalSource );
+								gdm::epArcType(stringtoelement(gdm::sArcs, "tank" + ldm::iInternalSourceTankNumber + "_TL_" + spProductName(gdm::iProduct) + " - " + iInternalSource)) := gdm::epArcTypeRegular;
+								gdm::epNodeFrom(stringtoelement(gdm::sArcs, "tank" + ldm::iInternalSourceTankNumber + "_TL_" + spProductName(gdm::iProduct) + " - " + iInternalSource)) := epInternalSourceTank(iInternalSource, gdm::iProduct, ldm::iInternalSourceTankNumber);
+								gdm::epNodeTo(stringtoelement(gdm::sArcs, "tank" + ldm::iInternalSourceTankNumber + "_TL_" + spProductName(gdm::iProduct) + " - " + iInternalSource)) := stringtoelement(gdm::sNodes, "TL_" + spProductName(gdm::iProduct) + " - " + iInternalSource);
+								gdm::pArcMinFlow(stringtoelement(gdm::sArcs, "tank" + ldm::iInternalSourceTankNumber + "_TL_" + spProductName(gdm::iProduct) + " - " + iInternalSource)) := 0;
+								gdm::pArcMaxFlow(stringtoelement(gdm::sArcs, "tank" + ldm::iInternalSourceTankNumber + "_TL_" + spProductName(gdm::iProduct) + " - " + iInternalSource)) := 999999;
+							endif;
+						endfor;
+					}
+					ElementParameter epNodeAdd {
+						Range: gdm::sNodes;
+					}
+					ElementParameter epExternalsourceTankAdd {
+						Range: sExternalsourceTanks;
+					}
+					ElementParameter epTruckloadingAdd {
+						Range: sTruckLoadings;
+					}
+					ElementParameter epArcAdd {
+						Range: gdm::sArcs;
+					}
+				}
+				Procedure procCreationCrossTable {
+					Body: {
+						
+						! Generate the set Routes (cross Truckloading and Customer/Cluster)
+						pCounter := 1;
+						if card(sRoutes)=0 then
+							for iTruckloading, iCustomerCluster do
+								if epTruckLoadingProduct(iTruckLoading) = epCustomerClusterProduct(iCustomerCluster) then
+									spCounter := "00000" + pCounter;
+									spCounter := "R" + SubString(spCounter, StringLength(spCounter)-5, StringLength(spCounter));
+									SetElementAdd(sRoutes, epRouteAdd, spCounter);
+									epRouteFrom(stringtoelement(sRoutes, spCounter)) := iTruckloading;
+									epRouteTo(stringtoelement(sRoutes, spCounter)) := iCustomerCluster;
+									pRouteDistance(stringtoelement(sRoutes, spCounter)) := 60 * 1.1515 * 1.609344
+									* degrees(arcCos(
+											round(
+											(sin(Radians(pSourceLatitude(epTruckLoadingSource(iTruckLoading)))) * sin(radians(pCustomerClusterLatitude(iCustomerCluster))))
+											+ (cos(Radians(pSourceLatitude(epTruckLoadingSource(iTruckLoading)))) * cos(radians(pCustomerClusterLatitude(iCustomerCluster)))) 
+												* cos(radians(pSourceLongitude(epTruckLoadingSource(iTruckLoading)) - pCustomerClusterLongitude(iCustomerCluster)))
+											,8)
+											)
+										);
+									pCounter := pCounter + 1;
+								endif;
+							endfor;
+						else
+							! Check the definitin of the route from
+							for( iRoute | epRouteFrom(iRoute) = '' ) do
+								log_message::procLogError( 2, '', formatstring( "The route_from is not correctly define for %e", iRoute ) );
+							endfor;
+							! Check the definitin of the route to
+							for( iRoute | epRouteTo(iRoute) = '' ) do
+								log_message::procLogError( 2, '', formatstring( "The route_to is not correctly define for %e", iRoute ) );
+							endfor;
+						endif;
+						
+						! Complete data for Depot Source
+						!for iSource, iDepot do
+							pSourceDepotDistance(iSource, iDepot) := 60 * 1.1515 * 1.609344
+								* degrees(arcCos(
+										round(
+										(sin(Radians(pSourceLatitude(iSource))) * sin(radians(pDepotLatitude(iDepot))))
+										+ (cos(Radians(pSourceLatitude(iSource))) * cos(radians(pDepotLatitude(iDepot)))) 
+											* cos(radians(pSourceLongitude(iSource) - pDepotLongitude(iDepot)))
+										,8)
+										)
+									);
+							p01SourceDepotActive(iSource, iDepot, iTimeIM) :=1;
+						!endfor;
+					}
+					Comment: "EL: arccos(round(x,8)), round the value to avoid an error of a value more than 1 when the localisations of the from and to are identical.";
+					ElementParameter epRouteAdd {
+						Range: sRoutes;
+					}
+					Parameter pCounter;
+					StringParameter spCounter;
+				}
+				Procedure procAddSetDispatchZoneAndCategory {
+					Body: {
+						
+						for iCustomerCluster do
+							SetElementAdd(sDispatchZone, epDispatchZoneAdd, spCustomerClusterDispatchZone(iCustomerCluster));
+						endfor;
+						epCustomerClusterDispatchZone(iCustomerCluster) := stringtoelement(sDispatchZone, spCustomerClusterDispatchZone(iCustomerCluster));
+						
+						for iCustomerCluster do
+							SetElementAdd(sCustomerClusterCategoryForRouteRule, epCategoryAdd, spCustomerClusterCategoryForRouteRule(iCustomerCluster));
+						endfor;
+						epCustomerClusterCategoryForRouteRule(iCustomerCluster) := stringtoelement(sCustomerClusterCategoryForRouteRule, spCustomerClusterCategoryForRouteRule(iCustomerCluster));
+						
+						! Add the set information for the Alto parameters
+						ldm::procAddSetForAltoCode();
+					}
+					ElementParameter epDispatchZoneAdd {
+						Range: sDispatchZone;
+					}
+					ElementParameter epCategoryAdd {
+						Range: sCustomerClusterCategoryForRouteRule;
+					}
+				}
+			}
+			Section Activation_Rule {
+				DeclarationSection Source_Depot_activation_declaration {
+					Parameter p01SourceDepotActive_Input {
+						IndexDomain: (iSource, iDepot, iTimeIM);
+						Range: binary;
+						Comment: "1 for all for the moment";
+					}
+					Parameter p01SourceDepotTruckType_Input {
+						IndexDomain: (iSource, iDepot, iTruckType, gdm::iProduct);
+						Range: binary;
+					}
+					Parameter p01SourceDepotTruckType_InputIsException {
+						IndexDomain: (iSource, iDepot, iTruckType, gdm::iProduct);
+						Range: binary;
+					}
+				}
+				DeclarationSection Split_demand_coef {
+					Parameter pCoefSplit {
+						IndexDomain: gdm::iTime;
+					}
+				}
+				Procedure procActivationRule {
+					Body: {
+						! Apply the Input Source Depot Active in the parameter P01SourceDepotTrucktypeActive
+						if sum((iSource, iDepot, iTimeIM), ldm::p01SourceDepotActive_Input(iSource, iDepot, iTimeIM)) = 0 then
+							ldm::p01SourceDepotActive_Input(iSource, iDepot, iTimeIM) := 1;
+						endif;
+						p01SourceDepotActive(iSource, iDepot, iTimeIM) := ldm::p01SourceDepotActive_Input(iSource, iDepot, iTimeIM);
+						p01SourceDepotTruckTypeActive(iSource, iDepot, iTruckType, gdm::iProduct, iTimeIM) 
+							:= p01SourceDepotActive(iSource, iDepot, iTimeIM) * p01DepotTruckNumberActive(iDepot, iTruckType, gdm::iProduct, iTimeIM);
+						! Apply the exception value in the parameter P01SourceDepotTrucktypeActive
+						p01SourceDepotTruckTypeActive((iSource, iDepot, iTruckType, gdm::iProduct, iTimeIM) | ldm::p01SourceDepotTruckType_InputIsException(iSource, iDepot, iTruckType, gdm::iProduct))
+							:= ldm::p01SourceDepotTruckType_Input(iSource, iDepot, iTruckType, gdm::iProduct);
+						
+						! Aply route rules
+						procRouteActivationRule();
+						
+						! Apply the demand coef split rule
+						if sum((iTruckLoading, gdm::iTime), ldm::pCoefSplit(gdm::iTime)) = 0 then
+							ldm::pCoefSplit(gdm::iTime) := 1;
+						endif;
+						pTruckloadingCoefSplit(iTruckLoading, gdm::iTime) := ldm::pCoefSplit(gdm::iTime);
+					}
+				}
+				DeclarationSection Route_rule_declaration {
+					Parameter p01RouteDispatchzoneRuleRemoved {
+						IndexDomain: (iSource,gdm::iProduct, iDispatchZone);
+						Range: binary;
+						Default: 0;
+					}
+					Parameter p01SourceCustomerCluster_InputIsException {
+						IndexDomain: (iSource,iCustomerCluster,gdm::iProduct);
+						Range: binary;
+					}
+					Parameter p01CategorySourceRemoved {
+						IndexDomain: (iCustomerClusterCategoryForRouteRule, gdm::iProduct, iSource);
+						Range: binary;
+					}
+					Parameter pRouteRuleRemoved {
+						IndexDomain: iRoute;
+					}
+					Parameter pRouteRuleDistance {
+						IndexDomain: (iSource,iCustomerCluster,gdm::iProduct);
+					}
+				}
+				Procedure procRouteActivationRule {
+					Body: {
+						! Route rule removed
+						pRouteRuleRemoved(iRoute) := 
+							! Activation route from source dispatchzone rule
+							ldm::p01RouteDispatchzoneRuleRemoved(ldm::epTruckLoadingSource(ldm::epRouteFrom(ldm::iRoute)),ldm::epRouteProduct(ldm::iRoute), ldm::epCustomerClusterDispatchZone(ldm::epRouteTo(ldm::iRoute)))
+							! Removed the route corresponding to the Source-CustomerCluster-rule
+							+ ldm::p01SourceCustomerCluster_InputIsException(ldm::epTruckLoadingSource(ldm::epRouteFrom(ldm::iRoute)), ldm::epRouteTo(ldm::iRoute), ldm::epRouteProduct(ldm::iRoute))
+							! Removed the route corresponding to the CustomerCluster category Source-CustomerCluster-rule
+							+ p01CategorySourceRemoved(epCustomerClusterCategoryForRouteRule(epRouteTo(iRoute)), epRouteProduct(iRoute), ldm::epTruckLoadingSource(ldm::epRouteFrom(ldm::iRoute)));
+						
+						for iRoute do
+							if pRouteRuleRemoved(iRoute)<>0 then
+								ldm::p01RouteRemoved(ldm::iRoute) := 1;
+							endif;
+						endfor;
+						
+						! Route manual distance apply
+						for iroute do
+							if pRouteRuleDistance(epTruckLoadingSource(epRouteFrom(iRoute)), epRouteTo(iRoute), epRouteProduct(iRoute)) <> 0 then
+								pRouteDistance(iRoute) := pRouteRuleDistance(epTruckLoadingSource(epRouteFrom(iRoute)), epRouteTo(iRoute), epRouteProduct(iRoute));
+							endif;
+						endfor;
+					}
+				}
+			}
+			Procedure procReadFromExcelButtonAuto_ldm {
+				Body: {
+					! Clear messages
+					gdm::procClearMessages;
+					
+					if ( fileselect( spExcelFile , extension: "xlsx") = 0 ) then return; endif;
+					
+					! repair for special character string since the string is used in generated code
+					spExcelFile := FindReplaceStrings( spExcelFile , "\\" , "\\\\" );
+					
+					! Define tables LIM (Base)
+					ldm::procDefineTables_IM1;
+					
+					!Read from Excel step2 
+					if ( cdl::procReadFromExcel( formatstring("%s",spExcelFile ) ) ) then
+						! dialogmessage( "Excel succesfully read");
+					endif;
+					
+					! Add the dispatch zone of customer/cluster in the set sDisptachZone
+					procAddSetDispatchZoneAndCategory();
+					
+					! Complete and create the table from Source 
+					ldm::procCreationFromSource();
+					
+					! Define tables LIM (Base)
+					cdl::procClear();
+					ldm::procDefineTables_Routes;
+					ldm::procDefineTables_Routes_Time();
+					! Define table for rules
+					ldm::procDefineTablesRules();
+					
+					!Read from Excel step3
+					if ( cdl::procReadFromExcel( formatstring("%s",spExcelFile ) ) ) then
+						dialogmessage( "Excel succesfully read");
+					endif;
+					
+					! Creation the cross table routes and complete the others cross tables
+					ldm::procCreationCrossTable();
+					
+					! Save the name of the loaded file
+					ldm::spExcelDistribFileDisplay := spExcelFile;
+					
+					! Call procedure to create the link between excel parameters and time dependent parameters in gom and uom
+					gdm::procInitializeTimeDependentData();
+					udm::procInitializeTimeDependentData_udm();
+				}
+				StringParameter spExcelFile;
+			}
+			Procedure procReadFromExcel_Routes_ldm {
+				Body: {
+					! Clear messages
+					gdm::procClearMessages;
+					empty sRoutes;
+					
+					if ( fileselect( spExcelFile , extension: "xlsx") = 0 ) then return; endif;
+					
+					! repair for special character string since the string is used in generated code
+					spExcelFile := FindReplaceStrings( spExcelFile , "\\" , "\\\\" );
+					
+					! Define tables Routes 
+					cdl::procClear();
+					procDefineTables_Routes();
+					
+					!Read from Excel step2 
+					if ( cdl::procReadFromExcel( formatstring("%s",spExcelFile ) ) ) then
+						dialogmessage( "Excel succesfully read");
+					endif;
+					
+					! Save the name of the loaded file
+					! gdm::spExcelFileDisplay := spExcelFile;
+					
+					! Add the dispatch zone of customer/cluster in the set sDisptachZone
+					procAddSetDispatchZoneAndCategory();
+					
+					! Call procedure to create the link between excel parameters and time dependent parameters in gom and uom
+					gdm::procInitializeTimeDependentData();
+					udm::procInitializeTimeDependentData_udm();
+				}
+				StringParameter spExcelFile;
+			}
+			Procedure procWriteToExcel_Routes_ldm {
+				Body: {
+					! Update timestamp
+					gdm::spRunTimeStamp := CurrentToString( "%c%y-%m-%d %H:%M:%S");
+					! Update model vesion
+					gdm::spRunModelVersion := gdm::spModelVersion;
+					
+					! Ask for file to export data to
+					if ( fileselectnew( spExcelFile , extension: "xlsx") = 0 ) then return; endif;
+					!if ( dialoggetstring( "Enter a name for the file.\n for example \"ASU_data\"", spExcelFile, title: "Enter a file name") = 0 ) then return; endif;
+					
+					! repair for special character string since the string is used in generated code
+					spExcelFile := FindReplaceStrings( spExcelFile , "\\" , "\\\\" );
+					
+					! First update format for write to excel
+					gdm::procChangeDateFormatExcelWrite();
+					! procDefineTablesResult_LIM();
+					cdl::procClear();
+					procDefineTables_Routes();
+					
+					! Export to Excel
+					cdl::procWriteToExcel( spExcelFile );
+					
+					dialogmessage( "Excel succesfully exported");
+				}
+				Comment: "Write the generic data to Excel";
+				StringParameter spExcelFile;
+			}
+			Procedure procWriteToExcelMapGraphButton_ldm {
+				Body: {
+					! check the selection of the TimeIM
+					if epTimeIMSelected="" then
+						epTimeIMSelected:=epFirstTimeIM;
+					endif;
+					
+					! Update timestamp
+					gdm::spRunTimeStamp := CurrentToString( "%c%y-%m-%d %H:%M:%S");
+					! Update model vesion
+					gdm::spRunModelVersion := gdm::spModelVersion;
+					
+					! Ask for file to export data to
+					if ( fileselectnew( spExcelFile , extension: "xlsx") = 0 ) then return; endif;
+					!if ( dialoggetstring( "Enter a name for the file.\n for example \"ASU_data\"", spExcelFile, title: "Enter a file name") = 0 ) then return; endif;
+					
+					! repair for special character string since the string is used in generated code
+					spExcelFile := FindReplaceStrings( spExcelFile , "\\" , "\\\\" );
+					
+					! First update format for write to excel
+					gdm::procChangeDateFormatExcelWrite();
+					! gdm::procDefineTables();
+					! Add tables user
+					! udm::procDefineTables_udm();
+					! Add result
+					! procDefineTablesResult_LIM();
+					procDefineTablesResult_MapGraph();
+					
+					! Export to Excel
+					cdl::procWriteToExcel( spExcelFile );
+					
+					dialogmessage( "Excel succesfully exported");
+				}
+				Comment: "Write the generic data to Excel";
+				StringParameter spExcelFile;
+			}
+			Procedure procWriteToExcelTableButton_ldm {
+				Body: {
+					! Update timestamp
+					gdm::spRunTimeStamp := CurrentToString( "%c%y-%m-%d %H:%M:%S");
+					! Update model vesion
+					gdm::spRunModelVersion := gdm::spModelVersion;
+					
+					! Ask for file to export data to
+					if ( fileselectnew( spExcelFile , extension: "xlsx") = 0 ) then return; endif;
+					!if ( dialoggetstring( "Enter a name for the file.\n for example \"ASU_data\"", spExcelFile, title: "Enter a file name") = 0 ) then return; endif;
+					
+					! repair for special character string since the string is used in generated code
+					spExcelFile := FindReplaceStrings( spExcelFile , "\\" , "\\\\" );
+					
+					! First update format for write to excel
+					gdm::procChangeDateFormatExcelWrite();
+					! procDefineTablesResult_LIM();
+					procDefineTablesResult_Table();
+					
+					! Export to Excel
+					cdl::procWriteToExcel( spExcelFile );
+					
+					dialogmessage( "Excel succesfully exported");
+				}
+				Comment: "Write the generic data to Excel";
+				StringParameter spExcelFile;
+			}
+			Procedure procSaveToExcelInputDataButton_ldm {
+				Body: {
+					! Update timestamp
+					gdm::spRunTimeStamp := CurrentToString( "%c%y-%m-%d %H:%M:%S");
+					! Update model vesion
+					gdm::spRunModelVersion := gdm::spModelVersion;
+					
+					! Ask for file to export data to
+					if ( fileselectnew( spExcelFile , extension: "xlsx") = 0 ) then return; endif;
+					!if ( dialoggetstring( "Enter a name for the file.\n for example \"ASU_data\"", spExcelFile, title: "Enter a file name") = 0 ) then return; endif;
+					
+					! repair for special character string since the string is used in generated code
+					spExcelFile := FindReplaceStrings( spExcelFile , "\\" , "\\\\" );
+					
+					! First update format for write to excel
+					gdm::procChangeDateFormatExcelWrite();
+					! Define tables LIM (Base)
+					ldm::procDefineTables_IM1;
+					! Define tables LIM (Base)
+					ldm::procDefineTables_Routes;
+					ldm::procDefineTables_Routes_Time();
+					! Spec Iatly to read the route rules and source-depot
+					uldm::procDefineTablesRules_uldm();
+					
+					! Export to Excel
+					cdl::procWriteToExcel( spExcelFile );
+					
+					dialogmessage( "Excel succesfully exported");
+				}
+				Comment: "Write the generic data to Excel";
+				StringParameter spExcelFile;
+			}
+		}
+		Section TruckType_Flexible {
+			Parameter p01TruckTypeFlexibleActive {
+				Range: binary;
+			}
+			Parameter pTruckTypeLoadingDistanceSave {
+				IndexDomain: (iTruckType,gdm::iProduct);
+			}
+			Parameter pTruckTypeLoadingDistanceProductAverage {
+				IndexDomain: (gdm::iProduct);
+				Definition: {
+					sum(ldm::iTruckType, pTruckTypeLoadingDistanceSave(ldm::iTruckType, gdm::iProduct))
+					/$ count(ldm::iTruckType)
+				}
+			}
+			Parameter pTruckTypeLoadingDistanceProductAverageInput {
+				IndexDomain: (gdm::iProduct);
+			}
+			Parameter pTruckTypeLoadingDistanceAverage {
+				IndexDomain: (ldm::iTruckType, gdm::iProduct);
+				Definition: {
+					if pTruckTypeLoadingDistanceProductAverageInput(gdm::iProduct)<>0 then
+						pTruckTypeLoadingDistanceProductAverageInput(gdm::iProduct)
+					else
+						pTruckTypeLoadingDistanceProductAverage(gdm::iProduct)
+					endif
+				}
+			}
+			Procedure procTruckTypeFlexibleInit {
+				Body: {
+					if p01TruckTypeFlexibleActive = 1 then
+						pTruckTypeLoadingDistanceSave(iTruckType, gdm::iProduct) := pTruckTypeLoadingDistance(iTruckType, gdm::iProduct);
+						pTruckTypeLoadingDistance(iTruckType, gdm::iProduct) := pTruckTypeLoadingDistanceAverage(iTruckType, gdm::iProduct);
+						pageopen("DM_TruckTypeFlexible");
+					else
+						pTruckTypeLoadingDistance(iTruckType, gdm::iProduct) := pTruckTypeLoadingDistanceSave(iTruckType, gdm::iProduct);
+					endif;
+				}
+			}
+		}
+	}
+	Section Distribution_Optimisation_Model {
+		Section Distribution_model {
+			DeclarationSection Customer_Cluster_Declaration {
+				Constraint cCustomerClusterMaterialBalance {
+					IndexDomain: (iCustomerCluster, iTimeIM) | not p01RouteVolumeTransportedForced;
+					Definition: {
+						sum( iRoute | epRouteTo(iRoute)=iCustomerCluster, vRouteVolumeTransported(iRoute, iTimeIM) )
+						=
+						pCustomerClusterLiquidDemand(ldm::iCustomerCluster, ldm::iTimeIM)
+					}
+				}
+			}
+			DeclarationSection Routes_Declaration {
+				Variable vRouteVolumeTransported {
+					IndexDomain: (iRoute, iTimeIM);
+					Range: nonnegative;
+				}
+				Variable vRouteNumberOfTrip {
+					IndexDomain: (iRoute, iTimeIM);
+					Range: nonnegative;
+					Comment: "epCustomerClusterAccessibility(epRouteTo(ldm::iRoute))";
+				}
+				Variable vRouteDistance {
+					IndexDomain: (iRoute, iTimeIM);
+					Range: free;
+				}
+				Variable vRouteTransportCost {
+					IndexDomain: (iRoute, iTimeIM);
+				}
+				Constraint cRouteNumberOfTrip {
+					IndexDomain: (iRoute, iTimeIM);
+					Definition: {
+						vRouteNumberOfTrip(ldm::iRoute, iTimeIM)
+						=
+						vRouteVolumeTransported(ldm::iRoute, iTimeIM)
+						/$
+						pTruckTypeCapacity( epRouteTruckType(ldm::iRoute), epTruckLoadingProduct(epRouteFrom(ldm::iRoute)))
+					}
+				}
+				Constraint cRouteDistance {
+					IndexDomain: (iRoute, iTimeIM);
+					Definition: {
+						vRouteDistance(ldm::iRoute, iTimeIM)
+						=
+						vRouteNumberOfTrip(iRoute, iTimeIM) * pRouteDistance(ldm::iRoute)
+					}
+				}
+				Constraint cRouteAssigned {
+					IndexDomain: (iRoute, iTimeIM) | p01RouteAssigned(iRoute);
+					Definition: {
+						vRouteVolumeTransported(ldm::iRoute, iTimeIM)
+						=
+						pCustomerClusterLiquidDemand(epRouteTo(iRoute), iTimeIM)
+					}
+				}
+				Constraint cRouteRemoved {
+					IndexDomain: (iRoute, iTimeIM) | p01RouteRemoved(iRoute);
+					Definition: vRouteVolumeTransported(iRoute, iTimeIM)=0;
+				}
+				Constraint cRouteForceVolumeTransported {
+					IndexDomain: (ldm::iRoute, iTimeIM) | p01RouteVolumeTransportedForced;
+					Definition: {
+						
+						vRouteVolumeTransported(ldm::iRoute, iTimeIM) = pRouteVolumeTransportedForced(ldm::iRoute, iTimeIM)
+					}
+				}
+				Parameter pRouteAverageDistancePerTrip {
+					IndexDomain: (ldm::iRoute, iTimeIM);
+					Definition: {
+						vRouteDistance(ldm::iRoute, iTimeIM)
+						/$
+						vRouteNumberOfTrip(ldm::iRoute, iTimeIM)
+					}
+				}
+				Parameter pSourceRouteDistance {
+					IndexDomain: (iSource, iTimeIM);
+					Definition: sum(ldm::iRoute | epTruckLoadingSource(epRouteFrom(ldm::iRoute))=iSource, vRouteDistance(ldm::iRoute, iTimeIM) * 2);
+				}
+				Parameter pVolumeTransportedResult {
+					IndexDomain: (ldm::iSource, ldm::iCustomerCluster, gdm::iProduct, ldm::iDispatchZone, ldm::iTruckType, ldm::iTimeIM);
+					Definition: {
+						sum(ldm::iRoute | (
+									epTruckLoadingSource(epRouteFrom(ldm::iRoute)) = ldm::iSource
+									and epRouteTo(ldm::iRoute) = ldm::iCustomerCluster
+									and epRouteProduct(ldm::iRoute) = gdm::iProduct
+									and epCustomerClusterDispatchZone(epRouteTo(ldm::iRoute)) = ldm::iDispatchZone
+									and epRouteTruckType(ldm::iRoute) = ldm::iTruckType
+								 )	
+							, vRouteVolumeTransported(ldm::iRoute, ldm::iTimeIM))
+					}
+				}
+			}
+			DeclarationSection Truckloading_Declaration {
+				Variable vTruckloadingTotalDistance {
+					IndexDomain: (ldm::iTruckLoading, gdm::iproduct, ldm::iTruckType, iTimeIM);
+					Range: free;
+				}
+				Variable vTruckloadingNumberOfShift {
+					IndexDomain: (iTruckLoading, gdm::iproduct, iTruckType, iTimeIM);
+					Range: free;
+				}
+				Parameter pTruckloadingSplitCoefCal {
+					IndexDomain: {
+						(iTruckLoading, gdm::itime, iTimeIM) | ord(gdm::iTime, gdm::calHorizon) < pOrdTimeIMplus1(iTimeIM)
+						and ord(gdm::iTime, gdm::calHorizon) >= ord(iTimeIM, gdm::calHorizon)
+					}
+					Definition: {
+						pTruckloadingCoefSplit(ldm::iTruckLoading, gdm::iTime) * p01TruckloadingOpeningDay(ldm::iTruckLoading, gdm::iTime)
+						/$ sum( gdm::iTime2 | ord(gdm::iTime2, gdm::calHorizon) < pOrdTimeIMplus1(iTimeIM) and ord(gdm::iTime2, gdm::calHorizon) >= ord(iTimeIM, gdm::calHorizon)
+							, pTruckloadingCoefSplit(ldm::iTruckLoading, gdm::iTime2) * p01TruckloadingOpeningDay(ldm::iTruckLoading, gdm::iTime2))
+					}
+				}
+				Constraint cTruckLoadingMaterialBalance {
+					IndexDomain: {
+						(iTruckLoading, gdm::itime, iTimeIM) | ord(gdm::iTime, gdm::calHorizon) < pOrdTimeIMplus1(iTimeIM)
+						and ord(gdm::iTime, gdm::calHorizon) >= ord(iTimeIM, gdm::calHorizon)
+					}
+					Definition: {
+						gom::vOutputFlow(iTruckLoading, gdm::iTime) * gdm::pPeriodInHours
+						=
+						sum( iRoute | epRouteFrom(iRoute)=iTruckLoading, vRouteVolumeTransported(iRoute, iTimeIM) )
+						*
+						pTruckloadingSplitCoefCal(ldm::iTruckLoading, gdm::iTime, ldm::iTimeIM)
+					}
+					Comment: {
+						"old one:
+						sum( iRoute | epRouteFrom(iRoute)=iTruckLoading, vRouteVolumeTransported(iRoute) )
+						=
+						sum( gdm::iTime, gom::vOutputFlow(iTruckLoading, gdm::iTime) * p01TruckloadingOpeningDay(ldm::iTruckLoading, gdm::iTime) * gdm::pPeriodInHours )"
+					}
+				}
+				Constraint cTruckLoadingMaterialBalance2 {
+					IndexDomain: (iTruckLoading, iTimeIM);
+					Definition: {
+						if sum(gdm::iTime | ord(gdm::iTime, gdm::calHorizon) < pOrdTimeIMplus1(iTimeIM)
+							and ord(gdm::iTime, gdm::calHorizon) >= ord(iTimeIM, gdm::calHorizon) , pTruckloadingSplitCoefCal(ldm::iTruckLoading, gdm::iTime, ldm::iTimeIM))=0 then
+						
+							sum( iRoute | epRouteFrom(iRoute)=iTruckLoading, vRouteVolumeTransported(iRoute, iTimeIM) ) = 0
+						else
+							0 = 0
+						endif
+					}
+					Comment: {
+						"old one:
+						sum( iRoute | epRouteFrom(iRoute)=iTruckLoading, vRouteVolumeTransported(iRoute) )
+						=
+						sum( gdm::iTime, gom::vOutputFlow(iTruckLoading, gdm::iTime) * p01TruckloadingOpeningDay(ldm::iTruckLoading, gdm::iTime) * gdm::pPeriodInHours )"
+					}
+				}
+				Constraint cTruckloadingTotalDistance {
+					IndexDomain: (iTruckLoading,gdm::iProduct,iTruckType,iTimeIM) | not p01CalibrationCalculation;
+					Definition: {
+						
+						if epDepotDistanceCalWay = epDistanceDepotSourceInShiftCal then
+							vTruckloadingTotalDistance(iTruckLoading,gdm::iProduct,iTruckType,iTimeIM)
+							=
+							(
+							sum(iRoute | (epRouteFrom(ldm::iRoute) = ldm::iTruckLoading and epRouteTruckType(ldm::iRoute) = ldm::iTruckType and epRouteProduct(ldm::iRoute) = gdm::iproduct),
+								vRouteDistance(ldm::iRoute,iTimeIM) ) * 2
+							)
+							* pDistanceAdjustmentCoefficient
+							+
+							sum(iDepot, vTruckLoadingDepotDistance(ldm::iTruckLoading, ldm::iDepot, gdm::iProduct, ldm::iTruckType, iTimeIM) )
+						
+						else
+							vTruckloadingTotalDistance(iTruckLoading,gdm::iProduct,iTruckType,iTimeIM)
+							=
+							(
+							sum(iRoute | (epRouteFrom(ldm::iRoute) = ldm::iTruckLoading and epRouteTruckType(ldm::iRoute) = ldm::iTruckType and epRouteProduct(ldm::iRoute) = gdm::iproduct),
+								vRouteDistance(ldm::iRoute,iTimeIM) ) * 2
+							)
+							* pDistanceAdjustmentCoefficient
+						
+						endif
+					}
+					Comment: "pDistanceAdjustmentCoefficient is already take into account in the number of shift used to calculate the source depot distance.";
+				}
+				Constraint cTruckloadingNumberOfShift {
+					IndexDomain: (iTruckLoading,gdm::iProduct,iTruckType, iTimeIM);
+					Definition: {
+						
+						vTruckloadingNumberOfShift(iTruckLoading,gdm::iProduct,iTruckType,iTimeIM)
+						=
+						( vTruckloadingTotalDistance(ldm::iTruckLoading, gdm::iProduct, ldm::iTruckType, iTimeIM)
+						  + ( sum(ldm::iRoute | (epRouteFrom(ldm::iRoute)=iTruckLoading and epRouteTruckType(ldm::iRoute)=iTruckType and epRouteProduct(ldm::iRoute)=gdm::iProduct),
+						  			vRouteNumberOfTrip(ldm::iRoute,iTimeIM) * pTruckTypeLoadingDistance(epRouteTruckType(ldm::iRoute), epRouteProduct(ldm::iRoute))) )
+						 )
+						/$
+						pTruckTypeDistancePerShift(ldm::iTruckType, gdm::iProduct)
+						!+vSlackNeg(iTruckLoading,gdm::iProduct,iTruckType)
+					}
+				}
+				Variable vSlackNeg {
+					IndexDomain: (iTruckLoading,gdm::iProduct,iTruckType);
+					Range: nonpositive;
+				}
+				Parameter pTruckloadingLoadingDistance {
+					IndexDomain: (iTruckLoading,gdm::iProduct,iTruckType,iTimeIM);
+					Definition: {
+						( sum(ldm::iRoute | (epRouteFrom(ldm::iRoute)=iTruckLoading and epRouteTruckType(ldm::iRoute)=iTruckType and epRouteProduct(ldm::iRoute)=gdm::iProduct),
+							vRouteNumberOfTrip(ldm::iRoute,iTimeIM) * pTruckTypeLoadingDistance(epRouteTruckType(ldm::iRoute), epRouteProduct(ldm::iRoute))) )
+					}
+				}
+			}
+			DeclarationSection TruckLoading_Depots_Declaration {
+				Variable vTruckLoadingDepotNumberOfShift {
+					IndexDomain: (iTruckLoading, iDepot, gdm::iproduct, iTruckType, iTimeIM) | p01UseDepot;
+					Range: nonnegative;
+				}
+				Variable vTruckLoadingDepotDistance {
+					IndexDomain: (ldm::iTruckLoading, ldm::iDepot, gdm::iproduct, ldm::iTruckType, iTimeIM) | p01UseDepot;
+					Range: free;
+				}
+				Constraint cTruckloadingDepotMaterialBalance1 {
+					IndexDomain: (iTruckLoading, gdm::iproduct, iTruckType, iTimeIM) | p01UseDepot and not p01TruckTypeFlexibleActive;
+					Definition: {
+						
+						sum( ldm::iDepot,
+							vTruckLoadingDepotNumberOfShift(ldm::iTruckLoading, ldm::iDepot, gdm::iProduct, ldm::iTruckType, iTimeIM)
+						 	* p01SourceDepotTruckTypeActive(epTruckLoadingSource(ldm::iTruckLoading), ldm::iDepot, ldm::iTruckType, gdm::iProduct, iTimeIM)
+						   )
+						=
+						vTruckloadingNumberOfShift(ldm::iTruckLoading, gdm::iProduct, ldm::iTruckType, iTimeIM)
+						!+vSlackNeg(iTruckLoading,gdm::iProduct,iTruckType)
+					}
+				}
+				Constraint cTruckloadingDepotMaterialBalance2 {
+					IndexDomain: (ldm::iTruckLoading, ldm::iDepot, gdm::iproduct, ldm::iTruckType, iTimeIM) | p01UseDepot;
+					Definition: {
+						
+						vTruckLoadingDepotNumberOfShift(ldm::iTruckLoading, ldm::iDepot, gdm::iProduct, ldm::iTruckType, iTimeIM)
+						<=
+						p01SourceDepotTruckTypeActive(epTruckLoadingSource(ldm::iTruckLoading), ldm::iDepot, ldm::iTruckType, gdm::iProduct, iTimeIM) * 999999
+					}
+				}
+				Constraint cTruckLoadingDepotDistance {
+					IndexDomain: (ldm::iTruckLoading, ldm::iDepot, gdm::iproduct, ldm::iTruckType, iTimeIM) | p01UseDepot;
+					Definition: {
+						if epDepotDistanceCalWay = epWithoutDistanceDepotSource then
+							vTruckLoadingDepotDistance(ldm::iTruckLoading, ldm::iDepot, gdm::iproduct, ldm::iTruckType, iTimeIM)
+							=
+							vTruckLoadingDepotNumberOfShift(ldm::iTruckLoading, ldm::iDepot, gdm::iProduct, ldm::iTruckType, iTimeIM)
+							*
+							pSourceDepotDistance(epTruckLoadingSource(ldm::iTruckLoading), ldm::iDepot) / 100 ! Divide the distance depot source to reduce the impact of this distance on the objective function compare with the distance of the route to allow the use of truck from a depot.
+						
+						else
+							vTruckLoadingDepotDistance(ldm::iTruckLoading, ldm::iDepot, gdm::iproduct, ldm::iTruckType, iTimeIM)
+							=
+							vTruckLoadingDepotNumberOfShift(ldm::iTruckLoading, ldm::iDepot, gdm::iProduct, ldm::iTruckType, iTimeIM)
+							*
+							pSourceDepotDistance(epTruckLoadingSource(ldm::iTruckLoading), ldm::iDepot)
+						endif
+					}
+				}
+				Parameter pTestMatBal {
+					IndexDomain: (iTruckLoading, gdm::iproduct, iTruckType, iTimeIM);
+					Definition: {
+						sum( ldm::iDepot,
+							vTruckLoadingDepotNumberOfShift(ldm::iTruckLoading, ldm::iDepot, gdm::iProduct, ldm::iTruckType, iTimeIM)
+						 	* p01SourceDepotTruckTypeActive(epTruckLoadingSource(ldm::iTruckLoading), ldm::iDepot, ldm::iTruckType, gdm::iProduct, iTimeIM)
+						   )
+					}
+				}
+				Variable vTruckLoadingDepotNumberOfShiftFlex {
+					IndexDomain: (iTruckLoading,iDepot,gdm::iProduct,iTruckType1,iTruckType2,iTimeIM) | p01UseDepot and p01TruckTypeFlexibleActive;
+					Range: nonnegative;
+				}
+				Constraint cTruckloadingDepotMaterialBalance1Flex {
+					IndexDomain: (iTruckLoading, gdm::iProduct, iTruckType1, iTimeIM) | p01UseDepot and p01TruckTypeFlexibleActive;
+					Definition: {
+						
+						sum( (ldm::iDepot, ldm::iTruckType2) | pTruckTypeCapacity(ldm::iTruckType2, gdm::iProduct)<=pTruckTypeCapacity(ldm::iTruckType1, gdm::iProduct),
+							vTruckLoadingDepotNumberOfShiftFlex(ldm::iTruckLoading, ldm::iDepot, gdm::iProduct, ldm::iTruckType1, ldm::iTruckType2, ldm::iTimeIM)
+							* pTruckTypeCapacity(ldm::iTruckType2, gdm::iProduct) /$ pTruckTypeCapacity(ldm::iTruckType1, gdm::iProduct)
+							* pTruckTypeDistancePerShift(ldm::iTruckType2, gdm::iProduct) /$ pTruckTypeDistancePerShift(ldm::iTruckType1, gdm::iProduct)
+						 	* p01SourceDepotTruckTypeActive(epTruckLoadingSource(ldm::iTruckLoading), ldm::iDepot, ldm::iTruckType1, gdm::iProduct, iTimeIM)
+						   )
+						=
+						vTruckloadingNumberOfShift(ldm::iTruckLoading, gdm::iProduct, ldm::iTruckType1, iTimeIM)
+						!+vSlackNeg(iTruckLoading,gdm::iProduct,iTruckType)
+					}
+				}
+				Constraint cTruckloadingDepotFlexLink {
+					IndexDomain: (iTruckLoading,iDepot,gdm::iProduct,iTruckType,iTimeIM) | p01UseDepot and p01TruckTypeFlexibleActive;
+					Definition: {
+						vTruckLoadingDepotNumberOfShift(ldm::iTruckLoading, ldm::iDepot, gdm::iProduct, ldm::iTruckType, ldm::iTimeIM)
+						=
+						sum(ldm::iTruckType1,
+							vTruckLoadingDepotNumberOfShiftFlex(ldm::iTruckLoading, ldm::iDepot, gdm::iProduct, ldm::iTruckType1, ldm::iTruckType, ldm::iTimeIM)
+							)
+					}
+				}
+			}
+			DeclarationSection Depot_Declaration {
+				Variable vDepotExtraShiftCost {
+					IndexDomain: (iDepot, iTimeIM);
+					Range: free;
+				}
+				Constraint cDepotCapacityTrailer {
+					IndexDomain: (iDepot, iTruckType, gdm::iProduct, iTimeIM) | p01UseDepot;
+					Definition: {
+						
+						sum( ldm::iTruckLoading, vTruckLoadingDepotNumberOfShift(ldm::iTruckLoading, ldm::iDepot, gdm::iProduct, ldm::iTruckType, iTimeIM) )
+						<=
+						pDepotTruckTypeNumber(ldm::iDepot, ldm::iTruckType, gdm::iProduct, iTimeIM) * pDepotTruckTypeNumberShift(ldm::iDepot, ldm::iTruckType, gdm::iProduct, iTimeIM)
+						+
+						vSlackTrailerCapacity(ldm::iDepot, ldm::iTruckType, gdm::iProduct, ldm::iTimeIM)
+					}
+				}
+				Constraint cDepotCapacityDriver {
+					IndexDomain: (iDepot, iTimeIM) | p01UseDepot;
+					Definition: {
+						sum( (ldm::iTruckLoading, gdm::iProduct, ldm::iTruckType), vTruckLoadingDepotNumberOfShift(ldm::iTruckLoading, ldm::iDepot, gdm::iProduct, ldm::iTruckType, iTimeIM) )
+						<=
+						pDepotNumberDriver(ldm::iDepot, iTimeIM) * pDepotNumberShift(ldm::iDepot, iTimeIM)
+						+
+						vSlackDriverCapacity(ldm::iDepot, ldm::iTimeIM)
+					}
+				}
+				Constraint cDepotExtraCost {
+					IndexDomain: (iDepot, iTimeIM);
+					Definition: {
+						vDepotExtraShiftCost(ldm::iDepot, iTimeIM)
+						=
+						sum((ldm::iTruckLoading, gdm::iProduct, ldm::iTruckType), vTruckLoadingDepotNumberOfShift(ldm::iTruckLoading, ldm::iDepot, gdm::iProduct, ldm::iTruckType, iTimeIM))
+						*
+						pDepotShiftExtraCost(ldm::iDepot, iTimeIM)
+					}
+				}
+				Parameter pDepotDistanceTruckType {
+					IndexDomain: (ldm::iTruckLoading, ldm::iDepot, gdm::iProduct, ldm::iTruckType, iTimeIM);
+					Definition: {
+						!sum(ldm::iTruckLoading ,
+							vTruckLoadingDepotNumberOfShift(ldm::iTruckLoading, ldm::iDepot, gdm::iProduct, ldm::iTruckType, iTimeIM) * pTruckTypeDistancePerShift(ldm::iTruckType, gdm::iProduct)
+							- ( sum(ldm::iRoute | (epRouteFrom(ldm::iRoute)=iTruckLoading and epRouteTruckType(ldm::iRoute)=iTruckType and epRouteProduct(ldm::iRoute)=gdm::iProduct),
+								vRouteNumberOfTrip(ldm::iRoute, iTimeIM) * pTruckTypeLoadingDistance(epRouteTruckType(ldm::iRoute), epRouteProduct(ldm::iRoute))) )
+									* vTruckLoadingDepotNumberOfShift(ldm::iTruckLoading, ldm::iDepot, gdm::iProduct, ldm::iTruckType, iTimeIM)
+									/$ sum(ldm::iDepot2, vTruckLoadingDepotNumberOfShift(ldm::iTruckLoading, ldm::iDepot2, gdm::iProduct, ldm::iTruckType, iTimeIM))
+						!	)
+					}
+				}
+				Variable vSlackTrailerCapacity {
+					IndexDomain: (iDepot, iTruckType, gdm::iProduct, iTimeIM) | p01AllowSlackDepotCapacity;
+					Range: nonnegative;
+				}
+				Variable vSlackDriverCapacity {
+					IndexDomain: (iDepot, iTimeIM) | p01AllowSlackDepotCapacity;
+					Range: nonnegative;
+				}
+				Parameter p01AllowSlackDepotCapacity;
+				Parameter pSlackDepotCapacityPenalty {
+					InitialData: 10;
+				}
+			}
+			DeclarationSection TruckType_Declaration {
+				Variable vTruckTypeTotalDistance {
+					IndexDomain: ( ldm::iTruckType, gdm::iProduct, iTimeIM);
+					Range: nonnegative;
+					Comment: {
+						"!sum(iRoute, vDistanceRoute(ldm::iRoute)*2)
+						!+ sum((ldm::iTruckLoading, ldm::iDepot), vDistanceSourceDepot(ldm::iTruckLoading, ldm::iDepot))"
+					}
+				}
+				Variable vTruckTypeTotalTransportCost {
+					IndexDomain: (ldm::iTruckType, gdm::iProduct, iTimeIM);
+				}
+				Constraint cTruckTypeTotalDistance {
+					IndexDomain: (iTruckType,gdm::iProduct,iTimeIM);
+					Definition: {
+						if epDepotDistanceCalWay = epDistanceDepotSourceInShiftCal then
+							vTruckTypeTotalDistance(iTruckType,gdm::iProduct,iTimeIM)
+							=
+							sum(ldm::iTruckLoading,
+								vTruckloadingTotalDistance(ldm::iTruckLoading, gdm::iProduct, ldm::iTruckType, iTimeIM))
+						
+						else
+							vTruckTypeTotalDistance(iTruckType,gdm::iProduct,iTimeIM)
+							=
+							sum(ldm::iTruckLoading,
+								vTruckloadingTotalDistance(ldm::iTruckLoading, gdm::iProduct, ldm::iTruckType, iTimeIM))
+							+
+							sum((ldm::iTruckLoading, iDepot), vTruckLoadingDepotDistance(ldm::iTruckLoading, ldm::iDepot, gdm::iProduct, ldm::iTruckType, iTimeIM) )
+							! * pDistanceAdjustmentCoefficient
+						
+						endif
+					}
+					Comment: "pDistanceAdjustmentCoefficient is already take into account in the number of shift used to calculate the source depot distance.";
+				}
+				Constraint cTruckTypeTotalTransportCost {
+					IndexDomain: (iTruckType,gdm::iProduct,iTimeIM);
+					Definition: {
+						
+						vTruckTypeTotalTransportCost(iTruckType,gdm::iProduct,iTimeIM)
+						=
+						vTruckTypeTotalDistance(ldm::iTruckType, gdm::iProduct,iTimeIM)
+						*
+						pTruckTypeTransportCost(ldm::iTruckType, gdm::iProduct)
+					}
+				}
+				Parameter pDistancePeriod {
+					IndexDomain: iTimeIM;
+					Definition: {
+						if sum((ldm::iDepot, ldm::iTruckType, gdm::iProduct), pDepotTruckTypeTransportCost(ldm::iDepot, ldm::iTruckType, gdm::iProduct, iTimeIM)) = 0 then 
+							! Total Distance / TruckType
+							sum( (gdm::iProduct, ldm::iTruckType),
+								vTruckTypeTotalDistance(ldm::iTruckType, gdm::iProduct, iTimeIM) )
+						else
+							! Total Distance per Depot / Product / Trucktype => cost mode2
+							sum((ldm::iDepot, ldm::iTruckType, gdm::iProduct),
+								vDepotTruckTypeTotalDistance(ldm::iDepot, ldm::iTruckType, gdm::iProduct, ldm::iTimeIM) )
+						endif
+					}
+				}
+				Parameter pTransportCostPeriod {
+					IndexDomain: iTimeIM;
+					Definition: {
+						! Transport cost
+						if sum((ldm::iDepot, ldm::iTruckType, gdm::iProduct), pDepotTruckTypeTransportCost(ldm::iDepot, ldm::iTruckType, gdm::iProduct, iTimeIM)) = 0 then 
+							! Transport cost per Product / TruckType
+							sum((gdm::iProduct, ldm::iTruckType),
+								vTruckTypeTotalTransportCost(ldm::iTruckType, gdm::iProduct, iTimeIM))
+						else
+							! Transport cost per Depot / Product / Trucktype
+							sum((ldm::iDepot, ldm::iTruckType, gdm::iProduct),
+								vDepotTruckTypeTotalTransportCost(ldm::iDepot, ldm::iTruckType, gdm::iProduct, iTimeIM))
+						endif	
+						+
+						! Shift Extra cost per depot 
+						sum(iDepot, vDepotExtraShiftCost(ldm::iDepot, iTimeIM))
+					}
+				}
+			}
+			DeclarationSection Depot_TruckType_Declaration {
+				Variable vDepotTruckTypeTotalDistance {
+					IndexDomain: (ldm::iDepot, ldm::iTruckType, gdm::iProduct,iTimeIM);
+					Range: nonnegative;
+					Comment: {
+						"WARNING : This distance include the loading_distance
+						 Transport cost per Depot / Product / Trucktype => cost mode2"
+					}
+				}
+				Variable vDepotTruckTypeTotalTransportCost {
+					IndexDomain: (ldm::iDepot, ldm::iTruckType, gdm::iProduct, iTimeIM);
+					Comment: " Transport cost per Depot / Product / Trucktype => cost mode2";
+				}
+				Constraint cDepotTruckTypeTotalDistance {
+					IndexDomain: (iDepot, iTruckType, gdm::iProduct, iTimeIM);
+					Definition: {
+						
+						vDepotTruckTypeTotalDistance(ldm::iDepot, ldm::iTruckType, gdm::iProduct, iTimeIM)
+						=
+						sum( ldm::iTruckLoading, vTruckLoadingDepotNumberOfShift(ldm::iTruckLoading, ldm::iDepot, gdm::iProduct, ldm::iTruckType, iTimeIM) )
+						*
+						pTruckTypeDistancePerShift(ldm::iTruckType, gdm::iProduct)
+						+
+						sum((ldm::iTruckLoading), vTruckLoadingDepotDistance(ldm::iTruckLoading, ldm::iDepot, gdm::iProduct, ldm::iTruckType, iTimeIM) )
+						!* pDistanceAdjustmentCoefficient
+					}
+					Comment: {
+						" Transport cost per Depot / Product / Trucktype => cost mode2
+						 pDistanceAdjustmentCoefficient is already take into account in the number of shift used to calculate the source depot distance."
+					}
+				}
+				Constraint cDepotTruckTypeTotalTransportCost {
+					IndexDomain: (iDepot, iTruckType, gdm::iProduct, iTimeIM);
+					Definition: {
+						
+						vDepotTruckTypeTotalTransportCost(ldm::iDepot, ldm::iTruckType, gdm::iProduct, iTimeIM)
+						=
+						vDepotTruckTypeTotalDistance(ldm::iDepot, ldm::iTruckType, gdm::iProduct, iTimeIM)
+						*
+						pDepotTruckTypeTransportCost(ldm::iDepot, ldm::iTruckType, gdm::iProduct, iTimeIM)
+					}
+					Comment: " Transport cost per Depot / Product / Trucktype => cost mode2";
+				}
+			}
+			DeclarationSection Externalsource_Declaration {
+				Variable v01InputFlowNode {
+					IndexDomain: (gdm::iInputFlowNode, gdm::iTime);
+					Range: binary;
+				}
+				Variable v01OutputFlowNode {
+					IndexDomain: (gdm::iOutputFlowNode,gdm::iTime);
+					Range: binary;
+				}
+				Constraint c01ExternalsourceInputflow {
+					IndexDomain: (ldm::iExternalsourceTank, gdm::itime) | gdm::itime in sTimeIM and gdm::iTime <> gdm::epFirstTimeUnit;
+					Definition: {
+						
+						gom::vInputFlowVariable(epInOutputFlowNodeExternalsourceTankInit(ldm::iExternalsourceTank), gdm::iTime)
+						<=
+						v01InputFlowNode(epInOutputFlowNodeExternalsourceTankInit(ldm::iExternalsourceTank), gdm::iTime)
+						* gdm::pInputFlowNodeMaxFlow(epInOutputFlowNodeExternalsourceTankInit(ldm::iExternalsourceTank), gdm::iTime)
+					}
+				}
+				Constraint c01ExternalsourceOutputflow {
+					IndexDomain: (ldm::iExternalsourceTank, gdm::itime) | gdm::itime in sTimeIM and gdm::iTime <> gdm::epFirstTimeUnit;
+					Definition: {
+						
+						gom::vOutputFlowVariable(epInOutputFlowNodeExternalsourceTankInit(ldm::iExternalsourceTank), gdm::iTime)
+						<=
+						v01OutputFlowNode(epInOutputFlowNodeExternalsourceTankInit(ldm::iExternalsourceTank), gdm::iTime)
+						* gdm::pOutputFlowNodeMaxFlow(epInOutputFlowNodeExternalsourceTankInit(ldm::iExternalsourceTank), gdm::iTime)
+					}
+				}
+				Constraint cExternalsourceInputFlowOrOutputFlow {
+					IndexDomain: (ldm::iExternalsourceTank, gdm::itime) | gdm::itime in sTimeIM and gdm::iTime <> gdm::epFirstTimeUnit;
+					Definition: {
+						v01InputFlowNode(epInOutputFlowNodeExternalsourceTankInit(ldm::iExternalsourceTank), gdm::iTime)
+						+
+						v01OutputFlowNode(epInOutputFlowNodeExternalsourceTankInit(ldm::iExternalsourceTank), gdm::iTime)
+						<=
+						1
+					}
+				}
+				Constraint cExternalsourceInitialLevel1 {
+					IndexDomain: (ldm::iExternalsourceTank, gdm::itime, iTimeIM) | gdm::itime = iTimeIM and gdm::iTime <> gdm::epFirstTimeUnit;
+					Definition: {
+						( gom::vInputFlowVariable(epInOutputFlowNodeExternalsourceTankInit(ldm::iExternalsourceTank), gdm::iTime)
+						  - gom::vOutputFlowVariable(epInOutputFlowNodeExternalsourceTankInit(ldm::iExternalsourceTank), gdm::iTime)
+						) * gdm::pPeriodInHours
+						=
+						pExternalsourceTankInitialLevel(ldm::iExternalsourceTank, ldm::iTimeIM)
+						-
+						gom::vTankLevel(ldm::iExternalsourceTank, gdm::iTime-1) /$ gdm::pLiquidMassToVolumeUnits(gdm::epTankLiquidProduct(ldm::iExternalsourceTank))
+					}
+				}
+				Constraint cExternalsourceInitialLevel2 {
+					IndexDomain: (ldm::iExternalsourceTank, gdm::itime) | gdm::itime in (gdm::calHorizon-sTimeIM) or gdm::iTime = gdm::epFirstTimeUnit;
+					Definition: {
+						gom::vInputFlowVariable(epInOutputFlowNodeExternalsourceTankInit(ldm::iExternalsourceTank), gdm::iTime) 
+						=
+						0
+					}
+				}
+				Constraint cExternalsourceInitialLevel3 {
+					IndexDomain: (ldm::iExternalsourceTank, gdm::itime) | gdm::itime in (gdm::calHorizon-sTimeIM) or gdm::iTime = gdm::epFirstTimeUnit;
+					Definition: {
+						gom::vOutputFlowVariable(epInOutputFlowNodeExternalsourceTankInit(ldm::iExternalsourceTank), gdm::iTime) 
+						=
+						0
+					}
+				}
+				Variable vExternalsourceCost {
+					IndexDomain: iTimeIM;
+					Definition: {
+						sum( ldm::iExternalsourceTank, 
+							(-gom::vTankLevel( ldm::iExternalsourceTank,  element(gdm::calHorizon, pOrdTimeIMplus1(ldm::iTimeIM) - 1)) /$ gdm::pLiquidMassToVolumeUnits(gdm::epTankLiquidProduct(ldm::iExternalsourceTank))
+							 + pExternalsourceTankInitialLevel(ldm::iExternalsourceTank, ldm::iTimeIM))
+							 * pExternalsourceTankCost(ldm::iExternalsourceTank, iTimeIM)
+						)
+					}
+					Comment: "Not used";
+				}
+				Constraint cExternalsourceTakeorPayTankLevel {
+					IndexDomain: (ldm::iExternalsourceTank, iTimeIM) | epSourceType(gdm::epNodeSite(ldm::iExternalsourceTank)) = epExternalSource and gdm::p01TankFlashSpecificEquation(ldm::iExternalsourceTank);
+					Definition: {
+						pExternalsourceTankInitialLevel(ldm::iExternalsourceTank, ldm::iTimeIM)
+						-
+						gom::vTankLevel(ldm::iExternalsourceTank, element(gdm::calHorizon, pOrdTimeIMplus1(ldm::iTimeIM) - 1)) /$ gdm::pLiquidMassToVolumeUnits(gdm::epTankLiquidProduct(ldm::iExternalsourceTank))
+						>=
+						pExternalsourceTankTakeOrPayQuantity(ldm::iExternalsourceTank, iTimeIM)
+					}
+				}
+				Parameter pExternalsourceTakeorPayCost {
+					IndexDomain: (iExternalsourceTank, iTimeIM);
+					Range: free;
+					Definition: {
+						
+						sum(gdm::iTime | ord(gdm::iTime, gdm::calHorizon) < pOrdTimeIMplus1(ldm::iTimeIM) and ord(gdm::iTime, gdm::calHorizon) >= ord(iTimeIM, gdm::calHorizon),
+							gom::vFlashTank(iExternalsourceTank, gdm::iTime) * pExternalsourceTankCost(iExternalsourceTank, iTimeIM) )
+					}
+				}
+				Parameter pTestTankCal {
+					IndexDomain: (ldm::iExternalsourceTank, iTimeIM);
+					Definition: {
+						pExternalsourceTankInitialLevel(ldm::iExternalsourceTank, ldm::iTimeIM)
+						-
+						gom::vTankLevel(ldm::iExternalsourceTank, element(gdm::calHorizon, pOrdTimeIMplus1(ldm::iTimeIM) - 1)) /$ gdm::pLiquidMassToVolumeUnits(gdm::epTankLiquidProduct(ldm::iExternalsourceTank))
+					}
+					Comment: " | epSourceType(gdm::epNodeSite(gdm::iTankNode)) = epExternalSource and gdm::p01TankFlashSpecificEquation(gdm::iTankNode)";
+				}
+				Parameter ptestInputFlow {
+					IndexDomain: (ldm::iExternalsourceTank, gdm::itime, iTimeIM) | gdm::itime = iTimeIM;
+					Definition: {
+						pExternalsourceTankInitialLevel(ldm::iExternalsourceTank, ldm::iTimeIM)
+						-
+						gom::vTankLevel(ldm::iExternalsourceTank, gdm::iTime-1) /$ gdm::pLiquidMassToVolumeUnits(gdm::epTankLiquidProduct(ldm::iExternalsourceTank))
+					}
+				}
+			}
+		}
+		DeclarationSection Objective_function {
+			Variable vObjective_LIM {
+				Range: free;
+				Definition: {
+					uom::vUserObjective
+					+
+					vObjective_IM
+					-
+					sum((iTruckLoading,gdm::iProduct,iTruckType), vSlackNeg(ldm::iTruckLoading, gdm::iProduct, ldm::iTruckType)) * 1000
+				}
+			}
+			Variable vObjective_IM {
+				Range: free;
+				Definition: {
+					! For normal use
+					vObjective_IM_Std
+					+
+					! For Calibration calculation
+					vObjective_IM_Forced
+				}
+			}
+			Variable vObjective_IM_Std {
+				IndexDomain: | not p01CalibrationCalculation;
+				Range: free;
+				Definition: {
+					
+					! Transport cost
+					if sum((ldm::iDepot, ldm::iTruckType, gdm::iProduct, iTimeIM), pDepotTruckTypeTransportCost(ldm::iDepot, ldm::iTruckType, gdm::iProduct, iTimeIM)) = 0 then 
+						! Transport cost per Product / TruckType
+						sum((gdm::iProduct, ldm::iTruckType, iTimeIM),
+							vTruckTypeTotalTransportCost(ldm::iTruckType, gdm::iProduct, iTimeIM))
+					else
+						! Transport cost per Depot / Product / Trucktype => cost mode2
+						sum((ldm::iDepot, ldm::iTruckType, gdm::iProduct, iTimeIM),
+							vDepotTruckTypeTotalTransportCost(ldm::iDepot, ldm::iTruckType, gdm::iProduct, iTimeIM))
+					endif	
+					+
+					! Shift Extra cost per depot 
+					sum((iDepot, iTimeIM), vDepotExtraShiftCost(ldm::iDepot, iTimeIM))
+					+
+					! Product Externalsource cost
+					sum(iTimeIM, vExternalsourceCost(iTimeIM))
+					+
+					! Slack Capacity Depot cost
+					( sum((ldm::iDepot, ldm::iTruckType, gdm::iProduct, ldm::iTimeIM), vSlackTrailerCapacity(ldm::iDepot, ldm::iTruckType, gdm::iProduct, ldm::iTimeIM))
+					  +
+					  sum((ldm::iDepot, ldm::iTimeIM), vSlackDriverCapacity(ldm::iDepot, ldm::iTimeIM))
+					) * pSlackDepotCapacityPenalty
+				}
+			}
+			Parameter pExternalsourceCostTotal {
+				Definition: sum(ldm::iTimeIM, vExternalsourceCost(ldm::iTimeIM));
+			}
+			Parameter pTransportCostTotal {
+				Definition: sum(ldm::iTimeIM, pTransportCostPeriod(ldm::iTimeIM));
+			}
+			Parameter pSlackDepotCost {
+				Definition: {
+					( sum((ldm::iDepot, ldm::iTruckType, gdm::iProduct, ldm::iTimeIM), vSlackTrailerCapacity(ldm::iDepot, ldm::iTruckType, gdm::iProduct, ldm::iTimeIM))
+					  +
+					  sum((ldm::iDepot, ldm::iTimeIM), vSlackDriverCapacity(ldm::iDepot, ldm::iTimeIM))
+					) * pSlackDepotCapacityPenalty
+				}
+			}
+			Parameter pDistanceTotal {
+				Definition: sum(ldm::iTimeIM, pDistancePeriod(ldm::iTimeIM));
+			}
+		}
+		DeclarationSection mathematical_program {
+			MathematicalProgram mpLinearModel_ldm {
+				Objective: vObjective_LIM;
+				Direction: minimize;
+				Constraints: lom::sMPConstraints_Linear;
+				Variables: lom::sMPVariables_Linear;
+				Type: Automatic;
+			}
+		}
+		Section Solve_procedures {
+			StringParameter spLinearSolveTerminationInfo {
+				Definition: {
+					"\n Solver Status : " + ldm::mpLinearModel_ldm.SolverStatus
+					+ "\n Program Status : " + ldm::mpLinearModel_ldm.ProgramStatus 
+					+ "\n Solution Time : " + round(ldm::mpLinearModel_ldm.SolutionTime,3)
+					!+ "\n Objectif : " + round(ldm::mpLinearModel_ldm.Objective)
+					!+ " - Incumbent : " + round(ldm::mpLinearModel_ldm.Incumbent)
+					+ "\n Best Bound : " + round(ldm::mpLinearModel_ldm.BestBound)
+					+ " - Gap : " + round((ldm::mpLinearModel_ldm.Incumbent - ldm::mpLinearModel_ldm.BestBound) /$ ldm::mpLinearModel_ldm.Incumbent * 100,2) + "%"
+				}
+			}
+			StringParameter spLinearSolveTerminationInfoSave;
+			Procedure procSolveLinearModel_ldm {
+				Body: {
+					if p01ApplicationIsOnAimmsPro then
+						pro::ManagedSessionRemoveFromCaseIdentifierSet := {};
+					
+						!Delegate the execution of the procedure to the server
+						if pro::DelegateToServer( 
+						waitForCompletion: 1,
+						completionCallback: 'pro::session::LoadResultsCallback',
+						priorityAdjustment: 0,
+						timeOut: 600000
+						) 
+						then
+						return 1;
+						endif ;
+					endif;
+					
+					udm::procCheckData_udm;
+					if gom::procCheckSevereErrors() = 1  then
+					
+						!Configure math program 
+						ldm::procConfigureMathProgram_ldm();
+					
+						!Solve
+					        BLOCK
+					                epGMP := GMP::Instance::Generate( ldm::mpLinearModel_ldm );
+					                gom::procSolve( epGMP, 0, splProgramStatus );
+					        ONERROR epError
+					        DO
+					                spErrorString := errh::Message(epError);
+					                if( errh::Severity( epError ) = 'Warning' )
+					                then
+					                !It is a warning, mark it as handled and return.
+					                	errh::MarkAsHandled( epError );
+					                else
+					                	log_message::procLogInfo("",formatstring( "Solver failed for linear model: %s", spErrorString));
+					                	errh::MarkAsHandled( epError );	
+					                	return 0;
+					                endif;
+					        ENDBLOCK;
+					
+					        gdm::procLogSlackAllowed("Variant"); !log slack allowed
+					        log_message::procLogInfo("",formatstring( "Program status for linear model: %s", splProgramStatus));
+					
+					        !Copy objective values to parameters
+					        !lom::pObjectiveCost:= gom::vObjectiveCost;
+					        lom::pObjective_lom := uom::vUserObjective;
+					
+					        ! Initialized missing variables
+					        gom::vRectificationPower.level(gdm::iColdbox,gdm::iTime) := lom::pRectificationPowerLinear(gdm::iColdbox,gdm::iTime);
+					        gom::vO2Recovery.level(gdm::iColdbox,gdm::iTime)  := lom::pO2RecoveryLinear(gdm::iColdbox,gdm::iTime);
+					        gom::vArRecovery.level(gdm::iColdbox,gdm::iTime)  := lom::pArRecoveryLinear(gdm::iColdbox,gdm::iTime);
+					
+						ulom::epProgramStatus_ulom := (GMP::Solution::GetProgramStatus( epGMP, 1 ));
+						ulom::pTimeUsed_ulom := (GMP::Solution::GetTimeUsed( epGMP, 1 ));
+						ulom::pGap_ulom :=( abs( ulom::mpUserLinearModel.Incumbent - ulom::mpUserLinearModel.bestbound ) / $abs( ulom::mpUserLinearModel.Incumbent ) ) * 100;
+						spLinearSolveTerminationInfoSave := spLinearSolveTerminationInfo;
+					
+						return 1;
+					else
+						return 0;
+					endif;
+				}
+				ElementParameter epGMP {
+					Range: AllGeneratedMathematicalPrograms;
+				}
+				StringParameter splProgramStatus;
+				StringParameter spErrorString;
+				ElementParameter epError {
+					Range: errh::PendingErrors;
+				}
+			}
+			Section Config_declaration {
+				Set sMPConstraintsExcluded_ldm {
+					SubsetOf: AllConstraints;
+					Definition: {
+						{}
+					}
+				}
+				Set sMPVariablesExcluded_ldm {
+					SubsetOf: AllVariables;
+				}
+			}
+			Section Config_procedures {
+				Procedure procConfigureMathProgram_ldm {
+					Body: {
+						/****
+						This procedure is called before any solve and it configures 
+						the mathematical program by setting the correct elements in 
+						the sets, i.e. it defines the set of
+						- Constraints
+						- Variables
+						... other
+						****/
+						
+						!set definitions of p01 for linear or non-linear constraints all to 1 for linear model
+						gdm::p01BoxLinearEquationModel( gdm::iBox ) := 1;
+						gdm::p01CompressorLinearEquationModel( gdm::iCompressorArc ) := 1;
+						gdm::p01LiquefierLinearEquationModel( gdm::iLiquefierArc ) := 1;
+						gdm::p01PipeLinearEquationModel( gdm::iPipeArc ) := 1;
+						gdm::p01ValveLinearEquationModel( gdm::iValveArc ) := 1;
+						
+						!Set definitions of constraint and variables sets
+						lom::sMPConstraints_Linear := 
+						    {IndexConstraints|IndexConstraints in (LinearOptimizationModel or UserLinearOptimizationModel) }
+						    + {IndexConstraints|IndexConstraints in (GeneralOptimizationModel or USEROptimizationModel)}
+						    + {IndexConstraints|IndexConstraints in (LimDistributionModel)}
+						    - {IndexNonLinearConstraints|IndexNonLinearConstraints in (GeneralOptimizationModel or USEROptimizationModel)}
+						    ! List here all linaer constraints from uomm that should not be taken into account
+						    - lom::sMPConstraintsExcluded_lom
+						    - ulom::sMPConstraintsExcluded_ulom
+						    - ldm::sMPConstraintsExcluded_ldm;
+						
+						lom::sMPVariables_Linear :=
+						    {IndexVariables|IndexVariables in (LinearOptimizationModel or UserLinearOptimizationModel)}
+						    + {IndexVariables|IndexVariables in (GeneralOptimizationModel or USEROptimizationModel)}
+						    + {IndexVariables|IndexVariables in (LimDistributionModel)}
+						    - lom::sMPVariablesExcluded_lom
+						    - ulom::sMPVariablesExcluded_ulom
+						    - ldm::sMPVariablesExcluded_ldm;
+						
+						!Set definitions of other sets
+						uom::procNodeSetsDefinition_uom();
+						
+						! Call procedure to initialize pAccuBufferInitial and pAccuPipeBufferInitial based on initial pressures
+						gom::procInitializeAccuBuffers();
+						
+						! Fix unnecessary flow variables based on data
+						gom::procFixFlowVariablesFromData();
+						lom::procFixBinariesFromData_lom();
+						
+						! Fix user specific variables
+						uom::procFixUserSpecificVariables_uom();
+						ulom::procFixUserSpecificVariables_ulom();
+					}
+				}
+			}
+			Section Configuration;
+		}
+	}
+	Procedure procEmptyAllData_ldm {
+		Body: {
+			empty Distribution_Data_Manager;
+			empty Distance_Coefficient_Calibration;
+			!uldm::procEmpty_UserIM_DataModel();
+			udm::procEmptyAllData_udm();
+			uom::procClear_uom();
+		}
+	}
+	Procedure procEmpty_IM_DataModel {
+		Body: {
+			gdm::sNodes := gdm::sNodes - sExternalsourceTanks;
+			gdm::sNodes := gdm::sNodes - sTruckloadings;
+			gdm::sNodes := gdm::sNodes - sNodeInOutputFlow_InitTank;
+			
+			empty Distribution_Data_Manager;
+			empty Distance_Coefficient_Calibration;
+			!uldm::procEmpty_UserIM_DataModel();
+		}
+	}
+	Procedure procEmptyIMData {
+		Body: {
+			empty Distribution_Data_Manager;
+		}
+	}
+	Section Distance_Coefficient_Calibration {
+		Procedure procRead_IM_ExcelFileDistanceCalibration {
+			Body: {
+				! Read the Excel File of IM with the automatic generation of the CE table and cross table
+				procReadFromExcelButtonDistanceCalibration();
+				! Check the data of the CE
+				udm::procCheckData_udm();
+				! Apply the SourceDepotTruckType rule
+				ldm::procActivationRule();
+				! Select IM_date
+				epTimeIMSelected := ldm::epLastTimeIM;
+				! Select and complete Selected unit
+				epSelectedUnit := epDisplayUnit_Nm3;
+				procDM_ModeledTank_ToSelectedUnit();
+				procDM_NonModeledSource_ToSelectedUnit();
+				
+				pDistanceCalibrationRouteVolumeForced(iWeek, iRoute, iTimeIM) := pDistanceCalibrationVolumeForced_Input(iWeek, epTruckLoadingSource(epRouteFrom(iRoute)), epRouteTo(iRoute), epRouteProduct(iRoute), iTimeIM);
+			}
+		}
+		Procedure procReadFromExcelButtonDistanceCalibration {
+			Body: {
+				! Clear messages
+				gdm::procClearMessages;
+				
+				if ( fileselect( spExcelFile , extension: "xlsx") = 0 ) then return; endif;
+				
+				! repair for special character string since the string is used in generated code
+				spExcelFile := FindReplaceStrings( spExcelFile , "\\" , "\\\\" );
+				
+				! Define tables LIM (Base)
+				ldm::procDefineTables_IM1;
+				
+				!Read from Excel step2 
+				if ( cdl::procReadFromExcel( formatstring("%s",spExcelFile ) ) ) then
+					! dialogmessage( "Excel succesfully read");
+				endif;
+				
+				! Add the dispatch zone of customer/cluster in the set sDisptachZone
+				ldm::procAddSetDispatchZoneAndCategory();
+				
+				! Complete and create the table from Source 
+				ldm::procCreationFromSource();
+				
+				! Define tables LIM (Base)
+				cdl::procClear();
+				ldm::procDefineTables_Routes;
+				ldm::procDefineTables_Routes_Time();
+				! Define table for rules
+				ldm::procDefineTablesRules();
+				! Define table for Distance Calibration
+				ldm::procDefineTablesDistanceCalibration_ldm();
+				
+				!Read from Excel step3
+				if ( cdl::procReadFromExcel( formatstring("%s",spExcelFile ) ) ) then
+					dialogmessage( "Excel succesfully read");
+				endif;
+				
+				! Creation the cross table routes and complete the others cross tables
+				ldm::procCreationCrossTable();
+				
+				! Save the name of the loaded file
+				spExcelDistribFileDisplay := spExcelFile;
+				
+				! Call procedure to create the link between excel parameters and time dependent parameters in gom and uom
+				gdm::procInitializeTimeDependentData();
+				udm::procInitializeTimeDependentData_udm();
+			}
+			StringParameter spExcelFile;
+		}
+		Procedure procDefineTablesDistanceCalibration_ldm {
+			Body: {
+				!! calibration_demand
+				!cdl::procAddTable("customer_demand_all_weeks", gdm::spSchemaName, 1);
+				!cdl::procAddIndexToTable("customer_demand_all_weeks", 'ldm::iWeek', "week");
+				!cdl::procAddIndexToTable("customer_demand_all_weeks",  'ldm::iCustomerCluster', "customer_cluster");
+				!cdl::procAddIndexToTable("customer_demand_all_weeks", 'ldm::iTimeIM', "time_im");
+				!cdl::procAddIdentifierToTable("customer_demand_all_weeks",'ldm::pDemandForced',"demand");
+				
+				! calibration_route
+				cdl::procAddTable("distance_calibration_route", gdm::spSchemaName, 1);
+				cdl::procAddIndexToTable("distance_calibration_route", 'ldm::iWeek', "week");
+				!cdl::procAddIndexToTable("distance_calibration_route",  'ldm::iRoute', "route");
+				cdl::procAddIndexToTable("distance_calibration_route",  'ldm::iSource', "source");
+				cdl::procAddIndexToTable("distance_calibration_route",  'ldm::iCustomerCluster', "customer_cluster");
+				cdl::procAddIndexToTable("distance_calibration_route",  'gdm::iProduct', "product");
+				cdl::procAddIndexToTable("distance_calibration_route", 'ldm::iTimeIM', "time_im");
+				cdl::procAddIdentifierToTable("distance_calibration_route",'ldm::pDistanceCalibrationVolumeForced_Input',"force_volume_transported");
+				
+				! calibration_route_ActualWeekDistance
+				cdl::procAddTable("week_distance_calibration_route", gdm::spSchemaName, 1);
+				cdl::procAddIndexToTable("week_distance_calibration_route", 'ldm::iWeek', "week");
+				cdl::procAddIndexToTable("week_distance_calibration_route", 'ldm::iTimeIM', "time_im");
+				cdl::procAddIdentifierToTable("week_distance_calibration_route", 'ldm::pWeekTotalDistanceActual', "week_total_distance_actual");
+			}
+		}
+		Procedure procSolveCalibration {
+			Body: {
+				! Calculation of the calibration factor
+				p01CalibrationCalculation := 1;
+				
+				! Initialisation of the result parameters
+				pCalibrationFactorWeek(iWeek) := 0;
+				pDistanceCalibrationKM(iWeek) := 0;
+				pDistanceCalibrationKMperSource(iWeek, iSource, gdm::iProduct) := 0;
+				
+				! Activation of the parameter to use the volume route forced
+				p01RouteVolumeTransportedForced := 1;
+				
+				! Check that the distance Adjustment coefficient=1
+				if pDistanceAdjustmentCoefficient <> 1 then
+					dialogmessage( "The distance adjustment coefficient must be 1 for the calibration. It is forced to 1");
+					pDistanceAdjustmentCoefficient := 1;
+				endif;
+				
+				
+				for iWeek do
+					if p01WeeksSelected(iWeek) then
+						uom::procClear_uom();
+						! modify the variables in non.var
+						vRouteNumberOfTrip(ldm::iRoute, iTimeIM).nonvar := -1;
+						vRouteDistance(ldm::iRoute, iTimeIM).nonvar := -1;
+				
+						StatusMessage("Calculation for week: "+iWeek);
+						pRouteVolumeTransportedForced(iRoute, iTimeIM) := pDistanceCalibrationRouteVolumeForced(iWeek,iRoute,iTimeIM);
+						pActualTotalDistance(iTimeIM) := pWeekTotalDistanceActual(iWeek, iTimeIM);
+						!p01RouteRemoved(iRoute | pRouteVolumeTransportedForced(iRoute, gdm::epFirstTimeUnit)=0) := 1;
+						!p01RouteRemoved(iRoute | pRouteVolumeTransportedForced(iRoute, gdm::epFirstTimeUnit)<>0) := 0;
+				
+						! Calculation and fix the variables forced
+						vRouteNumberOfTrip(ldm::iRoute, iTimeIM) := pRouteVolumeTransportedForced(iRoute, iTimeIM)
+								/$ pTruckTypeCapacity( epRouteTruckType(ldm::iRoute), epTruckLoadingProduct(epRouteFrom(ldm::iRoute)));
+						vRouteDistance(ldm::iRoute, iTimeIM) := vRouteNumberOfTrip(iRoute, iTimeIM) * pRouteDistance(ldm::iRoute);
+				
+						uldm::procSolveLinearModel_uldm();
+						pCalibrationFactorWeek(iWeek) := vDistanceAdjustmentCoefficient;
+						pDistanceCalibrationKM(iWeek) := pDistanceTotal;
+						pDistanceCalibrationKMperSource(iWeek, epTruckLoadingSource(iTruckLoading), epTruckLoadingProduct(iTruckLoading)) := pDistanceTotalTruckloading(iTruckLoading);
+					endif;
+				
+				endfor;
+				! modify the variables in non.var
+				vRouteNumberOfTrip(ldm::iRoute, iTimeIM).nonvar := 0;
+				vRouteDistance(ldm::iRoute, iTimeIM).nonvar := 0;
+				! Initialize of the calibration factor
+				p01CalibrationCalculation := 0;
+				! Disable of the parameter to use the volume route forced
+				p01RouteVolumeTransportedForced := 0;
+				
+				StatusMessage("");
+			}
+		}
+		Set sWeeks {
+			Index: iWeek;
+			Definition: {
+				! { 1..53 }
+			}
+		}
+		Parameter pCalibrationFactorWeek {
+			IndexDomain: iWeek;
+		}
+		Parameter pDistanceCalibrationKM {
+			IndexDomain: (iWeek);
+		}
+		Parameter pDistanceCalibrationKMperSource {
+			IndexDomain: (iWeek, iSource, gdm::iproduct);
+		}
+		Parameter pDistanceCalibrationDemandForced {
+			IndexDomain: (iWeek,iCustomerCluster,iTimeIM);
+		}
+		Parameter pDistanceCalibrationRouteVolumeForced {
+			IndexDomain: (iWeek,iRoute,iTimeIM);
+		}
+		Parameter pDistanceCalibrationVolumeForced_Input {
+			IndexDomain: (iWeek,iSource,iCustomerCluster,gdm::iProduct,iTimeIM);
+		}
+		Parameter pWeekTotalDistanceActual {
+			IndexDomain: (iWeek,iTimeIM);
+		}
+		Parameter pDistanceTotalTruckloading {
+			IndexDomain: ldm::iTruckLoading;
+			Definition: {
+				sum((gdm::iProduct, ldm::iTruckType, iTimeIM),
+					vTruckloadingTotalDistance(ldm::iTruckLoading, gdm::iProduct, ldm::iTruckType, iTimeIM))
+				+
+				sum((ldm::iDepot, gdm::iProduct, ldm::iTruckType, iTimeIM) ,
+					vTruckLoadingDepotDistance(ldm::iTruckLoading, ldm::iDepot, gdm::iProduct, ldm::iTruckType, iTimeIM))
+				* pDistanceAdjustmentCoefficient
+			}
+		}
+		Parameter p01CalibrationCalculation {
+			Range: binary;
+		}
+		Variable vDistanceAdjustmentCoefficient {
+			IndexDomain: | p01CalibrationCalculation;
+			Range: free;
+		}
+		Variable vTotalDistanceForced {
+			IndexDomain: iTimeIM | p01CalibrationCalculation;
+			Range: free;
+		}
+		Parameter pActualTotalDistance {
+			IndexDomain: iTimeIM;
+		}
+		Constraint cTruckloadingTotalDistanceForced {
+			IndexDomain: (iTruckLoading,gdm::iProduct,iTruckType,iTimeIM) | p01CalibrationCalculation;
+			Definition: {
+				
+				if epDepotDistanceCalWay = epDistanceDepotSourceInShiftCal then
+					vTruckloadingTotalDistance(iTruckLoading,gdm::iProduct,iTruckType,iTimeIM)
+					=
+					(
+					sum(iRoute | (epRouteFrom(ldm::iRoute) = ldm::iTruckLoading and epRouteTruckType(ldm::iRoute) = ldm::iTruckType and epRouteProduct(ldm::iRoute) = gdm::iproduct),
+						vRouteDistance(ldm::iRoute,iTimeIM) ) * 2
+					)
+					* pDistanceAdjustmentCoefficient
+					+
+					sum(iDepot, vTruckLoadingDepotDistance(ldm::iTruckLoading, ldm::iDepot, gdm::iProduct, ldm::iTruckType, iTimeIM) )
+				
+				else
+					vTruckloadingTotalDistance(iTruckLoading,gdm::iProduct,iTruckType,iTimeIM)
+					=
+					(
+					sum(iRoute | (epRouteFrom(ldm::iRoute) = ldm::iTruckLoading and epRouteTruckType(ldm::iRoute) = ldm::iTruckType and epRouteProduct(ldm::iRoute) = gdm::iproduct),
+						vRouteDistance(ldm::iRoute,iTimeIM) ) * 2
+					)
+					* vDistanceAdjustmentCoefficient
+				
+				endif
+			}
+			Comment: "pDistanceAdjustmentCoefficient is already take into account in the number of shift used to calculate the source depot distance.";
+		}
+		Constraint cTotalDistanceForced {
+			IndexDomain: ldm::iTimeIM | p01CalibrationCalculation;
+			Definition: {
+				vTotalDistanceForced(ldm::iTimeIM)
+				=
+				if sum((ldm::iDepot, ldm::iTruckType, gdm::iProduct), pDepotTruckTypeTransportCost(ldm::iDepot, ldm::iTruckType, gdm::iProduct, iTimeIM)) = 0 then 
+					! Total Distance / TruckType
+					sum( (gdm::iProduct, ldm::iTruckType),
+						vTruckTypeTotalDistance(ldm::iTruckType, gdm::iProduct, iTimeIM) )
+				else
+					! Total Distance per Depot / Product / Trucktype => cost mode2
+					sum((ldm::iDepot, ldm::iTruckType, gdm::iProduct),
+						vDepotTruckTypeTotalDistance(ldm::iDepot, ldm::iTruckType, gdm::iProduct, ldm::iTimeIM) )
+				endif
+			}
+		}
+		Constraint cActualDistanceForced1 {
+			IndexDomain: ldm::iTimeIM | p01CalibrationCalculation;
+			Definition: vTotalDistanceForced(ldm::iTimeIM) <= pActualTotalDistance(ldm::iTimeIM) + 0.0001;
+		}
+		Constraint cActualDistanceForced2 {
+			IndexDomain: ldm::iTimeIM | p01CalibrationCalculation;
+			Definition: vTotalDistanceForced(ldm::iTimeIM) >= pActualTotalDistance(ldm::iTimeIM) - 0.0001;
+		}
+		Variable vObjective_IM_Forced {
+			IndexDomain: | p01CalibrationCalculation;
+			Range: free;
+			Definition: {
+				! Transport cost
+				!if sum((ldm::iDepot, ldm::iTruckType, gdm::iProduct, iTimeIM), pDepotTruckTypeTransportCost(ldm::iDepot, ldm::iTruckType, gdm::iProduct, iTimeIM)) = 0 then 
+				!	! Transport cost per Product / TruckType
+				!	sum((gdm::iProduct, ldm::iTruckType, iTimeIM),
+				!		vTruckTypeTotalTransportCost(ldm::iTruckType, gdm::iProduct, iTimeIM))
+				!else
+				!	! Transport cost per Depot / Product / Trucktype => cost mode2
+				!	sum((ldm::iDepot, ldm::iTruckType, gdm::iProduct, iTimeIM),
+				!		vDepotTruckTypeTotalTransportCost(ldm::iDepot, ldm::iTruckType, gdm::iProduct, iTimeIM))
+				!endif	
+				!+
+				! Shift Extra cost per depot 
+				sum((iDepot, iTimeIM), vDepotExtraShiftCost(ldm::iDepot, iTimeIM))
+				+
+				! Product Externalsource cost
+				sum(iTimeIM, vExternalsourceCost(iTimeIM))
+				+
+				! Slack Capacity Depot cost
+				( sum((ldm::iDepot, ldm::iTruckType, gdm::iProduct, ldm::iTimeIM), vSlackTrailerCapacity(ldm::iDepot, ldm::iTruckType, gdm::iProduct, ldm::iTimeIM))
+				  +
+				  sum((ldm::iDepot, ldm::iTimeIM), vSlackDriverCapacity(ldm::iDepot, ldm::iTimeIM))
+				) * pSlackDepotCapacityPenalty
+				
+				
+				+ sum((ldm::iTruckLoading, ldm::iDepot, gdm::iProduct, ldm::iTruckType, iTimeIM), vTruckLoadingDepotDistance(ldm::iTruckLoading, ldm::iDepot, gdm::iProduct, ldm::iTruckType, iTimeIM))
+			}
+		}
+		Parameter p01WeeksSelected {
+			IndexDomain: iWeek;
+			Range: binary;
+		}
+	}
+	Section Alto {
+		DeclarationSection Sources_Alto {
+			Set sAltoBusinessCode {
+				Index: iAltoBusinessCode;
+			}
+			StringParameter spAltoBusinessCode {
+				IndexDomain: ldm::iSource;
+				Comment: "Code read from the excel file corresponding to the Alto ID code. To be used in the export file for ALTO BTA.";
+			}
+			ElementParameter epAltoBusinessCode {
+				IndexDomain: iSource;
+				Range: sAltoBusinessCode;
+			}
+		}
+		DeclarationSection Customer_Clusters_Alto {
+			Set sAltoRawProductCode {
+				Index: iAltoRawProductCode;
+			}
+			StringParameter spAltoRawProductCode {
+				IndexDomain: ldm::iCustomerCluster;
+				Comment: "Code read from the excel file corresponding to the RAW Product code in Alto. To be used in the export file for ALTO BTA.";
+			}
+			ElementParameter epAltoRawProductCode {
+				IndexDomain: iCustomerCluster;
+				Range: sAltoRawProductCode;
+			}
+			Set sAltoDispatchZoneCode {
+				Index: iAltoDispatchZoneCode;
+			}
+			StringParameter spAltoDispatchZoneCode {
+				IndexDomain: ldm::iCustomerCluster;
+			}
+			ElementParameter epAltoDispatchZoneCode {
+				IndexDomain: iCustomerCluster;
+				Range: sAltoDispatchZoneCode;
+			}
+		}
+		Procedure procAddSetForAltoCode {
+			Body: {
+				
+				for iCustomerCluster do
+					SetElementAdd(sAltoRawProductCode, epAltoRawProductAdd, spAltoRawProductCode(iCustomerCluster));
+					SetElementAdd(sAltoDispatchZoneCode, epAltoDispatchZoneCodeAdd, spAltoDispatchZoneCode(iCustomerCluster));
+				endfor;
+				epAltoRawProductCode(iCustomerCluster) := stringtoelement(sAltoRawProductCode, spAltoRawProductCode(iCustomerCluster));
+				epAltoDispatchZoneCode(iCustomerCluster) := stringtoelement(sAltoDispatchZoneCode, spAltoDispatchZoneCode(iCustomerCluster));
+				
+				for iSource do
+					SetElementAdd(sAltoBusinessCode, epAltoBusinessCodeAdd, spAltoBusinessCode(iSource));
+				endfor;
+				epAltoBusinessCode(iSource) := stringtoelement(sAltoBusinessCode, spAltoBusinessCode(iSource));
+			}
+			ElementParameter epAltoRawProductAdd {
+				Range: sAltoRawProductCode;
+			}
+			ElementParameter epAltoBusinessCodeAdd {
+				Range: sAltoBusinessCode;
+			}
+			ElementParameter epAltoDispatchZoneCodeAdd {
+				Range: sAltoDispatchZoneCode;
+			}
+		}
+		DeclarationSection Output_for_Alto {
+			ElementParameter epTimeZoneApplication {
+				Range: AllTimeZones;
+				InitialData: 'UTC';
+			}
+			ElementParameter epTimeZoneUTC {
+				Range: AllTimeZones;
+				Definition: 'UTC';
+			}
+			StringParameter spStartTimeIM_UTC {
+				IndexDomain: (iAltoBusinessCode, iAltoRawProductCode, ldm::iDispatchZone, ldm::iTimeIM);
+				Definition: {
+					
+					ConvertReferenceDate(ldm::iTimeIM, epTimeZoneApplication, epTimeZoneUTC, 0)
+				}
+			}
+			StringParameter spEndTimeIM_UTC {
+				IndexDomain: (iAltoBusinessCode, iAltoRawProductCode, ldm::iDispatchZone, ldm::iTimeIM);
+				Definition: {
+					if ldm::iTimeIM = last(ldm::sTimeIM) then
+						ConvertReferenceDate(gdm::epLastTimeUnit, epTimeZoneApplication, epTimeZoneUTC, 0)
+					else
+						ConvertReferenceDate(ldm::iTimeIM+1, epTimeZoneApplication, epTimeZoneUTC, 0)
+					endif
+				}
+			}
+			Parameter pVolumeTransportedResultAlto {
+				IndexDomain: (iAltoBusinessCode, iAltoRawProductCode, ldm::iAltoDispatchZoneCode, ldm::iTimeIM);
+				Definition: {
+					sum(ldm::iRoute | (
+								epAltoBusinessCode(epTruckLoadingSource(epRouteFrom(ldm::iRoute))) = iAltoBusinessCode
+								and epAltoRawProductCode(epRouteTo(ldm::iRoute)) = iAltoRawProductCode
+								and epAltoDispatchZoneCode(epRouteTo(ldm::iRoute)) = iAltoDispatchZoneCode
+							 )	
+						, vRouteVolumeTransported(ldm::iRoute, ldm::iTimeIM)) ! * pConvFromNm3ToSelectUnit(ldm::epRouteProduct(ldm::iRoute), epDisplayUnit_kg))
+				}
+			}
+		}
+	}
+	Section Distribution_Display {
+		Section Define_TimeIM_from_Calendar {
+			DeclarationSection Parameters_Declaration {
+				Parameter p01TimeIMActive {
+					IndexDomain: gdm::iTime;
+					Range: binary;
+				}
+			}
+			Procedure procTimeIMDefinition_OpenPage {
+				Body: {
+					for gdm::iTime do
+						epAddTimeIM := gdm::iTime;
+						if gdm::iTime in sTimeIM then
+							p01TimeIMActive(gdm::iTime) := 1;
+						else
+							p01TimeIMActive(gdm::iTime) := 0;
+						endif;
+					endfor;
+				}
+				ElementParameter epAddTimeIM {
+					Range: gdm::calHorizon;
+				}
+			}
+			Procedure procTimeIMDefinition_ClosePage {
+				Body: {
+					for gdm::iTime do
+						epAddTimeIM := gdm::iTime;
+						if p01TimeIMActive(gdm::iTime) = 1 then
+							sTimeIM += epAddTimeIM;
+						elseif p01TimeIMActive(gdm::iTime) = 0 and gdm::iTime in sTimeIM then
+							sTimeIM -= epAddTimeIM;
+						endif;
+					endfor;
+				}
+				ElementParameter epAddTimeIM {
+					Range: gdm::calHorizon;
+				}
+			}
+		}
+		DeclarationSection LIM_RM_Source_DispatchZone {
+			Parameter p01RouteSelectLIN {
+				IndexDomain: ( iDispatchZone, iTruckLoading, gdm::iProduct, iTimeIM );
+			}
+			Parameter p01RouteSelectLOX {
+				IndexDomain: ( iDispatchZone, iTruckLoading, gdm::iProduct, iTimeIM );
+			}
+			Parameter p01RouteSelectLAR {
+				IndexDomain: ( iDispatchZone, iTruckLoading, gdm::iProduct, iTimeIM );
+			}
+			Set sRouteSelectLIN_DM {
+				SubsetOf: sRoutes;
+				Index: iRouteSelectLIN_DM;
+				Definition: {
+					{ iRoute | p01RouteSelectLIN(epCustomerClusterDispatchZone(epRouteTo(ldm::iRoute)), epRouteFrom(ldm::iRoute), epRouteProduct(ldm::iRoute), epTimeIMSelected) = 1 }
+				}
+			}
+			Set sRouteSelectLOX_DM {
+				SubsetOf: sRoutes;
+				Index: iRouteSelectLOX_DM;
+				Definition: {
+					{ iRoute | p01RouteSelectLOX(epCustomerClusterDispatchZone(epRouteTo(ldm::iRoute)), epRouteFrom(ldm::iRoute), epRouteProduct(ldm::iRoute), epTimeIMSelected) = 1 }
+				}
+			}
+			Set sRouteSelectLAR_DM {
+				SubsetOf: sRoutes;
+				Index: iRouteSelectLAR_DM;
+				Definition: {
+					{ iRoute | p01RouteSelectLAR(epCustomerClusterDispatchZone(epRouteTo(ldm::iRoute)), epRouteFrom(ldm::iRoute), epRouteProduct(ldm::iRoute), epTimeIMSelected) = 1 }
+				}
+			}
+		}
+		DeclarationSection Parameter_Cal_Declaration {
+			Parameter pVolumeTransportedTruckloading {
+				IndexDomain: (ldm::iTruckLoading, iTimeIM);
+				Definition: sum(ldm::iRoute | epRouteFrom(ldm::iRoute)=ldm::iTruckLoading, vRouteVolumeTransported(ldm::iRoute, iTimeIM));
+			}
+			Parameter pVolumeTakeOrPayNotUsedTruckloading {
+				IndexDomain: (ldm::iTruckLoading, iTimeIM);
+				Definition: {
+					sum( (ldm::iExternalsourceTank, gdm::iTime) | 
+								( gdm::epNodeSite(ldm::iExternalsourceTank)=gdm::epNodeSite(iTruckloading) and gdm::epTankLiquidProduct(ldm::iExternalsourceTank)=epTruckLoadingProduct(ldm::iTruckLoading)
+								  and ord(gdm::iTime, gdm::calHorizon) < pOrdTimeIMplus1(iTimeIM) and ord(gdm::iTime, gdm::calHorizon) >= ord(iTimeIM, gdm::calHorizon)
+								)
+						, gom::vFlashTank(ldm::iExternalsourceTank, gdm::iTime) * gdm::pPeriodInHours )
+				}
+			}
+			Parameter pNbShiftTruckMaxPerDepot {
+				IndexDomain: (ldm::iDepot, ldm::iTruckType, gdm::iProduct, iTimeIM);
+				Definition: {
+					pDepotTruckTypeNumberShift(ldm::iDepot, ldm::iTruckType, gdm::iProduct, iTimeIM)
+					*
+					pDepotTruckTypeNumber(ldm::iDepot, ldm::iTruckType, gdm::iProduct, iTimeIM)
+				}
+			}
+			Parameter pNbShiftDriverMaxPerDepot {
+				IndexDomain: (ldm::iDepot, iTimeIM);
+				Definition: pDepotNumberDriver(ldm::iDepot, iTimeIM) * pDepotNumberShift(ldm::iDepot, iTimeIM);
+			}
+			Parameter pProductAvailableTankUnit {
+				IndexDomain: iTruckloading |  epSourceType(epTruckLoadingSource(ldm::iTruckLoading))=epExternalSource;
+				Definition: {
+					
+					sum( gdm::iTankNode | gdm::epNodeSite(gdm::iTankNode)=gdm::epNodeSite(iTruckloading) and gdm::epTankLiquidProduct(gdm::iTankNode)=epTruckLoadingProduct(ldm::iTruckLoading)
+						, gdm::pTankInitialLevel(gdm::iTankNode) )
+				}
+			}
+			Parameter pProductAvailableNm3 {
+				IndexDomain: (iTruckloading, iTimeIM) |  epSourceType(epTruckLoadingSource(ldm::iTruckLoading))=epExternalSource;
+				Definition: {
+					
+					sum( ldm::iExternalsourceTank | gdm::epNodeSite(ldm::iExternalsourceTank)=gdm::epNodeSite(iTruckloading) and gdm::epTankLiquidProduct(ldm::iExternalsourceTank)=epTruckLoadingProduct(ldm::iTruckLoading)
+						, pExternalsourceTankInitialLevel(ldm::iExternalsourceTank, ldm::iTimeIM) )
+				}
+			}
+			Parameter pProductTakeOrPayQuantityNm3 {
+				IndexDomain: (iTruckloading, iTimeIM) |  epSourceType(epTruckLoadingSource(ldm::iTruckLoading))=epExternalSource;
+				Definition: {
+					
+					sum( ldm::iExternalsourceTank | gdm::epNodeSite(ldm::iExternalsourceTank)=gdm::epNodeSite(iTruckloading) and gdm::epTankLiquidProduct(ldm::iExternalsourceTank)=epTruckLoadingProduct(ldm::iTruckLoading)
+						, pExternalsourceTankTakeOrPayQuantity(ldm::iExternalsourceTank, ldm::iTimeIM) )
+				}
+			}
+			Parameter pTotalNumberOfShiftPerDepot {
+				IndexDomain: (ldm::iDepot, iTimeIM);
+				Definition: sum( (ldm::iTruckLoading, gdm::iProduct, ldm::iTruckType), vTruckLoadingDepotNumberOfShift(ldm::iTruckLoading, ldm::iDepot, gdm::iProduct, ldm::iTruckType, iTimeIM) );
+			}
+			Parameter pTotalNumberOfShiftPerDepotTruckType {
+				IndexDomain: (ldm::iDepot, ldm::iTruckType, gdm::iProduct, iTimeIM);
+				Definition: sum( (ldm::iTruckLoading), vTruckLoadingDepotNumberOfShift(ldm::iTruckLoading, ldm::iDepot, gdm::iProduct, ldm::iTruckType, iTimeIM) );
+			}
+			Parameter pVolumeTransportedDispatchzone;
+			StringParameter spRouteDispatchzone {
+				IndexDomain: iRoute;
+				Definition: spCustomerClusterDispatchZone( epRouteTo(ldm::iRoute) );
+			}
+			Parameter pRouteVolumeTransportedDisplay {
+				IndexDomain: (idispatchzone, itruckloading, icustomercluster, itrucktype, gdm::iproduct, iTimeIM);
+				Definition: {
+					sum(iroute | epRouteFrom(ldm::iRoute) = itruckloading and epRouteTo(ldm::iRoute) = icustomercluster
+							and spCustomerClusterDispatchZone(ldm::iCustomerCluster) = idispatchzone and epRouteTruckType(ldm::iRoute) = itrucktype
+							and epRouteProduct(ldm::iRoute) = gdm::iProduct
+						,vRouteVolumeTransported(ldm::iRoute, iTimeIM)
+						)
+				}
+			}
+			Parameter pRouteVolumeTransportedDisplay2 {
+				IndexDomain: (idispatchzone, itruckloading, gdm::iproduct, iTimeIM);
+				Definition: {
+					sum((icustomercluster, itrucktype), pRouteVolumeTransportedDisplay(ldm::iDispatchZone, ldm::iTruckLoading, ldm::iCustomerCluster, ldm::iTruckType, gdm::iProduct, iTimeIM) )
+					
+					
+					!
+					!sum((icustomercluster, itrucktype, iroute) | epRouteFrom(ldm::iRoute) = itruckloading and epRouteTo(ldm::iRoute) = icustomercluster
+					!		and spCustomerClusterDispatchZone(ldm::iCustomerCluster) = idispatchzone and epRouteTruckType(ldm::iRoute) = itrucktype
+					!		and epRouteProduct(ldm::iRoute) = gdm::iProduct
+					!	,vRouteVolumeTransported(ldm::iRoute)
+					!	)
+				}
+			}
+			Parameter pSourceLiquidConsumption {
+				IndexDomain: (gdm::iSite, gdm::iProduct, iTimeIM);
+				Definition: {
+					
+					sum((gdm::iArc, gdm::iTime) | ( gdm::epNodeSite(gdm::epNodeFrom(gdm::iArc)) = gdm::iSite
+									and gdm::epNodeType(gdm::epNodeFrom(gdm::iArc)) = gdm::epNodeTypeTank
+									and gdm::epTankLiquidProduct(gdm::epNodeFrom(gdm::iArc)) = gdm::iProduct
+									and gdm::epNodeType(gdm::epNodeTo(gdm::iArc)) = gdm::epNodeTypeOutputFlow )
+									and ord(gdm::iTime, gdm::calHorizon) < pOrdTimeIMplus1(iTimeIM) and ord(gdm::iTime, gdm::calHorizon) >= ord(iTimeIM, gdm::calHorizon),
+						gom::vFlow(gdm::iArc, gdm::iTime)
+						)
+					* gdm::pPeriodInHours
+				}
+			}
+			Parameter pSourceTruckloadingConsumption {
+				IndexDomain: (gdm::iSite, gdm::iProduct, iTimeIM);
+				Definition: {
+					
+					sum((gdm::iArc, gdm::iTime) | ( gdm::epNodeSite(gdm::epNodeFrom(gdm::iArc)) = gdm::iSite
+									and gdm::epNodeType(gdm::epNodeFrom(gdm::iArc)) = gdm::epNodeTypeTank
+									and gdm::epTankLiquidProduct(gdm::epNodeFrom(gdm::iArc)) = gdm::iProduct
+									and gdm::epNodeTo(gdm::iArc) in ldm::sTruckLoadings
+									and ord(gdm::iTime, gdm::calHorizon) < pOrdTimeIMplus1(iTimeIM) and ord(gdm::iTime, gdm::calHorizon) >= ord(iTimeIM, gdm::calHorizon)),
+						gom::vFlow(gdm::iArc, gdm::iTime)
+						)
+					* gdm::pPeriodInHours
+				}
+			}
+			Parameter pTankInput {
+				IndexDomain: gdm::iTankNode;
+				Definition: {
+					
+					sum((gdm::iarc, gdm::iTime) | gdm::epNodeTo(gdm::iArc) = gdm::iTankNode, gom::vFlow(gdm::iArc, gdm::iTime) )
+					*
+					gdm::pPeriodInHours
+				}
+			}
+			Parameter pTankOutput {
+				IndexDomain: gdm::iTankNode;
+				Definition: {
+					
+					( sum((gdm::iarc, gdm::iTime) | gdm::epNodeFrom(gdm::iArc) = gdm::iTankNode, gom::vFlow(gdm::iArc, gdm::iTime) )
+					+ sum(gdm::itime, gom::vFlashTank(gdm::iTankNode, gdm::iTime))
+					)
+					*
+					gdm::pPeriodInHours
+				}
+			}
+			Parameter pTankOutputBackup {
+				IndexDomain: gdm::iTankNode;
+				Definition: {
+					
+					sum((gdm::iarc, gdm::iTime) | ( gdm::epNodeFrom(gdm::iArc) = gdm::iTankNode
+									and gdm::epArcType(gdm::iArc) = gdm::epArcTypeBackup )
+							, gom::vFlow(gdm::iArc, gdm::iTime) )
+					*
+					gdm::pPeriodInHours
+				}
+			}
+			Parameter pTankOutputTruckloading {
+				IndexDomain: gdm::iTankNode;
+				Definition: {
+					
+					sum((gdm::iarc, gdm::iTime) | ( gdm::epNodeFrom(gdm::iArc) = gdm::iTankNode
+									and gdm::epNodeTo(gdm::iArc) in ldm::sTruckLoadings )
+							, gom::vFlow(gdm::iArc, gdm::iTime) )
+					*
+					gdm::pPeriodInHours
+				}
+			}
+			Parameter pTankOutputCustomerLI {
+				IndexDomain: gdm::iTankNode;
+				Definition: {
+					sum( (gdm::iArc, gdm::iTime) | (gdm::epNodeFrom(gdm::iArc)=gdm::iTankNode
+									and gdm::epNodeType(gdm::epNodeTo(gdm::iArc))=gdm::epNodeTypeOutputFlow
+									and gdm::epArcType(gdm::iArc)<>gdm::epArcTypeBackup),
+						gom::vFlow(gdm::iArc, gdm::iTime) )
+					* gdm::pPeriodInHours
+					-
+					pTankOutputTruckloading(gdm::iTankNode)
+				}
+			}
+			Parameter pTankOutputOthers {
+				IndexDomain: gdm::iTankNode;
+				Definition: {
+					pTankOutput(gdm::iTankNode)
+					-
+					pTankOutputBackup(gdm::iTankNode)
+					-
+					pTankOutputTruckloading(gdm::iTankNode)
+					-
+					pTankOutputCustomerLI(gdm::iTankNode)
+				}
+				Comment: {
+					"for external source => Take or pay
+					for internal source => LinAssist or LoxAssist or Flash"
+				}
+			}
+			StringParameter spTankOutputOthersTooltip {
+				Definition: "for external source => Take or pay \nfor internal source => LinAssist / LoxAssist / Flash";
+			}
+			Parameter pTankInputReffiling {
+				IndexDomain: gdm::iTankNode;
+				Definition: {
+					
+					sum((gdm::iarc, gdm::iTime) | ( gdm::epNodeTo(gdm::iArc) = gdm::iTankNode
+									and gdm::epNodeType(gdm::epNodeFrom(gdm::iArc)) = gdm::epNodeTypeInputFlow )
+							, gom::vFlow(gdm::iArc, gdm::iTime) )
+					*
+					gdm::pPeriodInHours
+				}
+			}
+			Parameter pTankInputProduction {
+				IndexDomain: gdm::iTankNode;
+				Definition: {
+					
+					pTankInput(gdm::iTankNode) - pTankInputReffiling(gdm::iTankNode)
+				}
+			}
+		}
+		DeclarationSection Parameter_TimeIM_selected {
+			ElementParameter epTimeIMSelected {
+				Range: sTimeIM;
+			}
+			Parameter pRouteVolumetransportedSelected {
+				IndexDomain: iRoute;
+				Definition: vRouteVolumeTransported(ldm::iRoute, epTimeIMSelected);
+			}
+			Parameter pRouteNumberOfTripSelected {
+				IndexDomain: iRoute;
+				Definition: vRouteNumberOfTrip(ldm::iRoute, epTimeIMSelected);
+			}
+			Parameter pRouteDistanceSelect {
+				IndexDomain: iRoute;
+				Definition: vRouteDistance(ldm::iRoute, epTimeIMSelected);
+			}
+			Parameter pCustomerClusterLiquidDemandSelect {
+				IndexDomain: iCustomerCluster;
+				Definition: pCustomerClusterLiquidDemand(ldm::iCustomerCluster, epTimeIMSelected);
+			}
+			Parameter pVolumeTransportedTruckloadingSelected {
+				IndexDomain: iTruckLoading;
+				Definition: pVolumeTransportedTruckloading(ldm::iTruckLoading, epTimeIMSelected);
+			}
+			Parameter pTruckloadingTotalDistanceSelected {
+				IndexDomain: (iTruckLoading,gdm::iProduct,iTruckType);
+				Definition: vTruckloadingTotalDistance(iTruckLoading,gdm::iProduct,iTruckType,epTimeIMSelected);
+			}
+			Parameter pTruckloadingNumberOfShiftSelected {
+				IndexDomain: (iTruckLoading,gdm::iProduct,iTruckType);
+				Definition: vTruckloadingNumberOfShift(iTruckLoading,gdm::iProduct,iTruckType,epTimeIMSelected);
+			}
+			Parameter pTruckLoadingDepotNumberOfShiftSelected {
+				IndexDomain: (iTruckLoading,iDepot,gdm::iProduct,iTruckType);
+				Definition: vTruckLoadingDepotNumberOfShift(iTruckLoading,iDepot,gdm::iProduct,iTruckType,epTimeIMSelected);
+			}
+			Parameter pTruckLoadingDepotDistanceSelected {
+				IndexDomain: (iTruckLoading,iDepot,gdm::iProduct,iTruckType);
+				Definition: vTruckLoadingDepotDistance(iTruckLoading,iDepot,gdm::iProduct,iTruckType,epTimeIMSelected);
+			}
+			Parameter pTruckTypeTotalDistanceSelected {
+				IndexDomain: (iTruckType,gdm::iProduct);
+				Definition: vTruckTypeTotalDistance(iTruckType,gdm::iProduct,epTimeIMSelected);
+			}
+			Parameter pTruckTypeTotalTransportCostSelected {
+				IndexDomain: (iTruckType,gdm::iProduct);
+				Definition: vTruckTypeTotalTransportCost(iTruckType,gdm::iProduct,epTimeIMSelected);
+			}
+		}
+		DeclarationSection Set_Display {
+			Set sInternalSourceTank {
+				SubsetOf: gdm::sTankNodes;
+				Index: iInternalSourceTank;
+				OrderBy: iInternalSourceTank;
+				Definition: gdm::sTankNodes - sExternalsourceTanks;
+			}
+			Set sNodeIM {
+				SubsetOf: gdm::sNodes;
+				Index: iNodeIM;
+				OrderBy: iNodeIM;
+				Definition: {
+					sExternalsourceTanks
+					+
+					sTruckLoadings
+					+
+					sNodeInOutputFlow_InitTank
+				}
+			}
+			Set sArcIM {
+				SubsetOf: gdm::sArcs;
+				Index: iArcIM;
+				OrderBy: iArcIM;
+				Definition: {
+					
+					{ gdm::iArc | gdm::epNodeTo(gdm::iArc) in sTruckLoadings }
+					+
+					{ gdm::iArc | gdm::epNodeFrom(gdm::iArc) in sNodeInOutputFlow_InitTank }
+				}
+			}
+			Set sOutputflowNodeIM {
+				SubsetOf: gdm::sOutputFlowNodes;
+				Index: iOutputFlowIM;
+				OrderBy: iOutputFlowIM;
+				Definition: sNodeInOutputFlow_InitTank + sTruckLoadings;
+			}
+			Set sInputflowNodeIM {
+				SubsetOf: gdm::sInputFlowNodes;
+				Index: iInputflowNodeIM;
+				OrderBy: iInputflowNodeIM;
+				Definition: sNodeInOutputFlow_InitTank;
+			}
+		}
+		DeclarationSection Conversion_Selected_Unit {
+			Set sDisplayUnits {
+				Index: iDisplayUnit;
+			}
+			ElementParameter epDisplayUnit_Nm3 {
+				Range: sDisplayUnits;
+				Definition: stringtoelement(sDisplayUnits, "Nm3");
+			}
+			ElementParameter epDisplayUnit_kg {
+				Range: sDisplayUnits;
+				Definition: stringtoelement(sDisplayUnits, "kg");
+			}
+			ElementParameter epSelectedUnit {
+				Range: sDisplayUnits;
+			}
+			Parameter pConvFromNm3ToSelectUnit {
+				IndexDomain: (gdm::iproduct, iDisplayUnit);
+			}
+			Parameter pVolumeTransportedTruckloading_SelectedUnit {
+				IndexDomain: (iTruckLoading,iTimeIM,ldm::iDisplayUnit);
+				Definition: {
+					pVolumeTransportedTruckloading( iTruckLoading, iTimeIM )
+					*
+					pConvFromNm3ToSelectUnit(ldm::epTruckLoadingProduct(ldm::iTruckLoading), ldm::iDisplayUnit)
+				}
+			}
+			Parameter pVolumeTakeOrPayNotUsedTruckloading_SelectedUnit {
+				IndexDomain: (iTruckLoading, iTimeIM, ldm::iDisplayUnit);
+				Definition: {
+					pVolumeTakeOrPayNotUsedTruckloading( iTruckLoading, iTimeIM )
+					*
+					pConvFromNm3ToSelectUnit(ldm::epTruckLoadingProduct(ldm::iTruckLoading), ldm::iDisplayUnit)
+				}
+			}
+			Parameter pProductAvailable_SelectedUnit {
+				IndexDomain: (iTruckLoading, iTimeIM, ldm::iDisplayUnit);
+				Definition: {
+					pProductAvailableNm3( iTruckLoading, iTimeIM )
+					*
+					pConvFromNm3ToSelectUnit(ldm::epTruckLoadingProduct(ldm::iTruckLoading), ldm::iDisplayUnit)
+				}
+			}
+			Parameter pProductTakeOrPayQuantity_SelectedUnit {
+				IndexDomain: (iTruckLoading, iTimeIM, ldm::iDisplayUnit);
+				Definition: {
+					pProductTakeOrPayQuantityNm3( iTruckLoading, iTimeIM )
+					*
+					pConvFromNm3ToSelectUnit(ldm::epTruckLoadingProduct(ldm::iTruckLoading), ldm::iDisplayUnit)
+				}
+			}
+			Parameter pRouteVolumeTransportedDisplay2_SelectedUnit {
+				IndexDomain: (iDispatchZone,iTruckLoading,gdm::iProduct,iTimeIM, ldm::iDisplayUnit);
+				Definition: {
+					pRouteVolumeTransportedDisplay2(ldm::iDispatchZone, ldm::iTruckLoading, gdm::iProduct, ldm::iTimeIM)
+					*
+					pConvFromNm3ToSelectUnit(gdm::iProduct, ldm::iDisplayUnit)
+				}
+			}
+			Parameter pRouteVolumeTransported_SelectedUnit {
+				IndexDomain: (iRoute,iTimeIM, ldm::iDisplayUnit);
+				Definition: {
+					vRouteVolumeTransported(iRoute, iTimeIM)
+					*
+					pConvFromNm3ToSelectUnit(epRouteProduct(ldm::iRoute), ldm::iDisplayUnit)
+				}
+			}
+			Parameter pVolumeTransportedResult_SelectedUnit {
+				IndexDomain: (iSource,iCustomerCluster,gdm::iProduct,iDispatchZone,iTruckType,iTimeIM, ldm::iDisplayUnit);
+				Definition: {
+					pVolumeTransportedResult( iSource, iCustomerCluster, gdm::iProduct, iDispatchZone, iTruckType, iTimeIM )
+					*
+					pConvFromNm3ToSelectUnit(gdm::iProduct, ldm::iDisplayUnit)
+				}
+			}
+			Parameter pTankInitialLevel_SelectedUnit {
+				IndexDomain: (gdm::iTankNode, ldm::iDisplayUnit);
+				Definition: {
+					gdm::pTankInitialLevel( gdm::iTankNode ) /$ gdm::pLiquidMassToVolumeUnits(gdm::epTankLiquidProduct(gdm::iTankNode))
+					*
+					pConvFromNm3ToSelectUnit(gdm::epTankLiquidProduct(gdm::iTankNode), ldm::iDisplayUnit)
+				}
+			}
+			Parameter pTankInput_SelectedUnit {
+				IndexDomain: (gdm::iTankNode, ldm::iDisplayUnit);
+				Definition: {
+					pTankInput( gdm::iTankNode )
+					*
+					pConvFromNm3ToSelectUnit(gdm::epTankLiquidProduct(gdm::iTankNode), ldm::iDisplayUnit)
+				}
+			}
+			Parameter pTankOutput_SelectedUnit {
+				IndexDomain: (gdm::iTankNode, ldm::iDisplayUnit);
+				Definition: {
+					pTankOutput( gdm::iTankNode )
+					*
+					pConvFromNm3ToSelectUnit(gdm::epTankLiquidProduct(gdm::iTankNode), ldm::iDisplayUnit)
+				}
+			}
+			Parameter pTankLevel_SelectedUnit {
+				IndexDomain: (gdm::iTankNode,gdm::iTime, ldm::iDisplayUnit);
+				Definition: {
+					gom::vTankLevel(gdm::iTankNode,gdm::iTime) /$ gdm::pLiquidMassToVolumeUnits(gdm::epTankLiquidProduct(gdm::iTankNode))
+					*
+					pConvFromNm3ToSelectUnit(gdm::epTankLiquidProduct(gdm::iTankNode), ldm::iDisplayUnit)
+				}
+			}
+			Parameter pTankInputProduction_SelectedUnit {
+				IndexDomain: (gdm::iTankNode, ldm::iDisplayUnit);
+				Definition: {
+					pTankInputProduction( gdm::iTankNode )
+					*
+					pConvFromNm3ToSelectUnit(gdm::epTankLiquidProduct(gdm::iTankNode), ldm::iDisplayUnit)
+				}
+			}
+			Parameter pTankInputReffiling_SelectedUnit {
+				IndexDomain: (gdm::iTankNode, ldm::iDisplayUnit);
+				Definition: {
+					pTankInputReffiling( gdm::iTankNode )
+					*
+					pConvFromNm3ToSelectUnit(gdm::epTankLiquidProduct(gdm::iTankNode), ldm::iDisplayUnit)
+				}
+			}
+			Parameter pTankOutputBackup_SelectedUnit {
+				IndexDomain: (gdm::iTankNode, ldm::iDisplayUnit);
+				Definition: {
+					pTankOutputBackup( gdm::iTankNode )
+					*
+					pConvFromNm3ToSelectUnit(gdm::epTankLiquidProduct(gdm::iTankNode), ldm::iDisplayUnit)
+				}
+			}
+			Parameter pTankOutputTruckloading_SelectedUnit {
+				IndexDomain: (gdm::iTankNode, ldm::iDisplayUnit);
+				Definition: {
+					pTankOutputTruckloading( gdm::iTankNode )
+					*
+					pConvFromNm3ToSelectUnit(gdm::epTankLiquidProduct(gdm::iTankNode), ldm::iDisplayUnit)
+				}
+			}
+			Parameter pTankOutputCustomerLI_SelectedUnit {
+				IndexDomain: (gdm::iTankNode, ldm::iDisplayUnit);
+				Definition: {
+					pTankOutputCustomerLI( gdm::iTankNode )
+					*
+					pConvFromNm3ToSelectUnit(gdm::epTankLiquidProduct(gdm::iTankNode), ldm::iDisplayUnit)
+				}
+			}
+			Parameter pTankOutputOthers_SelectedUnit {
+				IndexDomain: (gdm::iTankNode, ldm::iDisplayUnit);
+				Definition: {
+					pTankOutputOthers( gdm::iTankNode )
+					*
+					pConvFromNm3ToSelectUnit(gdm::epTankLiquidProduct(gdm::iTankNode), ldm::iDisplayUnit)
+				}
+			}
+			Parameter pTankMinLevel_SelectedUnit {
+				IndexDomain: (gdm::iTankNode,gdm::iTime, ldm::iDisplayUnit);
+				Definition: {
+					gdm::pTankMinLevel(gdm::iTankNode,gdm::iTime) /$ gdm::pLiquidMassToVolumeUnits(gdm::epTankLiquidProduct(gdm::iTankNode))
+					*
+					pConvFromNm3ToSelectUnit(gdm::epTankLiquidProduct(gdm::iTankNode), ldm::iDisplayUnit)
+				}
+			}
+			Parameter pTankMaxLevel_SelectedUnit {
+				IndexDomain: (gdm::iTankNode,gdm::iTime, ldm::iDisplayUnit);
+				Definition: {
+					gdm::pTankMaxLevel(gdm::iTankNode,gdm::iTime) /$ gdm::pLiquidMassToVolumeUnits(gdm::epTankLiquidProduct(gdm::iTankNode))
+					*
+					pConvFromNm3ToSelectUnit(gdm::epTankLiquidProduct(gdm::iTankNode), ldm::iDisplayUnit)
+				}
+			}
+			Parameter pFlashTank_SelectedUnit {
+				IndexDomain: (gdm::iTankNode,gdm::iTime, ldm::iDisplayUnit);
+				Definition: {
+					gom::vFlashTank(gdm::iTankNode, gdm::iTime)
+					*
+					pConvFromNm3ToSelectUnit(gdm::epTankLiquidProduct(gdm::iTankNode), ldm::iDisplayUnit)
+				}
+			}
+			Parameter pTankLiquidValue_SelectedUnit {
+				IndexDomain: (gdm::iTankNode, ldm::iDisplayUnit);
+				Definition: {
+					gdm::pTankLiquidValue(gdm::iTankNode) * gdm::pLiquidMassToVolumeUnits(gdm::epTankLiquidProduct(gdm::iTankNode))
+					/$
+					pConvFromNm3ToSelectUnit(gdm::epTankLiquidProduct(gdm::iTankNode), ldm::iDisplayUnit)
+				}
+			}
+			Parameter pTankStorageCapacity_SelectedUnit {
+				IndexDomain: (gdm::iTankNode, ldm::iDisplayUnit);
+				Definition: {
+					gdm::pTankStorageCapacity(gdm::iTankNode) /$ gdm::pLiquidMassToVolumeUnits(gdm::epTankLiquidProduct(gdm::iTankNode))
+					*
+					pConvFromNm3ToSelectUnit(gdm::epTankLiquidProduct(gdm::iTankNode), ldm::iDisplayUnit)
+				}
+			}
+		}
+		DeclarationSection Input_parameter_in_Selected_Unit {
+			Parameter pTankInitialLevel_InputSelectedUnit {
+				IndexDomain: (gdm::iTankNode, ldm::iDisplayUnit);
+			}
+			Parameter pTankMinLevel_InputSelectedUnit {
+				IndexDomain: (gdm::iTankNode,gdm::iTime, ldm::iDisplayUnit);
+			}
+			Parameter pTankMaxLevel_InputSelectedUnit {
+				IndexDomain: (gdm::iTankNode,gdm::iTime, ldm::iDisplayUnit);
+			}
+			Parameter pTankLiquidValue_InputSelectedUnit {
+				IndexDomain: (gdm::iTankNode, ldm::iDisplayUnit);
+			}
+			Parameter pExternalsourceQuantityAvailable_InputSelectedUnit {
+				IndexDomain: (iSource,gdm::iProduct,iExternalsourceTierNumber,iTimeIM,iDisplayUnit);
+			}
+			Parameter pExternalsourceCost_InputSelectedUnit {
+				IndexDomain: (iSource,gdm::iProduct,iExternalsourceTierNumber,iTimeIM,iDisplayUnit);
+			}
+			Parameter pExternalsourceTakeorPayQuantity_InputSelectedUnit {
+				IndexDomain: (iSource,gdm::iProduct,iExternalsourceTierNumber,iTimeIM,iDisplayUnit);
+			}
+		}
+		Procedure procDM_ModeledTank_FromSelectedUnit {
+			Body: {
+				gdm::pTankInitialLevel( gdm::iTankNode ) := pTankInitialLevel_InputSelectedUnit(gdm::iTankNode, epSelectedUnit) * gdm::pLiquidMassToVolumeUnits(gdm::epTankLiquidProduct(gdm::iTankNode)) /$ pConvFromNm3ToSelectUnit(gdm::epTankLiquidProduct(gdm::iTankNode), epSelectedUnit);
+				gdm::pTankLiquidValue(gdm::iTankNode) := pTankLiquidValue_InputSelectedUnit(gdm::iTankNode, epSelectedUnit) /$ gdm::pLiquidMassToVolumeUnits(gdm::epTankLiquidProduct(gdm::iTankNode)) * pConvFromNm3ToSelectUnit(gdm::epTankLiquidProduct(gdm::iTankNode), epSelectedUnit);
+				gdm::pTankMinLevel( gdm::iTankNode, gdm::epLastTimeUnit ) := pTankMinLevel_InputSelectedUnit(gdm::iTankNode, gdm::epLastTimeUnit, epSelectedUnit) * gdm::pLiquidMassToVolumeUnits(gdm::epTankLiquidProduct(gdm::iTankNode)) /$ pConvFromNm3ToSelectUnit(gdm::epTankLiquidProduct(gdm::iTankNode), epSelectedUnit);
+				gdm::pTankMaxLevel( gdm::iTankNode, gdm::epLastTimeUnit ) := pTankMaxLevel_InputSelectedUnit(gdm::iTankNode, gdm::epLastTimeUnit, epSelectedUnit) * gdm::pLiquidMassToVolumeUnits(gdm::epTankLiquidProduct(gdm::iTankNode)) /$ pConvFromNm3ToSelectUnit(gdm::epTankLiquidProduct(gdm::iTankNode), epSelectedUnit);
+				
+				odm::procUpdateTimeDependentDataWithGeneralData();
+			}
+		}
+		Procedure procDM_ModeledTank_ToSelectedUnit {
+			Body: {
+				odm::procUpdateTimeDependentDataWithGeneralData();
+				
+				pTankInitialLevel_InputSelectedUnit(gdm::iTankNode, ldm::iDisplayUnit) := gdm::pTankInitialLevel(gdm::iTankNode ) /$ gdm::pLiquidMassToVolumeUnits(gdm::epTankLiquidProduct(gdm::iTankNode)) * pConvFromNm3ToSelectUnit(gdm::epTankLiquidProduct(gdm::iTankNode), ldm::iDisplayUnit);
+				pTankLiquidValue_InputSelectedUnit(gdm::iTankNode, ldm::iDisplayUnit) := gdm::pTankLiquidValue(gdm::iTankNode) * gdm::pLiquidMassToVolumeUnits(gdm::epTankLiquidProduct(gdm::iTankNode)) /$ pConvFromNm3ToSelectUnit(gdm::epTankLiquidProduct(gdm::iTankNode), ldm::iDisplayUnit);
+				pTankMinLevel_InputSelectedUnit(gdm::iTankNode, gdm::epLastTimeUnit, ldm::iDisplayUnit) := gdm::pTankMinLevel( gdm::iTankNode, gdm::epLastTimeUnit ) /$ gdm::pLiquidMassToVolumeUnits(gdm::epTankLiquidProduct(gdm::iTankNode)) * pConvFromNm3ToSelectUnit(gdm::epTankLiquidProduct(gdm::iTankNode), ldm::iDisplayUnit);
+				pTankMaxLevel_InputSelectedUnit(gdm::iTankNode, gdm::epLastTimeUnit, ldm::iDisplayUnit) := gdm::pTankMaxLevel( gdm::iTankNode, gdm::epLastTimeUnit ) /$ gdm::pLiquidMassToVolumeUnits(gdm::epTankLiquidProduct(gdm::iTankNode)) * pConvFromNm3ToSelectUnit(gdm::epTankLiquidProduct(gdm::iTankNode), ldm::iDisplayUnit);
+			}
+		}
+		Procedure procDM_NonModeledSource_FromSelectedUnit {
+			Body: {
+				ldm::pExternalsourceQuantityAvailable(ldm::iSource, gdm::iProduct, ldm::iExternalsourceTierNumber, ldm::iTimeIM) := pExternalsourceQuantityAvailable_InputSelectedUnit(ldm::iSource, gdm::iProduct, ldm::iExternalsourceTierNumber, ldm::iTimeIM, epSelectedUnit) /$ pConvFromNm3ToSelectUnit(gdm::iProduct, epSelectedUnit);
+				ldm::pExternalsourceCost(ldm::iSource, gdm::iProduct, ldm::iExternalsourceTierNumber, ldm::iTimeIM) := pExternalsourceCost_InputSelectedUnit(ldm::iSource, gdm::iProduct, ldm::iExternalsourceTierNumber, ldm::iTimeIM, epSelectedUnit) * pConvFromNm3ToSelectUnit(gdm::iProduct, epSelectedUnit);
+				ldm::pExternalsourceTakeorPayQuantity(ldm::iSource, gdm::iProduct, ldm::iExternalsourceTierNumber, ldm::iTimeIM) := pExternalsourceTakeorPayQuantity_InputSelectedUnit(ldm::iSource, gdm::iProduct, ldm::iExternalsourceTierNumber, ldm::iTimeIM, epSelectedUnit) /$ pConvFromNm3ToSelectUnit(gdm::iProduct, epSelectedUnit);
+			}
+		}
+		Procedure procDM_NonModeledSource_FromSelectedUnit2 {
+			Body: {
+				
+				for iExternalSource, gdm::iProduct, iExternalsourceTierNumber, iTimeIM do
+					if p01ExternalsourceActive(iExternalSource, gdm::iProduct, iExternalsourceTierNumber, iTimeIM) then
+						gdm::pTankInitialLevel(stringtoelement(gdm::sNodes, "Tank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource)) := pExternalsourceQuantityAvailable(iExternalSource, gdm::iProduct, iExternalsourceTierNumber, epFirstTimeIM) * gdm::pLiquidMassToVolumeUnits(gdm::iProduct);
+						gdm::pTankStorageCapacity(stringtoelement(gdm::sNodes, "Tank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource)) := max(iTimeIM2, pExternalsourceQuantityAvailable(iExternalSource, gdm::iProduct, iExternalsourceTierNumber, iTimeIM2)) * gdm::pLiquidMassToVolumeUnits(gdm::iProduct);
+						pExternalsourceTankInitialLevel(stringtoelement(gdm::sNodes, "Tank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource), iTimeIM) := pExternalsourceQuantityAvailable(iExternalSource, gdm::iProduct, iExternalsourceTierNumber, iTimeIM);
+						pExternalsourceTankCost(stringtoelement(gdm::sNodes, "Tank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource), iTimeIM) := pExternalsourceCost(iExternalSource, gdm::iProduct, iExternalsourceTierNumber, iTimeIM);
+						pExternalsourceTankTakeOrPayQuantity(stringtoelement(gdm::sNodes, "Tank" + iExternalsourceTierNumber + "_" + spProductName(gdm::iProduct) + " - " + iExternalSource), iTimeIM) := pExternalsourceTakeorPayQuantity(iExternalSource, gdm::iProduct, iExternalsourceTierNumber, iTimeIM);
+					endif;
+				endfor;
+			}
+		}
+		Procedure procDM_NonModeledSource_ToSelectedUnit {
+			Body: {
+				pExternalsourceQuantityAvailable_InputSelectedUnit(ldm::iSource, gdm::iProduct, ldm::iExternalsourceTierNumber, ldm::iTimeIM, ldm::iDisplayUnit) := ldm::pExternalsourceQuantityAvailable(ldm::iSource, gdm::iProduct, ldm::iExternalsourceTierNumber, ldm::iTimeIM) * pConvFromNm3ToSelectUnit(gdm::iProduct, ldm::iDisplayUnit);
+				pExternalsourceCost_InputSelectedUnit(ldm::iSource, gdm::iProduct, ldm::iExternalsourceTierNumber, ldm::iTimeIM, ldm::iDisplayUnit) := ldm::pExternalsourceCost(ldm::iSource, gdm::iProduct, ldm::iExternalsourceTierNumber, ldm::iTimeIM) /$ pConvFromNm3ToSelectUnit(gdm::iProduct, ldm::iDisplayUnit);
+				pExternalsourceTakeorPayQuantity_InputSelectedUnit(ldm::iSource, gdm::iProduct, ldm::iExternalsourceTierNumber, ldm::iTimeIM, ldm::iDisplayUnit) := ldm::pExternalsourceTakeorPayQuantity(ldm::iSource, gdm::iProduct, ldm::iExternalsourceTierNumber, ldm::iTimeIM) * pConvFromNm3ToSelectUnit(gdm::iProduct, ldm::iDisplayUnit);
+			}
+		}
+		DeclarationSection Color_declaration {
+			ElementParameter epColorSlackDepot {
+				Range: AllColors;
+				Definition: {
+					if pSlackDepotCost = 0 then
+						odm::epContentTextColor
+					else
+						'Air Liquide red'
+					endif
+				}
+			}
+			ElementParameter epColorSlackTruckTypeQty {
+				IndexDomain: ( iDepot, iTruckType, gdm::iProduct, iTimeIM );
+				Range: AllColors;
+				Definition: {
+					if pTotalNumberOfShiftPerDepotTruckType( iDepot, iTruckType, gdm::iProduct, iTimeIM ) <= pNbShiftTruckMaxPerDepot( iDepot, iTruckType, gdm::iProduct, iTimeIM ) then
+						odm::epContentTextColor
+					else
+						'Air Liquide red'
+					endif
+				}
+			}
+			ElementParameter epColorSlackDriverQty {
+				IndexDomain: ( iDepot, iTimeIM );
+				Range: AllColors;
+				Definition: {
+					if pTotalNumberOfShiftPerDepot( iDepot, iTimeIM ) <= pNbShiftDriverMaxPerDepot( iDepot, iTimeIM ) then
+						odm::epContentTextColor
+					else
+						'Air Liquide red'
+					endif
+				}
+			}
+		}
+	}
+	Section Temp_Dev {
+		Section Test_dev {
+			Parameter p01RouteTripOrShiftDepot {
+				IndexDomain: ldm::iRoute;
+				Range: binary;
+				Definition: {
+					
+					if pRouteDistance(ldm::iRoute) * 2 * pDistanceAdjustmentCoefficient >= pTruckTypeDistancePerShift(epRouteTruckType(ldm::iRoute), epRouteProduct(ldm::iRoute)) then
+						1
+					else
+						0
+					endif
+				}
+			}
+			Variable vTruckloadingNumberOfShiftForDepotDistance {
+				IndexDomain: (iTruckLoading, gdm::iproduct, iTruckType, iTimeIM) | 0;
+				Range: free;
+			}
+			Constraint cTruckloadingNumberOfShiftForDepotDistance {
+				IndexDomain: (iTruckLoading,gdm::iProduct,iTruckType,iTimeIM) | 0;
+				Definition: {
+					vTruckloadingNumberOfShiftForDepotDistance(ldm::iTruckLoading, gdm::iProduct, ldm::iTruckType, ldm::iTimeIM)
+					=
+					sum((ldm::iRoute) |  epRouteFrom(ldm::iRoute)= iTruckLoading and epRouteProduct(ldm::iRoute) = gdm::iProduct and epRouteTruckType(ldm::iRoute) = iTruckType
+							,p01RouteTripOrShiftDepot(ldm::iRoute) * vRouteNumberOfTrip(ldm::iRoute, ldm::iTimeIM)
+							+
+							(1 - p01RouteTripOrShiftDepot(ldm::iRoute)) 
+							* vRouteDistance(ldm::iRoute, ldm::iTimeIM) * 2 * pDistanceAdjustmentCoefficient 
+							/$ pTruckTypeDistancePerShift(epRouteTruckType(ldm::iRoute), epRouteProduct(ldm::iRoute))
+							)
+				}
+			}
+			Section ReadWriteExcel_old {
+				Procedure procDefineTables_IM2 {
+					Body: {
+						/***
+						Definition of the datatables that are the specific for User
+						Do not add additional properties to existing (generic) data tables 
+						but define new tables for these specific properties
+						***/
+						!Format of command for index(sets) or other identifiers)
+						!cdl::procAddTable("Excel sheet name", gdm::spSchemaName, 1);
+						!cdl::procAddIndexToTable( "Excel sheet name", 'udm::iIndex', "Excel column name");
+						!cdl::procAddIdentifierToTable( "Excell sheet name", 'udm::AIMMSidentifier', "Excel column name");
+						
+						! cdl::procClear();
+						
+						! Nodes table
+						cdl::procAddTable("node", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "node", 'gdm::iNode', "node");
+						cdl::procAddIdentifierToTable("node",'gdm::epNodeType',"node_type");
+						cdl::procAddIdentifierToTable("node",'gdm::pNodeMinPressure',"min_pressure");
+						cdl::procAddIdentifierToTable("node",'gdm::pNodeMaxPressure',"max_pressure");
+						cdl::procAddIdentifierToTable("node",'gdm::epNodeSite',"site");
+						
+						! Arcs table
+						cdl::procAddTable("arc", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "arc", 'gdm::iArc', "arc");
+						cdl::procAddIdentifierToTable("arc",'gdm::epArcType',"arc_type");
+						cdl::procAddIdentifierToTable("arc",'gdm::epNodeFrom',"from_node");
+						cdl::procAddIdentifierToTable("arc",'gdm::epNodeTo',"to_node");
+						cdl::procAddIdentifierToTable("arc",'gdm::pArcMinFlow',"min_flow");
+						cdl::procAddIdentifierToTable("arc",'gdm::pArcMaxFlow',"max_flow");
+						
+						! outputflow node
+						cdl::procAddTable("output_flow_node", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "output_flow_node", 'gdm::iOutputFlowNode', "output_flow_node");
+						cdl::procAddIdentifierToTable( "output_flow_node", 'gdm::pOutputFlowNodeFixedConstant', "fixed_flow");
+						cdl::procAddIdentifierToTable( "output_flow_node", 'gdm::pOutputFlowNodeMinFlowConstant', "min_flow");
+						cdl::procAddIdentifierToTable( "output_flow_node", 'gdm::pOutputFlowNodeMaxFlowConstant', "max_flow");
+						cdl::procAddIdentifierToTable( "output_flow_node", 'gdm::pOutputFlowNodeMinPositiveRateChangeFlowConstant', "min_positive_rate_change");
+						cdl::procAddIdentifierToTable( "output_flow_node", 'gdm::pOutputFlowNodeMaxPositiveRateChangeFlowConstant', "max_positive_rate_change");
+						cdl::procAddIdentifierToTable( "output_flow_node", 'gdm::pOutputFlowNodeMinNegativeRateChangeFlowConstant', "min_negative_rate_change");
+						cdl::procAddIdentifierToTable( "output_flow_node", 'gdm::pOutputFlowNodeMaxNegativeRateChangeFlowConstant', "max_negative_rate_change");
+						cdl::procAddIdentifierToTable( "output_flow_node", 'gdm::pOutputFlowNodeMinStayTimeSteadyStateConstant', "min_stay_time_steady_state");
+						cdl::procAddIdentifierToTable( "output_flow_node", 'gdm::pOutputFlowNodeValuePerUnitConstant', "value_per_unit");
+						
+						! tanks
+						cdl::procAddTable("tank", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "tank", 'gdm::iTankNode', "tank");
+						cdl::procAddIdentifierToTable("tank",'gdm::epTankLiquidProduct',"liquid_product");
+						cdl::procAddIdentifierToTable("tank",'gdm::pTankInitialLevel',"initial_level");
+						cdl::procAddIdentifierToTable("tank",'gdm::pTankStorageCapacity',"storage_capacity");
+						cdl::procAddIdentifierToTable("tank",'gdm::pTankMinLevelConstant',"min_level");
+						cdl::procAddIdentifierToTable("tank",'gdm::pTankMaxLevelConstant',"max_level");
+						cdl::procAddIdentifierToTable("tank",'gdm::p01TankEnableLevelConstraintsConstant',"enable_level_constraints");
+						cdl::procAddIdentifierToTable("tank",'gdm::pTankLiquidValue',"liquid_value");
+						cdl::procAddIdentifierToTable("tank",'gdm::p01TankFlashSpecificEquation',"use_flash_tank_specific_equation");
+						
+						! ExternalsourceTanks
+						cdl::procAddTable("outsourcing_tank", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "outsourcing_tank", 'ldm::iExternalsourceTank', "outsourcing_tank");
+						cdl::procAddIdentifierToTable("outsourcing_tank",'ldm::pExternalsourceTankCost',"outsourcing_cost");
+						cdl::procAddIdentifierToTable("outsourcing_tank",'ldm::pExternalsourceTankTakeOrPayQuantity',"takeorpay_quantity");
+						
+						! Truckloading table
+						cdl::procAddTable("truckloadings", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "truckloadings", 'ldm::iTruckLoading', "truckloading");
+						cdl::procAddIdentifierToTable("truckloadings",'ldm::epTruckLoadingProduct',"product");
+						
+						! Routes table
+						cdl::procAddTable("routes", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "routes", 'ldm::iRoute', "route");
+						cdl::procAddIdentifierToTable("routes",'ldm::epRouteFrom',"from_truckloading");
+						cdl::procAddIdentifierToTable("routes",'ldm::epRouteTo',"to_cluster");
+						cdl::procAddIdentifierToTable("routes",'ldm::pRouteDistance',"distance");
+						cdl::procAddIdentifierToTable("routes",'ldm::p01RouteAssigned',"assigned");
+						cdl::procAddIdentifierToTable("routes",'ldm::p01RouteRemoved',"removed");
+						cdl::procAddIdentifierToTable("routes",'ldm::pRouteVolumeTransportedForced',"force_volume_transported");
+						
+						! Source_Depot table
+						cdl::procAddTable("source_depot", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "source_depot", 'ldm::iSource', "source");
+						cdl::procAddIndexToTable( "source_depot", 'ldm::iDepot', "depot");
+						cdl::procAddIdentifierToTable("source_depot",'ldm::pSourceDepotDistance',"distance");
+						cdl::procAddIdentifierToTable("source_depot",'ldm::p01SourceDepotActive',"is_active");
+						
+						!
+						!! Source_Depot_Accessibility table
+						!!cdl::procAddTable("source_depot_accessibility", gdm::spSchemaName, 1);
+						!!cdl::procAddIndexToTable( "source_depot_accessibility", 'ldm::iSource', "source");
+						!!cdl::procAddIndexToTable( "source_depot_accessibility", 'ldm::iDepot', "depot");
+						!!cdl::procAddIndexToTable( "source_depot_accessibility", 'ldm::iAccessibility', "accessibility");
+						!!cdl::procAddIndexToTable( "source_depot_accessibility", 'gdm::iProduct', "product");
+						!!cdl::procAddIdentifierToTable("source_depot_accessibility",'ldm::pMaxNumberAccessibilitySourceDepot',"number_accessibility");
+						!!cdl::procAddIdentifierToTable("source_depot_accessibility",'ldm::p01SourceDepotAccessibilityActive',"is_active");
+						!
+						
+						
+						
+						
+						/***
+						
+						! source type table
+						cdl::procAddTable("source_types", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "source_types", 'ldm::iSourceType', "source_type");
+						
+						! Source table
+						cdl::procAddTable("sources", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "sources", 'ldm::iSource', "source");
+						cdl::procAddIdentifierToTable("sources",'ldm::epSourceType',"source_type");
+						cdl::procAddIdentifierToTable("sources",'ldm::pSourceLatitude',"latitude");
+						cdl::procAddIdentifierToTable("sources",'ldm::pSourceLongitude',"longitude");
+						cdl::procAddIdentifierToTable("sources",'ldm::spSourceOpeningDay',"opening_day");
+						
+						
+						! Nodes table
+						cdl::procAddTable("node", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "node", 'gdm::iNode', "node");
+						cdl::procAddIdentifierToTable("node",'gdm::epNodeType',"node_type");
+						cdl::procAddIdentifierToTable("node",'gdm::pNodeMinPressure',"min_pressure");
+						cdl::procAddIdentifierToTable("node",'gdm::pNodeMaxPressure',"max_pressure");
+						cdl::procAddIdentifierToTable("node",'gdm::epNodeSite',"site");
+						
+						! Arcs table
+						cdl::procAddTable("arc", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "arc", 'gdm::iArc', "arc");
+						cdl::procAddIdentifierToTable("arc",'gdm::epArcType',"arc_type");
+						cdl::procAddIdentifierToTable("arc",'gdm::epNodeFrom',"from_node");
+						cdl::procAddIdentifierToTable("arc",'gdm::epNodeTo',"to_node");
+						cdl::procAddIdentifierToTable("arc",'gdm::pArcMinFlow',"min_flow");
+						cdl::procAddIdentifierToTable("arc",'gdm::pArcMaxFlow',"max_flow");
+						
+						! outputflow node
+						cdl::procAddTable("output_flow_node", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "output_flow_node", 'gdm::iOutputFlowNode', "output_flow_node");
+						cdl::procAddIdentifierToTable( "output_flow_node", 'gdm::pOutputFlowNodeFixedConstant', "fixed_flow");
+						cdl::procAddIdentifierToTable( "output_flow_node", 'gdm::pOutputFlowNodeMinFlowConstant', "min_flow");
+						cdl::procAddIdentifierToTable( "output_flow_node", 'gdm::pOutputFlowNodeMaxFlowConstant', "max_flow");
+						cdl::procAddIdentifierToTable( "output_flow_node", 'gdm::pOutputFlowNodeMinPositiveRateChangeFlowConstant', "min_positive_rate_change");
+						cdl::procAddIdentifierToTable( "output_flow_node", 'gdm::pOutputFlowNodeMaxPositiveRateChangeFlowConstant', "max_positive_rate_change");
+						cdl::procAddIdentifierToTable( "output_flow_node", 'gdm::pOutputFlowNodeMinNegativeRateChangeFlowConstant', "min_negative_rate_change");
+						cdl::procAddIdentifierToTable( "output_flow_node", 'gdm::pOutputFlowNodeMaxNegativeRateChangeFlowConstant', "max_negative_rate_change");
+						cdl::procAddIdentifierToTable( "output_flow_node", 'gdm::pOutputFlowNodeMinStayTimeSteadyStateConstant', "min_stay_time_steady_state");
+						cdl::procAddIdentifierToTable( "output_flow_node", 'gdm::pOutputFlowNodeValuePerUnitConstant', "value_per_unit");
+						
+						! tanks
+						cdl::procAddTable("tank", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "tank", 'gdm::iTankNode', "tank");
+						cdl::procAddIdentifierToTable("tank",'gdm::epTankLiquidProduct',"liquid_product");
+						cdl::procAddIdentifierToTable("tank",'gdm::pTankInitialLevel',"initial_level");
+						cdl::procAddIdentifierToTable("tank",'gdm::pTankStorageCapacity',"storage_capacity");
+						cdl::procAddIdentifierToTable("tank",'gdm::pTankMinLevelConstant',"min_level");
+						cdl::procAddIdentifierToTable("tank",'gdm::pTankMaxLevelConstant',"max_level");
+						cdl::procAddIdentifierToTable("tank",'gdm::p01TankEnableLevelConstraintsConstant',"enable_level_constraints");
+						cdl::procAddIdentifierToTable("tank",'gdm::pTankLiquidValue',"liquid_value");
+						cdl::procAddIdentifierToTable("tank",'gdm::p01TankFlashSpecificEquation',"use_flash_tank_specific_equation");
+						
+						! OutsourcingTanks
+						cdl::procAddTable("outsourcing_tank", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "outsourcing_tank", 'ldm::iOutsourcingTank', "outsourcing_tank");
+						cdl::procAddIdentifierToTable("outsourcing_tank",'ldm::pOutsourcingTankCost',"outsourcing_cost");
+						cdl::procAddIdentifierToTable("outsourcing_tank",'ldm::pOutsourcingTankTakeOrPayQuantity',"takeorpay_quantity");
+						
+						! TruckType table
+						cdl::procAddTable("truck_type", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "truck_type", 'ldm::iTruckType', "truck_type");
+						cdl::procAddIndexToTable( "truck_type", 'gdm::iProduct', "product");
+						cdl::procAddIdentifierToTable("truck_type",'ldm::pTruckTypeCapacity',"capacity");
+						cdl::procAddIdentifierToTable("truck_type",'ldm::pTruckTypeTransportCost',"transport_cost");
+						cdl::procAddIdentifierToTable("truck_type",'ldm::pTruckTypeDistancePerShift',"distance_per_shift");
+						cdl::procAddIdentifierToTable("truck_type",'ldm::pTruckTypeLoadingDistance',"loading_distance");
+						
+						! CustomerClusters table
+						cdl::procAddTable("customer_clusters", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "customer_clusters", 'ldm::iCustomerCluster', "customer_cluster");
+						cdl::procAddIdentifierToTable("customer_clusters",'ldm::epCustomerClusterProduct',"product");
+						cdl::procAddIdentifierToTable("customer_clusters",'ldm::pCustomerClusterLiquidDemand',"demand");
+						cdl::procAddIdentifierToTable("customer_clusters",'ldm::epCustomerClusterTruckType',"truck_type");
+						cdl::procAddIdentifierToTable("customer_clusters",'ldm::pCustomerClusterLatitude',"latitude");
+						cdl::procAddIdentifierToTable("customer_clusters",'ldm::pCustomerClusterLongitude',"longitude");
+						cdl::procAddIdentifierToTable("customer_clusters",'ldm::spCustomerClusterDispatchZone',"dispatch_zone");
+						
+						! Truckloading table
+						cdl::procAddTable("truckloadings", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "truckloadings", 'ldm::iTruckLoading', "truckloading");
+						cdl::procAddIdentifierToTable("truckloadings",'ldm::epTruckLoadingProduct',"product");
+						
+						! Routes table
+						cdl::procAddTable("routes", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "routes", 'ldm::iRoute', "route");
+						cdl::procAddIdentifierToTable("routes",'ldm::epRouteFrom',"from_truckloading");
+						cdl::procAddIdentifierToTable("routes",'ldm::epRouteTo',"to_cluster");
+						cdl::procAddIdentifierToTable("routes",'ldm::pRouteDistance',"distance");
+						cdl::procAddIdentifierToTable("routes",'ldm::p01RouteAssigned',"assigned");
+						cdl::procAddIdentifierToTable("routes",'ldm::p01RouteRemoved',"removed");
+						cdl::procAddIdentifierToTable("routes",'ldm::pRouteVolumeTransportedForced',"force_volume_transported");
+						
+						! Depots table
+						cdl::procAddTable("depots", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "depots", 'ldm::iDepot', "depot");
+						cdl::procAddIdentifierToTable("depots",'ldm::pDepotLatitude',"latitude");
+						cdl::procAddIdentifierToTable("depots",'ldm::pDepotLongitude',"longitude");
+						cdl::procAddIdentifierToTable("depots",'ldm::pDepotNumberDriver',"number_driver");
+						cdl::procAddIdentifierToTable("depots",'ldm::pDepotNumberShift',"number_shift");
+						cdl::procAddIdentifierToTable("depots",'ldm::pDepotShiftExtraCost',"shift_extra_cost");
+						
+						! Source_Depot table
+						cdl::procAddTable("source_depot", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "source_depot", 'ldm::iSource', "source");
+						cdl::procAddIndexToTable( "source_depot", 'ldm::iDepot', "depot");
+						cdl::procAddIdentifierToTable("source_depot",'ldm::pSourceDepotDistance',"distance");
+						cdl::procAddIdentifierToTable("source_depot",'ldm::p01SourceDepotActive',"is_active");
+						
+						! Depot_Trucktype table
+						cdl::procAddTable("depot_truck_type", gdm::spSchemaName, 1);
+						cdl::procAddIndexToTable( "depot_truck_type", 'ldm::iDepot', "depot");
+						cdl::procAddIndexToTable( "depot_truck_type", 'ldm::iTruckType', "truck_type");
+						cdl::procAddIndexToTable( "depot_truck_type", 'gdm::iProduct', "product");
+						cdl::procAddIdentifierToTable("depot_truck_type",'ldm::pDepotTruckTypeNumber',"number_truck_type");
+						cdl::procAddIdentifierToTable("depot_truck_type",'ldm::pDepotTruckTypeNumberShift',"number_shift");
+						cdl::procAddIdentifierToTable("depot_truck_type",'ldm::pDepotTruckTypeTransportCost',"depot_transport_cost");
+						cdl::procAddIdentifierToTable("depot_truck_type",'ldm::p01DepotTruckNumberActive',"is_active");
+						
+						! Source_Depot_Accessibility table
+						!cdl::procAddTable("source_depot_accessibility", gdm::spSchemaName, 1);
+						!cdl::procAddIndexToTable( "source_depot_accessibility", 'ldm::iSource', "source");
+						!cdl::procAddIndexToTable( "source_depot_accessibility", 'ldm::iDepot', "depot");
+						!cdl::procAddIndexToTable( "source_depot_accessibility", 'ldm::iAccessibility', "accessibility");
+						!cdl::procAddIndexToTable( "source_depot_accessibility", 'gdm::iProduct', "product");
+						!cdl::procAddIdentifierToTable("source_depot_accessibility",'ldm::pMaxNumberAccessibilitySourceDepot',"number_accessibility");
+						!cdl::procAddIdentifierToTable("source_depot_accessibility",'ldm::p01SourceDepotAccessibilityActive',"is_active");
+						
+						! Lim Parameters
+						cdl::procAddTable("lim_parameters" , gdm::spSchemaName, 1);
+						cdl::procAddIdentifierToTable( "lim_parameters", 'ldm::p01UseDepot', "use_depot");
+						cdl::procAddIdentifierToTable( "lim_parameters", 'ldm::pDistanceAdjustmentCoefficient', "distance_adjustment_coefficient");
+						
+						***/
+					}
+					Comment: {
+						"
+						Defines the table structure in the database / excel files"
+					}
+				}
+				Procedure procReadFromExcelButton_ldm {
+					Body: {
+						! Clear messages
+						gdm::procClearMessages;
+						
+						if ( fileselect( spExcelFile , extension: "xlsx") = 0 ) then return; endif;
+						
+						! repair for special character string since the string is used in generated code
+						spExcelFile := FindReplaceStrings( spExcelFile , "\\" , "\\\\" );
+						
+						! Define tables LIM (Base)
+						ldm::procDefineTables_IM1();
+						! Define tables LIM (Base)
+						ldm::procDefineTables_IM2();
+						
+						!Read from Excel step2 
+						if ( cdl::procReadFromExcel( formatstring("%s",spExcelFile ) ) ) then
+							dialogmessage( "Excel succesfully read");
+						endif;
+						
+						! Save the name of the loaded file
+						! gdm::spExcelFileDisplay := spExcelFile;
+						
+						! Add the dispatch zone of customer/cluster in the set sDisptachZone
+						procAddSetDispatchZoneAndCategory();
+						
+						! Call procedure to create the link between excel parameters and time dependent parameters in gom and uom
+						gdm::procInitializeTimeDependentData();
+						udm::procInitializeTimeDependentData_udm();
+					}
+					StringParameter spExcelFile;
+				}
+			}
+		}
+		Section Distribution__Analysis {
+			Parameter pRouteTotalDistance {
+				IndexDomain: iTimeIM;
+				Definition: {
+					sum( (iTruckLoading,gdm::iProduct,iTruckType),
+						sum(iRoute | (epRouteFrom(ldm::iRoute) = ldm::iTruckLoading and epRouteTruckType(ldm::iRoute) = ldm::iTruckType and epRouteProduct(ldm::iRoute) = gdm::iproduct),
+						vRouteDistance(ldm::iRoute, iTimeIM) ) * 2
+						)
+				}
+			}
+			Parameter pDepotTotalDistance {
+				IndexDomain: iTimeIM;
+				Definition: {
+					sum( (iTruckLoading,gdm::iProduct,iTruckType),
+						sum(iDepot, vTruckLoadingDepotDistance(ldm::iTruckLoading, ldm::iDepot, gdm::iProduct, ldm::iTruckType,iTimeIM) )
+						)
+				}
+			}
+			Parameter pDemandForcedWeek {
+				IndexDomain: (iWeek, iRoute);
+			}
+			Parameter pTotalDistanceWeek {
+				IndexDomain: (iWeek);
+			}
+			Parameter pRouteTotalDistanceWeek {
+				IndexDomain: (iWeek);
+			}
+			Parameter pDepotTotalDistanceWeek {
+				IndexDomain: (iWeek);
+			}
+			Procedure procDefineTablesForHistQty_LIM {
+				Body: {
+					/***
+					Definition of the datatables that are the specific for User
+					Do not add additional properties to existing (generic) data tables 
+					but define new tables for these specific properties
+					***/
+					!Format of command for index(sets) or other identifiers)
+					!cdl::procAddTable("Excel sheet name", gdm::spSchemaName, 1);
+					!cdl::procAddIndexToTable( "Excel sheet name", 'udm::iIndex', "Excel column name");
+					!cdl::procAddIdentifierToTable( "Excell sheet name", 'udm::AIMMSidentifier', "Excel column name");
+					
+					cdl::procClear();
+					
+					
+					! Nodes table
+					cdl::procAddTable("Sheet1", gdm::spSchemaName, 1);
+					cdl::procAddIndexToTable( "Sheet1", 'ldm::iWeek', "Week");
+					cdl::procAddIndexToTable( "Sheet1", 'ldm::iRoute', "route");
+					cdl::procAddIdentifierToTable("Sheet1",'ldm::pDemandForcedWeek',"qty_kg-Nm3");
+				}
+				Comment: {
+					"
+					Defines the table structure in the database / excel files"
+				}
+			}
+			Procedure procReadFromExcelForHistQty_ldm {
+				Body: {
+					! Clear messages
+					gdm::procClearMessages;
+					
+					if ( fileselect( spExcelFile , extension: "xlsx") = 0 ) then return; endif;
+					
+					! repair for special character string since the string is used in generated code
+					spExcelFile := FindReplaceStrings( spExcelFile , "\\" , "\\\\" );
+					
+					! Define tables step 1
+					! gdm::procDefineTablesTime1();
+					
+					!Read from Excel step1 
+					!if ( cdl::procReadFromExcel( formatstring("%s",spExcelFile ) ) = 0 ) then
+					!	return 0;
+					!endif;
+					
+					! change date format for excel
+					! gdm::procChangeDateFormatExcelRead();
+					
+					ldm::procDefineTablesForHistQty_LIM();
+					
+					
+					!Read from Excel step2 
+					if ( cdl::procReadFromExcel( formatstring("%s",spExcelFile ) ) ) then
+						dialogmessage( "Excel succesfully read");
+					endif;
+					
+					! Save the name of the loaded file
+					! gdm::spExcelFileDisplay := spExcelFile;
+					
+					! Call procedure to create the link between excel parameters and time dependent parameters in gom and uom
+					!gdm::procInitializeTimeDependentData();
+					!udm::procInitializeTimeDependentData_udm();
+				}
+				StringParameter spExcelFile;
+			}
+			Procedure procLaunchSolvePerWeek {
+				Body: {
+					!
+					!pCustomerClusterLiquidDemand(iCustomerCluster, iTimeIM) := 0;
+					!
+					!
+					!
+					!for iWeek do
+					!	StatusMessage("nb_week : " + iweek);
+					!	pRouteVolumeTransportedForced(iRoute) := pDemandForcedWeek(iWeek, iRoute);
+					!
+					!	procSolveLinearModel_ldm();
+					!
+					!	pTotalDistanceWeek(iWeek) := pTotalDistance;
+					!	pRouteTotalDistanceWeek(iWeek) := pRouteTotalDistance;
+					!	pDepotTotalDistanceWeek(iWeek) := pDepotTotalDistance;
+					!endfor;
+					!
+				}
+			}
+		}
+		Section Distribution_WebUI_Test {
+			Set sCustomerClusterLin {
+				SubsetOf: sCustomerClusters;
+				Index: iCustomerClusterLin;
+				Definition: {
+					{ iCustomerCluster | epCustomerClusterProduct(ldm::iCustomerCluster) = gdm::epProductN2 }
+				}
+				webui::AnnotationsIdentifier: spaCustomerProduct;
+			}
+			Set sCustomerClusterLox {
+				SubsetOf: sCustomerClusters;
+				Index: iCustomerClusterLox;
+				Definition: {
+					{ iCustomerCluster | epCustomerClusterProduct(ldm::iCustomerCluster) = gdm::epProductO2 }
+				}
+				webui::AnnotationsIdentifier: spaCustomerProduct;
+			}
+			Set sCustomerClusterLar {
+				SubsetOf: sCustomerClusters;
+				Index: iCustomerClusterLar;
+				Definition: {
+					{ iCustomerCluster | epCustomerClusterProduct(ldm::iCustomerCluster) = gdm::epProductAr }
+				}
+				webui::AnnotationsIdentifier: spaCustomerProduct;
+			}
+			Parameter pRoutesUsedForLin {
+				IndexDomain: (isource, icustomercluster, iTimeIM) | epCustomerClusterProduct(ldm::iCustomerCluster) = gdm::epProductN2;
+				Definition: {
+					if sum(iroute | ( epTruckLoadingSource(epRouteFrom(ldm::iRoute)) = isource and epRouteTo(ldm::iRoute) = icustomercluster ), vRouteVolumeTransported(ldm::iRoute, iTimeIM)) = 0 then
+						0
+					else
+						sum(iroute | ( epTruckLoadingSource(epRouteFrom(ldm::iRoute)) = isource and epRouteTo(ldm::iRoute) = icustomercluster ), vRouteVolumeTransported(ldm::iRoute, iTimeIM))
+					endif
+				}
+				webui::AnnotationsIdentifier: spaRoutesTrucktypeLin;
+			}
+			Parameter pRoutesUsedForLox {
+				IndexDomain: (isource, icustomercluster, iTimeIM) | epCustomerClusterProduct(ldm::iCustomerCluster) = gdm::epProductO2;
+				Definition: {
+					if sum(iroute | ( epTruckLoadingSource(epRouteFrom(ldm::iRoute)) = isource and epRouteTo(ldm::iRoute) = icustomercluster ), vRouteVolumeTransported(ldm::iRoute, iTimeIM)) = 0 then
+						0
+					else
+						sum(iroute | ( epTruckLoadingSource(epRouteFrom(ldm::iRoute)) = isource and epRouteTo(ldm::iRoute) = icustomercluster ), vRouteVolumeTransported(ldm::iRoute, iTimeIM))
+					endif
+				}
+				webui::AnnotationsIdentifier: spaRoutesTrucktypeLox;
+			}
+			Parameter pRoutesUsedForLar {
+				IndexDomain: (isource, icustomercluster, iTimeIM) | epCustomerClusterProduct(ldm::iCustomerCluster) = gdm::epProductAr;
+				Definition: {
+					if sum(iroute | ( epTruckLoadingSource(epRouteFrom(ldm::iRoute)) = isource and epRouteTo(ldm::iRoute) = icustomercluster ), vRouteVolumeTransported(ldm::iRoute, iTimeIM)) = 0 then
+						0
+					else
+						sum(iroute | ( epTruckLoadingSource(epRouteFrom(ldm::iRoute)) = isource and epRouteTo(ldm::iRoute) = icustomercluster ), vRouteVolumeTransported(ldm::iRoute, iTimeIM))
+					endif
+				}
+				webui::AnnotationsIdentifier: spaRoutesTrucktypeLar;
+			}
+			StringParameter spaSources {
+				IndexDomain: iSource;
+				Definition: "Source";
+			}
+			StringParameter spaArcLox {
+				IndexDomain: (iSource,iCustomerCluster);
+				Definition: "Lox";
+			}
+			StringParameter spaCustomerProduct {
+				IndexDomain: icustomercluster;
+				Definition: {
+					if epCustomerClusterProduct(ldm::iCustomerCluster) = gdm::epProductN2 then
+						"n2"
+					elseif epCustomerClusterProduct(ldm::iCustomerCluster) = gdm::epProductO2 then
+						"o2"
+					elseif epCustomerClusterProduct(ldm::iCustomerCluster) = gdm::epProductAr then
+						"ar"
+					endif
+				}
+			}
+			StringParameter spaRoutesTrucktypeLin {
+				IndexDomain: (isource, icustomercluster, iTimeIM) | epCustomerClusterProduct(ldm::iCustomerCluster) = gdm::epProductN2;
+				Definition: {
+					
+					if sum(iroute | ( epTruckLoadingSource(epRouteFrom(ldm::iRoute)) = isource and epRouteTo(ldm::iRoute) = icustomercluster and epRouteTruckType(ldm::iRoute) = epTruckTypeTrailer)
+								, vRouteVolumeTransported(ldm::iRoute, iTimeIM)) <> 0 then
+						"TrailerN2"
+					elseif sum(iroute | ( epTruckLoadingSource(epRouteFrom(ldm::iRoute)) = isource and epRouteTo(ldm::iRoute) = icustomercluster and epRouteTruckType(ldm::iRoute) = epTruckTypeTruck)
+								, vRouteVolumeTransported(ldm::iRoute, iTimeIM)) <> 0  then
+						"TruckN2"
+					elseif sum(iroute | ( epTruckLoadingSource(epRouteFrom(ldm::iRoute)) = isource and epRouteTo(ldm::iRoute) = icustomercluster and epRouteTruckType(ldm::iRoute) = epTruckTypeSmall)
+								, vRouteVolumeTransported(ldm::iRoute, iTimeIM)) <> 0 then
+						"SmallN2"
+					endif
+				}
+			}
+			StringParameter spaRoutesTrucktypeLox {
+				IndexDomain: (isource, icustomercluster, iTimeIM) | epCustomerClusterProduct(ldm::iCustomerCluster) = gdm::epProductO2;
+				Definition: {
+					
+					if sum(iroute | ( epTruckLoadingSource(epRouteFrom(ldm::iRoute)) = isource and epRouteTo(ldm::iRoute) = icustomercluster and epRouteTruckType(ldm::iRoute) = epTruckTypeTrailer)
+								, vRouteVolumeTransported(ldm::iRoute, iTimeIM)) <> 0 then
+						"TrailerO2"
+					elseif sum(iroute | ( epTruckLoadingSource(epRouteFrom(ldm::iRoute)) = isource and epRouteTo(ldm::iRoute) = icustomercluster and epRouteTruckType(ldm::iRoute) = epTruckTypeTruck)
+								, vRouteVolumeTransported(ldm::iRoute, iTimeIM)) <> 0  then
+						"TruckO2"
+					elseif sum(iroute | ( epTruckLoadingSource(epRouteFrom(ldm::iRoute)) = isource and epRouteTo(ldm::iRoute) = icustomercluster and epRouteTruckType(ldm::iRoute) = epTruckTypeSmall)
+								, vRouteVolumeTransported(ldm::iRoute, iTimeIM)) <> 0 then
+						"SmallO2"
+					endif
+				}
+			}
+			StringParameter spaRoutesTrucktypeLar {
+				IndexDomain: (isource, icustomercluster, iTimeIM) | epCustomerClusterProduct(ldm::iCustomerCluster) = gdm::epProductAr;
+				Definition: {
+					
+					if sum(iroute | ( epTruckLoadingSource(epRouteFrom(ldm::iRoute)) = isource and epRouteTo(ldm::iRoute) = icustomercluster and epRouteTruckType(ldm::iRoute) = epTruckTypeTrailer)
+								, vRouteVolumeTransported(ldm::iRoute, iTimeIM)) <> 0 then
+						"TrailerAr"
+					elseif sum(iroute | ( epTruckLoadingSource(epRouteFrom(ldm::iRoute)) = isource and epRouteTo(ldm::iRoute) = icustomercluster and epRouteTruckType(ldm::iRoute) = epTruckTypeTruck)
+								, vRouteVolumeTransported(ldm::iRoute, iTimeIM)) <> 0  then
+						"TruckAr"
+					elseif sum(iroute | ( epTruckLoadingSource(epRouteFrom(ldm::iRoute)) = isource and epRouteTo(ldm::iRoute) = icustomercluster and epRouteTruckType(ldm::iRoute) = epTruckTypeSmall)
+								, vRouteVolumeTransported(ldm::iRoute, iTimeIM)) <> 0 then
+						"SmallAr"
+					endif
+				}
+			}
+			ElementParameter epRoute {
+				IndexDomain: (iSource,iCustomerCluster);
+				Range: sRoutes;
+			}
+			Parameter p01MapArcHideLabel {
+				Range: binary;
+			}
+		}
+	}
+}

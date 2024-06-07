@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<Page Version="4000" TimeStamp="2022-11-14 13:16:42">
+	<PageEditSize Type="Specified">
+		<Size Width="800" Height="400" />
+	</PageEditSize>
+	<ProjectUUID>69E6B8B7-8C6E-468D-ABF3-943574690CFD</ProjectUUID>
+	<IsDialogPage>true</IsDialogPage>
+	<TemplatesTabOrderPosition>1</TemplatesTabOrderPosition>
+	<ResizeData>
+		<MainArea Line="FixedFromTop" Value="38">
+			<TopArea Line="PercentageFromLeft" Value="0.983333333333" />
+		</MainArea>
+	</ResizeData>
+	<Background>
+		<UserColor GUID="BDFE7E86-A7C8-4FA3-BEA3-FA3B7D1374B7">dark grey</UserColor>
+	</Background>
+	<PageObject Type="Text">
+		<Location top="415" left="213" bottom="460" right="263" />
+		<StaticText>
+
+PdP Style</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<TextColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="12" left="12" bottom="33" right="381" />
+		<StaticText>sTruckloading</StaticText>
+		<Font GUID="523F941B-E378-47BE-AEB2-3C1FD99F8C69" Name="Arial 12 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="189" left="809" bottom="435" right="1260" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="12" left="669" bottom="36" right="769" />
+		<TabOrder>2</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Closed"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="ClosePage" />
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Selection Object">
+		<SelectionType>ListBox</SelectionType>
+		<Location top="60" left="294" bottom="402" right="786" />
+		<ReadOnly>odm::p01ReadOnlyCreateNewItem</ReadOnly>
+		<TabOrder>1</TabOrder>
+		<UseTabInObject>true</UseTabInObject>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<TextShown>ElementName</TextShown>
+		<Border Style="InShadow" Width="2" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor>
+			<Symbol>odm::epColumnAreaLineColor</Symbol>
+		</BackgroundColor>
+		<TextColor>
+			<Symbol>odm::epContentTextColor</Symbol>
+		</TextColor>
+		<MultipleColumns>true</MultipleColumns>
+		<ExplicitIdentifier>
+			<Identifier>ldm::sTruckLoadings( gdm::sOutputFlowNodes )</Identifier>
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Selection Object">
+		<SelectionType>ListBox</SelectionType>
+		<Location top="60" left="9" bottom="396" right="288" />
+		<TabOrder>3</TabOrder>
+		<UseTabInObject>true</UseTabInObject>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<TextShown>ElementName</TextShown>
+		<Border Style="InShadow" Width="2" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor>
+			<Symbol>odm::epColumnAreaLineColor</Symbol>
+		</BackgroundColor>
+		<TextColor>
+			<Symbol>odm::epContentTextColor</Symbol>
+		</TextColor>
+		<MultipleColumns>true</MultipleColumns>
+		<ExplicitIdentifier>
+			<Identifier>ldm::sTruckLoadings(ldm::sTruckLoadings)</Identifier>
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="42" left="12" bottom="60" right="168" />
+		<StaticText>ldm::sTruckLoading</StaticText>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="42" left="294" bottom="60" right="558" />
+		<StaticText>Subset of: gdm::sOutputFlowNodes</StaticText>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<UsedReferences>
+		<Model>
+			<Symbol>gdm::sOutputFlowNodes</Symbol>
+			<Symbol>odm::p01ReadOnlyCreateNewItem</Symbol>
+			<Symbol>odm::epColumnAreaLineColor</Symbol>
+			<Symbol>odm::epContentTextColor</Symbol>
+			<Symbol>ldm::sTruckLoadings</Symbol>
+		</Model>
+	</UsedReferences>
+</Page>

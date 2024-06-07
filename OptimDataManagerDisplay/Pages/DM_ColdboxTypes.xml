@@ -1,0 +1,330 @@
+<?xml version="1.0"?>
+<Page Version="4000" TimeStamp="2021-09-15 06:31:18">
+	<PageEditSize Type="Specified">
+		<Size Width="800" Height="400" />
+	</PageEditSize>
+	<ProjectUUID>748F1752-A3CC-4398-BEB0-3B3157FE70D8</ProjectUUID>
+	<IsDialogPage>true</IsDialogPage>
+	<TemplatesTabOrderPosition>1</TemplatesTabOrderPosition>
+	<ResizeData>
+		<MainArea Line="FixedFromTop" Value="38">
+			<TopArea Line="PercentageFromLeft" Value="0.983333333333" />
+		</MainArea>
+	</ResizeData>
+	<Background>
+		<UserColor GUID="BDFE7E86-A7C8-4FA3-BEA3-FA3B7D1374B7">dark grey</UserColor>
+	</Background>
+	<PageObject Type="Text">
+		<Location top="414" left="215" bottom="459" right="263" />
+		<StaticText>
+
+PdP Style</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<TextColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="189" left="810" bottom="435" right="1260" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="12" left="670" bottom="36" right="770" />
+		<TabOrder>1</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Closed"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="ClosePage" />
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="42" left="6" bottom="396" right="162" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="42" left="12" bottom="84" right="156" />
+		<StaticText>Coldbox Process List</StaticText>
+		<Font GUID="523F941B-E378-47BE-AEB2-3C1FD99F8C69" Name="Arial 12 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Selection Object">
+		<SelectionType>ListBox</SelectionType>
+		<Location top="84" left="12" bottom="390" right="156" />
+		<ReadOnly>odm::p01ReadOnlyCreateNewItem</ReadOnly>
+		<TabOrder>5</TabOrder>
+		<UseTabInObject>true</UseTabInObject>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<TextShown>ElementName</TextShown>
+		<EditField>AtTop</EditField>
+		<AddAndRemoveButtons>true</AddAndRemoveButtons>
+		<Border Style="Line" Width="1" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor>
+			<Symbol>odm::epColumnAreaLineColor</Symbol>
+		</BackgroundColor>
+		<TextColor>
+			<Symbol>odm::epContentTextColor</Symbol>
+		</TextColor>
+		<MultipleColumns>true</MultipleColumns>
+		<ExplicitIdentifier>
+			<Identifier>gdm::sColdboxProcess(gdm::sColdboxProcess)</Identifier>
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Line">
+		<Location top="397" left="20" bottom="397" right="40" />
+		<LineColor RGB="#000000" />
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="42" left="168" bottom="396" right="342" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="42" left="174" bottom="90" right="336" />
+		<StaticText>Coldbox
+Internal Flow List
+</StaticText>
+		<Font GUID="523F941B-E378-47BE-AEB2-3C1FD99F8C69" Name="Arial 12 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Selection Object">
+		<SelectionType>ListBox</SelectionType>
+		<Location top="84" left="174" bottom="390" right="336" />
+		<ReadOnly>odm::p01ReadOnlyCreateNewItem</ReadOnly>
+		<TabOrder>4</TabOrder>
+		<UseTabInObject>true</UseTabInObject>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<TextShown>ElementName</TextShown>
+		<EditField>AtTop</EditField>
+		<AddAndRemoveButtons>true</AddAndRemoveButtons>
+		<Border Style="Line" Width="1" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor>
+			<Symbol>odm::epColumnAreaLineColor</Symbol>
+		</BackgroundColor>
+		<TextColor>
+			<Symbol>odm::epContentTextColor</Symbol>
+		</TextColor>
+		<MultipleColumns>true</MultipleColumns>
+		<ExplicitIdentifier>
+			<Identifier>gdm::sColdboxInternalFlows(gdm::sColdboxInternalFlows)</Identifier>
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="42" left="348" bottom="396" right="786" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="42" left="354" bottom="57" right="726" />
+		<StaticText>Coldbox General Equation</StaticText>
+		<Font GUID="523F941B-E378-47BE-AEB2-3C1FD99F8C69" Name="Arial 12 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Selection Object">
+		<SelectionType>ListBox</SelectionType>
+		<Location top="60" left="354" bottom="204" right="780" />
+		<ReadOnly>odm::p01ReadOnlyCreateNewItem</ReadOnly>
+		<TabOrder>3</TabOrder>
+		<UseTabInObject>true</UseTabInObject>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<TextShown>ElementName</TextShown>
+		<EditField>AtTop</EditField>
+		<AddAndRemoveButtons>true</AddAndRemoveButtons>
+		<Border Style="Line" Width="1" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor>
+			<Symbol>odm::epColumnAreaLineColor</Symbol>
+		</BackgroundColor>
+		<TextColor>
+			<Symbol>odm::epContentTextColor</Symbol>
+		</TextColor>
+		<MultipleColumns>true</MultipleColumns>
+		<ExplicitIdentifier>
+			<Identifier>gdm::sColdboxGeneralEquations(gdm::sColdboxGeneralEquations)</Identifier>
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Pivot Table">
+		<Location top="210" left="354" bottom="390" right="780" />
+		<TabOrder>2</TabOrder>
+		<ObjectUUID>7EE7200E-4CE0-495F-9B9F-64AF86537198</ObjectUUID>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="Line" Width="1" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<Contents>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::p01ColdboxTypeGeneralEquation( gdm::iColdboxProcess, gdm::iColdboxGeneralEquation )</Identifier>
+			</Explicit_Identifier>
+			<Defaults>
+				<Format>
+					<Standard_Format ID="4216">3</Standard_Format>
+					<Show_Checkboxes ID="4215">"Yes"</Show_Checkboxes>
+				</Format>
+				<Readonly ID="4052">odm::p01ReadOnlyCreateNewItem</Readonly>
+				<Colors>
+					<Background_Color ID="4170">odm::epContentBackgroundColor</Background_Color>
+					<Text_Color ID="4175">odm::epContentTextColor</Text_Color>
+					<Bar_Fill_Color ID="4177">odm::epContentBarFillColor</Bar_Fill_Color>
+				</Colors>
+			</Defaults>
+		</Contents>
+		<Indices>
+			<Identifier_Index>
+				<Header_Title ID="6230">""</Header_Title>
+				<Hide_if_Single_Identifier ID="6270">"No"</Hide_if_Single_Identifier>
+			</Identifier_Index>
+		</Indices>
+		<General>
+			<Background_Color ID="1010">odm::epGeneralBackgroundColor</Background_Color>
+			<Border_Color ID="1011">odm::epGeneralBorderColor</Border_Color>
+			<Dense_Aggregation_restricts_to_Domain ID="1022">"Yes"</Dense_Aggregation_restricts_to_Domain>
+		</General>
+		<Row_Area>
+			<Background_Color ID="2010">odm::epRowAreaBackgroundColor</Background_Color>
+			<Text_Color ID="2020">odm::epRowAreaTextColor</Text_Color>
+			<Line_Color ID="2040">odm::epRowAreaLineColor</Line_Color>
+			<Headers>
+				<Background_Color ID="2120">odm::epRowAreaHeaderBackgroundColor</Background_Color>
+				<Text_Color ID="2130">odm::epRowAreaHeaderTextColor</Text_Color>
+				<Show_Sub_Headers ID="2150">"No"</Show_Sub_Headers>
+			</Headers>
+			<Aggregators>
+				<Background_Color ID="2220">odm::epRowAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="2230">odm::epRowAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Grid_Focus_Indicator>
+				<Background_Color ID="2270">odm::epRowAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="2280">odm::epRowAreaGridFocusTextColor</Text_Color>
+			</Grid_Focus_Indicator>
+		</Row_Area>
+		<Column_Area>
+			<Same_as_Row_Area ID="3005">"No"</Same_as_Row_Area>
+			<Auto_resize_Column_Widths ID="3006">"Never"</Auto_resize_Column_Widths>
+			<Background_Color ID="3010">odm::epColumnAreaBackgroundColor</Background_Color>
+			<Text_Color ID="3020">odm::epColumnAreaTextColor</Text_Color>
+			<Line_Color ID="3040">odm::epColumnAreaLineColor</Line_Color>
+			<Headers>
+				<Background_Color ID="3120">odm::epColumnAreaHeaderBackgroundColor</Background_Color>
+				<Text_Color ID="3130">odm::epColumnAreaHeaderTextColor</Text_Color>
+			</Headers>
+			<Aggregators>
+				<Background_Color ID="3220">odm::epColumnAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="3230">odm::epColumnAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Grid_Focus_Indicator>
+				<Background_Color ID="3270">odm::epColumnAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="3280">odm::epColumnAreaGridFocusTextColor</Text_Color>
+			</Grid_Focus_Indicator>
+		</Column_Area>
+		<Outer_Area>
+			<Same_as_Row_Area ID="3505">"No"</Same_as_Row_Area>
+			<Background_Color ID="3510">odm::epOuterAreaBackgroundColor</Background_Color>
+			<Text_Color ID="3520">odm::epOuterAreaTextColor</Text_Color>
+			<Line_Color ID="3540">odm::epOuterAreaLineColor</Line_Color>
+			<Headers>
+				<Background_Color ID="3620">odm::epOuterAreaHeaderBackgroundColor</Background_Color>
+				<Text_Color ID="3630">odm::epOuterAreaHeaderTextColor</Text_Color>
+			</Headers>
+			<Aggregators>
+				<Background_Color ID="3720">odm::epOuterAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="3730">odm::epOuterAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Grid_Focus_Indicator>
+				<Background_Color ID="3770">odm::epOuterAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="3780">odm::epOuterAreaGridFocusTextColor</Text_Color>
+			</Grid_Focus_Indicator>
+		</Outer_Area>
+		<Grid_Area>
+			<Background_Color ID="5010">odm::epGridAreaBackgroundColor</Background_Color>
+			<Alternating_Background_Color ID="5011">odm::epGridAreaAltBackgroundColor</Alternating_Background_Color>
+			<Text_Color ID="5020">odm::epGridAreaTextColor</Text_Color>
+			<Line_Color ID="5040">odm::epGridAreaLineColor</Line_Color>
+			<Second_Line_Color ID="5041">odm::epGridAreaSecondLineColor</Second_Line_Color>
+			<Selection>
+				<Background_Color ID="5120">odm::epGridAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="5130">odm::epGridAreaGridFocusTextColor</Text_Color>
+			</Selection>
+			<Aggregators>
+				<Background_Color ID="5220">odm::epGridAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="5230">odm::epGridAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Sub_Header_Row_or_Column>
+				<Background_Color ID="5320">odm::epGridAreaSubHeaderColor</Background_Color>
+			</Sub_Header_Row_or_Column>
+		</Grid_Area>
+	</PageObject>
+	<UsedReferences>
+		<Model>
+			<Symbol>gdm::p01ColdboxTypeGeneralEquation</Symbol>
+			<Symbol>gdm::sColdboxInternalFlows</Symbol>
+			<Symbol>gdm::sColdboxProcess</Symbol>
+			<Symbol>gdm::sColdboxGeneralEquations</Symbol>
+			<Symbol>odm::p01ReadOnlyCreateNewItem</Symbol>
+			<Symbol>odm::epColumnAreaBackgroundColor</Symbol>
+			<Symbol>odm::epColumnAreaGridFocusBackgroundColor</Symbol>
+			<Symbol>odm::epColumnAreaGridFocusTextColor</Symbol>
+			<Symbol>odm::epColumnAreaHeaderBackgroundColor</Symbol>
+			<Symbol>odm::epColumnAreaHeaderTextColor</Symbol>
+			<Symbol>odm::epColumnAreaLineColor</Symbol>
+			<Symbol>odm::epColumnAreaTextColor</Symbol>
+			<Symbol>odm::epColumnAreaAgregatorsBackgroundColor</Symbol>
+			<Symbol>odm::epColumnAreaAgregatorsTextColor</Symbol>
+			<Symbol>odm::epContentBackgroundColor</Symbol>
+			<Symbol>odm::epContentBarFillColor</Symbol>
+			<Symbol>odm::epContentTextColor</Symbol>
+			<Symbol>odm::epGeneralBackgroundColor</Symbol>
+			<Symbol>odm::epGeneralBorderColor</Symbol>
+			<Symbol>odm::epGridAreaAltBackgroundColor</Symbol>
+			<Symbol>odm::epGridAreaBackgroundColor</Symbol>
+			<Symbol>odm::epGridAreaGridFocusBackgroundColor</Symbol>
+			<Symbol>odm::epGridAreaGridFocusTextColor</Symbol>
+			<Symbol>odm::epGridAreaLineColor</Symbol>
+			<Symbol>odm::epGridAreaSecondLineColor</Symbol>
+			<Symbol>odm::epGridAreaSubHeaderColor</Symbol>
+			<Symbol>odm::epGridAreaTextColor</Symbol>
+			<Symbol>odm::epGridAreaAgregatorsBackgroundColor</Symbol>
+			<Symbol>odm::epGridAreaAgregatorsTextColor</Symbol>
+			<Symbol>odm::epOuterAreaLineColor</Symbol>
+			<Symbol>odm::epOuterAreaBackgroundColor</Symbol>
+			<Symbol>odm::epOuterAreaGridFocusBackgroundColor</Symbol>
+			<Symbol>odm::epOuterAreaGridFocusTextColor</Symbol>
+			<Symbol>odm::epOuterAreaHeaderBackgroundColor</Symbol>
+			<Symbol>odm::epOuterAreaHeaderTextColor</Symbol>
+			<Symbol>odm::epOuterAreaTextColor</Symbol>
+			<Symbol>odm::epOuterAreaAgregatorsBackgroundColor</Symbol>
+			<Symbol>odm::epOuterAreaAgregatorsTextColor</Symbol>
+			<Symbol>odm::epRowAreaBackgroundColor</Symbol>
+			<Symbol>odm::epRowAreaGridFocusBackgroundColor</Symbol>
+			<Symbol>odm::epRowAreaGridFocusTextColor</Symbol>
+			<Symbol>odm::epRowAreaHeaderBackgroundColor</Symbol>
+			<Symbol>odm::epRowAreaHeaderTextColor</Symbol>
+			<Symbol>odm::epRowAreaLineColor</Symbol>
+			<Symbol>odm::epRowAreaTextColor</Symbol>
+			<Symbol>odm::epRowAreaAgregatorsBackgroundColor</Symbol>
+			<Symbol>odm::epRowAreaAgregatorsTextColor</Symbol>
+			<Symbol>gdm::iColdboxProcess</Symbol>
+			<Symbol>gdm::iColdboxGeneralEquation</Symbol>
+		</Model>
+	</UsedReferences>
+</Page>

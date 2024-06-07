@@ -1,0 +1,529 @@
+## ams_version=1.0
+
+LibraryModule UserLinearOptimizationModel {
+	Prefix: ulom;
+	Interface: {
+		data { vUserLinearObjective, mpUserLinearModel, procSolveLinearModel_ulom, sMPConstraintsExcluded_ulom, 
+		       sMPVariablesExcluded_ulom, epProgramStatus_ulom, spProgramStatus_ulom, pTimeUsed_ulom, 
+		       pGap_ulom, procConfigureMathProgram_ulom, procFixUserSpecificVariables_ulom, 
+		       sConstraintsMP_Linear, pViolationPenalty, epConstraintsFirstIndex, sConstraintsNode, 
+		       pNode_vp, sConstraintsPressureControlNode, pPressureControlNode_vp, sConstraintsTankNode, 
+		       pTankNode_vp, sConstraintsBufferNode, pBufferNode_vp, sConstraintsInputFlowNode, 
+		       pInputFlowNode_vp, sConstraintsOutputFlowNode, pOutputFlowNode_vp, sConstraintsArc, 
+		       pArc_vp, sConstraintsCompressorArc, pCompressorArc_vp, sConstraintsLiquefierArc, 
+		       pLiquefierArc_vp, sConstraintsBackupArc, pBackupArc_vp, sConstraintsValveArc, 
+		       pValveArc_vp, sConstraintsPipeArc, pPipeArc_vp, sConstraintsBox, pBox_vp, 
+		       sConstraintsColdBox, pColdBox_vp, sConstraintsOperatingModes, pOperatingMode_vp, 
+		       sConstraintsOther, pOther_vp, procSolveLinearModelwithViolations_ulom, procEmptyAllPenalties, mpUserLinearModelWithViolations }
+	}
+	Section Optimization_model_user_specific {
+		DeclarationSection Declaration_ulom;
+		DeclarationSection objective_function {
+			Variable vUserLinearObjective {
+				Range: free;
+				Definition: {
+					
+					gom::vObjective 
+					+ 0  ! user additional objective
+					! or a completely new objective function
+				}
+			}
+		}
+		DeclarationSection mathematical_program {
+			MathematicalProgram mpUserLinearModel {
+				Objective: vUserLinearObjective;
+				Direction: minimize;
+				Constraints: lom::sMPConstraints_Linear;
+				Variables: lom::sMPVariables_Linear;
+				Type: Automatic;
+			}
+		}
+	}
+	Section Solve_procedures {
+		Procedure procSolveLinearModel_ulom {
+			Body: {
+				if p01ApplicationIsOnAimmsPro then
+					pro::ManagedSessionRemoveFromCaseIdentifierSet := {};
+				
+					!Delegate the execution of the procedure to the server
+					if pro::DelegateToServer( 
+					waitForCompletion: 1,
+					completionCallback: 'pro::session::LoadResultsCallback',
+					priorityAdjustment: 0,
+					timeOut: 600000
+					) 
+					then
+					return 1;
+					endif ;
+				endif;
+				
+				udm::procCheckData_udm;
+				if gom::procCheckSevereErrors() = 1  then
+				
+					!Configure math program 
+					ulom::procConfigureMathProgram_ulom();
+				
+					!Solve
+				        BLOCK
+				                epGMP := GMP::Instance::Generate( ulom::mpUserLinearModel );
+				                gom::procSolve( epGMP, 0, splProgramStatus );
+				        ONERROR epError
+				        DO
+				                spErrorString := errh::Message(epError);
+				                if( errh::Severity( epError ) = 'Warning' )
+				                then
+				                !It is a warning, mark it as handled and return.
+				                	errh::MarkAsHandled( epError );
+				                else
+				                	log_message::procLogInfo("",formatstring( "Solver failed for linear model: %s", spErrorString));
+				                	errh::MarkAsHandled( epError );	
+				                	return 0;
+				                endif;
+				        ENDBLOCK;
+				
+				        gdm::procLogSlackAllowed("Variant"); !log slack allowed
+				        log_message::procLogInfo("",formatstring( "Program status for linear model: %s", splProgramStatus));
+				
+				        !Copy objective values to parameters
+				        !lom::pObjectiveCost:= gom::vObjectiveCost;
+				        lom::pObjective_lom:= uom::vUserObjective;
+				
+				        ! Initialized missing variables
+				        gom::vRectificationPower.level(gdm::iColdbox,gdm::iTime) := lom::pRectificationPowerLinear(gdm::iColdbox,gdm::iTime);
+				        gom::vO2Recovery.level(gdm::iColdbox,gdm::iTime)  := lom::pO2RecoveryLinear(gdm::iColdbox,gdm::iTime);
+				        gom::vArRecovery.level(gdm::iColdbox,gdm::iTime)  := lom::pArRecoveryLinear(gdm::iColdbox,gdm::iTime);
+				
+					epProgramStatus_ulom := (GMP::Solution::GetProgramStatus( epGMP, 1 ));
+					pTimeUsed_ulom := (GMP::Solution::GetTimeUsed( epGMP, 1 ));
+					pGap_ulom :=( abs( mpUserLinearModel.Incumbent - mpUserLinearModel.bestbound ) / $abs( mpUserLinearModel.Incumbent ) ) * 100;
+				
+					return 1;
+				else
+					return 0;
+				endif;
+			}
+			ElementParameter epGMP {
+				Range: AllGeneratedMathematicalPrograms;
+			}
+			StringParameter splProgramStatus;
+			StringParameter spErrorString;
+			ElementParameter epError {
+				Range: errh::PendingErrors;
+			}
+		}
+		Section Config_declaration {
+			Set sMPConstraintsExcluded_ulom {
+				SubsetOf: AllConstraints;
+				Definition: {
+					!{ 'lom::cFlowDirection', 'lom::cFlowDirectionPlus', 'lom::cFlowDirectionMinus' }
+				}
+			}
+			Set sMPVariablesExcluded_ulom {
+				SubsetOf: AllVariables;
+			}
+			ElementParameter epProgramStatus_ulom {
+				Range: AllSolutionStates;
+			}
+			StringParameter spProgramStatus_ulom {
+				Definition: epProgramStatus_ulom;
+			}
+			Parameter pTimeUsed_ulom;
+			Parameter pGap_ulom;
+		}
+		Section Config_procedures {
+			Procedure procConfigureMathProgram_ulom {
+				Body: {
+					/****
+					This procedure is called before any solve and it configures 
+					the mathematical program by setting the correct elements in 
+					the sets, i.e. it defines the set of
+					- Constraints
+					- Variables
+					... other
+					****/
+					
+					!set definitions of p01 for linear or non-linear constraints all to 1 for linear model
+					gdm::p01BoxLinearEquationModel( gdm::iBox ) := 1;
+					gdm::p01CompressorLinearEquationModel( gdm::iCompressorArc ) := 1;
+					gdm::p01LiquefierLinearEquationModel( gdm::iLiquefierArc ) := 1;
+					gdm::p01PipeLinearEquationModel( gdm::iPipeArc ) := 1;
+					gdm::p01ValveLinearEquationModel( gdm::iValveArc ) := 1;
+					
+					!Set definitions of constraint and variables sets
+					lom::sMPConstraints_Linear := 
+					    {IndexConstraints|IndexConstraints in (LinearOptimizationModel or UserLinearOptimizationModel) }
+					    + {IndexConstraints|IndexConstraints in (GeneralOptimizationModel or USEROptimizationModel)}
+					    - {IndexNonLinearConstraints|IndexNonLinearConstraints in (GeneralOptimizationModel or USEROptimizationModel)}
+					    ! List here all linaer constraints from uomm that should not be taken into account
+					    - lom::sMPConstraintsExcluded_lom
+					    - sMPConstraintsExcluded_ulom;
+					
+					lom::sMPVariables_Linear :=
+					    {IndexVariables|IndexVariables in (LinearOptimizationModel or UserLinearOptimizationModel)}
+					    + {IndexVariables|IndexVariables in (GeneralOptimizationModel or USEROptimizationModel)}
+					    - lom::sMPVariablesExcluded_lom
+					    - sMPVariablesExcluded_ulom;
+					
+					!Set definitions of other sets
+					uom::procNodeSetsDefinition_uom();
+					
+					! Call procedure to initialize pAccuBufferInitial based on initial pressures
+					gom::procInitializeAccuBuffers();
+					
+					! Fix unnecessary flow variables based on data
+					gom::procFixFlowVariablesFromData();
+					lom::procFixBinariesFromData_lom();
+					
+					! Fix user specific variables
+					uom::procFixUserSpecificVariables_uom();
+					procFixUserSpecificVariables_ulom();
+				}
+			}
+			Procedure procFixUserSpecificVariables_ulom {
+				Body: {
+					
+					! fix user element
+				}
+				Comment: "Modify this procedure to fix Integer variables for a user model";
+			}
+		}
+		Section Infeasibility_ulom {
+			DeclarationSection MathProggramInfeasible {
+				MathematicalProgram mpUserLinearModelWithViolations {
+					Objective: vUserLinearObjective;
+					Direction: minimize;
+					Constraints: lom::sMPConstraints_Linear;
+					Variables: lom::sMPVariables_Linear;
+					Type: Automatic;
+					ViolationPenalty: pViolationPenalty;
+				}
+			}
+			DeclarationSection Declaration_for_linear_constraints_violation {
+				Set sConstraintsMP_Linear {
+					SubsetOf: AllVariablesConstraints;
+					Index: iConstraintMP_Linear;
+					Definition: {
+						lom::sMPConstraints_Linear
+						! constraints for these two variables since the range are defined (min and max arcs flows and node pressure)
+						+'gom::vFlow'+'gom::vPressure'
+					}
+				}
+				Parameter pViolationPenalty {
+					IndexDomain: iConstraintMP_Linear;
+					Definition: {
+						!Node constraints penalty
+						pNode_vp(ulom::iConstraintMP_Linear)
+						+pPressureControlNode_vp(ulom::iConstraintMP_Linear)
+						+pTankNode_vp(ulom::iConstraintMP_Linear)
+						+pBufferNode_vp(ulom::iConstraintMP_Linear)
+						+pInputFlowNode_vp(ulom::iConstraintMP_Linear)
+						+pOutputFlowNode_vp(ulom::iConstraintMP_Linear)
+						!Arc constraints penalty
+						+pArc_vp(ulom::iConstraintMP_Linear)
+						+pCompressorArc_vp(ulom::iConstraintMP_Linear)
+						+pLiquefierArc_vp(ulom::iConstraintMP_Linear)
+						+pBackupArc_vp(ulom::iConstraintMP_Linear)
+						+pValveArc_vp(ulom::iConstraintMP_Linear)
+						+pPipeArc_vp(ulom::iConstraintMP_Linear)
+						!Box constraints penalty
+						+pBox_vp(ulom::iConstraintMP_Linear)
+						+pColdBox_vp(ulom::iConstraintMP_Linear)
+						!OPeratingMode constraint penalty
+						+pOperatingMode_vp(ulom::iConstraintMP_Linear)
+						! Other penalty
+						+pOther_vp(ulom::iConstraintMP_Linear)
+					}
+				}
+			}
+			DeclarationSection Declaration_for_constraints_list_split {
+				ElementParameter epConstraintsFirstIndex {
+					IndexDomain: iConstraintMP_Linear;
+					Range: AllIdentifiers;
+					Definition: {
+						DomainIndex(
+							identifierName : iConstraintMP_Linear , 
+							indexPosition  : 1 )
+					}
+				}
+				Set sConstraintsNode {
+					SubsetOf: sConstraintsMP_Linear;
+					Index: iConstraintNode;
+					Definition: {
+						{iConstraintMP_Linear| (epConstraintsFirstIndex(ulom::iConstraintMP_Linear)='gdm::iNode' ) }
+					}
+				}
+				Parameter pNode_vp {
+					IndexDomain: iConstraintNode;
+				}
+				Set sConstraintsPressureControlNode {
+					SubsetOf: sConstraintsMP_Linear;
+					Index: iConstraintPressureControlNode;
+					Definition: {
+						{iConstraintMP_Linear| (epConstraintsFirstIndex(ulom::iConstraintMP_Linear)='gdm::iPressureControlNode') }
+					}
+				}
+				Parameter pPressureControlNode_vp {
+					IndexDomain: iConstraintPressureControlNode;
+				}
+				Set sConstraintsTankNode {
+					SubsetOf: sConstraintsMP_Linear;
+					Index: iConstraintTankNode;
+					Definition: {
+						{iConstraintMP_Linear| (epConstraintsFirstIndex(ulom::iConstraintMP_Linear)='gdm::iTankNode')  }
+					}
+				}
+				Parameter pTankNode_vp {
+					IndexDomain: iConstraintTankNode;
+				}
+				Set sConstraintsBufferNode {
+					SubsetOf: sConstraintsMP_Linear;
+					Index: iConstraintBufferNode;
+					Definition: {
+						{iConstraintMP_Linear| (epConstraintsFirstIndex(ulom::iConstraintMP_Linear)='gdm::iBufferNode') }
+					}
+				}
+				Parameter pBufferNode_vp {
+					IndexDomain: iConstraintBufferNode;
+				}
+				Set sConstraintsInputFlowNode {
+					SubsetOf: sConstraintsMP_Linear;
+					Index: iConstraintInputFlowNode;
+					Definition: {
+						{iConstraintMP_Linear| (epConstraintsFirstIndex(ulom::iConstraintMP_Linear)='gdm::iInputFlowNode' ) }
+					}
+				}
+				Parameter pInputFlowNode_vp {
+					IndexDomain: iConstraintInputFlowNode;
+				}
+				Set sConstraintsOutputFlowNode {
+					SubsetOf: sConstraintsMP_Linear;
+					Index: iConstraintOutputFlowNode;
+					Definition: {
+						{iConstraintMP_Linear| (epConstraintsFirstIndex(ulom::iConstraintMP_Linear)='gdm::iOutputFlowNode' ) }
+					}
+				}
+				Parameter pOutputFlowNode_vp {
+					IndexDomain: iConstraintOutputFlowNode;
+				}
+				Set sConstraintsArc {
+					SubsetOf: sConstraintsMP_Linear;
+					Index: iConstraintArc;
+					Definition: {
+						{iConstraintMP_Linear| (epConstraintsFirstIndex(ulom::iConstraintMP_Linear)='gdm::iArc' )}
+					}
+				}
+				Parameter pArc_vp {
+					IndexDomain: iConstraintArc;
+				}
+				Set sConstraintsCompressorArc {
+					SubsetOf: sConstraintsMP_Linear;
+					Index: iConstraintCompressorArc;
+					Definition: {
+						{iConstraintMP_Linear| (epConstraintsFirstIndex(ulom::iConstraintMP_Linear)='gdm::iCompressorArc' ) }
+					}
+				}
+				Parameter pCompressorArc_vp {
+					IndexDomain: iConstraintCompressorArc;
+				}
+				Set sConstraintsLiquefierArc {
+					SubsetOf: sConstraintsMP_Linear;
+					Index: iConstraintLiquefierArc;
+					Definition: {
+						{iConstraintMP_Linear| (epConstraintsFirstIndex(ulom::iConstraintMP_Linear)='gdm::iLiquefierArc' ) }
+					}
+				}
+				Parameter pLiquefierArc_vp {
+					IndexDomain: iConstraintLiquefierArc;
+				}
+				Set sConstraintsBackupArc {
+					SubsetOf: sConstraintsMP_Linear;
+					Index: iConstraintBackupArc;
+					Definition: {
+						{iConstraintMP_Linear| (epConstraintsFirstIndex(ulom::iConstraintMP_Linear)='gdm::iBackupArc' ) }
+					}
+				}
+				Parameter pBackupArc_vp {
+					IndexDomain: iConstraintBackupArc;
+				}
+				Set sConstraintsValveArc {
+					SubsetOf: sConstraintsMP_Linear;
+					Index: iConstraintValveArc;
+					Definition: {
+						{iConstraintMP_Linear| (epConstraintsFirstIndex(ulom::iConstraintMP_Linear)='gdm::iValveArc' ) }
+					}
+				}
+				Parameter pValveArc_vp {
+					IndexDomain: iConstraintValveArc;
+				}
+				Set sConstraintsPipeArc {
+					SubsetOf: sConstraintsMP_Linear;
+					Index: iConstraintPipeArc;
+					Definition: {
+						{iConstraintMP_Linear| (epConstraintsFirstIndex(ulom::iConstraintMP_Linear)='gdm::iPipeArc' ) }
+					}
+				}
+				Parameter pPipeArc_vp {
+					IndexDomain: iConstraintPipeArc;
+				}
+				Set sConstraintsBox {
+					SubsetOf: sConstraintsMP_Linear;
+					Index: iConstraintBox;
+					Definition: {
+						{iConstraintMP_Linear| (epConstraintsFirstIndex(ulom::iConstraintMP_Linear)='gdm::iBox' ) }
+					}
+				}
+				Parameter pBox_vp {
+					IndexDomain: iConstraintBox;
+				}
+				Set sConstraintsColdBox {
+					SubsetOf: sConstraintsMP_Linear;
+					Index: iConstraintColdBox;
+					Definition: {
+						{iConstraintMP_Linear|  (epConstraintsFirstIndex(ulom::iConstraintMP_Linear)='gdm::iColdBox' ) }
+					}
+				}
+				Parameter pColdBox_vp {
+					IndexDomain: iConstraintColdBox;
+				}
+				Set sConstraintsOperatingModes {
+					SubsetOf: sConstraintsMP_Linear;
+					Index: iConstraintOperatingMode;
+					Definition: {
+						{iConstraintMP_Linear| (epConstraintsFirstIndex(ulom::iConstraintMP_Linear)='gdm::iOperatingModeElement' )}
+					}
+				}
+				Parameter pOperatingMode_vp {
+					IndexDomain: iConstraintOperatingMode;
+				}
+				Set sConstraintsOther {
+					SubsetOf: sConstraintsMP_Linear;
+					Index: iConstraintOther;
+					Definition: {
+						! Must b blanked if all the constraints are taken into account. The list represents the constraints that are in no other sets
+						
+						sConstraintsMP_Linear
+						! Node indexed Constraints
+						- sConstraintsNode
+						- sConstraintsPressureControlNode
+						- sConstraintsTankNode
+						- sConstraintsBufferNode
+						- sConstraintsInputFlowNode
+						- sConstraintsOutputFlowNode
+						!Arc indexed Constraints
+						- sConstraintsArc
+						- sConstraintsCompressorArc
+						- sConstraintsLiquefierArc
+						- sConstraintsBackupArc
+						- sConstraintsValveArc
+						- sConstraintsPipeArc
+						!Box indexed Constraints
+						- sConstraintsBox
+						!ColdBox indexed Constraints
+						- sConstraintsColdBox
+						! Operating mode indexed constraints
+						-sConstraintsOperatingModes
+					}
+				}
+				Parameter pOther_vp {
+					IndexDomain: iConstraintOther;
+				}
+			}
+			Procedure procSolveLinearModelwithViolations_ulom {
+				Body: {
+					if p01ApplicationIsOnAimmsPro then
+						pro::ManagedSessionRemoveFromCaseIdentifierSet := {};
+					
+						!Delegate the execution of the procedure to the server
+						if pro::DelegateToServer( 
+						waitForCompletion: 1,
+						completionCallback: 'pro::session::LoadResultsCallback',
+						priorityAdjustment: 0,
+						timeOut: 600000
+						) 
+						then
+						return 1;
+						endif ;
+					endif;
+					
+					udm::procCheckData_udm;
+					if gom::procCheckSevereErrors() = 1  then
+					
+						!Configure math program 
+						ulom::procConfigureMathProgram_ulom();
+					
+						!Solve
+					        BLOCK
+					                epGMP := GMP::Instance::Generate( ulom::mpUserLinearModelwithViolations );
+					                gom::procSolve( epGMP, 0, splProgramStatus );
+					        ONERROR epError
+					        DO
+					                spErrorString := errh::Message(epError);
+					                if( errh::Severity( epError ) = 'Warning' )
+					                then
+					                !It is a warning, mark it as handled and return.
+					                	errh::MarkAsHandled( epError );
+					                else
+					                	log_message::procLogInfo("",formatstring( "Solver failed for linear model: %s", spErrorString));
+					                	errh::MarkAsHandled( epError );	
+					                	return 0;
+					                endif;
+					        ENDBLOCK;
+					
+					        gdm::procLogSlackAllowed("Variant"); !log slack allowed
+					        log_message::procLogInfo("",formatstring( "Program status for linear model: %s", splProgramStatus));
+					
+					        !Copy objective values to parameters
+					        !lom::pObjectiveCost:= gom::vObjectiveCost;
+					        lom::pObjective_lom:= uom::vUserObjective;
+					
+					        ! Initialized missing variables
+					        gom::vRectificationPower.level(gdm::iColdbox,gdm::iTime) := lom::pRectificationPowerLinear(gdm::iColdbox,gdm::iTime);
+					        gom::vO2Recovery.level(gdm::iColdbox,gdm::iTime)  := lom::pO2RecoveryLinear(gdm::iColdbox,gdm::iTime);
+					        gom::vArRecovery.level(gdm::iColdbox,gdm::iTime)  := lom::pArRecoveryLinear(gdm::iColdbox,gdm::iTime);
+					
+						epProgramStatus_ulom := (GMP::Solution::GetProgramStatus( epGMP, 1 ));
+						pTimeUsed_ulom := (GMP::Solution::GetTimeUsed( epGMP, 1 ));
+						pGap_ulom :=( abs( mpUserLinearModel.Incumbent - mpUserLinearModel.bestbound ) / $abs( mpUserLinearModel.Incumbent ) ) * 100;
+					
+						return 1;
+					else
+						return 0;
+					endif;
+				}
+				ElementParameter epGMP {
+					Range: AllGeneratedMathematicalPrograms;
+				}
+				StringParameter splProgramStatus;
+				StringParameter spErrorString;
+				ElementParameter epError {
+					Range: errh::PendingErrors;
+				}
+			}
+			Procedure procEmptyAllPenalties {
+				Body: {
+					!Node constraints penalty
+					empty pNode_vp(ulom::iConstraintMP_Linear);
+					empty pPressureControlNode_vp(ulom::iConstraintMP_Linear);
+					empty pTankNode_vp(ulom::iConstraintMP_Linear);
+					empty pBufferNode_vp(ulom::iConstraintMP_Linear);
+					empty pInputFlowNode_vp(ulom::iConstraintMP_Linear);
+					empty pOutputFlowNode_vp(ulom::iConstraintMP_Linear);
+					!Arc constraints penalty
+					empty pArc_vp(ulom::iConstraintMP_Linear);
+					empty pCompressorArc_vp(ulom::iConstraintMP_Linear);
+					empty pLiquefierArc_vp(ulom::iConstraintMP_Linear);
+					empty pBackupArc_vp(ulom::iConstraintMP_Linear);
+					empty pValveArc_vp(ulom::iConstraintMP_Linear);
+					empty pPipeArc_vp(ulom::iConstraintMP_Linear);
+					!Box constraints penalty
+					empty pBox_vp(ulom::iConstraintMP_Linear);
+					empty pColdBox_vp(ulom::iConstraintMP_Linear);
+					!OPeratingMode constraint penalty
+					empty pOperatingMode_vp(ulom::iConstraintMP_Linear);
+					! Other penalty
+					empty pOther_vp(ulom::iConstraintMP_Linear);
+				}
+			}
+		}
+	}
+}

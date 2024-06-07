@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<Page Version="4000" TimeStamp="2021-12-09 12:58:10">
+	<PageEditSize Type="Specified">
+		<Size Width="800" Height="400" />
+	</PageEditSize>
+	<ProjectUUID>748F1752-A3CC-4398-BEB0-3B3157FE70D8</ProjectUUID>
+	<IsDialogPage>true</IsDialogPage>
+	<TemplatesTabOrderPosition>1</TemplatesTabOrderPosition>
+	<ResizeData>
+		<MainArea Line="FixedFromTop" Value="38">
+			<TopArea Line="PercentageFromLeft" Value="0.983333333333" />
+		</MainArea>
+	</ResizeData>
+	<Background>
+		<UserColor GUID="BDFE7E86-A7C8-4FA3-BEA3-FA3B7D1374B7">dark grey</UserColor>
+	</Background>
+	<PageObject Type="Text">
+		<Location top="414" left="215" bottom="459" right="263" />
+		<StaticText>
+
+PdP Style</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<TextColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="189" left="810" bottom="435" right="1260" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="12" left="670" bottom="36" right="770" />
+		<TabOrder>1</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Closed"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="ClosePage" />
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="42" left="6" bottom="396" right="162" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="54" left="12" bottom="72" right="156" />
+		<StaticText>Box Type</StaticText>
+		<Font GUID="523F941B-E378-47BE-AEB2-3C1FD99F8C69" Name="Arial 12 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Selection Object">
+		<SelectionType>ListBox</SelectionType>
+		<Location top="84" left="12" bottom="390" right="156" />
+		<ReadOnly>odm::p01ReadOnlyCreateNewItem</ReadOnly>
+		<TabOrder>4</TabOrder>
+		<UseTabInObject>true</UseTabInObject>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<TextShown>ElementName</TextShown>
+		<EditField>AtTop</EditField>
+		<AddAndRemoveButtons>true</AddAndRemoveButtons>
+		<Border Style="Line" Width="1" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor>
+			<Symbol>odm::epColumnAreaLineColor</Symbol>
+		</BackgroundColor>
+		<TextColor>
+			<Symbol>odm::epContentTextColor</Symbol>
+		</TextColor>
+		<MultipleColumns>true</MultipleColumns>
+		<ExplicitIdentifier>
+			<Identifier>gdm::sBoxTypes(gdm::sBoxTypes)</Identifier>
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Line">
+		<Location top="397" left="20" bottom="397" right="40" />
+		<LineColor RGB="#000000" />
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="42" left="168" bottom="396" right="510" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="42" left="180" bottom="66" right="498" />
+		<StaticText>Box Node Connection Type</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="523F941B-E378-47BE-AEB2-3C1FD99F8C69" Name="Arial 12 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Selection Object">
+		<SelectionType>ListBox</SelectionType>
+		<Location top="84" left="174" bottom="390" right="336" />
+		<ReadOnly>odm::p01ReadOnlyCreateNewItem</ReadOnly>
+		<TabOrder>3</TabOrder>
+		<UseTabInObject>true</UseTabInObject>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<TextShown>ElementName</TextShown>
+		<EditField>AtTop</EditField>
+		<AddAndRemoveButtons>true</AddAndRemoveButtons>
+		<Border Style="Line" Width="1" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor>
+			<Symbol>odm::epColumnAreaLineColor</Symbol>
+		</BackgroundColor>
+		<TextColor>
+			<Symbol>odm::epContentTextColor</Symbol>
+		</TextColor>
+		<MultipleColumns>true</MultipleColumns>
+		<ExplicitIdentifier>
+			<Identifier>gdm::sBoxNodeConnectionTypeInputs(gdm::sBoxNodeConnectionTypeInputs)</Identifier>
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Selection Object">
+		<SelectionType>ListBox</SelectionType>
+		<Location top="84" left="342" bottom="390" right="504" />
+		<ReadOnly>odm::p01ReadOnlyCreateNewItem</ReadOnly>
+		<TabOrder>2</TabOrder>
+		<UseTabInObject>true</UseTabInObject>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<TextShown>ElementName</TextShown>
+		<EditField>AtTop</EditField>
+		<AddAndRemoveButtons>true</AddAndRemoveButtons>
+		<Border Style="Line" Width="1" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor>
+			<Symbol>odm::epColumnAreaLineColor</Symbol>
+		</BackgroundColor>
+		<TextColor>
+			<Symbol>odm::epContentTextColor</Symbol>
+		</TextColor>
+		<MultipleColumns>true</MultipleColumns>
+		<ExplicitIdentifier>
+			<Identifier>gdm::sBoxNodeConnectionTypeOutputs(gdm::sBoxNodeConnectionTypeOutputs)</Identifier>
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="66" left="174" bottom="84" right="234" />
+		<StaticText>Input</StaticText>
+		<Font GUID="523F941B-E378-47BE-AEB2-3C1FD99F8C69" Name="Arial 12 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="66" left="342" bottom="84" right="402" />
+		<StaticText>Output</StaticText>
+		<Font GUID="523F941B-E378-47BE-AEB2-3C1FD99F8C69" Name="Arial 12 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<UsedReferences>
+		<Model>
+			<Symbol>gdm::sBoxTypes</Symbol>
+			<Symbol>gdm::sBoxNodeConnectionTypeInputs</Symbol>
+			<Symbol>gdm::sBoxNodeConnectionTypeOutputs</Symbol>
+			<Symbol>odm::p01ReadOnlyCreateNewItem</Symbol>
+			<Symbol>odm::epColumnAreaLineColor</Symbol>
+			<Symbol>odm::epContentTextColor</Symbol>
+		</Model>
+	</UsedReferences>
+</Page>

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<LibraryProject AimmsVersion="4.79.7.2 unicode x64" ProjectUUID="EC4EC703-F7D0-401A-A8F5-29B85D69EC26">
+	<ModelFileName>LogMessageHandler.ams</ModelFileName>
+	<Prefix>log_message</Prefix>
+	<DisplayName>LogMessageHandler</DisplayName>
+</LibraryProject>

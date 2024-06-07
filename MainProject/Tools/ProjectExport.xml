@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<ExportSettings>
+	<ExcludedFile>backup</ExcludedFile>
+	<ExcludedFile>log</ExcludedFile>
+	<ExcludedFile>ASU model.dat</ExcludedFile>
+	<ExcludedFile>test.xlsx</ExcludedFile>
+	<ExcludedFile>test2.xlsx</ExcludedFile>
+</ExportSettings>

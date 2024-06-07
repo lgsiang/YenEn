@@ -1,0 +1,632 @@
+<?xml version="1.0"?>
+<Page Version="4000" TimeStamp="2022-03-14 13:02:35">
+	<PageEditSize Type="Specified">
+		<Size Width="1200" Height="606" />
+	</PageEditSize>
+	<ProjectUUID>748F1752-A3CC-4398-BEB0-3B3157FE70D8</ProjectUUID>
+	<CloseWhenInactive>true</CloseWhenInactive>
+	<TemplatesTabOrderPosition>1</TemplatesTabOrderPosition>
+	<ResizeData>
+		<MainArea Line="PercentageFromTop" Value="0.986798679868">
+			<TopArea Line="PercentageFromLeft" Value="0.993333333333">
+				<LeftArea Line="FixedFromTop" Value="46">
+					<TopArea Line="FixedFromLeft" Value="226" />
+				</LeftArea>
+			</TopArea>
+		</MainArea>
+	</ResizeData>
+	<Background>
+		<UserColor GUID="BDFE7E86-A7C8-4FA3-BEA3-FA3B7D1374B7">dark grey</UserColor>
+	</Background>
+	<PageObject Type="Scalar">
+		<Location top="6" left="228" bottom="36" right="834" />
+		<TabOrder>6</TabOrder>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="InShadow" Width="2" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</BackgroundColor>
+		<TextColor>
+			<UserColor>ALFIBackgroundDisplay</UserColor>
+		</TextColor>
+		<SelectionColor>
+			<UserColor>ALFIBackgroundDisplay</UserColor>
+		</SelectionColor>
+		<Layout>Text-Value</Layout>
+		<SeparatorSign>=</SeparatorSign>
+		<ExplicitIdentifier>
+			<Identifier>gdm::spExcelFileDisplay</Identifier>
+			<NumberFormat Width="100" Decimals="0" Alignment="Left" ShowDefaults="true" />
+			<Color>267 ALFIBackgroundDisplay</Color>
+			<Title>"Input file"</Title>
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="630" left="324" bottom="696" right="396" />
+		<StaticText>
+
+PdP Style</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<TextColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="6" left="876" bottom="42" right="1188" />
+		<Shape>Rounded-Filled</Shape>
+		<FillColor>
+			<UserColor>ALFIBackgroundDisplay</UserColor>
+		</FillColor>
+		<LineColor>
+			<UserColor>ALFIBackgroundDisplay</UserColor>
+		</LineColor>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="12" left="1116" bottom="36" right="1176" />
+		<TabOrder>7</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"DM Menu"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="32946F2C-CF92-4A97-9FA0-14B8B5F45301" Name="DataManager_Menu" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="12" left="0" bottom="36" right="222" />
+		<StaticText>User Box</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="523F941B-E378-47BE-AEB2-3C1FD99F8C69" Name="Arial 12 Bold" />
+		<TextColor>
+			<UserColor>Air Liquide blue</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Pivot Table">
+		<Location top="66" left="6" bottom="288" right="354" />
+		<TabOrder>5</TabOrder>
+		<ObjectUUID>6E91EF32-D33A-42F9-9B4D-CE8DA8E42D8D</ObjectUUID>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="Line" Width="1" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<Contents>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::epBoxEnergyContract( udm::iUserbox )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::epBoxAuxPowerGroup( udm::iUserbox )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::epBoxType( udm::iUserbox )</Identifier>
+			</Explicit_Identifier>
+			<Defaults>
+				<Format>
+					<Standard_Format ID="4216">3</Standard_Format>
+				</Format>
+				<Readonly ID="4052">odm::p01ReadOnlyInputFile</Readonly>
+				<Colors>
+					<Background_Color ID="4170">odm::epContentBackgroundColor</Background_Color>
+					<Text_Color ID="4175">odm::epContentTextColor</Text_Color>
+					<Bar_Fill_Color ID="4177">odm::epContentBarFillColor</Bar_Fill_Color>
+				</Colors>
+				<Procedures_Assertions>
+					<On_Change ID="4081">odm::procUpdateTimeDependentDataWithConstant</On_Change>
+				</Procedures_Assertions>
+			</Defaults>
+		</Contents>
+		<Indices>
+			<Identifier_Index>
+				<Header_Title ID="6230">""</Header_Title>
+				<Hide_if_Single_Identifier ID="6270">"No"</Hide_if_Single_Identifier>
+			</Identifier_Index>
+		</Indices>
+		<General>
+			<Background_Color ID="1010">odm::epGeneralBackgroundColor</Background_Color>
+			<Border_Color ID="1011">odm::epGeneralBorderColor</Border_Color>
+			<Dense_Aggregation_restricts_to_Domain ID="1022">"Yes"</Dense_Aggregation_restricts_to_Domain>
+		</General>
+		<Row_Area>
+			<Background_Color ID="2010">odm::epRowAreaBackgroundColor</Background_Color>
+			<Text_Color ID="2020">odm::epRowAreaTextColor</Text_Color>
+			<Line_Color ID="2040">odm::epRowAreaLineColor</Line_Color>
+			<Headers>
+				<Background_Color ID="2120">odm::epRowAreaHeaderBackgroundColor</Background_Color>
+				<Text_Color ID="2130">odm::epRowAreaHeaderTextColor</Text_Color>
+				<Show_Sub_Headers ID="2150">"No"</Show_Sub_Headers>
+			</Headers>
+			<Aggregators>
+				<Background_Color ID="2220">odm::epRowAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="2230">odm::epRowAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Grid_Focus_Indicator>
+				<Background_Color ID="2270">odm::epRowAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="2280">odm::epRowAreaGridFocusTextColor</Text_Color>
+			</Grid_Focus_Indicator>
+		</Row_Area>
+		<Column_Area>
+			<Same_as_Row_Area ID="3005">"No"</Same_as_Row_Area>
+			<Auto_resize_Column_Widths ID="3006">"Never"</Auto_resize_Column_Widths>
+			<Background_Color ID="3010">odm::epColumnAreaBackgroundColor</Background_Color>
+			<Text_Color ID="3020">odm::epColumnAreaTextColor</Text_Color>
+			<Line_Color ID="3040">odm::epColumnAreaLineColor</Line_Color>
+			<Headers>
+				<Background_Color ID="3120">odm::epColumnAreaHeaderBackgroundColor</Background_Color>
+				<Text_Color ID="3130">odm::epColumnAreaHeaderTextColor</Text_Color>
+			</Headers>
+			<Aggregators>
+				<Background_Color ID="3220">odm::epColumnAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="3230">odm::epColumnAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Grid_Focus_Indicator>
+				<Background_Color ID="3270">odm::epColumnAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="3280">odm::epColumnAreaGridFocusTextColor</Text_Color>
+			</Grid_Focus_Indicator>
+		</Column_Area>
+		<Outer_Area>
+			<Same_as_Row_Area ID="3505">"No"</Same_as_Row_Area>
+			<Background_Color ID="3510">odm::epOuterAreaBackgroundColor</Background_Color>
+			<Text_Color ID="3520">odm::epOuterAreaTextColor</Text_Color>
+			<Line_Color ID="3540">odm::epOuterAreaLineColor</Line_Color>
+			<Headers>
+				<Background_Color ID="3620">odm::epOuterAreaHeaderBackgroundColor</Background_Color>
+				<Text_Color ID="3630">odm::epOuterAreaHeaderTextColor</Text_Color>
+			</Headers>
+			<Aggregators>
+				<Background_Color ID="3720">odm::epOuterAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="3730">odm::epOuterAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Grid_Focus_Indicator>
+				<Background_Color ID="3770">odm::epOuterAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="3780">odm::epOuterAreaGridFocusTextColor</Text_Color>
+			</Grid_Focus_Indicator>
+		</Outer_Area>
+		<Grid_Area>
+			<Background_Color ID="5010">odm::epGridAreaBackgroundColor</Background_Color>
+			<Alternating_Background_Color ID="5011">odm::epGridAreaAltBackgroundColor</Alternating_Background_Color>
+			<Text_Color ID="5020">odm::epGridAreaTextColor</Text_Color>
+			<Line_Color ID="5040">odm::epGridAreaLineColor</Line_Color>
+			<Second_Line_Color ID="5041">odm::epGridAreaSecondLineColor</Second_Line_Color>
+			<Selection>
+				<Background_Color ID="5120">odm::epGridAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="5130">odm::epGridAreaGridFocusTextColor</Text_Color>
+			</Selection>
+			<Aggregators>
+				<Background_Color ID="5220">odm::epGridAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="5230">odm::epGridAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Sub_Header_Row_or_Column>
+				<Background_Color ID="5320">odm::epGridAreaSubHeaderColor</Background_Color>
+			</Sub_Header_Row_or_Column>
+		</Grid_Area>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="48" left="0" bottom="300" right="366" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="48" left="6" bottom="66" right="228" />
+		<StaticText>UserBox</StaticText>
+		<Font GUID="523F941B-E378-47BE-AEB2-3C1FD99F8C69" Name="Arial 12 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Pivot Table">
+		<Location top="336" left="6" bottom="582" right="1182" />
+		<TabOrder>1</TabOrder>
+		<ObjectUUID>3C228588-3DA8-4B9A-A338-F00486EB5CA4</ObjectUUID>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="Line" Width="1" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<Contents>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::epBoxNode( udm::iUserbox, udm::iUserBoxConnectionType )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::pBoxMinFlowConstant( udm::iUserbox, udm::iUserBoxConnectionType )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::pBoxMaxFlowConstant( udm::iUserbox, udm::iUserBoxConnectionType )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::pBoxMinPositiveRateChangeFlowConstant( udm::iUserbox, udm::iUserBoxConnectionType )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::pBoxMaxPositiveRateChangeFlowConstant( udm::iUserbox, udm::iUserBoxConnectionType )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::pBoxMinNegativeRateChangeFlowConstant( udm::iUserbox, udm::iUserBoxConnectionType )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::pBoxMaxNegativeRateChangeFlowConstant( udm::iUserbox, udm::iUserBoxConnectionType )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::pboxMinStayTimeSteadyStateConstant( udm::iUserbox, udm::iUserBoxConnectionType )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::p01BoxFlowSpecificEquation( udm::iUserbox, udm::iUserBoxConnectionType )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::pBoxParameter1Pres( udm::iUserbox, udm::iUserBoxConnectionType )</Identifier>
+				<Format>
+					<Decimal_Places ID="4312">4</Decimal_Places>
+				</Format>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::pBoxParameter2Pres( udm::iUserbox, udm::iUserBoxConnectionType )</Identifier>
+				<Format>
+					<Decimal_Places ID="4312">4</Decimal_Places>
+				</Format>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::pBoxParameter3Pres( udm::iUserbox, udm::iUserBoxConnectionType )</Identifier>
+				<Format>
+					<Decimal_Places ID="4312">4</Decimal_Places>
+				</Format>
+			</Explicit_Identifier>
+			<Defaults>
+				<Format>
+					<Standard_Format ID="4216">3</Standard_Format>
+					<Decimal_Places ID="4212">0</Decimal_Places>
+					<Show_1000_seperator ID="4213">"Yes"</Show_1000_seperator>
+				</Format>
+				<Readonly ID="4052">odm::p01ReadOnlyInputFile</Readonly>
+				<Colors>
+					<Background_Color ID="4170">odm::epContentBackgroundColor</Background_Color>
+					<Text_Color ID="4175">odm::epContentTextColor</Text_Color>
+					<Bar_Fill_Color ID="4177">odm::epContentBarFillColor</Bar_Fill_Color>
+				</Colors>
+				<Procedures_Assertions>
+					<On_Change ID="4081">odm::procUpdateTimeDependentDataWithConstant</On_Change>
+				</Procedures_Assertions>
+			</Defaults>
+		</Contents>
+		<Indices>
+			<Explicit_Index>
+				<Index ID="6510">gdm::iColdboxNodeConnectionType</Index>
+				<Element_Text ID="6520">gdm::spColdboxNodeConnectionName( gdm::iColdboxNodeConnectionType )</Element_Text>
+			</Explicit_Index>
+			<Identifier_Index>
+				<Header_Title ID="6230">""</Header_Title>
+				<Hide_if_Single_Identifier ID="6270">"No"</Hide_if_Single_Identifier>
+			</Identifier_Index>
+		</Indices>
+		<General>
+			<Background_Color ID="1010">odm::epGeneralBackgroundColor</Background_Color>
+			<Border_Color ID="1011">odm::epGeneralBorderColor</Border_Color>
+			<Dense_Aggregation_restricts_to_Domain ID="1022">"Yes"</Dense_Aggregation_restricts_to_Domain>
+		</General>
+		<Row_Area>
+			<Background_Color ID="2010">odm::epRowAreaBackgroundColor</Background_Color>
+			<Text_Color ID="2020">odm::epRowAreaTextColor</Text_Color>
+			<Line_Color ID="2040">odm::epRowAreaLineColor</Line_Color>
+			<Headers>
+				<Background_Color ID="2120">odm::epRowAreaHeaderBackgroundColor</Background_Color>
+				<Text_Color ID="2130">odm::epRowAreaHeaderTextColor</Text_Color>
+				<Show_Sub_Headers ID="2150">"No"</Show_Sub_Headers>
+			</Headers>
+			<Aggregators>
+				<Background_Color ID="2220">odm::epRowAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="2230">odm::epRowAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Grid_Focus_Indicator>
+				<Background_Color ID="2270">odm::epRowAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="2280">odm::epRowAreaGridFocusTextColor</Text_Color>
+			</Grid_Focus_Indicator>
+		</Row_Area>
+		<Column_Area>
+			<Same_as_Row_Area ID="3005">"No"</Same_as_Row_Area>
+			<Auto_resize_Column_Widths ID="3006">"Never"</Auto_resize_Column_Widths>
+			<Background_Color ID="3010">odm::epColumnAreaBackgroundColor</Background_Color>
+			<Text_Color ID="3020">odm::epColumnAreaTextColor</Text_Color>
+			<Line_Color ID="3040">odm::epColumnAreaLineColor</Line_Color>
+			<Headers>
+				<Background_Color ID="3120">odm::epColumnAreaHeaderBackgroundColor</Background_Color>
+				<Text_Color ID="3130">odm::epColumnAreaHeaderTextColor</Text_Color>
+			</Headers>
+			<Aggregators>
+				<Background_Color ID="3220">odm::epColumnAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="3230">odm::epColumnAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Grid_Focus_Indicator>
+				<Background_Color ID="3270">odm::epColumnAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="3280">odm::epColumnAreaGridFocusTextColor</Text_Color>
+			</Grid_Focus_Indicator>
+		</Column_Area>
+		<Outer_Area>
+			<Same_as_Row_Area ID="3505">"No"</Same_as_Row_Area>
+			<Background_Color ID="3510">odm::epOuterAreaBackgroundColor</Background_Color>
+			<Text_Color ID="3520">odm::epOuterAreaTextColor</Text_Color>
+			<Line_Color ID="3540">odm::epOuterAreaLineColor</Line_Color>
+			<Headers>
+				<Background_Color ID="3620">odm::epOuterAreaHeaderBackgroundColor</Background_Color>
+				<Text_Color ID="3630">odm::epOuterAreaHeaderTextColor</Text_Color>
+			</Headers>
+			<Aggregators>
+				<Background_Color ID="3720">odm::epOuterAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="3730">odm::epOuterAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Grid_Focus_Indicator>
+				<Background_Color ID="3770">odm::epOuterAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="3780">odm::epOuterAreaGridFocusTextColor</Text_Color>
+			</Grid_Focus_Indicator>
+		</Outer_Area>
+		<Grid_Area>
+			<Background_Color ID="5010">odm::epGridAreaBackgroundColor</Background_Color>
+			<Alternating_Background_Color ID="5011">odm::epGridAreaAltBackgroundColor</Alternating_Background_Color>
+			<Text_Color ID="5020">odm::epGridAreaTextColor</Text_Color>
+			<Line_Color ID="5040">odm::epGridAreaLineColor</Line_Color>
+			<Second_Line_Color ID="5041">odm::epGridAreaSecondLineColor</Second_Line_Color>
+			<Selection>
+				<Background_Color ID="5120">odm::epGridAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="5130">odm::epGridAreaGridFocusTextColor</Text_Color>
+			</Selection>
+			<Aggregators>
+				<Background_Color ID="5220">odm::epGridAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="5230">odm::epGridAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Sub_Header_Row_or_Column>
+				<Background_Color ID="5320">odm::epGridAreaSubHeaderColor</Background_Color>
+			</Sub_Header_Row_or_Column>
+		</Grid_Area>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="306" left="0" bottom="594" right="1188" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="318" left="6" bottom="342" right="228" />
+		<StaticText>Usebox Flow</StaticText>
+		<Font GUID="523F941B-E378-47BE-AEB2-3C1FD99F8C69" Name="Arial 12 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Pivot Table">
+		<Location top="66" left="732" bottom="288" right="1176" />
+		<TabOrder>2</TabOrder>
+		<ObjectUUID>65D7D4DF-1542-46AC-A92F-0D3438371BFC</ObjectUUID>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="Line" Width="1" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<Contents>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::pBoxParameterValue( udm::iUserbox, udm::iUserBoxParameter )</Identifier>
+			</Explicit_Identifier>
+			<Defaults>
+				<Format>
+					<Standard_Format ID="4216">3</Standard_Format>
+				</Format>
+				<Readonly ID="4052">odm::p01ReadOnlyInputFile</Readonly>
+				<Colors>
+					<Background_Color ID="4170">odm::epContentBackgroundColor</Background_Color>
+					<Text_Color ID="4175">odm::epContentTextColor</Text_Color>
+					<Bar_Fill_Color ID="4177">odm::epContentBarFillColor</Bar_Fill_Color>
+				</Colors>
+			</Defaults>
+		</Contents>
+		<Indices>
+			<Identifier_Index>
+				<Header_Title ID="6230">""</Header_Title>
+				<Hide_if_Single_Identifier ID="6270">"No"</Hide_if_Single_Identifier>
+			</Identifier_Index>
+		</Indices>
+		<General>
+			<Background_Color ID="1010">odm::epGeneralBackgroundColor</Background_Color>
+			<Border_Color ID="1011">odm::epGeneralBorderColor</Border_Color>
+			<Dense_Aggregation_restricts_to_Domain ID="1022">"Yes"</Dense_Aggregation_restricts_to_Domain>
+		</General>
+		<Row_Area>
+			<Background_Color ID="2010">odm::epRowAreaBackgroundColor</Background_Color>
+			<Text_Color ID="2020">odm::epRowAreaTextColor</Text_Color>
+			<Line_Color ID="2040">odm::epRowAreaLineColor</Line_Color>
+			<Headers>
+				<Background_Color ID="2120">odm::epRowAreaHeaderBackgroundColor</Background_Color>
+				<Text_Color ID="2130">odm::epRowAreaHeaderTextColor</Text_Color>
+				<Show_Sub_Headers ID="2150">"No"</Show_Sub_Headers>
+			</Headers>
+			<Aggregators>
+				<Background_Color ID="2220">odm::epRowAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="2230">odm::epRowAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Grid_Focus_Indicator>
+				<Background_Color ID="2270">odm::epRowAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="2280">odm::epRowAreaGridFocusTextColor</Text_Color>
+			</Grid_Focus_Indicator>
+		</Row_Area>
+		<Column_Area>
+			<Same_as_Row_Area ID="3005">"No"</Same_as_Row_Area>
+			<Auto_resize_Column_Widths ID="3006">"Never"</Auto_resize_Column_Widths>
+			<Background_Color ID="3010">odm::epColumnAreaBackgroundColor</Background_Color>
+			<Text_Color ID="3020">odm::epColumnAreaTextColor</Text_Color>
+			<Line_Color ID="3040">odm::epColumnAreaLineColor</Line_Color>
+			<Headers>
+				<Background_Color ID="3120">odm::epColumnAreaHeaderBackgroundColor</Background_Color>
+				<Text_Color ID="3130">odm::epColumnAreaHeaderTextColor</Text_Color>
+			</Headers>
+			<Aggregators>
+				<Background_Color ID="3220">odm::epColumnAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="3230">odm::epColumnAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Grid_Focus_Indicator>
+				<Background_Color ID="3270">odm::epColumnAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="3280">odm::epColumnAreaGridFocusTextColor</Text_Color>
+			</Grid_Focus_Indicator>
+		</Column_Area>
+		<Outer_Area>
+			<Same_as_Row_Area ID="3505">"No"</Same_as_Row_Area>
+			<Background_Color ID="3510">odm::epOuterAreaBackgroundColor</Background_Color>
+			<Text_Color ID="3520">odm::epOuterAreaTextColor</Text_Color>
+			<Line_Color ID="3540">odm::epOuterAreaLineColor</Line_Color>
+			<Headers>
+				<Background_Color ID="3620">odm::epOuterAreaHeaderBackgroundColor</Background_Color>
+				<Text_Color ID="3630">odm::epOuterAreaHeaderTextColor</Text_Color>
+			</Headers>
+			<Aggregators>
+				<Background_Color ID="3720">odm::epOuterAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="3730">odm::epOuterAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Grid_Focus_Indicator>
+				<Background_Color ID="3770">odm::epOuterAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="3780">odm::epOuterAreaGridFocusTextColor</Text_Color>
+			</Grid_Focus_Indicator>
+		</Outer_Area>
+		<Grid_Area>
+			<Background_Color ID="5010">odm::epGridAreaBackgroundColor</Background_Color>
+			<Alternating_Background_Color ID="5011">odm::epGridAreaAltBackgroundColor</Alternating_Background_Color>
+			<Text_Color ID="5020">odm::epGridAreaTextColor</Text_Color>
+			<Line_Color ID="5040">odm::epGridAreaLineColor</Line_Color>
+			<Second_Line_Color ID="5041">odm::epGridAreaSecondLineColor</Second_Line_Color>
+			<Selection>
+				<Background_Color ID="5120">odm::epGridAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="5130">odm::epGridAreaGridFocusTextColor</Text_Color>
+			</Selection>
+			<Aggregators>
+				<Background_Color ID="5220">odm::epGridAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="5230">odm::epGridAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Sub_Header_Row_or_Column>
+				<Background_Color ID="5320">odm::epGridAreaSubHeaderColor</Background_Color>
+			</Sub_Header_Row_or_Column>
+		</Grid_Area>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="48" left="372" bottom="300" right="1188" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="48" left="378" bottom="72" right="690" />
+		<StaticText>UserBox Parameters</StaticText>
+		<Font GUID="523F941B-E378-47BE-AEB2-3C1FD99F8C69" Name="Arial 12 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Selection Object">
+		<SelectionType>ListBox</SelectionType>
+		<Location top="66" left="378" bottom="288" right="726" />
+		<ReadOnly>odm::p01ReadOnlyCreateNewItem</ReadOnly>
+		<TabOrder>4</TabOrder>
+		<UseTabInObject>true</UseTabInObject>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<TextShown>ElementName</TextShown>
+		<EditField>AtTop</EditField>
+		<AddAndRemoveButtons>true</AddAndRemoveButtons>
+		<Border Style="Line" Width="1" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor>
+			<Symbol>odm::epColumnAreaLineColor</Symbol>
+		</BackgroundColor>
+		<TextColor>
+			<Symbol>odm::epContentTextColor</Symbol>
+		</TextColor>
+		<MultipleColumns>true</MultipleColumns>
+		<ExplicitIdentifier>
+			<Identifier>udm::sUserboxParameters( udm::iUserBoxParameter )</Identifier>
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="12" left="954" bottom="36" right="1032" />
+		<TabOrder>3</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"UserBox Time"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="1D274124-9708-4A46-8E23-6BBBA00B8458" Name="DM_UserBoxTime" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<UsedReferences>
+		<Model>
+			<Symbol>gdm::epBoxNode</Symbol>
+			<Symbol>gdm::pBoxParameter1Pres</Symbol>
+			<Symbol>gdm::pBoxParameter2Pres</Symbol>
+			<Symbol>gdm::pBoxParameter3Pres</Symbol>
+			<Symbol>gdm::epBoxEnergyContract</Symbol>
+			<Symbol>gdm::epBoxAuxPowerGroup</Symbol>
+			<Symbol>gdm::p01BoxFlowSpecificEquation</Symbol>
+			<Symbol>gdm::epBoxType</Symbol>
+			<Symbol>gdm::pBoxParameterValue</Symbol>
+			<Symbol>gdm::spColdboxNodeConnectionName</Symbol>
+			<Symbol>gdm::spExcelFileDisplay</Symbol>
+			<Symbol>gdm::pBoxMinFlowConstant</Symbol>
+			<Symbol>gdm::pBoxMaxFlowConstant</Symbol>
+			<Symbol>gdm::pBoxMinPositiveRateChangeFlowConstant</Symbol>
+			<Symbol>gdm::pBoxMaxPositiveRateChangeFlowConstant</Symbol>
+			<Symbol>gdm::pBoxMinNegativeRateChangeFlowConstant</Symbol>
+			<Symbol>gdm::pBoxMaxNegativeRateChangeFlowConstant</Symbol>
+			<Symbol>gdm::pboxMinStayTimeSteadyStateConstant</Symbol>
+			<Symbol>udm::sUserboxParameters</Symbol>
+			<Symbol>odm::procUpdateTimeDependentDataWithConstant</Symbol>
+			<Symbol>odm::p01ReadOnlyInputFile</Symbol>
+			<Symbol>odm::p01ReadOnlyCreateNewItem</Symbol>
+			<Symbol>odm::epColumnAreaBackgroundColor</Symbol>
+			<Symbol>odm::epColumnAreaGridFocusBackgroundColor</Symbol>
+			<Symbol>odm::epColumnAreaGridFocusTextColor</Symbol>
+			<Symbol>odm::epColumnAreaHeaderBackgroundColor</Symbol>
+			<Symbol>odm::epColumnAreaHeaderTextColor</Symbol>
+			<Symbol>odm::epColumnAreaLineColor</Symbol>
+			<Symbol>odm::epColumnAreaTextColor</Symbol>
+			<Symbol>odm::epColumnAreaAgregatorsBackgroundColor</Symbol>
+			<Symbol>odm::epColumnAreaAgregatorsTextColor</Symbol>
+			<Symbol>odm::epContentBackgroundColor</Symbol>
+			<Symbol>odm::epContentBarFillColor</Symbol>
+			<Symbol>odm::epContentTextColor</Symbol>
+			<Symbol>odm::epGeneralBackgroundColor</Symbol>
+			<Symbol>odm::epGeneralBorderColor</Symbol>
+			<Symbol>odm::epGridAreaAltBackgroundColor</Symbol>
+			<Symbol>odm::epGridAreaBackgroundColor</Symbol>
+			<Symbol>odm::epGridAreaGridFocusBackgroundColor</Symbol>
+			<Symbol>odm::epGridAreaGridFocusTextColor</Symbol>
+			<Symbol>odm::epGridAreaLineColor</Symbol>
+			<Symbol>odm::epGridAreaSecondLineColor</Symbol>
+			<Symbol>odm::epGridAreaSubHeaderColor</Symbol>
+			<Symbol>odm::epGridAreaTextColor</Symbol>
+			<Symbol>odm::epGridAreaAgregatorsBackgroundColor</Symbol>
+			<Symbol>odm::epGridAreaAgregatorsTextColor</Symbol>
+			<Symbol>odm::epOuterAreaLineColor</Symbol>
+			<Symbol>odm::epOuterAreaBackgroundColor</Symbol>
+			<Symbol>odm::epOuterAreaGridFocusBackgroundColor</Symbol>
+			<Symbol>odm::epOuterAreaGridFocusTextColor</Symbol>
+			<Symbol>odm::epOuterAreaHeaderBackgroundColor</Symbol>
+			<Symbol>odm::epOuterAreaHeaderTextColor</Symbol>
+			<Symbol>odm::epOuterAreaTextColor</Symbol>
+			<Symbol>odm::epOuterAreaAgregatorsBackgroundColor</Symbol>
+			<Symbol>odm::epOuterAreaAgregatorsTextColor</Symbol>
+			<Symbol>odm::epRowAreaBackgroundColor</Symbol>
+			<Symbol>odm::epRowAreaGridFocusBackgroundColor</Symbol>
+			<Symbol>odm::epRowAreaGridFocusTextColor</Symbol>
+			<Symbol>odm::epRowAreaHeaderBackgroundColor</Symbol>
+			<Symbol>odm::epRowAreaHeaderTextColor</Symbol>
+			<Symbol>odm::epRowAreaLineColor</Symbol>
+			<Symbol>odm::epRowAreaTextColor</Symbol>
+			<Symbol>odm::epRowAreaAgregatorsBackgroundColor</Symbol>
+			<Symbol>odm::epRowAreaAgregatorsTextColor</Symbol>
+			<Symbol>udm::iUserBoxConnectionType</Symbol>
+			<Symbol>udm::iUserbox</Symbol>
+			<Symbol>udm::iUserBoxParameter</Symbol>
+			<Symbol>gdm::iColdboxNodeConnectionType</Symbol>
+		</Model>
+	</UsedReferences>
+</Page>

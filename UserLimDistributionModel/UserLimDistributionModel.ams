@@ -1,0 +1,389 @@
+## ams_version=1.0
+
+LibraryModule UserLimDistributionModel {
+	Prefix: uldm;
+	Interface: {
+		data { procEmpty_UserIM_DataModel, procRead_LI_ExcelFile_uldm, procRead_IM_ExcelFile_uldm, 
+		       procSimulationDate_uldm, procDefineTablesRules_uldm, procRouteActivationRule_uldm, 
+		       procSpecificActivationRule_uldm, procReadFromExcelButtonAuto_uldm, procWriteToExcelTableButton_uldm, 
+		       procSaveToExcelInputDataButton_uldm, vObjective_LIM_uldm, vObjective_IM_uldm, 
+		       mpLinearModel_uldm, procSolveLinearModel_uldm, sMPConstraintsExcluded_uldm, 
+		       sMPVariablesExcluded_uldm, procConfigureMathProgram_uldm, spLinearSolveTerminationInfo, spLinearSolveTerminationInfoSave }
+	}
+	Section Distribution_Data_User {
+		Procedure procEmpty_UserIM_DataModel {
+			Body: {
+				empty Distribution_Data_User;
+			}
+		}
+		Section Read_write_procedures_uldm {
+			Procedure procRead_LI_ExcelFile_uldm {
+				Body: {
+					ldm::procEmptyAllData_ldm();
+					udm::procReadFromExcelButton_udm();
+					udm::procCheckData_udm();
+					odm::procInitCalendar();
+					odm::procClearCurrentcase;
+					
+					uldm::procSimulationDate_uldm();
+				}
+			}
+			Procedure procRead_IM_ExcelFile_uldm {
+				Body: {
+					! Clear variable
+					uom::procClear_uom;
+					! Read the Excel File of IM with the automatic generation of the CE table and cross table
+					uldm::procReadFromExcelButtonAuto_uldm();
+					! Check the data of the CE
+					udm::procCheckData_udm();
+					! Apply the specific activation rules
+					uldm::procSpecificActivationRule_uldm();
+					! Select IM_date
+					ldm::epTimeIMSelected := ldm::epLastTimeIM;
+					! Select and complete Selected unit
+					ldm::epSelectedUnit := ldm::epDisplayUnit_Nm3;
+					ldm::procDM_ModeledTank_ToSelectedUnit();
+					ldm::procDM_NonModeledSource_ToSelectedUnit();
+				}
+			}
+			Procedure procSimulationDate_uldm {
+				Body: {
+					!gdm::spBeginCalendar := udm::spBeginCalendarSimul;
+					!gdm::spEndCalendar := udm::spEndCalendarSimul;
+					!odm::spBeginCalendar_odm := udm::spBeginCalendarSimul;
+					!odm::spEndCalendar_odm := udm::spEndCalendarSimul;
+					!
+				}
+			}
+			Section Define_table_user {
+				Procedure procDefineTablesRules_uldm {
+					Body: {
+						/***
+						Definition of the datatables that are the specific for User
+						Do not add additional properties to existing (generic) data tables 
+						but define new tables for these specific properties
+						***/
+						!Format of command for index(sets) or other identifiers)
+						!cdl::procAddTable("Excel sheet name", gdm::spSchemaName, 1);
+						!cdl::procAddIndexToTable( "Excel sheet name", 'udm::iIndex', "Excel column name");
+						!cdl::procAddIdentifierToTable( "Excell sheet name", 'udm::AIMMSidentifier', "Excel column name");
+						
+						ldm::procDefineTablesRules();
+					}
+					Comment: {
+						"
+						Defines the table structure in the database / excel files"
+					}
+				}
+			}
+			Section user_activation_rule {
+				Procedure procSpecificActivationRule_uldm {
+					Body: {
+						! general activation rule for source depot
+						ldm::procActivationRule();
+					}
+				}
+				Procedure procRouteActivationRule_uldm {
+					Body: {
+						! Activation route from source dispatchzone rule
+						ldm::procRouteActivationRule();
+					}
+				}
+			}
+			Procedure procReadFromExcelButtonAuto_uldm {
+				Body: {
+					! Clear messages
+					gdm::procClearMessages;
+					
+					if ( fileselect( spExcelFile , extension: "xlsx") = 0 ) then return; endif;
+					
+					! repair for special character string since the string is used in generated code
+					spExcelFile := FindReplaceStrings( spExcelFile , "\\" , "\\\\" );
+					
+					! Define tables LIM (Base)
+					ldm::procDefineTables_IM1;
+					
+					!Read from Excel step2 
+					if ( cdl::procReadFromExcel( formatstring("%s",spExcelFile ) ) ) then
+						! dialogmessage( "Excel succesfully read");
+					endif;
+					
+					! Add the dispatch zone of customer/cluster in the set sDisptachZone
+					ldm::procAddSetDispatchZoneAndCategory();
+					
+					! Complete and create the table from Source 
+					ldm::procCreationFromSource();
+					
+					! Define tables LIM (Base)
+					cdl::procClear();
+					ldm::procDefineTables_Routes;
+					ldm::procDefineTables_Routes_Time();
+					! Read the route rules and source-depot
+					uldm::procDefineTablesRules_uldm();
+					
+					!Read from Excel step3
+					if ( cdl::procReadFromExcel( formatstring("%s",spExcelFile ) ) ) then
+						dialogmessage( "Excel succesfully read");
+					endif;
+					
+					! Creation the cross table routes and complete the others cross tables
+					ldm::procCreationCrossTable();
+					
+					! Save the name of the loaded file
+					ldm::spExcelDistribFileDisplay := spExcelFile;
+					
+					! Call procedure to create the link between excel parameters and time dependent parameters in gom and uom
+					gdm::procInitializeTimeDependentData();
+					udm::procInitializeTimeDependentData_udm();
+				}
+				StringParameter spExcelFile;
+			}
+			Procedure procWriteToExcelTableButton_uldm {
+				Body: {
+					! Update timestamp
+					gdm::spRunTimeStamp := CurrentToString( "%c%y-%m-%d %H:%M:%S");
+					! Update model vesion
+					gdm::spRunModelVersion := gdm::spModelVersion;
+					
+					! Ask for file to export data to
+					if ( fileselectnew( spExcelFile , extension: "xlsx") = 0 ) then return; endif;
+					!if ( dialoggetstring( "Enter a name for the file.\n for example \"ASU_data\"", spExcelFile, title: "Enter a file name") = 0 ) then return; endif;
+					
+					! repair for special character string since the string is used in generated code
+					spExcelFile := FindReplaceStrings( spExcelFile , "\\" , "\\\\" );
+					
+					! First update format for write to excel
+					gdm::procChangeDateFormatExcelWrite();
+					! procDefineTablesResult_LIM();
+					ldm::procDefineTablesResult_Table();
+					
+					! Export to Excel
+					cdl::procWriteToExcel( spExcelFile );
+					
+					dialogmessage( "Excel succesfully exported");
+				}
+				Comment: "Write the generic data to Excel";
+				StringParameter spExcelFile;
+			}
+			Procedure procSaveToExcelInputDataButton_uldm {
+				Body: {
+					! Update timestamp
+					gdm::spRunTimeStamp := CurrentToString( "%c%y-%m-%d %H:%M:%S");
+					! Update model vesion
+					gdm::spRunModelVersion := gdm::spModelVersion;
+					
+					! Ask for file to export data to
+					if ( fileselectnew( spExcelFile , extension: "xlsx") = 0 ) then return; endif;
+					!if ( dialoggetstring( "Enter a name for the file.\n for example \"ASU_data\"", spExcelFile, title: "Enter a file name") = 0 ) then return; endif;
+					
+					! repair for special character string since the string is used in generated code
+					spExcelFile := FindReplaceStrings( spExcelFile , "\\" , "\\\\" );
+					
+					! First update format for write to excel
+					gdm::procChangeDateFormatExcelWrite();
+					! Define tables LIM (Base)
+					ldm::procDefineTables_IM1;
+					! Define tables LIM (Base)
+					ldm::procDefineTables_Routes;
+					ldm::procDefineTables_Routes_Time();
+					! Spec Iatly to read the route rules and source-depot
+					uldm::procDefineTablesRules_uldm();
+					
+					
+					! Export to Excel
+					cdl::procWriteToExcel( spExcelFile );
+					
+					dialogmessage( "Excel succesfully exported");
+				}
+				Comment: "Write the generic data to Excel";
+				StringParameter spExcelFile;
+			}
+		}
+	}
+	Section Distribution_Optimisation_Model_User {
+		Section User_Distribution_Model;
+		DeclarationSection Objective_function {
+			Variable vObjective_LIM_uldm {
+				Range: free;
+				Definition: {
+					uom::vUserObjective
+					+
+					uldm::vObjective_IM_uldm
+					-
+					sum((ldm::iTruckLoading,gdm::iProduct,ldm::iTruckType), ldm::vSlackNeg(ldm::iTruckLoading, gdm::iProduct, ldm::iTruckType)) * 1000
+					
+					!ldm::vObjective_LIM
+				}
+			}
+			Variable vObjective_IM_uldm {
+				Range: free;
+				Definition: ldm::vObjective_IM;
+			}
+		}
+		DeclarationSection mathematical_program {
+			MathematicalProgram mpLinearModel_uldm {
+				Objective: vObjective_LIM_uldm;
+				Direction: minimize;
+				Constraints: lom::sMPConstraints_Linear;
+				Variables: lom::sMPVariables_Linear;
+				Type: Automatic;
+			}
+		}
+		Section Solve_procedures {
+			StringParameter spLinearSolveTerminationInfo {
+				Definition: {
+					"\n Solver Status : " + uldm::mpLinearModel_uldm.SolverStatus
+					+ "\n Program Status : " + uldm::mpLinearModel_uldm.ProgramStatus 
+					+ "\n Solution Time : " + round(uldm::mpLinearModel_uldm.SolutionTime,3)
+					!+ "\n Objectif : " + round(uldm::mpLinearModel_uldm.BestBound)
+					!+ " - Incumbent : " + round(uldm::mpLinearModel_uldm.Incumbent)
+					+ "\n Objective : " + round(uldm::mpLinearModel_uldm.Objective)
+					+ " - Gap : " + round((uldm::mpLinearModel_uldm.Incumbent - uldm::mpLinearModel_uldm.BestBound) /$ uldm::mpLinearModel_uldm.Incumbent * 100, 2) + "%"
+				}
+			}
+			StringParameter spLinearSolveTerminationInfoSave;
+			Procedure procSolveLinearModel_uldm {
+				Body: {
+					if p01ApplicationIsOnAimmsPro then
+						pro::ManagedSessionRemoveFromCaseIdentifierSet := {};
+					
+						!Delegate the execution of the procedure to the server
+						if pro::DelegateToServer( 
+						waitForCompletion: 1,
+						completionCallback: 'pro::session::LoadResultsCallback',
+						priorityAdjustment: 0,
+						timeOut: 600000
+						) 
+						then
+						return 1;
+						endif ;
+					endif;
+					
+					udm::procCheckData_udm;
+					if gom::procCheckSevereErrors() = 1  then
+					
+						!Configure math program 
+						uldm::procConfigureMathProgram_uldm();
+					
+						!Solve
+					        BLOCK
+					                epGMP := GMP::Instance::Generate( uldm::mpLinearModel_uldm );
+					                gom::procSolve( epGMP, 0, splProgramStatus );
+					        ONERROR epError
+					        DO
+					                spErrorString := errh::Message(epError);
+					                if( errh::Severity( epError ) = 'Warning' )
+					                then
+					                !It is a warning, mark it as handled and return.
+					                	errh::MarkAsHandled( epError );
+					                else
+					                	log_message::procLogInfo("",formatstring( "Solver failed for linear model: %s", spErrorString));
+					                	errh::MarkAsHandled( epError );	
+					                	return 0;
+					                endif;
+					        ENDBLOCK;
+					
+					        gdm::procLogSlackAllowed("Variant"); !log slack allowed
+					        log_message::procLogInfo("",formatstring( "Program status for linear model: %s", splProgramStatus));
+					
+					        !Copy objective values to parameters
+					        !lom::pObjectiveCost:= gom::vObjectiveCost;
+					        lom::pObjective_lom := uom::vUserObjective;
+					
+					        ! Initialized missing variables
+					        gom::vRectificationPower.level(gdm::iColdbox,gdm::iTime) := lom::pRectificationPowerLinear(gdm::iColdbox,gdm::iTime);
+					        gom::vO2Recovery.level(gdm::iColdbox,gdm::iTime)  := lom::pO2RecoveryLinear(gdm::iColdbox,gdm::iTime);
+					        gom::vArRecovery.level(gdm::iColdbox,gdm::iTime)  := lom::pArRecoveryLinear(gdm::iColdbox,gdm::iTime);
+					
+						ulom::epProgramStatus_ulom := (GMP::Solution::GetProgramStatus( epGMP, 1 ));
+						ulom::pTimeUsed_ulom := (GMP::Solution::GetTimeUsed( epGMP, 1 ));
+						ulom::pGap_ulom :=( abs( ulom::mpUserLinearModel.Incumbent - ulom::mpUserLinearModel.bestbound ) / $abs( ulom::mpUserLinearModel.Incumbent ) ) * 100;
+						uldm::spLinearSolveTerminationInfoSave := uldm::spLinearSolveTerminationInfo;
+					
+						return 1;
+					else
+						return 0;
+					endif;
+				}
+				ElementParameter epGMP {
+					Range: AllGeneratedMathematicalPrograms;
+				}
+				StringParameter splProgramStatus;
+				StringParameter spErrorString;
+				ElementParameter epError {
+					Range: errh::PendingErrors;
+				}
+			}
+			Section Config_declaration {
+				Set sMPConstraintsExcluded_uldm {
+					SubsetOf: AllConstraints;
+					Definition: {
+						{}
+					}
+				}
+				Set sMPVariablesExcluded_uldm {
+					SubsetOf: AllVariables;
+				}
+			}
+			Section Config_procedures {
+				Procedure procConfigureMathProgram_uldm {
+					Body: {
+						/****
+						This procedure is called before any solve and it configures 
+						the mathematical program by setting the correct elements in 
+						the sets, i.e. it defines the set of
+						- Constraints
+						- Variables
+						... other
+						****/
+						
+						!set definitions of p01 for linear or non-linear constraints all to 1 for linear model
+						gdm::p01BoxLinearEquationModel( gdm::iBox ) := 1;
+						gdm::p01CompressorLinearEquationModel( gdm::iCompressorArc ) := 1;
+						gdm::p01LiquefierLinearEquationModel( gdm::iLiquefierArc ) := 1;
+						gdm::p01PipeLinearEquationModel( gdm::iPipeArc ) := 1;
+						gdm::p01ValveLinearEquationModel( gdm::iValveArc ) := 1;
+						
+						!Set definitions of constraint and variables sets
+						lom::sMPConstraints_Linear := 
+						    {IndexConstraints|IndexConstraints in (LinearOptimizationModel or UserLinearOptimizationModel) }
+						    + {IndexConstraints|IndexConstraints in (GeneralOptimizationModel or USEROptimizationModel)}
+						    + {IndexConstraints|IndexConstraints in (LimDistributionModel)}
+						    + {IndexConstraints|IndexConstraints in (UserLimDistributionModel)}
+						    - {IndexNonLinearConstraints|IndexNonLinearConstraints in (GeneralOptimizationModel or USEROptimizationModel)}
+						    ! List here all linaer constraints from uomm that should not be taken into account
+						    - lom::sMPConstraintsExcluded_lom
+						    - ulom::sMPConstraintsExcluded_ulom
+						    - ldm::sMPConstraintsExcluded_ldm
+						    - uldm::sMPConstraintsExcluded_uldm;
+						
+						lom::sMPVariables_Linear :=
+						    {IndexVariables|IndexVariables in (LinearOptimizationModel or UserLinearOptimizationModel)}
+						    + {IndexVariables|IndexVariables in (GeneralOptimizationModel or USEROptimizationModel)}
+						    + {IndexVariables|IndexVariables in (LimDistributionModel)}
+						    + {IndexVariables|IndexVariables in (UserLimDistributionModel)}
+						    - lom::sMPVariablesExcluded_lom
+						    - ulom::sMPVariablesExcluded_ulom
+						    - ldm::sMPVariablesExcluded_ldm
+						    - uldm::sMPVariablesExcluded_uldm;
+						
+						!Set definitions of other sets
+						uom::procNodeSetsDefinition_uom();
+						
+						! Call procedure to initialize pAccuBufferInitial and pAccuPipeBufferInitial based on initial pressures
+						gom::procInitializeAccuBuffers();
+						
+						! Fix unnecessary flow variables based on data
+						gom::procFixFlowVariablesFromData();
+						lom::procFixBinariesFromData_lom();
+						
+						! Fix user specific variables
+						uom::procFixUserSpecificVariables_uom();
+						ulom::procFixUserSpecificVariables_ulom();
+					}
+				}
+			}
+		}
+	}
+	Section Distribution_Display_User;
+}

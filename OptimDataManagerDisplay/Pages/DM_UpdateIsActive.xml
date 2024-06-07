@@ -1,0 +1,588 @@
+<?xml version="1.0"?>
+<Page Version="4000" TimeStamp="2022-01-19 17:01:59">
+	<PageEditSize Type="Specified">
+		<Size Width="1200" Height="606" />
+	</PageEditSize>
+	<ProjectUUID>748F1752-A3CC-4398-BEB0-3B3157FE70D8</ProjectUUID>
+	<CloseWhenInactive>true</CloseWhenInactive>
+	<TemplatesTabOrderPosition>1</TemplatesTabOrderPosition>
+	<ResizeData>
+		<MainArea Line="PercentageFromTop" Value="0.986798679868">
+			<TopArea Line="PercentageFromLeft" Value="0.993333333333">
+				<LeftArea Line="FixedFromTop" Value="45">
+					<TopArea Line="FixedFromLeft" Value="226" />
+					<BottomArea Line="FixedFromRight" Value="211" />
+				</LeftArea>
+			</TopArea>
+		</MainArea>
+	</ResizeData>
+	<Background>
+		<UserColor GUID="BDFE7E86-A7C8-4FA3-BEA3-FA3B7D1374B7">dark grey</UserColor>
+	</Background>
+	<PageObject Type="Scalar">
+		<Location top="6" left="228" bottom="36" right="834" />
+		<TabOrder>3</TabOrder>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="InShadow" Width="2" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</BackgroundColor>
+		<TextColor>
+			<UserColor>ALFIBackgroundDisplay</UserColor>
+		</TextColor>
+		<SelectionColor>
+			<UserColor>ALFIBackgroundDisplay</UserColor>
+		</SelectionColor>
+		<Layout>Text-Value</Layout>
+		<SeparatorSign>=</SeparatorSign>
+		<ExplicitIdentifier>
+			<Identifier>odm::spActiveFile</Identifier>
+			<NumberFormat Width="100" Decimals="0" Alignment="Left" ShowDefaults="true" />
+			<Color>267 ALFIBackgroundDisplay</Color>
+			<DescriptionFromIdentifierName>false</DescriptionFromIdentifierName>
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="630" left="324" bottom="696" right="396" />
+		<StaticText>
+
+PdP Style</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<TextColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="12" left="0" bottom="36" right="222" />
+		<StaticText>TimeDependent Data</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="523F941B-E378-47BE-AEB2-3C1FD99F8C69" Name="Arial 12 Bold" />
+		<TextColor>
+			<UserColor>Air Liquide blue</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Pivot Table">
+		<Location top="54" left="6" bottom="588" right="972" />
+		<TabOrder>1</TabOrder>
+		<ObjectUUID>BD5BBC7A-958E-4994-BE21-ECFC3EF6A3AF</ObjectUUID>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="Line" Width="1" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<Contents>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::p01EnergyContractActiveTimeDependent( gdm::iEnergyContract, gdm::iTime )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::p01CoolingTowerTemperatureActiveTimeDependent( gdm::iCoolingTower, gdm::iTime )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::p01ColdboxFlowActiveTimeDependent( gdm::iColdbox, gdm::iColdboxInternalFlow, gdm::iTime )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::p01TankLevelActiveTimeDependent( gdm::iTankNode, gdm::iTime )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::p01BackupActiveTimeDependent( gdm::iBackupArc, gdm::iTime )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::p01InputFlowNodeActiveTimeDependent( gdm::iInputFlowNode, gdm::iTime )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::p01PressureControlNodeSetPointActiveTimeDependent( gdm::iPressureControlNode, gdm::iTime )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::p01OutputFlowNodeActiveTimeDependent( gdm::iOutputFlowNode, gdm::iTime )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::p01CompressorActiveTimeDependent( gdm::iCompressorArc, gdm::iTime )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::p01ValveActiveTimeDependent( gdm::iValveArc, gdm::iTime )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::p01LiquifierActiveTimeDependent( gdm::iLiquefierArc, gdm::iTime )</Identifier>
+			</Explicit_Identifier>
+			<Explicit_Identifier>
+				<Identifier ID="4110">gdm::p01OperatingModeActiveTimeDependent( gdm::iOperatingModeElement, gdm::iOperatingMode, gdm::iTime )</Identifier>
+			</Explicit_Identifier>
+			<Defaults>
+				<Format>
+					<Decimal_Places ID="4212">1</Decimal_Places>
+					<Show_1000_seperator ID="4213">"Yes"</Show_1000_seperator>
+					<Show_Checkboxes ID="4215">"Yes"</Show_Checkboxes>
+				</Format>
+				<Readonly ID="4052">odm::p01ReadOnlyModifyTimeDependentPage</Readonly>
+				<Colors>
+					<Background_Color ID="4170">odm::epContentBackgroundColor</Background_Color>
+					<Text_Color ID="4175">odm::epContentTextColor</Text_Color>
+					<Bar_Fill_Color ID="4177">odm::epContentBarFillColor</Bar_Fill_Color>
+				</Colors>
+			</Defaults>
+		</Contents>
+		<Indices>
+			<Identifier_Index>
+				<Header_Title ID="6230">""</Header_Title>
+				<Hide_if_Single_Identifier ID="6270">"No"</Hide_if_Single_Identifier>
+			</Identifier_Index>
+		</Indices>
+		<General>
+			<Background_Color ID="1010">odm::epGeneralBackgroundColor</Background_Color>
+			<Border_Color ID="1011">odm::epGeneralBorderColor</Border_Color>
+			<Dense_Aggregation_restricts_to_Domain ID="1022">"Yes"</Dense_Aggregation_restricts_to_Domain>
+		</General>
+		<Row_Area>
+			<Background_Color ID="2010">odm::epRowAreaBackgroundColor</Background_Color>
+			<Text_Color ID="2020">odm::epRowAreaTextColor</Text_Color>
+			<Line_Color ID="2040">odm::epRowAreaLineColor</Line_Color>
+			<Headers>
+				<Background_Color ID="2120">odm::epRowAreaHeaderBackgroundColor</Background_Color>
+				<Text_Color ID="2130">odm::epRowAreaHeaderTextColor</Text_Color>
+				<Show_Sub_Headers ID="2150">"No"</Show_Sub_Headers>
+			</Headers>
+			<Aggregators>
+				<Background_Color ID="2220">odm::epRowAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="2230">odm::epRowAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Grid_Focus_Indicator>
+				<Background_Color ID="2270">odm::epRowAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="2280">odm::epRowAreaGridFocusTextColor</Text_Color>
+			</Grid_Focus_Indicator>
+		</Row_Area>
+		<Column_Area>
+			<Same_as_Row_Area ID="3005">"No"</Same_as_Row_Area>
+			<Auto_resize_Column_Widths ID="3006">"Never"</Auto_resize_Column_Widths>
+			<Background_Color ID="3010">odm::epColumnAreaBackgroundColor</Background_Color>
+			<Text_Color ID="3020">odm::epColumnAreaTextColor</Text_Color>
+			<Line_Color ID="3040">odm::epColumnAreaLineColor</Line_Color>
+			<Headers>
+				<Background_Color ID="3120">odm::epColumnAreaHeaderBackgroundColor</Background_Color>
+				<Text_Color ID="3130">odm::epColumnAreaHeaderTextColor</Text_Color>
+			</Headers>
+			<Aggregators>
+				<Background_Color ID="3220">odm::epColumnAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="3230">odm::epColumnAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Grid_Focus_Indicator>
+				<Background_Color ID="3270">odm::epColumnAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="3280">odm::epColumnAreaGridFocusTextColor</Text_Color>
+			</Grid_Focus_Indicator>
+		</Column_Area>
+		<Outer_Area>
+			<Same_as_Row_Area ID="3505">"No"</Same_as_Row_Area>
+			<Background_Color ID="3510">odm::epOuterAreaBackgroundColor</Background_Color>
+			<Text_Color ID="3520">odm::epOuterAreaTextColor</Text_Color>
+			<Line_Color ID="3540">odm::epOuterAreaLineColor</Line_Color>
+			<Headers>
+				<Background_Color ID="3620">odm::epOuterAreaHeaderBackgroundColor</Background_Color>
+				<Text_Color ID="3630">odm::epOuterAreaHeaderTextColor</Text_Color>
+			</Headers>
+			<Aggregators>
+				<Background_Color ID="3720">odm::epOuterAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="3730">odm::epOuterAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Grid_Focus_Indicator>
+				<Background_Color ID="3770">odm::epOuterAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="3780">odm::epOuterAreaGridFocusTextColor</Text_Color>
+			</Grid_Focus_Indicator>
+		</Outer_Area>
+		<Grid_Area>
+			<Background_Color ID="5010">odm::epGridAreaBackgroundColor</Background_Color>
+			<Alternating_Background_Color ID="5011">odm::epGridAreaAltBackgroundColor</Alternating_Background_Color>
+			<Text_Color ID="5020">odm::epGridAreaTextColor</Text_Color>
+			<Line_Color ID="5040">odm::epGridAreaLineColor</Line_Color>
+			<Second_Line_Color ID="5041">odm::epGridAreaSecondLineColor</Second_Line_Color>
+			<Selection>
+				<Background_Color ID="5120">odm::epGridAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="5130">odm::epGridAreaGridFocusTextColor</Text_Color>
+			</Selection>
+			<Aggregators>
+				<Background_Color ID="5220">odm::epGridAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="5230">odm::epGridAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Sub_Header_Row_or_Column>
+				<Background_Color ID="5320">odm::epGridAreaSubHeaderColor</Background_Color>
+			</Sub_Header_Row_or_Column>
+		</Grid_Area>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="6" left="1116" bottom="42" right="1188" />
+		<Shape>Rounded-Filled</Shape>
+		<FillColor>
+			<UserColor>ALFIBackgroundDisplay</UserColor>
+		</FillColor>
+		<LineColor>
+			<UserColor>ALFIBackgroundDisplay</UserColor>
+		</LineColor>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="12" left="1122" bottom="36" right="1182" />
+		<TabOrder>2</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"DM Menu"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="32946F2C-CF92-4A97-9FA0-14B8B5F45301" Name="DataManager_Menu" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="60" left="1086" bottom="90" right="1182" />
+		<TabOrder>16</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"ComprerssorTime"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="95089723-4BB0-44F0-BBC0-272BFF9FE0EC" Name="DM_CompressorTime" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="252" left="1086" bottom="282" right="1182" />
+		<TabOrder>9</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"ColdBoxTime"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="7E6A28F8-D9B2-4BE5-B1DE-6E51402BE2BB" Name="DM_ColdboxTime" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="336" left="1086" bottom="366" right="1182" />
+		<TabOrder>4</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Switchable Element"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="0009C1A6-2DB5-47AE-B109-82CE02FC220C" Name="DM_OperatingMode" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="300" left="1086" bottom="330" right="1182" />
+		<TabOrder>8</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"UserBoTime"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="2F95F2A0-431D-4A19-9315-CDABBD0D8EB7" Name="DM_BoxTime" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="96" left="1086" bottom="126" right="1182" />
+		<TabOrder>12</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"LiquefierTime"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="D71180A9-7576-43B6-B3C8-2F176AEA81CD" Name="DM_LiquefierTime" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="372" left="1086" bottom="402" right="1182" />
+		<TabOrder>5</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"TankTime"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="58FBB3CB-D67B-4C96-A6DF-3AFE06D03E93" Name="DM_TankBufferTime" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="444" left="1086" bottom="474" right="1182" />
+		<TabOrder>7</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"InputFlowTime"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="27FBDF59-9586-4829-8FEF-E1E08BF79E33" Name="DM_InputFlowOutputFlowTime" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="480" left="1086" bottom="510" right="1182" />
+		<TabOrder>6</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"OutputFlowTime"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="27FBDF59-9586-4829-8FEF-E1E08BF79E33" Name="DM_InputFlowOutputFlowTime" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="168" left="1086" bottom="198" right="1182" />
+		<TabOrder>11</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"ValveTime"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="25E2D502-DCA9-4D0D-A3B5-8668DD1FD8C9" Name="DM_ValveBackupTime" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="204" left="1086" bottom="234" right="1182" />
+		<TabOrder>10</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"BackupTime"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="25E2D502-DCA9-4D0D-A3B5-8668DD1FD8C9" Name="DM_ValveBackupTime" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="48" left="0" bottom="594" right="978" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="48" left="1080" bottom="594" right="1188" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="60" left="990" bottom="90" right="1068" />
+		<TabOrder>15</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Force All = 1"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>odm::procForceActiveTimeDependentTo_1</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="96" left="990" bottom="126" right="1068" />
+		<TabOrder>13</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Force All = 0"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>odm::procForceActiveTimeDependentTo_0</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="48" left="984" bottom="186" right="1074" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="144" left="990" bottom="174" right="1068" />
+		<TabOrder>14</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Initialise Time Parameter"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>odm::procUpdateTimeDependentDataWithConstant</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<UsedReferences>
+		<Model>
+			<Symbol>gdm::p01PressureControlNodeSetPointActiveTimeDependent</Symbol>
+			<Symbol>gdm::p01BackupActiveTimeDependent</Symbol>
+			<Symbol>gdm::p01ColdboxFlowActiveTimeDependent</Symbol>
+			<Symbol>gdm::p01CompressorActiveTimeDependent</Symbol>
+			<Symbol>gdm::p01CoolingTowerTemperatureActiveTimeDependent</Symbol>
+			<Symbol>gdm::p01OutputFlowNodeActiveTimeDependent</Symbol>
+			<Symbol>gdm::p01InputFlowNodeActiveTimeDependent</Symbol>
+			<Symbol>gdm::p01LiquifierActiveTimeDependent</Symbol>
+			<Symbol>gdm::p01EnergyContractActiveTimeDependent</Symbol>
+			<Symbol>gdm::p01TankLevelActiveTimeDependent</Symbol>
+			<Symbol>gdm::p01ValveActiveTimeDependent</Symbol>
+			<Symbol>gdm::p01OperatingModeActiveTimeDependent</Symbol>
+			<Symbol>odm::procUpdateTimeDependentDataWithConstant</Symbol>
+			<Symbol>odm::procForceActiveTimeDependentTo_1</Symbol>
+			<Symbol>odm::procForceActiveTimeDependentTo_0</Symbol>
+			<Symbol>odm::p01ReadOnlyModifyTimeDependentPage</Symbol>
+			<Symbol>odm::spActiveFile</Symbol>
+			<Symbol>odm::epColumnAreaBackgroundColor</Symbol>
+			<Symbol>odm::epColumnAreaGridFocusBackgroundColor</Symbol>
+			<Symbol>odm::epColumnAreaGridFocusTextColor</Symbol>
+			<Symbol>odm::epColumnAreaHeaderBackgroundColor</Symbol>
+			<Symbol>odm::epColumnAreaHeaderTextColor</Symbol>
+			<Symbol>odm::epColumnAreaLineColor</Symbol>
+			<Symbol>odm::epColumnAreaTextColor</Symbol>
+			<Symbol>odm::epColumnAreaAgregatorsBackgroundColor</Symbol>
+			<Symbol>odm::epColumnAreaAgregatorsTextColor</Symbol>
+			<Symbol>odm::epContentBackgroundColor</Symbol>
+			<Symbol>odm::epContentBarFillColor</Symbol>
+			<Symbol>odm::epContentTextColor</Symbol>
+			<Symbol>odm::epGeneralBackgroundColor</Symbol>
+			<Symbol>odm::epGeneralBorderColor</Symbol>
+			<Symbol>odm::epGridAreaAltBackgroundColor</Symbol>
+			<Symbol>odm::epGridAreaBackgroundColor</Symbol>
+			<Symbol>odm::epGridAreaGridFocusBackgroundColor</Symbol>
+			<Symbol>odm::epGridAreaGridFocusTextColor</Symbol>
+			<Symbol>odm::epGridAreaLineColor</Symbol>
+			<Symbol>odm::epGridAreaSecondLineColor</Symbol>
+			<Symbol>odm::epGridAreaSubHeaderColor</Symbol>
+			<Symbol>odm::epGridAreaTextColor</Symbol>
+			<Symbol>odm::epGridAreaAgregatorsBackgroundColor</Symbol>
+			<Symbol>odm::epGridAreaAgregatorsTextColor</Symbol>
+			<Symbol>odm::epOuterAreaLineColor</Symbol>
+			<Symbol>odm::epOuterAreaBackgroundColor</Symbol>
+			<Symbol>odm::epOuterAreaGridFocusBackgroundColor</Symbol>
+			<Symbol>odm::epOuterAreaGridFocusTextColor</Symbol>
+			<Symbol>odm::epOuterAreaHeaderBackgroundColor</Symbol>
+			<Symbol>odm::epOuterAreaHeaderTextColor</Symbol>
+			<Symbol>odm::epOuterAreaTextColor</Symbol>
+			<Symbol>odm::epOuterAreaAgregatorsBackgroundColor</Symbol>
+			<Symbol>odm::epOuterAreaAgregatorsTextColor</Symbol>
+			<Symbol>odm::epRowAreaBackgroundColor</Symbol>
+			<Symbol>odm::epRowAreaGridFocusBackgroundColor</Symbol>
+			<Symbol>odm::epRowAreaGridFocusTextColor</Symbol>
+			<Symbol>odm::epRowAreaHeaderBackgroundColor</Symbol>
+			<Symbol>odm::epRowAreaHeaderTextColor</Symbol>
+			<Symbol>odm::epRowAreaLineColor</Symbol>
+			<Symbol>odm::epRowAreaTextColor</Symbol>
+			<Symbol>odm::epRowAreaAgregatorsBackgroundColor</Symbol>
+			<Symbol>odm::epRowAreaAgregatorsTextColor</Symbol>
+			<Symbol>gdm::iEnergyContract</Symbol>
+			<Symbol>gdm::iCoolingTower</Symbol>
+			<Symbol>gdm::iPressureControlNode</Symbol>
+			<Symbol>gdm::iInputFlowNode</Symbol>
+			<Symbol>gdm::iOutputFlowNode</Symbol>
+			<Symbol>gdm::iColdbox</Symbol>
+			<Symbol>gdm::iColdboxInternalFlow</Symbol>
+			<Symbol>gdm::iBackupArc</Symbol>
+			<Symbol>gdm::iTankNode</Symbol>
+			<Symbol>gdm::iCompressorArc</Symbol>
+			<Symbol>gdm::iLiquefierArc</Symbol>
+			<Symbol>gdm::iValveArc</Symbol>
+			<Symbol>gdm::iTime</Symbol>
+			<Symbol>gdm::iOperatingModeElement</Symbol>
+			<Symbol>gdm::iOperatingMode</Symbol>
+		</Model>
+	</UsedReferences>
+</Page>

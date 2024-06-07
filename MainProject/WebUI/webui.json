@@ -1,0 +1,2155 @@
+{
+  "version": "4.67.0",
+  "application": {
+    "aimms.widget.type": {
+      "literal": "application"
+    },
+    "browsername": {
+      "aimms": {
+        "contents": [
+          "webui::ClientBrowserName"
+        ]
+      }
+    },
+    "browsertimezone": {
+      "aimms": {
+        "contents": [
+          "webui::BrowserTimeZone"
+        ]
+      }
+    },
+    "ignoredst": {
+      "aimms": {
+        "contents": [
+          "webui::IgnoreDST"
+        ]
+      }
+    },
+    "pages": {
+      "literal": {
+        "name": "root",
+        "slug": "root",
+        "children": [
+          {
+            "name": "Main Project",
+            "slug": "main_project",
+            "children": [
+              {
+                "name": "home",
+                "slug": "home",
+                "type": "pagev2-grid",
+                "children": [
+                  {
+                    "name": "Carte",
+                    "type": "pagev2-grid",
+                    "slug": "carte",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Production",
+                "type": "pagev2-grid",
+                "slug": "production",
+                "children": []
+              },
+              {
+                "name": "Mainpage",
+                "type": "pagev2-grid",
+                "slug": "new_page",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "theme.classic": {
+      "literal": "NOT_ALLOWED"
+    },
+    "timezone": {
+      "aimms": {
+        "contents": [
+          "webui::DisplayTimeZone"
+        ]
+      }
+    },
+    "timezone.dst.readonly": {
+      "aimms": {
+        "contents": [
+          "webui::DefaultDSTSettingForDisplayTimeZone"
+        ]
+      }
+    }
+  },
+  "pages/carte": {
+    "aimms.widget.type": {
+      "literal": "pagev2-grid"
+    },
+    "bindings": {
+      "literal": [
+        {
+          "widgetUri": "Source_Dispatchzone_LIN",
+          "gridArea": "area-c",
+          "dndId": "area-cSource_Dispatchzone_LIN0"
+        },
+        {
+          "widgetUri": "Map",
+          "gridArea": "area-a",
+          "dndId": "area-aMap1"
+        },
+        {
+          "widgetUri": "Map Lox",
+          "gridArea": "area-b",
+          "dndId": "area-bMap Lox2"
+        },
+        {
+          "widgetUri": "Source_Dispatchzone_LOX",
+          "gridArea": "area-d",
+          "dndId": "Unassigned widgetsSource_Dispatchzone_LOX"
+        }
+      ]
+    },
+    "layoutId": {
+      "literal": "Layout5"
+    },
+    "widgets": {
+      "literal": [
+        {
+          "uri": "Map",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "Map Lox",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "Source_Dispatchzone_LIN",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "Source_Dispatchzone_LOX",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        }
+      ]
+    }
+  },
+  "pages/home": {
+    "aimms.widget.type": {
+      "literal": "pagev2-grid"
+    },
+    "bindings": {
+      "literal": [
+        {
+          "widgetUri": "Arcs",
+          "gridArea": "area-a",
+          "dndId": "area-aArcs0"
+        },
+        {
+          "widgetUri": "Flow",
+          "gridArea": "area-b",
+          "dndId": "area-bFlow1"
+        },
+        {
+          "widgetUri": "Flow_1",
+          "gridArea": "area-c",
+          "dndId": "area-cFlow_12"
+        },
+        {
+          "widgetUri": "Tank_Select",
+          "gridArea": "area-d",
+          "dndId": "area-dTank_Select4"
+        },
+        {
+          "widgetUri": "Tank Level",
+          "gridArea": "area-d",
+          "dndId": "area-dTank Level3"
+        }
+      ]
+    },
+    "layoutId": {
+      "literal": "Layout5"
+    },
+    "widgets": {
+      "literal": [
+        {
+          "uri": "Arcs",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "Flow",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "Flow_1",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "Tank Level",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "Tank_Select",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        }
+      ]
+    }
+  },
+  "pages/new_page": {
+    "aimms.widget.type": {
+      "literal": "pagev2-grid"
+    },
+    "bindings": {
+      "literal": [
+        {
+          "widgetUri": "Read_Excel_IM",
+          "gridArea": "area-b",
+          "dndId": "area-bRead_Excel_IM1"
+        },
+        {
+          "widgetUri": "Routes",
+          "gridArea": "area-b",
+          "dndId": "area-bRoutes2"
+        },
+        {
+          "widgetUri": "Solve_LIM_Model",
+          "gridArea": "area-c",
+          "dndId": "area-cSolve_LIM_Model3"
+        },
+        {
+          "widgetUri": "EmptyAllData",
+          "gridArea": "area-c",
+          "dndId": "area-cEmptyAllData4"
+        },
+        {
+          "widgetUri": "Sourcing",
+          "gridArea": "area-c",
+          "dndId": "area-cSourcing5"
+        },
+        {
+          "widgetUri": "Source_DispatchZone",
+          "gridArea": "area-d",
+          "dndId": "area-dSource_DispatchZone6"
+        },
+        {
+          "widgetUri": "Read_Excel_LI",
+          "gridArea": "area-a",
+          "dndId": "area-aRead_Excel_LI7"
+        },
+        {
+          "widgetUri": "Arcs_check",
+          "gridArea": "area-a",
+          "dndId": "area-aArcs_check8"
+        }
+      ]
+    },
+    "layoutId": {
+      "literal": "Layout7"
+    },
+    "widgets": {
+      "literal": [
+        {
+          "uri": "Read_Excel_LI",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "Read_Excel_IM",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "Solve_LIM_Model",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "EmptyAllData",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "Arcs_check",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "Routes",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "Sourcing",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "Source_DispatchZone",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        }
+      ]
+    }
+  },
+  "pages/production": {
+    "aimms.widget.type": {
+      "literal": "pagev2-grid"
+    },
+    "bindings": {
+      "literal": [
+        {
+          "widgetUri": "Coldbox",
+          "gridArea": "area-a",
+          "dndId": "area-aColdbox0"
+        },
+        {
+          "widgetUri": "Compressor",
+          "gridArea": "area-b",
+          "dndId": "Unassigned widgetsCompressor"
+        }
+      ]
+    },
+    "layoutId": {
+      "literal": "Layout1"
+    },
+    "widgets": {
+      "literal": [
+        {
+          "uri": "Coldbox",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "Compressor",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        }
+      ]
+    }
+  },
+  "widgets/Arcs": {
+    "aimms.widget.type": {
+      "literal": "table"
+    },
+    "contents": {
+      "aimms": {
+        "slices": [],
+        "contents": [
+          "gdm::epArcType",
+          "gdm::epNodeFrom",
+          "gdm::epNodeTo",
+          "gdm::pArcMinFlow",
+          "gdm::pArcMaxFlow"
+        ],
+        "prefix": "aimms"
+      }
+    },
+    "contents.displaydomain": {
+      "literal": {
+        "gdm::parcminflow": "1"
+      }
+    },
+    "contents.numdecimals": {
+      "literal": 0
+    },
+    "contents.partition": {
+      "literal": {
+        "rowHeader": [
+          "gdm::iArc"
+        ],
+        "colHeader": [
+          "<IDENTIFIER-SET>"
+        ],
+        "aggregated": []
+      }
+    },
+    "contents.sorting": {
+      "literal": [
+        {
+          "partIndex": 0,
+          "partOffsets": [
+            -1,
+            2
+          ],
+          "mode": "setorder"
+        }
+      ]
+    },
+    "custom.column.widths": {
+      "literal": [
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "gdm::epNodeFrom"
+          },
+          "width": 39.37
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "gdm::epArcType"
+          },
+          "width": 33.12
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "gdm::epNodeTo"
+          },
+          "width": 35.13
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "gdm::pArcMaxFlow"
+          },
+          "width": 42.15
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "gdm::pArcMinFlow"
+          },
+          "width": 34.58
+        }
+      ]
+    },
+    "data.exchange.enable": {
+      "literal": true
+    },
+    "name": {
+      "literal": "Arcs"
+    },
+    "views": {
+      "literal": {}
+    },
+    "views.__display_order__": {
+      "literal": [
+        "views.0",
+        "views.1"
+      ]
+    },
+    "views.0.type": {
+      "literal": "view"
+    },
+    "views.1.type": {
+      "literal": "template"
+    }
+  },
+  "widgets/Arcs_check": {
+    "aimms.widget.type": {
+      "literal": "table"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "gdm::epArcType",
+          "gdm::epNodeFrom",
+          "gdm::epNodeTo",
+          "gdm::pArcMinFlow",
+          "gdm::pArcMaxFlow"
+        ]
+      }
+    },
+    "contents.displaydomain": {
+      "literal": {
+        "gdm::parcminflow": "1"
+      }
+    },
+    "contents.partition": {
+      "literal": {
+        "rowHeader": [
+          "gdm::iArc"
+        ],
+        "colHeader": [
+          "<IDENTIFIER-SET>"
+        ],
+        "aggregated": []
+      }
+    },
+    "custom.column.widths": {
+      "literal": [
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "gdm::epArcType"
+          },
+          "width": 25.41
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "gdm::epNodeFrom"
+          },
+          "width": 30.62
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "gdm::epNodeTo"
+          },
+          "width": 23.06
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "gdm::pArcMaxFlow"
+          },
+          "width": 23.54
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "gdm::pArcMinFlow"
+          },
+          "width": 22.5
+        }
+      ]
+    },
+    "name": {
+      "literal": "Arcs_check"
+    },
+    "views": {
+      "literal": {}
+    }
+  },
+  "widgets/Coldbox": {
+    "aimms.widget.type": {
+      "literal": "table"
+    },
+    "contents": {
+      "aimms": {
+        "slices": [
+          {
+            "identifier": "gom::vColdboxInternalFlow",
+            "slice": [
+              {
+                "index": "gdm::iColdbox",
+                "type": "free",
+                "value": "gdm::iColdbox"
+              },
+              {
+                "index": "gdm::iColdboxInternalFlow",
+                "type": "element-parameter",
+                "value": "gdm::epTotalAir"
+              },
+              {
+                "index": "gdm::iTime",
+                "type": "free",
+                "value": "gdm::iTime"
+              }
+            ]
+          }
+        ],
+        "contents": [
+          "gom::vAirMp",
+          "gom::vAirHp",
+          "gom::vColdboxInternalFlow",
+          "gom::vHpGOx",
+          "gom::vHpGaN",
+          "gom::vLiN",
+          "gom::vLOx",
+          "gom::vLAr"
+        ]
+      }
+    },
+    "contents.displaydomain": {
+      "literal": {
+        "gom::vairhp": "1",
+        "gom::vairmp": "1",
+        "gom::vcoldboxinternalflow": "1",
+        "gom::vhpgox": "1",
+        "gom::vhpgan": "1",
+        "gom::vlox": "1",
+        "gom::vlar": "1"
+      }
+    },
+    "contents.numdecimals": {
+      "literal": 0
+    },
+    "contents.partition": {
+      "literal": {
+        "rowHeader": [
+          "gdm::iColdbox",
+          "<IDENTIFIER-SET>"
+        ],
+        "colHeader": [
+          "gdm::iTime"
+        ],
+        "aggregated": []
+      }
+    },
+    "contents.totals": {
+      "literal": [
+        {
+          "indexName": "gdm::iTime",
+          "operators": [
+            "sum_only_visible"
+          ]
+        }
+      ]
+    },
+    "custom.column.widths": {
+      "literal": [
+        {
+          "type": "rowHeader",
+          "colKey": "<IDENTIFIER-SET>",
+          "width": 34.93
+        }
+      ]
+    },
+    "default.column.width": {
+      "literal": 20
+    },
+    "name": {
+      "literal": "Coldbox"
+    },
+    "views": {
+      "literal": {}
+    },
+    "views.__display_order__": {
+      "literal": [
+        "views.0"
+      ]
+    },
+    "views.0.type": {
+      "literal": "view"
+    }
+  },
+  "widgets/Compressor": {
+    "aimms.widget.type": {
+      "literal": "table"
+    },
+    "contents": {
+      "aimms": {
+        "slices": [
+          {
+            "identifier": "gom::vFlow",
+            "slice": [
+              {
+                "index": "gdm::iArc",
+                "type": "subset",
+                "value": "gdm::iCompressorArc"
+              },
+              {
+                "index": "gdm::iTime",
+                "type": "free",
+                "value": "gdm::iTime"
+              }
+            ]
+          }
+        ],
+        "contents": [
+          "gom::vCompressorPower",
+          "gom::vFlow"
+        ]
+      }
+    },
+    "contents.numdecimals": {
+      "literal": 0
+    },
+    "contents.partition": {
+      "literal": {
+        "rowHeader": [
+          "gdm::iArc",
+          "gdm::iCompressorArc",
+          "<IDENTIFIER-SET>"
+        ],
+        "colHeader": [
+          "gdm::iTime"
+        ],
+        "aggregated": []
+      }
+    },
+    "contents.totals": {
+      "literal": [
+        {
+          "indexName": "gdm::iTime",
+          "operators": [
+            "sum_only_visible"
+          ]
+        }
+      ]
+    },
+    "custom.column.widths": {
+      "literal": [
+        {
+          "type": "rowHeader",
+          "colKey": "<IDENTIFIER-SET>",
+          "width": 26.3
+        },
+        {
+          "type": "rowHeader",
+          "colKey": "gdm::iCompressorArc",
+          "width": 16.43
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "gdm::iTime": "2018-06-08 03:00"
+          },
+          "width": 28.36
+        }
+      ]
+    },
+    "default.column.width": {
+      "literal": 20
+    },
+    "name": {
+      "literal": "Compressor"
+    },
+    "views": {
+      "literal": {}
+    },
+    "views.__display_order__": {
+      "literal": [
+        "views.0"
+      ]
+    },
+    "views.0.type": {
+      "literal": "view"
+    }
+  },
+  "widgets/EmptyAllData": {
+    "action": {
+      "literal": {
+        "type": "procedure",
+        "value": "ldm::procEmptyAllData_ldm"
+      }
+    },
+    "aimms.widget.type": {
+      "literal": "button"
+    },
+    "name": {
+      "literal": "EmptyAllData"
+    },
+    "title": {
+      "literal": "EmptyAllData"
+    }
+  },
+  "widgets/Flow": {
+    "aimms.widget.type": {
+      "literal": "table"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "gom::vFlow"
+        ]
+      }
+    },
+    "contents.displaydomain": {
+      "literal": {
+        "gom::vflow": "1"
+      }
+    },
+    "contents.numdecimals": {
+      "literal": 0
+    },
+    "contents.partition": {
+      "literal": {
+        "rowHeader": [
+          "gdm::iArc"
+        ],
+        "colHeader": [
+          "<IDENTIFIER-SET>",
+          "gdm::iTime"
+        ],
+        "aggregated": []
+      }
+    },
+    "contents.totals": {
+      "literal": [
+        {
+          "indexName": "gdm::iTime",
+          "operators": [
+            "sum_only_visible"
+          ]
+        }
+      ]
+    },
+    "default.column.width": {
+      "literal": 25
+    },
+    "name": {
+      "literal": "Flow"
+    },
+    "views": {
+      "literal": {}
+    },
+    "views.__display_order__": {
+      "literal": [
+        "views.0",
+        "views.1"
+      ]
+    },
+    "views.0.type": {
+      "literal": "view"
+    },
+    "views.1.type": {
+      "literal": "template"
+    }
+  },
+  "widgets/Flow_1": {
+    "aimms.widget.type": {
+      "literal": "linechart"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "gom::vFlow"
+        ],
+        "prefix": "aimms",
+        "slices": [
+          {
+            "identifier": "gom::vFlow",
+            "slice": [
+              {
+                "index": "gdm::iArc",
+                "type": "subset",
+                "value": "gdm::iCompressorArc"
+              },
+              {
+                "index": "gdm::iTime",
+                "type": "free",
+                "value": "gdm::iTime"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "contents.numdecimals": {
+      "literal": 0
+    },
+    "contents.partition": {
+      "literal": {
+        "header": [
+          "gdm::iTime"
+        ],
+        "stacked": [],
+        "overlays": [
+          "gdm::iCompressorArc"
+        ],
+        "aggregated": [
+          "<IDENTIFIER-SET>"
+        ]
+      }
+    },
+    "name": {
+      "literal": "Flow (1)"
+    },
+    "show.area": {
+      "literal": false
+    },
+    "views": {
+      "literal": {}
+    },
+    "views.__display_order__": {
+      "literal": [
+        "views.0",
+        "views.1"
+      ]
+    },
+    "views.0.type": {
+      "literal": "view"
+    },
+    "views.1.type": {
+      "literal": "template"
+    },
+    "yaxis.max": {
+      "literal": 120000
+    }
+  },
+  "widgets/Map": {
+    "aimms.widget.type": {
+      "literal": "map-v2"
+    },
+    "arcs.__display_order__": {
+      "literal": [
+        "arcs.0"
+      ]
+    },
+    "arcs.0": {
+      "aimms": {
+        "contents": [
+          "ldm::pRoutesUsedForLin"
+        ],
+        "slices": [
+          {
+            "identifier": "ldm::pRoutesUsedForLin",
+            "slice": [
+              {
+                "index": "ldm::iSource",
+                "type": "free",
+                "value": "ldm::iSource"
+              },
+              {
+                "index": "ldm::iCustomerCluster",
+                "type": "free",
+                "value": "ldm::iCustomerCluster"
+              },
+              {
+                "index": "ldm::iTimeIM",
+                "type": "fixed-element",
+                "value": "2018-06-04 00:00"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "arcs.0.label.hide": {
+      "literal": true
+    },
+    "arcs.0.line.straight": {
+      "literal": true
+    },
+    "arcs.0.value": {
+      "literal": {
+        "identifier": "ldm::pRoutesUsedForLin",
+        "slice": [
+          {
+            "index": "ldm::iSource",
+            "type": "free",
+            "value": "ldm::iSource"
+          },
+          {
+            "index": "ldm::iCustomerCluster",
+            "type": "free",
+            "value": "ldm::iCustomerCluster"
+          },
+          {
+            "index": "ldm::iTimeIM",
+            "type": "fixed-element",
+            "value": "2018-06-04 00:00"
+          }
+        ]
+      }
+    },
+    "center.latitude": {
+      "literal": 45.17071492939178
+    },
+    "center.longitude": {
+      "literal": 9.689941406250002
+    },
+    "heatmaps.__display_order__": {
+      "literal": [
+        "heatmaps.0"
+      ]
+    },
+    "name": {
+      "literal": "Map"
+    },
+    "nodes.__display_order__": {
+      "literal": [
+        "nodes.0",
+        "nodes.1"
+      ]
+    },
+    "nodes.0": {
+      "aimms": {
+        "contents": [
+          "ldm::pSourceLongitude",
+          "ldm::pSourceLatitude"
+        ],
+        "slices": [
+          {
+            "identifier": "ldm::pSourceLongitude",
+            "slice": [
+              {
+                "index": "ldm::iSource",
+                "type": "free",
+                "value": "ldm::iSource"
+              }
+            ]
+          },
+          {
+            "identifier": "ldm::pSourceLatitude",
+            "slice": [
+              {
+                "index": "ldm::iSource",
+                "type": "free",
+                "value": "ldm::iSource"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "nodes.0.index": {
+      "literal": {
+        "identifier": "ldm::iSource"
+      }
+    },
+    "nodes.0.latitude": {
+      "literal": {
+        "identifier": "ldm::pSourceLatitude",
+        "slice": [
+          {
+            "index": "ldm::iSource",
+            "type": "free",
+            "value": "ldm::iSource"
+          }
+        ]
+      }
+    },
+    "nodes.0.longitude": {
+      "literal": {
+        "identifier": "ldm::pSourceLongitude",
+        "slice": [
+          {
+            "index": "ldm::iSource",
+            "type": "free",
+            "value": "ldm::iSource"
+          }
+        ]
+      }
+    },
+    "nodes.1": {
+      "aimms": {
+        "contents": [
+          "ldm::pCustomerClusterLongitude",
+          "ldm::pCustomerClusterLatitude"
+        ],
+        "slices": [
+          {
+            "identifier": "ldm::pCustomerClusterLongitude",
+            "slice": [
+              {
+                "index": "ldm::iCustomerCluster",
+                "type": "free",
+                "value": "ldm::iCustomerCluster"
+              }
+            ]
+          },
+          {
+            "identifier": "ldm::pCustomerClusterLatitude",
+            "slice": [
+              {
+                "index": "ldm::iCustomerCluster",
+                "type": "free",
+                "value": "ldm::iCustomerCluster"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "nodes.1.index": {
+      "literal": {
+        "identifier": "ldm::iCustomerCluster"
+      }
+    },
+    "nodes.1.latitude": {
+      "literal": {
+        "identifier": "ldm::pCustomerClusterLatitude",
+        "slice": [
+          {
+            "index": "ldm::iCustomerCluster",
+            "type": "free",
+            "value": "ldm::iCustomerCluster"
+          }
+        ]
+      }
+    },
+    "nodes.1.longitude": {
+      "literal": {
+        "identifier": "ldm::pCustomerClusterLongitude",
+        "slice": [
+          {
+            "index": "ldm::iCustomerCluster",
+            "type": "free",
+            "value": "ldm::iCustomerCluster"
+          }
+        ]
+      }
+    },
+    "title": {
+      "literal": "Map LIN"
+    },
+    "views": {
+      "literal": {}
+    },
+    "views.__display_order__": {
+      "literal": [
+        "views.0",
+        "views.1"
+      ]
+    },
+    "views.0.type": {
+      "literal": "view"
+    },
+    "views.1.type": {
+      "literal": "template"
+    },
+    "zoom": {
+      "literal": 7
+    }
+  },
+  "widgets/Map Lox": {
+    "aimms.widget.type": {
+      "literal": "map-v2"
+    },
+    "arcs.__display_order__": {
+      "literal": [
+        "arcs.0"
+      ]
+    },
+    "arcs.0": {
+      "aimms": {
+        "contents": [
+          "ldm::pRoutesUsedForLox"
+        ],
+        "slices": [
+          {
+            "identifier": "ldm::pRoutesUsedForLox",
+            "slice": [
+              {
+                "index": "ldm::iSource",
+                "type": "free",
+                "value": "ldm::iSource"
+              },
+              {
+                "index": "ldm::iCustomerCluster",
+                "type": "free",
+                "value": "ldm::iCustomerCluster"
+              },
+              {
+                "index": "ldm::iTimeIM",
+                "type": "fixed-element",
+                "value": "2018-06-04 00:00"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "arcs.0.label.hide": {
+      "literal": true
+    },
+    "arcs.0.line.straight": {
+      "literal": true
+    },
+    "arcs.0.value": {
+      "literal": {
+        "identifier": "ldm::pRoutesUsedForLox",
+        "slice": [
+          {
+            "index": "ldm::iSource",
+            "type": "free",
+            "value": "ldm::iSource"
+          },
+          {
+            "index": "ldm::iCustomerCluster",
+            "type": "free",
+            "value": "ldm::iCustomerCluster"
+          },
+          {
+            "index": "ldm::iTimeIM",
+            "type": "fixed-element",
+            "value": "2018-06-04 00:00"
+          }
+        ]
+      }
+    },
+    "center.latitude": {
+      "literal": 45.63911852448564
+    },
+    "center.longitude": {
+      "literal": 10.145874023437502
+    },
+    "name": {
+      "literal": "Map Lox"
+    },
+    "nodes.__display_order__": {
+      "literal": [
+        "nodes.0",
+        "nodes.1"
+      ]
+    },
+    "nodes.0": {
+      "aimms": {
+        "contents": [
+          "ldm::pSourceLongitude",
+          "ldm::pSourceLatitude"
+        ],
+        "slices": [
+          {
+            "identifier": "ldm::pSourceLongitude",
+            "slice": [
+              {
+                "index": "ldm::iSource",
+                "type": "free",
+                "value": "ldm::iSource"
+              }
+            ]
+          },
+          {
+            "identifier": "ldm::pSourceLatitude",
+            "slice": [
+              {
+                "index": "ldm::iSource",
+                "type": "free",
+                "value": "ldm::iSource"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "nodes.0.index": {
+      "literal": {
+        "identifier": "ldm::iSource"
+      }
+    },
+    "nodes.0.latitude": {
+      "literal": {
+        "identifier": "ldm::pSourceLatitude",
+        "slice": [
+          {
+            "index": "ldm::iSource",
+            "type": "free",
+            "value": "ldm::iSource"
+          }
+        ]
+      }
+    },
+    "nodes.0.longitude": {
+      "literal": {
+        "identifier": "ldm::pSourceLongitude",
+        "slice": [
+          {
+            "index": "ldm::iSource",
+            "type": "free",
+            "value": "ldm::iSource"
+          }
+        ]
+      }
+    },
+    "nodes.1": {
+      "aimms": {
+        "contents": [
+          "ldm::pCustomerClusterLongitude",
+          "ldm::pCustomerClusterLatitude"
+        ],
+        "slices": [
+          {
+            "identifier": "ldm::pCustomerClusterLongitude",
+            "slice": [
+              {
+                "index": "ldm::iCustomerCluster",
+                "type": "subset",
+                "value": "ldm::iCustomerClusterLox"
+              }
+            ]
+          },
+          {
+            "identifier": "ldm::pCustomerClusterLatitude",
+            "slice": [
+              {
+                "index": "ldm::iCustomerCluster",
+                "type": "subset",
+                "value": "ldm::iCustomerClusterLox"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "nodes.1.index": {
+      "literal": {
+        "identifier": "ldm::iCustomerClusterLox"
+      }
+    },
+    "nodes.1.latitude": {
+      "literal": {
+        "identifier": "ldm::pCustomerClusterLatitude",
+        "slice": [
+          {
+            "index": "ldm::iCustomerCluster",
+            "type": "subset",
+            "value": "ldm::iCustomerClusterLox"
+          }
+        ]
+      }
+    },
+    "nodes.1.longitude": {
+      "literal": {
+        "identifier": "ldm::pCustomerClusterLongitude",
+        "slice": [
+          {
+            "index": "ldm::iCustomerCluster",
+            "type": "subset",
+            "value": "ldm::iCustomerClusterLox"
+          }
+        ]
+      }
+    },
+    "title": {
+      "literal": "Map LOX"
+    },
+    "views": {
+      "literal": {}
+    },
+    "zoom": {
+      "literal": 7
+    }
+  },
+  "widgets/Read_Excel_IM": {
+    "action": {
+      "literal": {
+        "type": "procedure",
+        "value": "uldm::procRead_IM_ExcelFile_uldm"
+      }
+    },
+    "aimms.widget.type": {
+      "literal": "button"
+    },
+    "name": {
+      "literal": "Read_Excel_IM"
+    },
+    "title": {
+      "literal": "Read_Excel_IM"
+    }
+  },
+  "widgets/Read_Excel_LI": {
+    "action": {
+      "literal": {
+        "type": "procedure",
+        "value": "uldm::procRead_LI_ExcelFile_uldm"
+      }
+    },
+    "aimms.widget.type": {
+      "literal": "button"
+    },
+    "name": {
+      "literal": "Read_Excel_LI"
+    },
+    "title": {
+      "literal": "Read_Excel_LI"
+    }
+  },
+  "widgets/Routes": {
+    "aimms.widget.type": {
+      "literal": "table"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "ldm::epRouteFrom",
+          "ldm::epRouteTo",
+          "ldm::pRouteDistance",
+          "ldm::p01RouteAssigned",
+          "ldm::p01RouteRemoved"
+        ]
+      }
+    },
+    "contents.displaydomain": {
+      "literal": {
+        "ldm::p01routeassigned": "1",
+        "ldm::p01routeremoved": "1"
+      }
+    },
+    "contents.partition": {
+      "literal": {
+        "rowHeader": [
+          "ldm::iRoute"
+        ],
+        "colHeader": [
+          "<IDENTIFIER-SET>"
+        ],
+        "aggregated": []
+      }
+    },
+    "custom.column.widths": {
+      "literal": [
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "ldm::epRouteFrom"
+          },
+          "width": 38.11
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "ldm::epRouteTo"
+          },
+          "width": 45.11
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "ldm::pRouteDistance"
+          },
+          "width": 20.88
+        }
+      ]
+    },
+    "name": {
+      "literal": "Routes"
+    },
+    "views": {
+      "literal": {}
+    }
+  },
+  "widgets/Solve_LIM_Model": {
+    "action": {
+      "literal": {
+        "type": "procedure",
+        "value": "uldm::procSolveLinearModel_uldm"
+      }
+    },
+    "aimms.widget.type": {
+      "literal": "button"
+    },
+    "name": {
+      "literal": "Solve_LIM_Model"
+    },
+    "title": {
+      "literal": "Solve_LIM_Model"
+    }
+  },
+  "widgets/Source_DispatchZone": {
+    "aimms.widget.type": {
+      "literal": "table"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "ldm::pRouteVolumeTransportedDisplay2_SelectedUnit"
+        ],
+        "prefix": "aimms",
+        "slices": [
+          {
+            "identifier": "ldm::pRouteVolumeTransportedDisplay2_SelectedUnit",
+            "slice": [
+              {
+                "index": "ldm::iDispatchZone",
+                "type": "free",
+                "value": "ldm::iDispatchZone"
+              },
+              {
+                "index": "ldm::iTruckLoading",
+                "type": "free",
+                "value": "ldm::iTruckLoading"
+              },
+              {
+                "index": "gdm::iProduct",
+                "type": "free",
+                "value": "gdm::iProduct"
+              },
+              {
+                "index": "ldm::iTimeIM",
+                "type": "element-parameter",
+                "value": "ldm::epTimeIMSelected"
+              },
+              {
+                "index": "ldm::iDisplayUnit",
+                "type": "element-parameter",
+                "value": "ldm::epSelectedUnit"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "contents.partition": {
+      "literal": {
+        "rowHeader": [
+          "gdm::iProduct",
+          "ldm::iTruckLoading"
+        ],
+        "colHeader": [
+          "<IDENTIFIER-SET>",
+          "ldm::iDispatchZone"
+        ],
+        "aggregated": []
+      }
+    },
+    "contents.totals": {
+      "literal": [
+        {
+          "indexName": "ldm::iTruckLoading",
+          "operators": [
+            "sum_only_visible"
+          ]
+        },
+        {
+          "indexName": "ldm::iDispatchZone",
+          "operators": [
+            "sum_only_visible"
+          ]
+        }
+      ]
+    },
+    "custom.column.widths": {
+      "literal": [
+        {
+          "type": "colHeader",
+          "colKey": {
+            "ldm::iTruckLoading": "TL_LIN - EL_Test_Plant",
+            "gdm::iProduct": "n2"
+          },
+          "width": 33.12
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "ldm::iTruckLoading": "TL_LIN - source3",
+            "gdm::iProduct": "n2"
+          },
+          "width": 39.37
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "ldm::iTruckLoading": "TL_LOX - EL_Test_Plant",
+            "gdm::iProduct": "o2"
+          },
+          "width": 33.75
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "ldm::iTruckLoading": "TL_LOX - source2",
+            "gdm::iProduct": "o2"
+          },
+          "width": 24.79
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "ldm::iTruckLoading": "TL_LOX - source3",
+            "gdm::iProduct": "o2"
+          },
+          "width": 29.16
+        },
+        {
+          "type": "rowHeader",
+          "colKey": "ldm::iDispatchZone",
+          "width": 44.79
+        },
+        {
+          "type": "rowHeader",
+          "colKey": "ldm::iTruckLoading",
+          "width": 30.2
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "ldm::pRouteVolumeTransportedDisplay2_SelectedUnit",
+            "ldm::iDispatchZone": "LIN Nord Lombardia"
+          },
+          "width": 28.12
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "ldm::pRouteVolumeTransportedDisplay2_SelectedUnit",
+            "ldm::iDispatchZone": "LIN Nord Ovest"
+          },
+          "width": 26.87
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "ldm::pRouteVolumeTransportedDisplay2_SelectedUnit",
+            "ldm::iDispatchZone": "LOX Nord Est"
+          },
+          "width": 22.91
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "ldm::pRouteVolumeTransportedDisplay2_SelectedUnit",
+            "ldm::iDispatchZone": "LOX Nord Ovest"
+          },
+          "width": 25
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "ldm::pRouteVolumeTransportedDisplay2_SelectedUnit",
+            "ldm::iDispatchZone": "sum_only_visible"
+          },
+          "width": 31.25
+        }
+      ]
+    },
+    "name": {
+      "literal": "Source_DispatchZone"
+    },
+    "views": {
+      "literal": {}
+    }
+  },
+  "widgets/Source_Dispatchzone_LIN": {
+    "aimms.widget.type": {
+      "literal": "table"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "ldm::pRouteVolumeTransportedDisplay2_SelectedUnit"
+        ],
+        "prefix": "aimms",
+        "slices": [
+          {
+            "identifier": "ldm::pRouteVolumeTransportedDisplay2_SelectedUnit",
+            "slice": [
+              {
+                "index": "ldm::iDispatchZone",
+                "type": "free",
+                "value": "ldm::iDispatchZone"
+              },
+              {
+                "index": "ldm::iTruckLoading",
+                "type": "free",
+                "value": "ldm::iTruckLoading"
+              },
+              {
+                "index": "gdm::iProduct",
+                "type": "element-parameter",
+                "value": "gdm::epProductN2"
+              },
+              {
+                "index": "ldm::iTimeIM",
+                "type": "element-parameter",
+                "value": "ldm::epTimeIMSelected"
+              },
+              {
+                "index": "ldm::iDisplayUnit",
+                "type": "element-parameter",
+                "value": "ldm::epSelectedUnit"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "contents.numdecimals": {
+      "literal": 0
+    },
+    "contents.partition": {
+      "literal": {
+        "rowHeader": [
+          "<IDENTIFIER-SET>",
+          "ldm::iTruckLoading"
+        ],
+        "colHeader": [
+          "ldm::iDispatchZone"
+        ],
+        "aggregated": []
+      }
+    },
+    "contents.totals": {
+      "literal": [
+        {
+          "indexName": "ldm::iDispatchZone",
+          "operators": [
+            "sum_only_visible"
+          ]
+        },
+        {
+          "indexName": "ldm::iTruckLoading",
+          "operators": [
+            "sum_only_visible"
+          ]
+        }
+      ]
+    },
+    "custom.column.widths": {
+      "literal": [
+        {
+          "type": "colHeader",
+          "colKey": {
+            "ldm::iTruckLoading": "TL_LIN - source3"
+          },
+          "width": 20.41
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "ldm::iTruckLoading": "TL_LIN - EL_Test_Plant"
+          },
+          "width": 18.12
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "ldm::iDispatchZone": "LIN Nord Lombardia"
+          },
+          "width": 19.16
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "ldm::iDispatchZone": "LIN Nord Ovest"
+          },
+          "width": 22.91
+        },
+        {
+          "type": "rowHeader",
+          "colKey": "ldm::iTruckLoading",
+          "width": 38.01
+        }
+      ]
+    },
+    "default.column.width": {
+      "literal": 20
+    },
+    "name": {
+      "literal": "Source_Dispatchzone_LIN"
+    },
+    "title": {
+      "literal": "Sourcing by dispatch zone LIN"
+    },
+    "views": {
+      "literal": {}
+    },
+    "views.__display_order__": {
+      "literal": [
+        "views.0",
+        "views.1"
+      ]
+    },
+    "views.0.type": {
+      "literal": "view"
+    },
+    "views.1.type": {
+      "literal": "template"
+    }
+  },
+  "widgets/Source_Dispatchzone_LOX": {
+    "aimms.widget.type": {
+      "literal": "table"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "ldm::pRouteVolumeTransportedDisplay2_SelectedUnit"
+        ],
+        "prefix": "aimms",
+        "slices": [
+          {
+            "identifier": "ldm::pRouteVolumeTransportedDisplay2_SelectedUnit",
+            "slice": [
+              {
+                "index": "ldm::iDispatchZone",
+                "type": "free",
+                "value": "ldm::iDispatchZone"
+              },
+              {
+                "index": "ldm::iTruckLoading",
+                "type": "free",
+                "value": "ldm::iTruckLoading"
+              },
+              {
+                "index": "gdm::iProduct",
+                "type": "element-parameter",
+                "value": "gdm::epProductO2"
+              },
+              {
+                "index": "ldm::iTimeIM",
+                "type": "element-parameter",
+                "value": "ldm::epTimeIMSelected"
+              },
+              {
+                "index": "ldm::iDisplayUnit",
+                "type": "element-parameter",
+                "value": "ldm::epSelectedUnit"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "contents.numdecimals": {
+      "literal": 0
+    },
+    "contents.partition": {
+      "literal": {
+        "rowHeader": [
+          "<IDENTIFIER-SET>",
+          "gdm::iProduct",
+          "ldm::iTruckLoading",
+          "ldm::iTimeIM",
+          "ldm::iDisplayUnit"
+        ],
+        "colHeader": [
+          "ldm::iDispatchZone"
+        ],
+        "aggregated": []
+      }
+    },
+    "contents.totals": {
+      "literal": [
+        {
+          "indexName": "ldm::iDispatchZone",
+          "operators": [
+            "sum_only_visible"
+          ]
+        },
+        {
+          "indexName": "ldm::iTruckLoading",
+          "operators": [
+            "sum_only_visible"
+          ]
+        }
+      ]
+    },
+    "custom.column.widths": {
+      "literal": [
+        {
+          "type": "rowHeader",
+          "colKey": "ldm::iTruckLoading",
+          "width": 29.25
+        }
+      ]
+    },
+    "default.column.width": {
+      "literal": 20
+    },
+    "name": {
+      "literal": "Source_Dispatchzone_LOX"
+    },
+    "views": {
+      "literal": {}
+    }
+  },
+  "widgets/Sourcing": {
+    "aimms.widget.type": {
+      "literal": "table"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "ldm::pVolumeTransportedTruckloading_SelectedUnit",
+          "ldm::pVolumeTakeOrPayNotUsedTruckloading_SelectedUnit",
+          "ldm::pProductAvailable_SelectedUnit",
+          "ldm::pProductTakeOrPayQuantity_SelectedUnit"
+        ],
+        "prefix": "aimms",
+        "slices": [
+          {
+            "identifier": "ldm::pProductAvailable_SelectedUnit",
+            "slice": [
+              {
+                "index": "ldm::iTruckLoading",
+                "type": "free",
+                "value": "ldm::iTruckLoading"
+              },
+              {
+                "index": "ldm::iTimeIM",
+                "type": "element-parameter",
+                "value": "ldm::epTimeIMSelected"
+              },
+              {
+                "index": "ldm::iDisplayUnit",
+                "type": "element-parameter",
+                "value": "ldm::epSelectedUnit"
+              }
+            ]
+          },
+          {
+            "identifier": "ldm::pProductTakeOrPayQuantity_SelectedUnit",
+            "slice": [
+              {
+                "index": "ldm::iTruckLoading",
+                "type": "free",
+                "value": "ldm::iTruckLoading"
+              },
+              {
+                "index": "ldm::iTimeIM",
+                "type": "element-parameter",
+                "value": "ldm::epTimeIMSelected"
+              },
+              {
+                "index": "ldm::iDisplayUnit",
+                "type": "element-parameter",
+                "value": "ldm::epSelectedUnit"
+              }
+            ]
+          },
+          {
+            "identifier": "ldm::pVolumeTakeOrPayNotUsedTruckloading_SelectedUnit",
+            "slice": [
+              {
+                "index": "ldm::iTruckLoading",
+                "type": "free",
+                "value": "ldm::iTruckLoading"
+              },
+              {
+                "index": "ldm::iTimeIM",
+                "type": "element-parameter",
+                "value": "ldm::epTimeIMSelected"
+              },
+              {
+                "index": "ldm::iDisplayUnit",
+                "type": "element-parameter",
+                "value": "ldm::epSelectedUnit"
+              }
+            ]
+          },
+          {
+            "identifier": "ldm::pVolumeTransportedTruckloading_SelectedUnit",
+            "slice": [
+              {
+                "index": "ldm::iTruckLoading",
+                "type": "free",
+                "value": "ldm::iTruckLoading"
+              },
+              {
+                "index": "ldm::iTimeIM",
+                "type": "element-parameter",
+                "value": "ldm::epTimeIMSelected"
+              },
+              {
+                "index": "ldm::iDisplayUnit",
+                "type": "element-parameter",
+                "value": "ldm::epSelectedUnit"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "contents.displaydomain": {
+      "literal": {
+        "ldm::pproductavailable_selectedunit": "1",
+        "ldm::pproducttakeorpayquantity_selectedunit": "1",
+        "ldm::pvolumetakeorpaynotusedtruckloading_selectedunit": "1",
+        "ldm::pvolumetransportedtruckloading_selectedunit": "1"
+      }
+    },
+    "contents.partition": {
+      "literal": {
+        "rowHeader": [
+          "ldm::iDisplayUnit",
+          "ldm::iTruckLoading"
+        ],
+        "colHeader": [
+          "ldm::iTimeIM",
+          "<IDENTIFIER-SET>"
+        ],
+        "aggregated": []
+      }
+    },
+    "contents.sorting": {
+      "literal": [
+        {
+          "partIndex": 0,
+          "index": "ldm::iTruckLoading",
+          "mode": "increasing"
+        }
+      ]
+    },
+    "custom.column.widths": {
+      "literal": [
+        {
+          "type": "colHeader",
+          "colKey": {
+            "ldm::iTimeIM": "2018-06-04 00:00",
+            "<IDENTIFIER-SET>": "ldm::pProductAvailable_SelectedUnit",
+            "ldm::iTruckLoading": "TL_LOX - source3"
+          },
+          "width": 37.7
+        },
+        {
+          "type": "rowHeader",
+          "width": 34.52
+        },
+        {
+          "type": "rowHeader",
+          "colKey": "ldm::iDisplayUnit",
+          "width": 35.95
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "ldm::pVolumeTakeOrPayNotUsedTruckloading_SelectedUnit"
+          },
+          "width": 31.66
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "ldm::pVolumeTransportedTruckloading_SelectedUnit"
+          },
+          "width": 30.93
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "ldm::pProductAvailable_SelectedUnit"
+          },
+          "width": 31.67
+        },
+        {
+          "type": "colHeader",
+          "colKey": {
+            "<IDENTIFIER-SET>": "ldm::pProductTakeOrPayQuantity_SelectedUnit"
+          },
+          "width": 20.83
+        }
+      ]
+    },
+    "name": {
+      "literal": "Sourcing"
+    },
+    "views": {
+      "literal": {}
+    },
+    "views.__display_order__": {
+      "literal": [
+        "views.0",
+        "views.1"
+      ]
+    },
+    "views.0.type": {
+      "literal": "view"
+    },
+    "views.1.type": {
+      "literal": "template"
+    }
+  },
+  "widgets/Tank Level": {
+    "aimms.widget.type": {
+      "literal": "linechart"
+    },
+    "contents": {
+      "aimms": {
+        "slices": [
+          {
+            "identifier": "gom::vTankLevel",
+            "slice": [
+              {
+                "index": "gdm::iTankNode",
+                "type": "element-parameter",
+                "value": "odm::epRM_TankNodeSelected1"
+              },
+              {
+                "index": "gdm::iTime",
+                "type": "free",
+                "value": "gdm::iTime"
+              }
+            ]
+          },
+          {
+            "identifier": "gdm::pTankMaxLevel",
+            "slice": [
+              {
+                "index": "gdm::iTankNode",
+                "type": "element-parameter",
+                "value": "odm::epRM_TankNodeSelected1"
+              },
+              {
+                "index": "gdm::iTime",
+                "type": "free",
+                "value": "gdm::iTime"
+              }
+            ]
+          }
+        ],
+        "contents": [
+          "gom::vTankLevel"
+        ]
+      }
+    },
+    "contents.partition": {
+      "literal": {
+        "header": [
+          "gdm::iTime"
+        ],
+        "stacked": [
+          "<IDENTIFIER-SET>"
+        ],
+        "overlays": [],
+        "aggregated": []
+      }
+    },
+    "name": {
+      "literal": "Tank Level"
+    },
+    "views": {
+      "literal": {}
+    },
+    "views.__display_order__": {
+      "literal": [
+        "views.0",
+        "views.1"
+      ]
+    },
+    "views.0.type": {
+      "literal": "view"
+    },
+    "views.1.type": {
+      "literal": "template"
+    }
+  },
+  "widgets/Tank_Select": {
+    "aimms.widget.type": {
+      "literal": "selectionbox-v2"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "odm::epRM_TankNodeSelected1"
+        ],
+        "slices": []
+      }
+    },
+    "name": {
+      "literal": "Tank_Select"
+    }
+  }
+}

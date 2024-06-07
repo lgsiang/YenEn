@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Page Version="4000" TimeStamp="2022-01-19 07:23:46">
+	<PageEditSize Type="Specified">
+		<Size Width="1200" Height="606" />
+	</PageEditSize>
+	<ProjectUUID>5FB798B8-A262-4C81-8824-C143D774313D</ProjectUUID>
+	<CloseWhenInactive>true</CloseWhenInactive>
+	<TemplatesTabOrderPosition>1</TemplatesTabOrderPosition>
+	<ResizeData>
+		<MainArea Line="PercentageFromTop" Value="0.986798679868">
+			<TopArea Line="PercentageFromLeft" Value="0.993333333333" />
+		</MainArea>
+	</ResizeData>
+	<Background>
+		<UserColor GUID="BDFE7E86-A7C8-4FA3-BEA3-FA3B7D1374B7">dark grey</UserColor>
+	</Background>
+	<Action>
+		<ExitProcedure>odm::procUpdateTimeDependentDataWithGeneralData</ExitProcedure>
+	</Action>
+	<PageObject Type="Text">
+		<Location top="630" left="324" bottom="696" right="396" />
+		<StaticText>
+
+PdP Style</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<TextColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Tabbed Page Object">
+		<Location top="0" left="0" bottom="600" right="1194" />
+		<TabOrder>1</TabOrder>
+		<PrintingOccurrence>Never</PrintingOccurrence>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<MultipleTabRows>true</MultipleTabRows>
+	</PageObject>
+	<UsedReferences>
+		<Model>
+			<Symbol>odm::procUpdateTimeDependentDataWithGeneralData</Symbol>
+		</Model>
+	</UsedReferences>
+</Page>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<StandardNumberFormat Name="CostOverview" InternalID="0">
+	<NumberFormat Width="20" Decimals="3" Scientific="IfTooLarge" />
+</StandardNumberFormat>
+<StandardNumberFormat Name="ColdboxFlow" InternalID="1">
+	<NumberFormat Width="6" Decimals="0" />
+</StandardNumberFormat>
+<StandardNumberFormat Name="ColdboxPressure" InternalID="2">
+	<NumberFormat Width="6" Decimals="2" />
+</StandardNumberFormat>

@@ -1,0 +1,246 @@
+<?xml version="1.0"?>
+<Page Version="4000" TimeStamp="2022-03-22 09:52:35">
+	<PageEditSize Type="Specified">
+		<Size Width="1200" Height="606" />
+	</PageEditSize>
+	<ProjectUUID>748F1752-A3CC-4398-BEB0-3B3157FE70D8</ProjectUUID>
+	<TemplatesTabOrderPosition>1</TemplatesTabOrderPosition>
+	<ResizeData>
+		<MainArea Line="PercentageFromTop" Value="0.986798679868">
+			<TopArea Line="PercentageFromLeft" Value="0.993333333333">
+				<LeftArea Line="FixedFromTop" Value="45">
+					<TopArea Line="FixedFromLeft" Value="226" />
+				</LeftArea>
+			</TopArea>
+		</MainArea>
+	</ResizeData>
+	<Background>
+		<UserColor GUID="BDFE7E86-A7C8-4FA3-BEA3-FA3B7D1374B7">dark grey</UserColor>
+	</Background>
+	<Action>
+		<EntryProcedure>odm::procUpdateTimeDependentDataWithGeneralData</EntryProcedure>
+		<ExitProcedure>odm::procUpdateTimeDependentDataWithGeneralData</ExitProcedure>
+	</Action>
+	<PageObject Type="Scalar">
+		<Location top="6" left="228" bottom="36" right="834" />
+		<TabOrder>2</TabOrder>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="InShadow" Width="2" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</BackgroundColor>
+		<TextColor>
+			<UserColor>ALFIBackgroundDisplay</UserColor>
+		</TextColor>
+		<SelectionColor>
+			<UserColor>ALFIBackgroundDisplay</UserColor>
+		</SelectionColor>
+		<Layout>Text-Value</Layout>
+		<SeparatorSign>=</SeparatorSign>
+		<ExplicitIdentifier>
+			<Identifier>odm::spActiveFile</Identifier>
+			<NumberFormat Width="100" Decimals="0" Alignment="Left" ShowDefaults="true" />
+			<Color>267 ALFIBackgroundDisplay</Color>
+			<DescriptionFromIdentifierName>false</DescriptionFromIdentifierName>
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="630" left="324" bottom="696" right="396" />
+		<StaticText>
+
+PdP Style</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<TextColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="12" left="0" bottom="36" right="222" />
+		<StaticText>Box Power Graph</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="523F941B-E378-47BE-AEB2-3C1FD99F8C69" Name="Arial 12 Bold" />
+		<TextColor>
+			<UserColor>Air Liquide blue</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="6" left="1116" bottom="42" right="1188" />
+		<Shape>Rounded-Filled</Shape>
+		<FillColor>
+			<UserColor>ALFIBackgroundDisplay</UserColor>
+		</FillColor>
+		<LineColor>
+			<UserColor>ALFIBackgroundDisplay</UserColor>
+		</LineColor>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="12" left="1122" bottom="36" right="1182" />
+		<TabOrder>1</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"RM Menu"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="DF63049B-71A6-415F-810B-6AAEA75CBFDB" Name="Result_Manager" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Selection Object">
+		<SelectionType>DropDownList</SelectionType>
+		<Location top="420" left="822" bottom="444" right="918" />
+		<TabOrder>6</TabOrder>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<TextShown>ElementName</TextShown>
+		<Border Style="None" />
+		<BackgroundColor RGB="#ffffff" />
+		<ExplicitIdentifier>
+			<Identifier>odm::epRM_EnergyContractSelected3</Identifier>
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Curve">
+		<Location top="420" left="12" bottom="594" right="816" />
+		<TabOrder>8</TabOrder>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="InShadow" Width="2" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor>
+			<Symbol>odm::epTableBackgroundColor</Symbol>
+		</BackgroundColor>
+		<TextColor>
+			<Symbol>odm::epTableForegroundColor</Symbol>
+		</TextColor>
+		<ColorScheme Number="0" />
+		<Title>true</Title>
+		<Legend>true</Legend>
+		<Y-Labels>true</Y-Labels>
+		<X-Labels>true</X-Labels>
+		<StatusLine>true</StatusLine>
+		<ExplicitIdentifier>
+			<Identifier>gdm::pEnergyContractCost( odm::epRM_EnergyContractSelected3, gdm::iTime )</Identifier>
+			<Color>201 Pastel Red</Color>
+		</ExplicitIdentifier>
+		<DrawLines>true</DrawLines>
+		<MarkPoints>true</MarkPoints>
+	</PageObject>
+	<PageObject Type="Table">
+		<Location top="420" left="924" bottom="594" right="1176" />
+		<TabOrder>3</TabOrder>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="InShadow" Width="2" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor>
+			<Symbol>odm::epTableBackgroundColor</Symbol>
+		</BackgroundColor>
+		<TextColor>
+			<Symbol>odm::epTableForegroundColor</Symbol>
+		</TextColor>
+		<InputColor>
+			<Symbol>odm::epTableSelectionColor</Symbol>
+		</InputColor>
+		<RowIndentation>3</RowIndentation>
+		<ExplicitIdentifier>
+			<Identifier>gdm::pEnergyContractCost( odm::epRM_EnergyContractSelected3, gdm::iTime )</Identifier>
+			<Permutation>[1,0]</Permutation>
+			<FirstColumn>2</FirstColumn>
+			<NumberFormat Width="6" Decimals="3" />
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="48" left="6" bottom="414" right="1182" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Selection Object">
+		<SelectionType>DropDownList</SelectionType>
+		<Location top="12" left="852" bottom="36" right="948" />
+		<TabOrder>5</TabOrder>
+		<UseTabInObject>true</UseTabInObject>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<TextShown>ElementName</TextShown>
+		<Border Style="None" />
+		<BackgroundColor RGB="#ffffff" />
+		<ExplicitIdentifier>
+			<Identifier>odm::epBoxSelect1</Identifier>
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Curve">
+		<Location top="54" left="12" bottom="408" right="816" />
+		<TabOrder>7</TabOrder>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="InShadow" Width="2" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor>
+			<Symbol>odm::epTableBackgroundColor</Symbol>
+		</BackgroundColor>
+		<TextColor>
+			<Symbol>odm::epTableForegroundColor</Symbol>
+		</TextColor>
+		<ColorScheme Number="0" />
+		<Title>true</Title>
+		<Legend>true</Legend>
+		<Y-Labels>true</Y-Labels>
+		<X-Labels>true</X-Labels>
+		<StatusLine>true</StatusLine>
+		<ExplicitIdentifier>
+			<Identifier>gom::vboxPower( odm::epBoxSelect1, gdm::iTime )</Identifier>
+			<Color>275 COOD_LOX</Color>
+		</ExplicitIdentifier>
+		<DrawLines>true</DrawLines>
+		<MarkPoints>true</MarkPoints>
+	</PageObject>
+	<PageObject Type="Table">
+		<Location top="54" left="924" bottom="408" right="1176" />
+		<TabOrder>4</TabOrder>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="InShadow" Width="2" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor>
+			<Symbol>odm::epTableBackgroundColor</Symbol>
+		</BackgroundColor>
+		<TextColor>
+			<Symbol>odm::epTableForegroundColor</Symbol>
+		</TextColor>
+		<InputColor>
+			<Symbol>odm::epTableSelectionColor</Symbol>
+		</InputColor>
+		<RowIndentation>3</RowIndentation>
+		<ExplicitIdentifier>
+			<Identifier>gom::vboxPower( odm::epBoxSelect1, gdm::iTime )</Identifier>
+			<Permutation>[1,0]</Permutation>
+			<FirstColumn>2</FirstColumn>
+			<HeaderText>"Power"</HeaderText>
+			<NumberFormat Width="8" Decimals="0" ThousandSeparator="true" Alignment="Center" />
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="60" left="834" bottom="78" right="906" />
+		<StaticText>Power</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="523F941B-E378-47BE-AEB2-3C1FD99F8C69" Name="Arial 12 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<UsedReferences>
+		<Model>
+			<Symbol>gdm::sEnergyContract</Symbol>
+			<Symbol>gdm::pEnergyContractCost</Symbol>
+			<Symbol>gdm::sBoxes</Symbol>
+			<Symbol>gom::vboxPower</Symbol>
+			<Symbol>odm::spActiveFile</Symbol>
+			<Symbol>odm::procUpdateTimeDependentDataWithGeneralData</Symbol>
+			<Symbol>odm::epRM_EnergyContractSelected3</Symbol>
+			<Symbol>odm::epBoxSelect1</Symbol>
+			<Symbol>odm::epTableBackgroundColor</Symbol>
+			<Symbol>odm::epTableForegroundColor</Symbol>
+			<Symbol>odm::epTableSelectionColor</Symbol>
+			<Symbol>gdm::iTime</Symbol>
+		</Model>
+	</UsedReferences>
+</Page>

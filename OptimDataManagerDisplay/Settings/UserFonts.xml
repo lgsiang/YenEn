@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<UserFonts>
+	<UserFont Name="Arial 10 Bold" FaceName="Arial" PointSize="100" Bold="true" UUID="6E499188-1365-49F9-8E6A-8900955BC0B6" />
+	<UserFont Name="Arial 10bi" FaceName="Arial" PointSize="100" Bold="true" Italic="true" UUID="7E007CC6-2268-4C94-BBAF-B75B6FEA5051" InternalID="1" />
+	<UserFont Name="Arial 11 Bold" FaceName="Arial" PointSize="110" Bold="true" UUID="AE4EBE2E-F8FF-42B5-95E9-E08B2BDCA11F" InternalID="2" />
+	<UserFont Name="Arial 12 Bold" FaceName="Arial" PointSize="120" Bold="true" UUID="523F941B-E378-47BE-AEB2-3C1FD99F8C69" InternalID="3" />
+	<UserFont Name="Arial 14 Bold" FaceName="Arial" PointSize="140" Bold="true" UUID="6CE1F43F-6A59-4B87-9BAA-9BF6DCB0D1BB" InternalID="4" />
+	<UserFont Name="Arial 18 Bold" FaceName="Arial" PointSize="180" Bold="true" UUID="B88ACF7E-383E-421F-A0F5-9E7D01597930" InternalID="5" />
+	<UserFont Name="Arial 8n" FaceName="Arial" PointSize="80" UUID="A81B58D9-EF17-4930-9ED9-91DE30BE93C7" InternalID="6" />
+	<UserFont Name="Arial 9 Bold" FaceName="Arial" PointSize="90" Bold="true" UUID="228F8FEF-9650-4E72-B9D2-FA7AD5330B18" InternalID="7" />
+	<UserFont Name="Arial 9" FaceName="Arial" PointSize="90" UUID="C643522C-8B0F-4570-8E72-002944D734DB" InternalID="8" />
+</UserFonts>

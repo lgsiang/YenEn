@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<UserFonts>
+	<UserFont Name="Main Font" FaceName="Arial" PointSize="80" UUID="00000000-0000-0000-0000-000000000001" />
+	<UserFont Name="Title" FaceName="Arial" PointSize="140" UUID="1950E2BD-5401-4DA2-A6E0-004D92119283" InternalID="1" />
+	<UserFont Name="SelectionObjectTitle" FaceName="Arial" PointSize="140" UUID="E70F9954-1416-4231-A27A-4D4A8BD06578" InternalID="2" />
+	<UserFont Name="Read &amp; Run 1" FaceName="Roboto" PointSize="110" UUID="0268519D-BED0-4A36-9E63-49C9683E8438" InternalID="3" />
+</UserFonts>

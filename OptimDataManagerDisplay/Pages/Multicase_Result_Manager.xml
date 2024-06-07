@@ -1,0 +1,921 @@
+<?xml version="1.0"?>
+<Page Version="4000" TimeStamp="2023-06-30 11:40:52">
+	<PageEditSize Type="Specified">
+		<Size Width="1200" Height="606" />
+	</PageEditSize>
+	<ProjectUUID>748F1752-A3CC-4398-BEB0-3B3157FE70D8</ProjectUUID>
+	<TemplatesTabOrderPosition>1</TemplatesTabOrderPosition>
+	<ResizeData>
+		<MainArea Line="FixedFromBottom" Value="24">
+			<TopArea Line="PercentageFromLeft" Value="0.993333333333">
+				<LeftArea Line="FixedFromTop" Value="42">
+					<TopArea Line="FixedFromLeft" Value="241" />
+				</LeftArea>
+			</TopArea>
+		</MainArea>
+	</ResizeData>
+	<Background>
+		<UserColor GUID="BDFE7E86-A7C8-4FA3-BEA3-FA3B7D1374B7">dark grey</UserColor>
+	</Background>
+	<PageObject Type="Picture">
+		<Location top="582" left="0" bottom="612" right="144" />
+		<FileName LiteralFileName="true">"Picture\AIR_LIQUIDE_CO_Redux.png"</FileName>
+		<Display>StretchOrShrink</Display>
+		<KeepRatio>true</KeepRatio>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="630" left="324" bottom="696" right="396" />
+		<StaticText>
+
+PdP Style</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<TextColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Line">
+		<Location top="42" left="0" bottom="42" right="1188" />
+		<LineColor RGB="#000000" />
+		<LineWidth>3</LineWidth>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="6" left="1098" bottom="36" right="1182" />
+		<TabOrder>28</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Main Page"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="3924427E-1A5F-465C-BA9D-FBA3DBEA92EF" Name="MainPage" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="540" left="1032" bottom="576" right="1116" />
+		<Hidden>"Yes"</Hidden>
+		<TabOrder>26</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Open/close pages"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>odm::procCloseAllPages</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="300" left="18" bottom="342" right="126" />
+		<Hidden>odm::p01SelectionMultiCAseOk</Hidden>
+		<TabOrder>22</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Flow"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="D3004F3A-D5AA-45FE-8BEA-C21FE133FA2E" Name="MRM_Flow" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="456" left="18" bottom="498" right="126" />
+		<Hidden>odm::p01SelectionMultiCAseOk</Hidden>
+		<TabOrder>14</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Pressure"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="F6B62CE7-0BC4-4C8A-BE6C-FACB449DD5DB" Name="MRM_Pressure" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="306" left="330" bottom="348" right="438" />
+		<Hidden>odm::p01SelectionMultiCAseOk</Hidden>
+		<TabOrder>12</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"ColdboxProduction"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="E234A0BD-B35D-4D14-9A0D-F81EC5327B6A" Name="MRM_ColdboxProduction" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="516" left="330" bottom="558" right="438" />
+		<Hidden>odm::p01SelectionMultiCAseOk</Hidden>
+		<TabOrder>11</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Power"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="863B0C72-FD52-4055-B0CA-965B71016695" Name="MRM_Power" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="360" left="744" bottom="402" right="852" />
+		<Hidden>odm::p01SelectionMultiCAseOk</Hidden>
+		<TabOrder>6</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"OperatingMode"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="42C52B29-02C4-4483-95E0-135F794C90EF" Name="MRM_OperatingMode" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="246" left="468" bottom="288" right="576" />
+		<Hidden>odm::p01SelectionMultiCAseOk</Hidden>
+		<TabOrder>2</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Tank Level Graph"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="46DAE8AE-0011-4F1F-B799-0BC948B4549E" Name="MRM_TankLevelGraph" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="516" left="468" bottom="558" right="576" />
+		<Hidden>odm::p01SelectionMultiCAseOk</Hidden>
+		<TabOrder>23</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Power Graph"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="271C7E0E-A66B-4286-9553-564983323D5E" Name="MRM_PowerGraph" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="360" left="882" bottom="402" right="990" />
+		<Hidden>odm::p01SelectionMultiCAseOk</Hidden>
+		<TabOrder>10</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"OperatingMode Graph"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="8E563B81-BFDB-4A6B-AEC3-1EF4E7A87B0F" Name="MRM_OperatingModeGraph" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="306" left="468" bottom="348" right="576" />
+		<Hidden>odm::p01SelectionMultiCAseOk</Hidden>
+		<TabOrder>13</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Coldbox Graph"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="3B537924-7DE5-42AB-87D9-2159536A962C" Name="MRM_ColdboxFlowGraph" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="522" left="18" bottom="570" right="126" />
+		<Hidden>odm::p01SelectionMultiCAseOk</Hidden>
+		<TabOrder>25</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Objective Function"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="CAC02972-AE7B-4375-BA61-52C9481331FA" Name="MRM_ObjectiveFunction" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="0" left="0" bottom="42" right="228" />
+		<StaticText>MultiCase
+Result Manager</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="523F941B-E378-47BE-AEB2-3C1FD99F8C69" Name="Arial 12 Bold" />
+		<TextColor>
+			<UserColor>Air Liquide blue</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Scalar">
+		<Location top="6" left="252" bottom="36" right="912" />
+		<ReadOnly>"Yes"</ReadOnly>
+		<TabOrder>3</TabOrder>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="InShadow" Width="2" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</BackgroundColor>
+		<TextColor>
+			<UserColor>ALFIBackgroundDisplay</UserColor>
+		</TextColor>
+		<SelectionColor>
+			<UserColor>ALFIBackgroundDisplay</UserColor>
+		</SelectionColor>
+		<Layout>Text-Value</Layout>
+		<SeparatorSign>=</SeparatorSign>
+		<ExplicitIdentifier>
+			<Identifier>odm::spActiveFile</Identifier>
+			<NumberFormat Width="100" Decimals="0" Alignment="Left" ShowDefaults="true" />
+			<Color>267 ALFIBackgroundDisplay</Color>
+			<DescriptionFromIdentifierName>false</DescriptionFromIdentifierName>
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="6" left="942" bottom="36" right="1086" />
+		<TabOrder>8</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"MULTICASE Selection"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>odm::procCheckDataManagementStyle</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+			<Action Type="MenuCommand">
+				<Command>Data-Multiple Cases</Command>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Pivot Table">
+		<Location top="84" left="156" bottom="234" right="852" />
+		<TabOrder>4</TabOrder>
+		<ObjectUUID>D6CD583C-3C1A-4EF9-A651-6D86AF8EB944</ObjectUUID>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="Line" Width="1" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<Contents>
+			<Explicit_Identifier>
+				<Identifier ID="4110">odm::spmultiplecasename( IndexCurrentCaseSelection )</Identifier>
+				<Title ID="4120">"Selected Cases"</Title>
+			</Explicit_Identifier>
+			<Defaults>
+				<Format>
+					<Standard_Format ID="4216">6</Standard_Format>
+					<Decimal_Places ID="4212">1</Decimal_Places>
+					<Show_1000_seperator ID="4213">"Yes"</Show_1000_seperator>
+					<Show_Checkboxes ID="4215">"No"</Show_Checkboxes>
+				</Format>
+				<Readonly ID="4052">odm::p01ReadOnlyInputFile</Readonly>
+				<Colors>
+					<Background_Color ID="4170">odm::epContentBackgroundColor</Background_Color>
+					<Text_Color ID="4175">odm::epContentTextColor</Text_Color>
+					<Bar_Fill_Color ID="4177">odm::epContentBarFillColor</Bar_Fill_Color>
+				</Colors>
+			</Defaults>
+		</Contents>
+		<Indices>
+			<Identifier_Index>
+				<Header_Title ID="6230">""</Header_Title>
+				<Hide_if_Single_Identifier ID="6270">"No"</Hide_if_Single_Identifier>
+			</Identifier_Index>
+		</Indices>
+		<General>
+			<Background_Color ID="1010">odm::epGeneralBackgroundColor</Background_Color>
+			<Border_Color ID="1011">odm::epGeneralBorderColor</Border_Color>
+			<Dense_Aggregation_restricts_to_Domain ID="1022">"Yes"</Dense_Aggregation_restricts_to_Domain>
+		</General>
+		<Row_Area>
+			<Background_Color ID="2010">odm::epRowAreaBackgroundColor</Background_Color>
+			<Text_Color ID="2020">odm::epRowAreaTextColor</Text_Color>
+			<Line_Color ID="2040">odm::epRowAreaLineColor</Line_Color>
+			<Headers>
+				<Background_Color ID="2120">odm::epRowAreaHeaderBackgroundColor</Background_Color>
+				<Text_Color ID="2130">odm::epRowAreaHeaderTextColor</Text_Color>
+				<Show_Sub_Headers ID="2150">"No"</Show_Sub_Headers>
+			</Headers>
+			<Aggregators>
+				<Background_Color ID="2220">odm::epRowAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="2230">odm::epRowAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Grid_Focus_Indicator>
+				<Background_Color ID="2270">odm::epRowAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="2280">odm::epRowAreaGridFocusTextColor</Text_Color>
+			</Grid_Focus_Indicator>
+		</Row_Area>
+		<Column_Area>
+			<Same_as_Row_Area ID="3005">"No"</Same_as_Row_Area>
+			<Auto_resize_Column_Widths ID="3006">"Upon all data changes"</Auto_resize_Column_Widths>
+			<Background_Color ID="3010">odm::epColumnAreaBackgroundColor</Background_Color>
+			<Text_Color ID="3020">odm::epColumnAreaTextColor</Text_Color>
+			<Line_Color ID="3040">odm::epColumnAreaLineColor</Line_Color>
+			<Headers>
+				<Background_Color ID="3120">odm::epColumnAreaHeaderBackgroundColor</Background_Color>
+				<Text_Color ID="3130">odm::epColumnAreaHeaderTextColor</Text_Color>
+			</Headers>
+			<Aggregators>
+				<Background_Color ID="3220">odm::epColumnAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="3230">odm::epColumnAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Grid_Focus_Indicator>
+				<Background_Color ID="3270">odm::epColumnAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="3280">odm::epColumnAreaGridFocusTextColor</Text_Color>
+			</Grid_Focus_Indicator>
+		</Column_Area>
+		<Outer_Area>
+			<Same_as_Row_Area ID="3505">"No"</Same_as_Row_Area>
+			<Background_Color ID="3510">odm::epOuterAreaBackgroundColor</Background_Color>
+			<Text_Color ID="3520">odm::epOuterAreaTextColor</Text_Color>
+			<Line_Color ID="3540">odm::epOuterAreaLineColor</Line_Color>
+			<Headers>
+				<Background_Color ID="3620">odm::epOuterAreaHeaderBackgroundColor</Background_Color>
+				<Text_Color ID="3630">odm::epOuterAreaHeaderTextColor</Text_Color>
+			</Headers>
+			<Aggregators>
+				<Background_Color ID="3720">odm::epOuterAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="3730">odm::epOuterAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Grid_Focus_Indicator>
+				<Background_Color ID="3770">odm::epOuterAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="3780">odm::epOuterAreaGridFocusTextColor</Text_Color>
+			</Grid_Focus_Indicator>
+		</Outer_Area>
+		<Grid_Area>
+			<Background_Color ID="5010">odm::epGridAreaBackgroundColor</Background_Color>
+			<Alternating_Background_Color ID="5011">odm::epGridAreaAltBackgroundColor</Alternating_Background_Color>
+			<Text_Color ID="5020">odm::epGridAreaTextColor</Text_Color>
+			<Line_Color ID="5040">odm::epGridAreaLineColor</Line_Color>
+			<Second_Line_Color ID="5041">odm::epGridAreaSecondLineColor</Second_Line_Color>
+			<Selection>
+				<Background_Color ID="5120">odm::epGridAreaGridFocusBackgroundColor</Background_Color>
+				<Text_Color ID="5130">odm::epGridAreaGridFocusTextColor</Text_Color>
+			</Selection>
+			<Aggregators>
+				<Background_Color ID="5220">odm::epGridAreaAgregatorsBackgroundColor</Background_Color>
+				<Text_Color ID="5230">odm::epGridAreaAgregatorsTextColor</Text_Color>
+			</Aggregators>
+			<Sub_Header_Row_or_Column>
+				<Background_Color ID="5320">odm::epGridAreaSubHeaderColor</Background_Color>
+			</Sub_Header_Row_or_Column>
+		</Grid_Area>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="66" left="102" bottom="108" right="330" />
+		<StaticText>Cases Selection list</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="523F941B-E378-47BE-AEB2-3C1FD99F8C69" Name="Arial 12 Bold" />
+		<TextColor>
+			<UserColor>Air Liquide blue</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="564" left="228" bottom="588" right="954" />
+		<Hidden>odm::p01SelectionMultiCaseNotOk</Hidden>
+		<StaticText>Error : The Number of cases must be &gt; 1 and active case must be in the selection list</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="523F941B-E378-47BE-AEB2-3C1FD99F8C69" Name="Arial 12 Bold" />
+		<TextColor>
+			<UserColor>Air Liquide blue</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="84" left="852" bottom="234" right="1176" />
+		<FillColor>
+			<UserColor>ALFIBackgroundDisplay</UserColor>
+		</FillColor>
+		<LineColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</LineColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="90" left="858" bottom="228" right="1170" />
+		<StaticText>- Comparison of Active case with other selected cases
+
+- Active case MUST be in the selection list
+
+- Active case is the reference
+  (only elements present in active case can be compared)</StaticText>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="66" left="858" bottom="108" right="1086" />
+		<StaticText>Multicase notice</StaticText>
+		<Font GUID="523F941B-E378-47BE-AEB2-3C1FD99F8C69" Name="Arial 12 Bold" />
+		<TextColor>
+			<UserColor>Air Liquide blue</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="240" left="18" bottom="282" right="126" />
+		<Hidden>odm::p01SelectionMultiCAseOk</Hidden>
+		<TabOrder>5</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Sumary 1 Period"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="0B2B4F3E-AE02-4EFF-9939-C3304B6CA43F" Name="MRM_Summary1Period" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="372" left="468" bottom="414" right="576" />
+		<Hidden>odm::p01SelectionMultiCAseOk</Hidden>
+		<TabOrder>16</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Compressor Power Graph"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="40D42BD5-3EB9-49EF-884C-5FCBA477655C" Name="MRM_PowerGraph_CompLique" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="468" left="468" bottom="510" right="576" />
+		<Hidden>odm::p01SelectionMultiCAseOk</Hidden>
+		<TabOrder>24</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Box Power Graph"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="223C4C0B-FDC0-4340-A9B0-3FDD45BC8726" Name="MRM_PowerGraph_Box" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="348" left="18" bottom="390" right="126" />
+		<Hidden>odm::p01SelectionMultiCAseOk</Hidden>
+		<TabOrder>21</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Input Flow"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="ADA2C557-10EB-47D5-8B71-AC3D89D8B126" Name="MRM_InputFlow" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="396" left="18" bottom="438" right="126" />
+		<Hidden>odm::p01SelectionMultiCAseOk</Hidden>
+		<TabOrder>20</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Output Flow"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="AE849777-CB84-41EA-A9A6-59257E52B631" Name="MRM_OutputFlow" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="162" left="12" bottom="504" right="132" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="516" left="12" bottom="576" right="132" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="420" left="468" bottom="462" right="576" />
+		<Hidden>odm::p01SelectionMultiCAseOk</Hidden>
+		<TabOrder>19</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Liquefier Power Graph"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="40D42BD5-3EB9-49EF-884C-5FCBA477655C" Name="MRM_PowerGraph_CompLique" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="300" left="264" bottom="354" right="582" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="240" left="738" bottom="408" right="1002" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="360" left="264" bottom="564" right="582" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="240" left="264" bottom="294" right="582" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="246" left="330" bottom="288" right="438" />
+		<Hidden>odm::p01SelectionMultiCAseOk</Hidden>
+		<TabOrder>1</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Tank Level"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="6E024746-DB2E-4D38-B569-0567B97BD5C4" Name="MRM_TankLevel" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="372" left="330" bottom="414" right="438" />
+		<Hidden>odm::p01SelectionMultiCAseOk</Hidden>
+		<TabOrder>15</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Compressor Power"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="48CB4CAF-4F64-4849-AA4B-D047185BBF51" Name="MRM_Power_CompLique" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="420" left="330" bottom="462" right="438" />
+		<Hidden>odm::p01SelectionMultiCAseOk</Hidden>
+		<TabOrder>18</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Liquefier Power"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="48CB4CAF-4F64-4849-AA4B-D047185BBF51" Name="MRM_Power_CompLique" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="312" left="744" bottom="354" right="852" />
+		<Hidden>odm::p01SelectionMultiCAseOk</Hidden>
+		<TabOrder>7</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"StatusMode"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="BDC8ECDC-FF9D-4471-AC89-24C4FD4F6DEB" Name="MRM_StatusMode" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="312" left="882" bottom="354" right="990" />
+		<Hidden>odm::p01SelectionMultiCAseOk</Hidden>
+		<TabOrder>9</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"StatusMode Graph"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="BE11592D-17BB-4949-B31D-8DB60C586297" Name="MRM_StatusModeGraph" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Picture">
+		<Location top="306" left="270" bottom="348" right="318" />
+		<FileName LiteralFileName="true">"Pictures\Coldbox_C.png"</FileName>
+		<Display>StretchOrShrink</Display>
+		<Center>true</Center>
+		<KeepRatio>true</KeepRatio>
+	</PageObject>
+	<PageObject Type="Picture">
+		<Location top="420" left="270" bottom="462" right="318" />
+		<FileName LiteralFileName="true">"Pictures\Liquefier_C.png"</FileName>
+		<Display>StretchOrShrink</Display>
+		<Center>true</Center>
+		<KeepRatio>true</KeepRatio>
+	</PageObject>
+	<PageObject Type="Picture">
+		<Location top="246" left="270" bottom="288" right="318" />
+		<FileName LiteralFileName="true">"Pictures\Tank_C.png"</FileName>
+		<Display>StretchOrShrink</Display>
+		<Center>true</Center>
+		<KeepRatio>true</KeepRatio>
+	</PageObject>
+	<PageObject Type="Picture">
+		<Location top="372" left="270" bottom="414" right="318" />
+		<FileName LiteralFileName="true">"Pictures\Compressor_C.png"</FileName>
+		<Display>StretchOrShrink</Display>
+		<Center>true</Center>
+		<KeepRatio>true</KeepRatio>
+	</PageObject>
+	<PageObject Type="Picture">
+		<Location top="516" left="270" bottom="558" right="318" />
+		<FileName LiteralFileName="true">"Pictures\ASU.png"</FileName>
+		<Display>StretchOrShrink</Display>
+		<Center>true</Center>
+		<KeepRatio>true</KeepRatio>
+	</PageObject>
+	<PageObject Type="Picture">
+		<Location top="168" left="36" bottom="228" right="102" />
+		<FileName LiteralFileName="true">"Pictures\ASU.png"</FileName>
+		<Display>StretchOrShrink</Display>
+		<Center>true</Center>
+		<KeepRatio>true</KeepRatio>
+	</PageObject>
+	<PageObject Type="Picture">
+		<Location top="246" left="834" bottom="306" right="900" />
+		<FileName LiteralFileName="true">"Pictures\ControlMode.png"</FileName>
+		<Display>StretchOrShrink</Display>
+		<Center>true</Center>
+		<KeepRatio>true</KeepRatio>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="468" left="330" bottom="510" right="438" />
+		<Hidden>odm::p01SelectionMultiCAseOk</Hidden>
+		<TabOrder>17</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Liquefier Power"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<ActionSequence>
+			<Action Type="LinkedPage">
+				<Page PageGUID="1C29C60B-4677-46A4-84CA-DDEA36D5D546" Name="MRM_Power_Box" />
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Picture">
+		<Location top="468" left="270" bottom="510" right="318" />
+		<FileName LiteralFileName="true">"Pictures\UserBox.png"</FileName>
+		<Display>StretchOrShrink</Display>
+		<Center>true</Center>
+		<KeepRatio>true</KeepRatio>
+	</PageObject>
+	<PageObject Type="Picture">
+		<Location top="6" left="204" bottom="36" right="234" />
+		<FileName LiteralFileName="true">"Pictures\help.png"</FileName>
+		<Display>StretchOrShrink</Display>
+		<Center>true</Center>
+		<KeepRatio>true</KeepRatio>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="6" left="204" bottom="36" right="234" />
+		<TabOrder>27</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Invisible</ButtonType>
+		<TooltipText>"MultiResultManager"</TooltipText>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Assignment">
+				<Identifier>odm::epWebLinkSelect</Identifier>
+				<AssignedValue>'MultiResultManager'</AssignedValue>
+			</Action>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>odm::procOpenWebLink</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<UsedReferences>
+		<Model>
+			<Symbol>IndexCurrentCaseSelection</Symbol>
+			<Symbol>odm::spActiveFile</Symbol>
+			<Symbol>odm::procCloseAllPages</Symbol>
+			<Symbol>odm::epWebLinkSelect</Symbol>
+			<Symbol>odm::procOpenWebLink</Symbol>
+			<Symbol>odm::p01ReadOnlyInputFile</Symbol>
+			<Symbol>odm::spmultiplecasename</Symbol>
+			<Symbol>odm::p01SelectionMultiCAseOk</Symbol>
+			<Symbol>odm::p01SelectionMultiCaseNotOk</Symbol>
+			<Symbol>odm::epColumnAreaBackgroundColor</Symbol>
+			<Symbol>odm::epColumnAreaGridFocusBackgroundColor</Symbol>
+			<Symbol>odm::epColumnAreaGridFocusTextColor</Symbol>
+			<Symbol>odm::epColumnAreaHeaderBackgroundColor</Symbol>
+			<Symbol>odm::epColumnAreaHeaderTextColor</Symbol>
+			<Symbol>odm::epColumnAreaLineColor</Symbol>
+			<Symbol>odm::epColumnAreaTextColor</Symbol>
+			<Symbol>odm::epColumnAreaAgregatorsBackgroundColor</Symbol>
+			<Symbol>odm::epColumnAreaAgregatorsTextColor</Symbol>
+			<Symbol>odm::epContentBackgroundColor</Symbol>
+			<Symbol>odm::epContentBarFillColor</Symbol>
+			<Symbol>odm::epContentTextColor</Symbol>
+			<Symbol>odm::epGeneralBackgroundColor</Symbol>
+			<Symbol>odm::epGeneralBorderColor</Symbol>
+			<Symbol>odm::epGridAreaAltBackgroundColor</Symbol>
+			<Symbol>odm::epGridAreaBackgroundColor</Symbol>
+			<Symbol>odm::epGridAreaGridFocusBackgroundColor</Symbol>
+			<Symbol>odm::epGridAreaGridFocusTextColor</Symbol>
+			<Symbol>odm::epGridAreaLineColor</Symbol>
+			<Symbol>odm::epGridAreaSecondLineColor</Symbol>
+			<Symbol>odm::epGridAreaSubHeaderColor</Symbol>
+			<Symbol>odm::epGridAreaTextColor</Symbol>
+			<Symbol>odm::epGridAreaAgregatorsBackgroundColor</Symbol>
+			<Symbol>odm::epGridAreaAgregatorsTextColor</Symbol>
+			<Symbol>odm::epOuterAreaLineColor</Symbol>
+			<Symbol>odm::epOuterAreaBackgroundColor</Symbol>
+			<Symbol>odm::epOuterAreaGridFocusBackgroundColor</Symbol>
+			<Symbol>odm::epOuterAreaGridFocusTextColor</Symbol>
+			<Symbol>odm::epOuterAreaHeaderBackgroundColor</Symbol>
+			<Symbol>odm::epOuterAreaHeaderTextColor</Symbol>
+			<Symbol>odm::epOuterAreaTextColor</Symbol>
+			<Symbol>odm::epOuterAreaAgregatorsBackgroundColor</Symbol>
+			<Symbol>odm::epOuterAreaAgregatorsTextColor</Symbol>
+			<Symbol>odm::epRowAreaBackgroundColor</Symbol>
+			<Symbol>odm::epRowAreaGridFocusBackgroundColor</Symbol>
+			<Symbol>odm::epRowAreaGridFocusTextColor</Symbol>
+			<Symbol>odm::epRowAreaHeaderBackgroundColor</Symbol>
+			<Symbol>odm::epRowAreaHeaderTextColor</Symbol>
+			<Symbol>odm::epRowAreaLineColor</Symbol>
+			<Symbol>odm::epRowAreaTextColor</Symbol>
+			<Symbol>odm::epRowAreaAgregatorsBackgroundColor</Symbol>
+			<Symbol>odm::epRowAreaAgregatorsTextColor</Symbol>
+			<Symbol>odm::procCheckDataManagementStyle</Symbol>
+		</Model>
+	</UsedReferences>
+</Page>

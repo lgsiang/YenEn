@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<Page Version="4000" TimeStamp="2016-08-15 10:57:31">
+	<PageEditSize Type="Inherited">
+		<Size Width="1024" Height="768" />
+	</PageEditSize>
+	<ProjectUUID>ADE70A01-626D-4A1A-8C95-EDE5F4ECB1D2</ProjectUUID>
+	<TemplatesTabOrderPosition>1</TemplatesTabOrderPosition>
+	<ResizeData>
+		<MainArea Line="FixedFromTop" Value="71">
+			<TopArea Line="FixedFromRight" Value="190" />
+		</MainArea>
+	</ResizeData>
+	<Background RGB="#ffffff" />
+	<PageObject Type="Picture">
+		<Location top="0" left="0" bottom="66" right="174" />
+		<FileName LiteralFileName="true">"BackgroundTemplate\Air Liquide Logo.jpg"</FileName>
+		<Display>StretchOrShrink</Display>
+		<KeepRatio>true</KeepRatio>
+	</PageObject>
+	<PageObject Type="Line">
+		<Location top="66" left="6" bottom="66" right="1020" />
+		<LineColor>
+			<UserColor>Air Liquide blue</UserColor>
+		</LineColor>
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Scalar">
+		<Location top="6" left="846" bottom="60" right="1020" />
+		<TabOrder>1</TabOrder>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="Line" Width="1" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor RGB="#ffffff" />
+		<TextColor>
+			<UserColor>Air Liquide blue</UserColor>
+		</TextColor>
+		<Layout>MultipleLineEditField</Layout>
+		<SeparatorSign>=</SeparatorSign>
+		<ExplicitIdentifier>
+			<Identifier>background_template::spHeaderText</Identifier>
+			<NumberFormat Width="15" Decimals="0" Alignment="Left" ShowDefaults="true" />
+		</ExplicitIdentifier>
+	</PageObject>
+	<UsedReferences>
+		<Model>
+			<Symbol>background_template::spHeaderText</Symbol>
+		</Model>
+	</UsedReferences>
+</Page>

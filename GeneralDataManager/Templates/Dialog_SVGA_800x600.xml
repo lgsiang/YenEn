@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<Page Version="4000" TimeStamp="2016-09-14 09:22:54" NeedsCompiledModel="false">
+	<PageEditSize Type="Specified">
+		<Size Width="800" Height="600" />
+	</PageEditSize>
+	<ProjectUUID>ADE70A01-626D-4A1A-8C95-EDE5F4ECB1D2</ProjectUUID>
+	<IsDialogPage>true</IsDialogPage>
+	<TemplatesTabOrderPosition>1</TemplatesTabOrderPosition>
+	<ToolBar None="true" />
+	<ResizeData>
+		<MainArea Line="FixedFromBottom" Value="41">
+			<TopArea Line="FixedFromTop" Value="42" />
+		</MainArea>
+	</ResizeData>
+	<Background RGB="#ffffff" />
+	<UsedReferences>
+		<Model />
+	</UsedReferences>
+</Page>

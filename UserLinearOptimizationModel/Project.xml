@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<LibraryProject AimmsVersion="4.79.7.2 unicode x64" ProjectUUID="E9E7D696-9271-4327-9C53-2649EE42952E">
+	<ModelFileName>UserLinearOptimizationModel.ams</ModelFileName>
+	<Prefix>ulom</Prefix>
+	<DisplayName>UserLinearOptimizationModel</DisplayName>
+</LibraryProject>

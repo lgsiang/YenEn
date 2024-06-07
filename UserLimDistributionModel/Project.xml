@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<LibraryProject AimmsVersion="4.79.7.2 unicode x64" ProjectUUID="C20ACAEE-14E9-4FB4-99A9-153409ED45B9">
+	<ModelFileName>UserLimDistributionModel.ams</ModelFileName>
+	<Prefix>uldm</Prefix>
+	<DisplayName>UserLimDistributionModel</DisplayName>
+</LibraryProject>

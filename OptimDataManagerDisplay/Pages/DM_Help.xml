@@ -1,0 +1,700 @@
+<?xml version="1.0"?>
+<Page Version="4000" TimeStamp="2022-03-29 07:36:31">
+	<PageEditSize Type="Specified">
+		<Size Width="600" Height="350" />
+	</PageEditSize>
+	<ProjectUUID>748F1752-A3CC-4398-BEB0-3B3157FE70D8</ProjectUUID>
+	<IsDialogPage>true</IsDialogPage>
+	<TemplatesTabOrderPosition>1</TemplatesTabOrderPosition>
+	<ResizeData>
+		<MainArea Line="FixedFromTop" Value="38">
+			<TopArea Line="PercentageFromLeft" Value="0.983333333333" />
+		</MainArea>
+	</ResizeData>
+	<Background>
+		<UserColor GUID="BDFE7E86-A7C8-4FA3-BEA3-FA3B7D1374B7">dark grey</UserColor>
+	</Background>
+	<PageObject Type="Text">
+		<Location top="363" left="159" bottom="402" right="197" />
+		<StaticText>
+
+PdP Style</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<TextColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="6" left="13" bottom="30" right="432" />
+		<StaticText>Help - Optim Suite - Core Engine Support</StaticText>
+		<Font GUID="6CE1F43F-6A59-4B87-9BAA-9BF6DCB0D1BB" Name="Arial 14 Bold" />
+		<TextColor>
+			<UserColor>Air Liquide blue</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="168" left="606" bottom="380" right="945" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="6" left="501" bottom="30" right="576" />
+		<TabOrder>1</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Closed"</Title>
+		<BackgroundColor>
+			<UserColor>ALFIBackgroundFirstLineAlarm</UserColor>
+		</BackgroundColor>
+		<ForegroundColor>
+			<UserColor>ALFIBackgroundAlarme2</UserColor>
+		</ForegroundColor>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="ClosePage" />
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Circle">
+		<Location top="126" left="258" bottom="150" right="282" />
+		<FillColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</FillColor>
+		<LineColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</LineColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="126" left="258" bottom="150" right="282" />
+		<StaticText>1</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="6CE1F43F-6A59-4B87-9BAA-9BF6DCB0D1BB" Name="Arial 14 Bold" />
+		<TextColor>
+			<UserColor GUID="9E91AFF7-0C42-4624-9450-66E75C74B1AB">grey</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Circle">
+		<Location top="162" left="258" bottom="187" right="282" />
+		<FillColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</FillColor>
+		<LineColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</LineColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="162" left="258" bottom="187" right="282" />
+		<StaticText>2</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="6CE1F43F-6A59-4B87-9BAA-9BF6DCB0D1BB" Name="Arial 14 Bold" />
+		<TextColor>
+			<UserColor GUID="9E91AFF7-0C42-4624-9450-66E75C74B1AB">grey</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Circle">
+		<Location top="198" left="258" bottom="222" right="282" />
+		<FillColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</FillColor>
+		<LineColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</LineColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="198" left="258" bottom="222" right="282" />
+		<StaticText>3</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="6CE1F43F-6A59-4B87-9BAA-9BF6DCB0D1BB" Name="Arial 14 Bold" />
+		<TextColor>
+			<UserColor GUID="9E91AFF7-0C42-4624-9450-66E75C74B1AB">grey</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Circle">
+		<Location top="234" left="258" bottom="258" right="282" />
+		<FillColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</FillColor>
+		<LineColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</LineColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="234" left="258" bottom="258" right="282" />
+		<StaticText>4</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="6CE1F43F-6A59-4B87-9BAA-9BF6DCB0D1BB" Name="Arial 14 Bold" />
+		<TextColor>
+			<UserColor GUID="9E91AFF7-0C42-4624-9450-66E75C74B1AB">grey</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Circle">
+		<Location top="270" left="258" bottom="294" right="282" />
+		<FillColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</FillColor>
+		<LineColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</LineColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="270" left="258" bottom="294" right="282" />
+		<StaticText>5</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="6CE1F43F-6A59-4B87-9BAA-9BF6DCB0D1BB" Name="Arial 14 Bold" />
+		<TextColor>
+			<UserColor GUID="9E91AFF7-0C42-4624-9450-66E75C74B1AB">grey</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Circle">
+		<Location top="306" left="258" bottom="330" right="282" />
+		<FillColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</FillColor>
+		<LineColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</LineColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="306" left="258" bottom="330" right="282" />
+		<StaticText>6</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="6CE1F43F-6A59-4B87-9BAA-9BF6DCB0D1BB" Name="Arial 14 Bold" />
+		<TextColor>
+			<UserColor GUID="9E91AFF7-0C42-4624-9450-66E75C74B1AB">grey</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="126" left="258" bottom="150" right="282" />
+		<TabOrder>11</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Invisible</ButtonType>
+		<TooltipText>"Module1"</TooltipText>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Assignment">
+				<Identifier>odm::epWebLinkSelect</Identifier>
+				<AssignedValue>'Module1'</AssignedValue>
+			</Action>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>odm::procOpenWebLink</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="162" left="258" bottom="187" right="282" />
+		<TabOrder>10</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Invisible</ButtonType>
+		<TooltipText>"Module2"</TooltipText>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Assignment">
+				<Identifier>odm::epWebLinkSelect</Identifier>
+				<AssignedValue>'Module2'</AssignedValue>
+			</Action>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>odm::procOpenWebLink</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="198" left="258" bottom="222" right="282" />
+		<TabOrder>9</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Invisible</ButtonType>
+		<TooltipText>"Module3"</TooltipText>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Assignment">
+				<Identifier>odm::epWebLinkSelect</Identifier>
+				<AssignedValue>'Module3'</AssignedValue>
+			</Action>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>odm::procOpenWebLink</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="234" left="258" bottom="258" right="282" />
+		<TabOrder>8</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Invisible</ButtonType>
+		<TooltipText>"Module4"</TooltipText>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Assignment">
+				<Identifier>odm::epWebLinkSelect</Identifier>
+				<AssignedValue>'Module4'</AssignedValue>
+			</Action>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>odm::procOpenWebLink</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="270" left="258" bottom="294" right="282" />
+		<TabOrder>7</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Invisible</ButtonType>
+		<TooltipText>"Module5"</TooltipText>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Assignment">
+				<Identifier>odm::epWebLinkSelect</Identifier>
+				<AssignedValue>'Module5'</AssignedValue>
+			</Action>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>odm::procOpenWebLink</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="306" left="258" bottom="330" right="282" />
+		<TabOrder>6</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Invisible</ButtonType>
+		<TooltipText>"Module6"</TooltipText>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Assignment">
+				<Identifier>odm::epWebLinkSelect</Identifier>
+				<AssignedValue>'Module6'</AssignedValue>
+			</Action>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>odm::procOpenWebLink</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="132" left="294" bottom="150" right="576" />
+		<StaticText>Module 1 - Architecture</StaticText>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="168" left="294" bottom="186" right="576" />
+		<StaticText>Module 2 - Compressor, Pipe, Valve</StaticText>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="204" left="294" bottom="222" right="576" />
+		<StaticText>Module 3 - Box, Coldbox</StaticText>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="240" left="294" bottom="258" right="576" />
+		<StaticText>Module 4 - Liquefier, Tank, Buffer</StaticText>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="276" left="294" bottom="294" right="576" />
+		<StaticText>Module 5 - Linear vs Non Linear Modes</StaticText>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="312" left="294" bottom="330" right="576" />
+		<StaticText>Module 6 - Time and Operating Modes</StaticText>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="42" left="246" bottom="342" right="588" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="54" left="252" bottom="77" right="578" />
+		<StaticText>Training Module (Core Engine)</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="6CE1F43F-6A59-4B87-9BAA-9BF6DCB0D1BB" Name="Arial 14 Bold" />
+		<TextColor>
+			<UserColor>Air Liquide blue</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Circle">
+		<Location top="90" left="258" bottom="114" right="282" />
+		<FillColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</FillColor>
+		<LineColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</LineColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="90" left="258" bottom="114" right="282" />
+		<StaticText>I</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="6CE1F43F-6A59-4B87-9BAA-9BF6DCB0D1BB" Name="Arial 14 Bold" />
+		<TextColor>
+			<UserColor GUID="9E91AFF7-0C42-4624-9450-66E75C74B1AB">grey</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="90" left="258" bottom="114" right="282" />
+		<TabOrder>5</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Invisible</ButtonType>
+		<TooltipText>"Introduction"</TooltipText>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Assignment">
+				<Identifier>odm::epWebLinkSelect</Identifier>
+				<AssignedValue>'Intro'</AssignedValue>
+			</Action>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>odm::procOpenWebLink</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="96" left="294" bottom="114" right="577" />
+		<StaticText>Optim.Suite - Introduction</StaticText>
+		<Font GUID="6E499188-1365-49F9-8E6A-8900955BC0B6" Name="Arial 10 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Circle">
+		<Location top="84" left="12" bottom="111" right="39" />
+		<FillColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</FillColor>
+		<LineColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</LineColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="90" left="12" bottom="114" right="42" />
+		<StaticText>W</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="523F941B-E378-47BE-AEB2-3C1FD99F8C69" Name="Arial 12 Bold" />
+		<TextColor>
+			<UserColor GUID="9E91AFF7-0C42-4624-9450-66E75C74B1AB">grey</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="90" left="48" bottom="108" right="202" />
+		<StaticText>Optim.Suite</StaticText>
+		<Font GUID="AE4EBE2E-F8FF-42B5-95E9-E08B2BDCA11F" Name="Arial 11 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="240" left="54" bottom="258" right="213" />
+		<StaticText>Result Manager</StaticText>
+		<Font GUID="AE4EBE2E-F8FF-42B5-95E9-E08B2BDCA11F" Name="Arial 11 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Picture">
+		<Location top="234" left="12" bottom="264" right="42" />
+		<FileName LiteralFileName="true">"Pictures\help.png"</FileName>
+		<Display>StretchOrShrink</Display>
+		<Center>true</Center>
+		<KeepRatio>true</KeepRatio>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="234" left="12" bottom="264" right="42" />
+		<TabOrder>13</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Invisible</ButtonType>
+		<TooltipText>"Result Manager"</TooltipText>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Assignment">
+				<Identifier>odm::epWebLinkSelect</Identifier>
+				<AssignedValue>'ResultManager'</AssignedValue>
+			</Action>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>odm::procOpenWebLink</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="204" left="54" bottom="222" right="213" />
+		<StaticText>Data Manager</StaticText>
+		<Font GUID="AE4EBE2E-F8FF-42B5-95E9-E08B2BDCA11F" Name="Arial 11 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Picture">
+		<Location top="198" left="12" bottom="228" right="42" />
+		<FileName LiteralFileName="true">"Pictures\help.png"</FileName>
+		<Display>StretchOrShrink</Display>
+		<Center>true</Center>
+		<KeepRatio>true</KeepRatio>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="198" left="12" bottom="228" right="42" />
+		<TabOrder>12</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Invisible</ButtonType>
+		<TooltipText>"Data Manager"</TooltipText>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Assignment">
+				<Identifier>odm::epWebLinkSelect</Identifier>
+				<AssignedValue>'DataManager'</AssignedValue>
+			</Action>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>odm::procOpenWebLink</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="276" left="54" bottom="294" right="213" />
+		<StaticText>Multi Result Manager</StaticText>
+		<Font GUID="AE4EBE2E-F8FF-42B5-95E9-E08B2BDCA11F" Name="Arial 11 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Picture">
+		<Location top="270" left="12" bottom="300" right="42" />
+		<FileName LiteralFileName="true">"Pictures\help.png"</FileName>
+		<Display>StretchOrShrink</Display>
+		<Center>true</Center>
+		<KeepRatio>true</KeepRatio>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="270" left="12" bottom="300" right="42" />
+		<TabOrder>15</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Invisible</ButtonType>
+		<TooltipText>"Multi Result Manager"</TooltipText>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Assignment">
+				<Identifier>odm::epWebLinkSelect</Identifier>
+				<AssignedValue>'MultiResultManager'</AssignedValue>
+			</Action>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>odm::procOpenWebLink</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="312" left="54" bottom="330" right="213" />
+		<StaticText>Infeasibility</StaticText>
+		<Font GUID="AE4EBE2E-F8FF-42B5-95E9-E08B2BDCA11F" Name="Arial 11 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Picture">
+		<Location top="306" left="12" bottom="336" right="42" />
+		<FileName LiteralFileName="true">"Pictures\help.png"</FileName>
+		<Display>StretchOrShrink</Display>
+		<Center>true</Center>
+		<KeepRatio>true</KeepRatio>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="306" left="12" bottom="336" right="42" />
+		<TabOrder>14</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Invisible</ButtonType>
+		<TooltipText>"Infeasibility"</TooltipText>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Assignment">
+				<Identifier>odm::epWebLinkSelect</Identifier>
+				<AssignedValue>'Infeasibility'</AssignedValue>
+			</Action>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>odm::procOpenWebLink</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="162" left="6" bottom="342" right="240" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="168" left="12" bottom="192" right="234" />
+		<StaticText>CEv3 Help</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="6CE1F43F-6A59-4B87-9BAA-9BF6DCB0D1BB" Name="Arial 14 Bold" />
+		<TextColor>
+			<UserColor>Air Liquide blue</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Circle">
+		<Location top="120" left="12" bottom="147" right="39" />
+		<FillColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</FillColor>
+		<LineColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</LineColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="126" left="12" bottom="150" right="42" />
+		<StaticText>W</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="523F941B-E378-47BE-AEB2-3C1FD99F8C69" Name="Arial 12 Bold" />
+		<TextColor>
+			<UserColor GUID="9E91AFF7-0C42-4624-9450-66E75C74B1AB">grey</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="126" left="48" bottom="144" right="202" />
+		<StaticText>Wizard</StaticText>
+		<Font GUID="AE4EBE2E-F8FF-42B5-95E9-E08B2BDCA11F" Name="Arial 11 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Circle">
+		<Location top="120" left="144" bottom="147" right="171" />
+		<FillColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</FillColor>
+		<LineColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</LineColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="126" left="144" bottom="150" right="174" />
+		<StaticText>W</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="523F941B-E378-47BE-AEB2-3C1FD99F8C69" Name="Arial 12 Bold" />
+		<TextColor>
+			<UserColor GUID="9E91AFF7-0C42-4624-9450-66E75C74B1AB">grey</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="126" left="180" bottom="144" right="234" />
+		<StaticText>OEMT</StaticText>
+		<Font GUID="AE4EBE2E-F8FF-42B5-95E9-E08B2BDCA11F" Name="Arial 11 Bold" />
+		<TextColor>
+			<UserColor>ALFIBackgroundAlarme1</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Rectangle">
+		<Location top="42" left="6" bottom="156" right="240" />
+		<Shape>Open</Shape>
+		<FillColor RGB="#ffffff" />
+		<LineColor RGB="#000000" />
+		<LineWidth>2</LineWidth>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="48" left="12" bottom="72" right="234" />
+		<StaticText>Website</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="6CE1F43F-6A59-4B87-9BAA-9BF6DCB0D1BB" Name="Arial 14 Bold" />
+		<TextColor>
+			<UserColor>Air Liquide blue</UserColor>
+		</TextColor>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="84" left="12" bottom="111" right="39" />
+		<TabOrder>3</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Invisible</ButtonType>
+		<TooltipText>"Optim.Suite website"</TooltipText>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Assignment">
+				<Identifier>odm::epWebLinkSelect</Identifier>
+				<AssignedValue>'OptimSuite'</AssignedValue>
+			</Action>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>odm::procOpenWebLink</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="120" left="12" bottom="147" right="39" />
+		<TabOrder>2</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Invisible</ButtonType>
+		<TooltipText>"Wizard website"</TooltipText>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Assignment">
+				<Identifier>odm::epWebLinkSelect</Identifier>
+				<AssignedValue>'Wizard'</AssignedValue>
+			</Action>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>odm::procOpenWebLink</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="120" left="144" bottom="147" right="171" />
+		<TabOrder>4</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Invisible</ButtonType>
+		<TooltipText>"OEMT website"</TooltipText>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Assignment">
+				<Identifier>odm::epWebLinkSelect</Identifier>
+				<AssignedValue>'OEMT'</AssignedValue>
+			</Action>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>odm::procOpenWebLink</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<UsedReferences>
+		<Model>
+			<Symbol>odm::epWebLinkSelect</Symbol>
+			<Symbol>odm::procOpenWebLink</Symbol>
+		</Model>
+	</UsedReferences>
+</Page>
